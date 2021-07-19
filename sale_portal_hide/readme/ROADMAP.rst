@@ -1,0 +1,1 @@
+* This module only hides objects on the customer portal home page. The portal user can still access orders and quotations by manually entering the URL in the web browser. Use the Access Rights and Record Rules feature to further block access to these objects.
