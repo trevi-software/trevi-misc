@@ -1,0 +1,8 @@
+<odoo>
+
+    <record id="project.portal_my_home" model="ir.ui.view">
+        <field name="customize_show" eval="True" />
+        <field name="active" eval="False" />
+    </record>
+
+</odoo>
