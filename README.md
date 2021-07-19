@@ -14,7 +14,13 @@ Miscellaneous Odoo addons by Trevi that do not belong elsewhere.
 
 [//]: # (addons)
 
-This part will be replaced when running the oca-gen-addons-table script from OCA/maintainer-tools.
+Available addons
+----------------
+addon | version | summary
+--- | --- | ---
+[project_portal_hide](project_portal_hide/) | 14.0.1.0.0 | Hide projects &amp; tasks in the customer portal.
+[purchase_portal_hide](purchase_portal_hide/) | 14.0.1.0.0 | Hide purchase orders in the customer portal.
+[sale_portal_hide](sale_portal_hide/) | 14.0.1.0.0 | Hide orders &amp; quotations in the customer portal.
 
 [//]: # (end addons)
 
