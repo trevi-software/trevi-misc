@@ -10,7 +10,7 @@
     "summary": """Hide projects &amp; tasks in the customer portal.""",
     "category": "Project Management",
     "maintainers": ["TREVI Software"],
-    "website": "https://github.com/OCA/project",
+    "website": "https://github.com/trevi-software/trevi-misc",
     "depends": [
         "project",
     ],

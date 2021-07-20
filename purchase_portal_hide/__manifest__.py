@@ -10,7 +10,7 @@
     "summary": """Hide purchase orders in the customer portal.""",
     "category": "Purchase",
     "maintainers": ["TREVI Software"],
-    "website": "https://github.com/OCA/purchase-workflow",
+    "website": "https://github.com/trevi-software/trevi-misc",
     "depends": [
         "purchase",
     ],

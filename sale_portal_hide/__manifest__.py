@@ -10,7 +10,7 @@
     "summary": """Hide orders &amp; quotations in the customer portal.""",
     "category": "Sales",
     "maintainers": ["TREVI Software"],
-    "website": "https://github.com/OCA/sale-workflow",
+    "website": "https://github.com/trevi-software/trevi-misc",
     "depends": [
         "sale",
     ],
