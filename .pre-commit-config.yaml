@@ -1,4 +1,3 @@
-
 exclude: |
   (?x)
   # NOT INSTALLABLE ADDONS
@@ -34,7 +33,7 @@ repos:
       # update the NOT INSTALLABLE ADDONS section above
       - id: oca-update-pre-commit-excluded-addons
       - id: oca-fix-manifest-website
-        args: ["https://github.com/OCA/trevi-misc"]
+        args: ["https://github.com/trevi-software/trevi-misc"]
   - repo: https://github.com/myint/autoflake
     rev: v1.4
     hooks:
