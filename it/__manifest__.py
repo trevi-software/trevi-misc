@@ -1,0 +1,45 @@
+# Copyright (C) 2021 TREVI Software
+# Copyright (C) 2014 Leandro Ezequiel Baldi
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+
+{
+    "name": "Infrastructure",
+    "version": "14.0.1.0.0",
+    "category": "Infrastructure",
+    "summary": "Equipments, Access, Backups, Applications",
+    "description": """This module is used for Infrastructure management.""",
+    "author": "TREVI Software, Leandro Ezequiel Baldi",
+    "website": "https://trevi.et/",
+    "images": ["static/src/img/default_image_equipment.png"],
+    "depends": ["base", "product"],
+    "data": [
+        "security/it_security.xml",
+        "security/ir.model.access.csv",
+        "views/it_menu_view.xml",
+        "views/equipment_view.xml",
+        "views/equipment_worklog_view.xml",
+        "views/equipment_network_view.xml",
+        "views/equipment_partition_view.xml",
+        "views/component_view.xml",
+        "views/access_view.xml",
+        "views/partner_view.xml",
+        "views/backup_view.xml",
+        "views/equipment_function_view.xml",
+        # "views/equipment_mapping_view.xml",
+        "views/application_view.xml",
+        "views/application_license_view.xml",
+        "views/brand_view.xml",
+        "views/site_view.xml",
+        "data/application_license_data.xml",
+        "data/equipment_brand_data.xml",
+        "data/equipment_db_engine_data.xml",
+        "data/equipment_function.xml",
+    ],
+    "demo": [],
+    "test": [],
+    "external_dependencies": {
+        "python": ["cryptography"],
+    },
+    "installable": True,
+    "application": True,
+}
