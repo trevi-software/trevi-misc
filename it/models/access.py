@@ -27,7 +27,7 @@ from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 from random import choice
 
-from odoo import api, fields, models, _
+from odoo import _, api, fields, models, _
 from odoo.exceptions import AccessDenied, ValidationError
 
 
@@ -37,6 +37,7 @@ PARAM_SALT = "it_passsalt"
 
 class ItAccess(models.Model):
     _name = "it.access"
+    _inherit = ["mail.activity.mixin", "mail.thread"]
     _description = "Access"
 
     @api.onchange("equipment_id")
@@ -131,19 +132,80 @@ class ItAccess(models.Model):
         ),
     )
     equipment_id = fields.Many2one("it.equipment", "Equipment", ondelete="restrict")
-    site_id = fields.Many2one("it.site", "Site", ondelete="restrict", default=_get_site_id)
-    name = fields.Char("Username", required=True)
+    site_id = fields.Many2one("it.site", "Site", required=True, ondelete="restrict", default=_get_site_id)
+    name = fields.Char("Username", required=True, tracking=True)
     password = fields.Char()
-    encrypted = fields.Boolean(default=False)
+    encrypted = fields.Boolean(default=False, tracking=True)
     partner_id = fields.Many2one(
-        "res.partner", "Partner", domain="[('manage_it','=',1)]", default="_get_partner_id",
+        "res.partner",
+        "Partner",
+        domain="[('manage_it','=',1)]",
+        default="_get_partner_id",
+        tracking=True,
     )
     active = fields.Boolean(default=True)
-    ssl_csr = fields.Binary("CSR")
+    ssl_csr = fields.Binary("CSR", tracking=True)
     ssl_csr_filename = fields.Char("CSR Filename")
-    ssl_cert = fields.Binary("Cert")
+    ssl_cert = fields.Binary("Cert", tracking=True)
     ssl_cert_filename = fields.Char("Cert Filename")
-    ssl_publickey = fields.Binary("Public Key")
+    ssl_publickey = fields.Binary("Public Key", tracking=True)
     ssl_publickey_filename = fields.Char("Public Key Filename")
-    ssl_privatekey = fields.Binary("Private Key")
+    ssl_privatekey = fields.Binary("Private Key", tracking=True)
     ssl_privatekey_filename = fields.Char("Private Key Filename")
+
+    # Log a note on creation of credential to Site and Equipment chatter.
+    #
+    @api.model
+    def create(self, vals):
+        res = super(ItAccess, self).create(vals)
+        mt_note = self.env.ref('mail.mt_note')
+        author = self.env.user.partner_id and self.env.user.partner_id.id or False
+        msg = _('<div class="o_mail_notification"><ul><li>A new %s was created: <a href="#" class="o_redirect" data-oe-model=it.access data-oe-id="%s">%s</a></li></ul></div>', res._description, res.id, res.name)
+        if res.site_id:
+            res.site_id.message_post(body=msg, subtype_id=mt_note.id, author_id=author)
+        if res.equipment_id:
+            res.equipment_id.message_post(body=msg, subtype_id=mt_note.id, author_id=author)
+        return res
+
+    # Log a note on deletion of credential to Site and Equipment chatter. Since
+    # more than one record at a time may be deleted post all deleted records
+    # for each site and each equipment together in one post.
+    #
+    def unlink(self):
+
+        mt_note = self.env.ref('mail.mt_note')
+        author = self.env.user.partner_id and self.env.user.partner_id.id or False
+
+        # map access records to sites and equipment
+        #
+        sites = {}
+        equips = {}
+        for res in self:
+            if res.site_id:
+                if res.site_id.id not in sites.keys():
+                    sites.update({res.site_id.id: [{'id': res.id, 'name': res.name}]})
+                else:
+                    sites[res.site_id.id].append({'id': res.id, 'name': res.name})
+            if res.equipment_id:
+                if res.equipment_id.id not in equips.keys():
+                    equips.update({res.equipment_id.id: [{'id': res.id, 'name': res.name}]})
+                else:
+                    equips[res.equipment_id.id].append({'id': res.id, 'name': res.name})
+
+        Site = self.env["it.site"]
+        for k,v in sites.items():
+            msg = ""
+            for r in v:
+                msg = msg + _("<li> %s record was deleted: %s</li>", self._description, r['name'])
+            note = '<div class="o_mail_notification"><ul>' + msg + '</ul></div>'
+            Site.browse(k).message_post(body=note, subtype_id=mt_note.id, author_id=author)
+
+        Equipment = self.env['it.equipment']
+        for k,v in equips.items():
+            msg = ""
+            for r in v:
+                msg = msg + _("<li> %s record was deleted: %s</li>", self._description, r['name'])
+            note = '<div class="o_mail_notification"><ul>' + msg + '</ul></div>'
+            Equipment.browse(k).message_post(body=note, subtype_id=mt_note.id, author_id=author)
+
+        return super(ItAccess, self).unlink()

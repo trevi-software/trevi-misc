@@ -11,7 +11,7 @@
     "author": "TREVI Software, Leandro Ezequiel Baldi",
     "website": "https://trevi.et/",
     "images": ["static/src/img/default_image_equipment.png"],
-    "depends": ["base", "product"],
+    "depends": ["mail", "product"],
     "data": [
         "security/it_security.xml",
         "security/ir.model.access.csv",

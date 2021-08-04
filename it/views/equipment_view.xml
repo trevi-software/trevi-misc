@@ -121,7 +121,6 @@
                                 <field name="site_id"/>
                             </group>
                         </group>
-                        <field colspan="4" name="note" nolabel="1" placeholder="Write a note ..."/>
                         <notebook>
                             <page string="Virtual Machine Data" attrs="{'invisible':[('equipment_type','!=', 'virtual' )]}">
                                 <group>
@@ -282,7 +281,12 @@
                             </page>
                         </notebook>
                     </sheet>
-                </form>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+            </form>
             </field>
         </record>
 
