@@ -62,7 +62,12 @@
                             </button>
                         </div>
                         <group>
-                            <field name="partner_id"/>
+                            <group>
+                                <field name="partner_id"/>
+                            </group>
+                            <group>
+                                <field name="company_id" string="Company" groups="base.group_multi_company"/>
+                            </group>
                         </group>
                     </sheet>
                     <div class="oe_chatter">

@@ -31,10 +31,7 @@ class ItApplication(models.Model):
     company_id = fields.Many2one(
         "res.company",
         "Company",
-        required=True,
-        default=lambda self: self.env["res.company"]._company_default_get(
-            "account.invoice"
-        ),
+        default=lambda self: self.env.company,
     )
     active = fields.Boolean("Active", default=True)
     developer = fields.Char("Developer")

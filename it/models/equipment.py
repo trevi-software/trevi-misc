@@ -95,10 +95,7 @@ class ItEquipment(models.Model):
     company_id = fields.Many2one(
         "res.company",
         "Company",
-        required=True,
-        default=lambda self: self.env["res.company"]._company_default_get(
-            "account.invoice"
-        ),
+        default=lambda self: self.env.company,
     )
     site_id = fields.Many2one("it.site", "Site", required=True, tracking=True)
     active = fields.Boolean(default=True, tracking=True)

@@ -20,6 +20,11 @@ class ItSite(models.Model):
         for site in self:
             site.access_count = len(site.access_ids)
 
+    company_id = fields.Many2one(
+        "res.company",
+        "Company",
+        default=lambda self: self.env.company,
+    )
     name = fields.Char(required=True)
     partner_id = fields.Many2one("res.partner", "Partner", tracking=True)
     equipment_count = fields.Integer(compute="compute_equipment_count", string="Asset Count", store=True, tracking=True)

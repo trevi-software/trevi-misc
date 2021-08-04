@@ -126,10 +126,7 @@ class ItAccess(models.Model):
     company_id = fields.Many2one(
         "res.company",
         "Company",
-        required=True,
-        default=lambda self: self.env["res.company"]._company_default_get(
-            "account.invoice"
-        ),
+        default=lambda self: self.env.company,
     )
     equipment_id = fields.Many2one("it.equipment", "Asset", ondelete="restrict")
     site_id = fields.Many2one("it.site", "Site", required=True, ondelete="restrict", default=_get_site_id)
