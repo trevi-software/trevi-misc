@@ -32,4 +32,4 @@ class ItEquipmentConfiguration(models.Model):
     date = fields.Datetime(default=fields.Datetime.now())
     config_file = fields.Binary("Configuration File")
     config_file_filename = fields.Char("Configuration File Filename")
-    equipment_id = fields.Many2one("it.equipment", "Equipment", ondelete="restrict")
+    equipment_id = fields.Many2one("it.equipment", "Asset", ondelete="restrict")

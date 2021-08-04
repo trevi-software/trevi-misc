@@ -24,9 +24,9 @@ from odoo import fields, models
 
 class ItEquipmentPartition(models.Model):
     _name = "it.equipment.partition"
-    _description = "Equipment Partition"
+    _description = "Partition"
 
-    equipment_id = fields.Many2one("it.equipment", "Equipment", ondelete="cascade")
+    equipment_id = fields.Many2one("it.equipment", "Asset", ondelete="cascade")
     name = fields.Char("Identificator", required=True)
     disks = fields.Char(help="Disks splitted by , ")
     type = fields.Char()

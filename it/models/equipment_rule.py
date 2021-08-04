@@ -24,9 +24,9 @@ from odoo import fields, models
 
 class ItEquipmentRule(models.Model):
     _name = "it.equipment.rule"
-    _description = "Equipment Firewall Rules"
+    _description = "Router Rule"
 
-    equipment_id = fields.Many2one("it.equipment", "Equipment", ondelete="cascade")
+    equipment_id = fields.Many2one("it.equipment", "Asset", ondelete="cascade")
     name = fields.Char(required=True)
     source_port = fields.Char()
     destination_port = fields.Char()

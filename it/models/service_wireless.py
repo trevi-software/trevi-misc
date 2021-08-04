@@ -24,7 +24,7 @@ from odoo import fields, models
 
 class ItServiceWireless(models.Model):
     _name = "it.service.wireless"
-    _description = "Wireless Access Point/Router Service"
+    _description = "Wireless Service"
 
     name = fields.Char("SSID", required=True)
     type = fields.Selection(

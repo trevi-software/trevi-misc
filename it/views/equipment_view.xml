@@ -24,14 +24,14 @@
         <!-- Action for Buttons -->
         <record id="act_equipment_2_access" model="ir.actions.act_window">
             <field name="res_model">it.access</field>
-            <field name="name">Access</field>
+            <field name="name">Creds</field>
             <field name="view_mode">tree,form</field>
             <field name="context">{'search_default_equipment_id': active_id }</field>
         </record>
 
         <record id="act_equipment_2_equipment" model="ir.actions.act_window">
             <field name="res_model">it.equipment</field>
-            <field name="name">Virtuals</field>
+            <field name="name">Guests</field>
             <field name="view_mode">tree,form</field>
             <field name="context">{'search_default_virtual_parent_id': active_id }</field>
         </record>
@@ -43,12 +43,12 @@
             <field name="context">{'search_default_equipment_id': active_id }</field>
         </record>
 
-        <!-- Equipments -->
+        <!-- Assets -->
         <record model="ir.ui.view" id="it_equipment_tree">
             <field name="name">it.equipment.tree</field>
             <field name="model">it.equipment</field>
             <field name="arch" type="xml">
-                <tree string="Equipments">
+                <tree string="Assets">
                     <field name="name"/>
                     <field name="partner_id"/>
                     <field name="description"/>
@@ -63,7 +63,7 @@
             <field name="name">it.equipment.form</field>
             <field name="model">it.equipment</field>
             <field name="arch" type="xml">
-                <form string="Equipments">
+                <form string="Assets">
                     <sheet>
                         <field name="image" class="oe_left oe_avatar" widget="image"/>
                         <div class="oe_title">
@@ -96,8 +96,7 @@
                             <button name="%(act_equipment_2_access)d"
                                     class="oe_inline oe_stat_button"
                                     icon="fa-key"
-                                    type="action"
-                                    attrs="{'invisible':[('is_access','=', False )]}">
+                                    type="action">
                                         <field name="access_count" widget="statinfo"/>
                             </button>
                             <button name="%(act_equipment_2_equipment)d"
@@ -257,7 +256,6 @@
                                     <group string="Basic Configuration">
                                         <field name="active"/>
                                         <field name="company_id" string="Company" groups="base.group_multi_company"/>
-                                        <field name="is_access"/>
                                         <field name="is_backup"/>
                                         <field name="is_application"/>
                                         <field name="is_contracted"/>
@@ -294,7 +292,7 @@
             <field name="name">it.equipment.search</field>
             <field name="model">it.equipment</field>
             <field name="arch" type="xml">
-                <search string="Equipment">
+                <search string="Asset">
                     <!--Searchs-->
                     <field name="identification" string="Identification Name"/>
                     <field name="pin" string="PIN"/>
@@ -310,26 +308,21 @@
                     <filter name="is_static_ip" string="DHCP" domain="[('is_static_ip','=',0)]"/>
                     <separator/>
                     <filter name="is_backup" string="With Backup" domain="[('is_backup','=',1)]"
-                            help="Equipments with backup"/>
+                            help="Assets with backup"/>
                     <filter name="is_backup" string="Without Backup" domain="[('is_backup','=',0)]"
-                            help="Equipments without backup"/>
-                    <separator/>
-                    <filter name="is_access" string="With Access" domain="[('is_access','=',1)]"
-                            help="Equipments with access"/>
-                    <filter name="is_access" string="Without Access" domain="[('is_access','=',0)]"
-                            help="Equipments without access"/>
+                            help="Assets without backup"/>
                     <separator/>
                     <filter name="is_application" string="With Applications" domain="[('is_application','=',1)]"
-                            help="Equipments with applications"/>
+                            help="Assets with applications"/>
                     <filter name="is_application" string="Without Applications" domain="[('is_application','=',0)]"
-                            help="Equipments without applications"/>
+                            help="Assets without applications"/>
                     <separator/>
                     <filter name="type_bundle" string="Bundle Type" domain="[('equipment_type','=','bundle')]"/>
                     <filter name="type_virtual" string="Virtual Type" domain="[('equipment_type','=','virtual')]"/>
                     <filter name="type_product" string="Product Type" domain="[('equipment_type','=','product')]"/>
                     <separator string="Functions"/>
                     <filter name="is_partitioned" string="Partitioned" domain="[('is_partitioned','=',1)]"
-                            help="Equipments with partitions"/>
+                            help="Assets with partitions"/>
                     <filter name="function_fileserver" string="FileServers" domain="[('function_fileserver','=',1)]"/>
                     <filter name="function_host" string="Hosts" domain="[('function_host','=',1)]"/>
                     <filter name="function_router" string="Routers" domain="[('function_router','=',1)]"/>
@@ -351,7 +344,7 @@
         </record>
 
         <record id="it_equipment_action" model="ir.actions.act_window">
-            <field name="name">Equipments</field>
+            <field name="name">Assets</field>
             <field name="res_model">it.equipment</field>
             <field name="view_mode">tree,form</field>
         </record>

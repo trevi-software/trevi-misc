@@ -24,11 +24,11 @@ from odoo import fields, models
 
 class ItBackup(models.Model):
     _name = "it.backup"
-    _description = "Back Up"
+    _description = "Backup"
 
     equipment_id = fields.Many2one(
         comodel_name="it.equipment",
-        string="Equipment",
+        string="Asset",
         domain="[('is_backup','=',1)]",
         ondelete="restrict",
         required=True,

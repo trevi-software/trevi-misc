@@ -28,7 +28,7 @@ from odoo.modules.module import get_module_resource
 
 class ItEquipmentBrand(models.Model):
     _name = "it.equipment.brand"
-    _description = "IT Equipment Brand Names"
+    _description = "IT Asset Brand Name"
 
     name = fields.Char(required=True)
     is_computer = fields.Boolean("Computing Devices")
@@ -39,7 +39,7 @@ class ItEquipmentBrand(models.Model):
 class ItEquipment(models.Model):
     _name = "it.equipment"
     _inherit = ["mail.activity.mixin", "mail.thread"]
-    _description = "Equipments"
+    _description = "IT Asset"
 
     _rec_name = "identification"
 
@@ -103,12 +103,12 @@ class ItEquipment(models.Model):
     site_id = fields.Many2one("it.site", "Site", required=True, tracking=True)
     active = fields.Boolean(default=True, tracking=True)
     # Counts
-    access_count = fields.Integer(compute="_access_count", string="Logins", store=False)
-    access_ids = fields.One2many("it.access", "equipment_id", string="Login Users")
+    access_count = fields.Integer(compute="_access_count", string="Credentials Count", store=False)
+    access_ids = fields.One2many("it.access", "equipment_id", string="Credentials")
     backup_count = fields.Integer(compute="_backup_count")
     backup_ids = fields.One2many("it.backup", "equipment_id", "Backups")
-    virtual_count = fields.Integer(compute="_virtual_count", store=False)
-    virtual_ids = fields.One2many("it.equipment", "virtual_parent_id", "Virtuals")
+    virtual_count = fields.Integer(compute="_virtual_count", string="Guest Count", store=False)
+    virtual_ids = fields.One2many("it.equipment", "virtual_parent_id", "Guests")
     # General Info
     identification = fields.Char(
         compute="_get_identification", string="Complete Name", store=True
@@ -156,7 +156,6 @@ class ItEquipment(models.Model):
     is_static_ip = fields.Boolean("Static IP")
     is_partitioned = fields.Boolean("Partitions")
     is_backup = fields.Boolean("Backup")
-    is_access = fields.Boolean("Credentials")
     is_os = fields.Boolean("Operating System")
     is_application = fields.Boolean("Application")
     is_config_file = fields.Boolean("Store Config Files")

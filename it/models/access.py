@@ -38,7 +38,7 @@ PARAM_SALT = "it_passsalt"
 class ItAccess(models.Model):
     _name = "it.access"
     _inherit = ["mail.activity.mixin", "mail.thread"]
-    _description = "Access"
+    _description = "Credential"
 
     @api.onchange("equipment_id")
     def onchange_equipment(self):
@@ -131,7 +131,7 @@ class ItAccess(models.Model):
             "account.invoice"
         ),
     )
-    equipment_id = fields.Many2one("it.equipment", "Equipment", ondelete="restrict")
+    equipment_id = fields.Many2one("it.equipment", "Asset", ondelete="restrict")
     site_id = fields.Many2one("it.site", "Site", required=True, ondelete="restrict", default=_get_site_id)
     name = fields.Char("Username", required=True, tracking=True)
     password = fields.Char()

@@ -49,7 +49,7 @@
         </record>
 
         <record id="it_application_license_action" model="ir.actions.act_window">
-            <field name="name">License</field>
+            <field name="name">Licenses</field>
             <field name="res_model">it.application.license</field>
             <field name="view_mode">tree,form</field>
         </record>

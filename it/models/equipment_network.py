@@ -24,9 +24,9 @@ from odoo import fields, models
 
 class ItEquipmentNetwork(models.Model):
     _name = "it.equipment.network"
-    _description = "Equipment Network Interface"
+    _description = "Network Interface"
 
-    equipment_id = fields.Many2one("it.equipment", "Equipment", ondelete="cascade")
+    equipment_id = fields.Many2one("it.equipment", "Asset", ondelete="cascade")
     name = fields.Char("Interface Name", required=True)
     mac = fields.Char("MAC Address", required=True)
     network_id = fields.Many2one("it.site.network", "Network")

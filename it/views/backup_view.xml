@@ -129,7 +129,7 @@
         </record>
 
         <record model="ir.actions.act_window" id="it_backup_action">
-            <field name="name">Backup</field>
+            <field name="name">Backups</field>
             <field name="res_model">it.backup</field>
             <field name="view_mode">tree,form</field>
         </record>

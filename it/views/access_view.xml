@@ -26,7 +26,7 @@
             <field name="name">it.access.tree</field>
             <field name="model">it.access</field>
             <field name="arch" type="xml">
-                <tree string="Access">
+                <tree string="credentials">
                     <field name="name"/>
                     <field name="encrypted"/>
                     <field name="equipment_id"/>
@@ -40,7 +40,7 @@
             <field name="name">it.access.form</field>
             <field name="model">it.access</field>
             <field name="arch" type="xml">
-                <form string="Access">
+                <form string="Credential">
                     <sheet>
                         <div class="oe_title">
                             <div class="oe_edit_only">
@@ -135,7 +135,7 @@
         </record>
 
         <record model="ir.actions.act_window" id="it_access_action">
-            <field name="name">Access</field>
+            <field name="name">Credentials</field>
             <field name="res_model">it.access</field>
             <field name="view_mode">tree,form</field>
         </record>

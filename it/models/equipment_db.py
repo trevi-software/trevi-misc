@@ -32,7 +32,7 @@ class ItEquipmentDb(models.Model):
     setting_ids = fields.One2many("it.equipment.dbsetting", "db_id", "Settings")
     engine_id = fields.Many2one("it.equipment.db.engine", "Database Engine")
     application_id = fields.Many2one("it.application", "Application")
-    equipment_id = fields.Many2one("it.equipment", "Equipment", ondelete="restrict")
+    equipment_id = fields.Many2one("it.equipment", "Asset", ondelete="restrict")
 
 
 class ItEquipmentDbEngine(models.Model):

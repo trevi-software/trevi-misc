@@ -54,7 +54,7 @@ class ItApplication(models.Model):
         "equipment_application_rel",
         "application_id",
         "equipment_id",
-        "Equipments",
+        "Assets",
     )
     db_ids = fields.One2many("it.equipment.db", "application_id", "Databases")
     # Closed Source
