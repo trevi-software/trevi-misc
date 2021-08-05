@@ -11,12 +11,12 @@ class ItSite(models.Model):
     _description = "IT Site"
 
     @api.depends("equipment_ids")
-    def compute_equipment_count(self):
+    def _compute_equipment_count(self):
         for site in self:
             site.equipment_count = len(site.equipment_ids)
 
     @api.depends("access_ids")
-    def compute_access_count(self):
+    def _compute_access_count(self):
         for site in self:
             site.access_count = len(site.access_ids)
 
@@ -27,9 +27,16 @@ class ItSite(models.Model):
     )
     name = fields.Char(required=True)
     partner_id = fields.Many2one("res.partner", "Partner", tracking=True)
-    equipment_count = fields.Integer(compute="compute_equipment_count", string="Asset Count", store=True, tracking=True)
+    equipment_count = fields.Integer(
+        compute="_compute_equipment_count",
+        string="Asset Count",
+        store=True,
+        tracking=True,
+    )
     equipment_ids = fields.One2many("it.equipment", "site_id", "Assets")
-    access_count = fields.Integer(compute="compute_access_count", string="Credential Count", store=False)
+    access_count = fields.Integer(
+        compute="_compute_access_count", string="Credential Count", store=False
+    )
     access_ids = fields.One2many("it.access", "site_id", "Credentials")
     ad_ids = fields.One2many("it.service.ad", "site_id", "Active Directory")
 

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!--
     Copyright (C) 2014 Leandro Ezequiel Baldi
     <baldileandro@gmail.com>
@@ -16,7 +16,6 @@
     You should have received a copy of the GNU Affero General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
-
 <odoo>
 
     <data>
@@ -29,16 +28,16 @@
                 <form string="Mapping">
                     <separator string="Mapping Registry" colspan="4" />
                     <group>
-                        <field name="name"/>
-                        <field name="path"/>
-                        <field name="groups"/>
-                        <field name="users"/>
+                        <field name="name" />
+                        <field name="path" />
+                        <field name="groups" />
+                        <field name="users" />
                     </group>
                     <group>
-                        <field name="perm_read"/>
-                        <field name="perm_write"/>
-                        <field name="perm_create"/>
-                        <field name="perm_delete"/>
+                        <field name="perm_read" />
+                        <field name="perm_write" />
+                        <field name="perm_create" />
+                        <field name="perm_delete" />
                     </group>
                 </form>
             </field>
@@ -50,14 +49,14 @@
             <field name="model">it.equipment.mapping</field>
             <field name="arch" type="xml">
                 <tree string="Mapping Registry">
-                    <field name="name" colspan="4"/>
-                    <field name="path"/>
-                    <field name="groups"/>
-                    <field name="users"/>
-                    <field name="perm_read"/>
-                    <field name="perm_write"/>
-                    <field name="perm_create"/>
-                    <field name="perm_delete"/>
+                    <field name="name" colspan="4" />
+                    <field name="path" />
+                    <field name="groups" />
+                    <field name="users" />
+                    <field name="perm_read" />
+                    <field name="perm_write" />
+                    <field name="perm_create" />
+                    <field name="perm_delete" />
                 </tree>
             </field>
         </record>
@@ -65,5 +64,4 @@
     </data>
 
 </odoo>
-
 <!-- vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4-->

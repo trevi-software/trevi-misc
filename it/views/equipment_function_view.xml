@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!--
     Copyright (C) 2014 Leandro Ezequiel Baldi
     <baldileandro@gmail.com>
@@ -16,7 +16,6 @@
     You should have received a copy of the GNU Affero General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
-
 <odoo>
 
     <data>
@@ -30,10 +29,10 @@
                     <sheet>
                         <div class="oe_title">
                             <div class="oe_edit_only">
-                                <label for="name"/>
+                                <label for="name" />
                             </div>
                             <h1>
-                                <field name="name"/>
+                                <field name="name" />
                             </h1>
                         </div>
                     </sheet>
@@ -47,7 +46,7 @@
             <field name="model">it.equipment.function</field>
             <field name="arch" type="xml">
                 <tree string="Function">
-                    <field name="name" colspan="4"/>
+                    <field name="name" colspan="4" />
                 </tree>
             </field>
         </record>
@@ -58,7 +57,12 @@
             <field name="view_mode">tree,form</field>
         </record>
 
-        <menuitem action="it_equipment_function_action" id="it_equipment_function" sequence="30" parent="it_menu_others"/>
+        <menuitem
+            action="it_equipment_function_action"
+            id="it_equipment_function"
+            sequence="30"
+            parent="it_menu_others"
+        />
 
     </data>
 

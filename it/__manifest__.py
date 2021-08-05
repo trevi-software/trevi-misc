@@ -5,11 +5,12 @@
 {
     "name": "Infrastructure",
     "version": "14.0.1.0.0",
+    "license": "AGPL-3",
     "category": "Infrastructure",
-    "summary": "Equipments, Access, Backups, Applications",
-    "description": """This module is used for Infrastructure management.""",
-    "author": "TREVI Software, Leandro Ezequiel Baldi",
-    "website": "https://trevi.et/",
+    "summary": """IT Assets, Credentials, Backups, Applications.""",
+    "author": """TREVI Software,
+        Leandro Ezequiel Baldi""",
+    "website": "https://github.com/trevi-software/trevi-misc",
     "images": ["static/src/img/default_image_equipment.png"],
     "depends": ["mail", "product"],
     "data": [

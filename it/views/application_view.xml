@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!--
     Copyright (C) 2014 Leandro Ezequiel Baldi
     <baldileandro@gmail.com>
@@ -16,7 +16,6 @@
     You should have received a copy of the GNU Affero General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
-
 <odoo>
 
     <data>
@@ -27,10 +26,10 @@
             <field name="model">it.application</field>
             <field name="arch" type="xml">
                 <tree string="Applications">
-                    <field name="name"/>
-                    <field name="developer"/>
-                    <field name="license_type"/>
-                    <field name="link_page" invisible="1"/>
+                    <field name="name" />
+                    <field name="developer" />
+                    <field name="license_type" />
+                    <field name="link_page" invisible="1" />
                 </tree>
             </field>
         </record>
@@ -43,49 +42,65 @@
                     <sheet>
                         <div class="oe_title">
                             <div class="oe_edit_only">
-                                <label for="name"/>
+                                <label for="name" />
                             </div>
                             <h1>
-                                <field name="name"/>
+                                <field name="name" />
                             </h1>
                         </div>
                         <group>
                             <group string="General Information">
-                                <field name="developer"/>
-                                <field name="license_type"/>
-                                <field name="license_id"/>
+                                <field name="developer" />
+                                <field name="license_type" />
+                                <field name="license_id" />
                             </group>
-                            <group string ="Links and Docs">
-                                <field name="link_page" widget="url"/>
-                                <field name="link_download" widget="url"/>
-                                <field name="documentation" filename="documentation_filename"/>
-                                <field name="documentation_filename" invisible="1"/>
+                            <group string="Links and Docs">
+                                <field name="link_page" widget="url" />
+                                <field name="link_download" widget="url" />
+                                <field
+                                    name="documentation"
+                                    filename="documentation_filename"
+                                />
+                                <field name="documentation_filename" invisible="1" />
                             </group>
                         </group>
-                        <field colspan="4" name="note" nolabel="1" placeholder="Write a note ..."/>
+                        <field
+                            colspan="4"
+                            name="note"
+                            nolabel="1"
+                            placeholder="Write a note ..."
+                        />
                         <notebook>
-                            <page string="Closed Source" attrs="{'invisible':[('license_type','!=', 'closedsource' )]}">
+                            <page
+                                string="Closed Source"
+                                attrs="{'invisible':[('license_type','!=', 'closedsource' )]}"
+                            >
                                 <group col="4">
-                                    <field name="key"/>
-                                    <newline/>
-                                    <field name="keygen"/>
-                                    <newline/>
-                                    <field name="crack"/>
+                                    <field name="key" />
+                                    <newline />
+                                    <field name="keygen" />
+                                    <newline />
+                                    <field name="crack" />
                                 </group>
                             </page>
                             <page string="Installations">
                                 <group>
-                                    <field name="equipment_ids" nolabel="1" colspan="4" domain="[('is_application', '=', 1)]"/>
+                                    <field
+                                        name="equipment_ids"
+                                        nolabel="1"
+                                        colspan="4"
+                                        domain="[('is_application', '=', 1)]"
+                                    />
                                 </group>
                             </page>
                             <page string="Audit Data" groups="it.group_it_mod">
                                 <group>
                                     <group>
-                                        <field name="create_uid"/>
+                                        <field name="create_uid" />
                                         <field name="create_date" />
                                     </group>
                                     <group>
-                                        <field name="write_uid"/>
+                                        <field name="write_uid" />
                                         <field name="write_date" />
                                     </group>
                                 </group>
@@ -94,7 +109,11 @@
                                 <group>
                                     <group>
                                         <field name="active" />
-                                        <field name="company_id" string="Company" groups="base.group_multi_company"/>
+                                        <field
+                                            name="company_id"
+                                            string="Company"
+                                            groups="base.group_multi_company"
+                                        />
                                     </group>
                                 </group>
                             </page>
@@ -104,22 +123,50 @@
             </field>
         </record>
 
-        <record model="ir.ui.view" id="it_application_search" >
+        <record model="ir.ui.view" id="it_application_search">
             <field name="name">it.application.search</field>
             <field name="model">it.application</field>
             <field name="arch" type="xml">
                 <search string="Application">
                     <!--Searchs-->
-                    <field name="name" string="Application Name"/>
-                    <field name="developer" string="Developer"/>
+                    <field name="name" string="Application Name" />
+                    <field name="developer" string="Developer" />
                     <!--Filters-->
-                    <filter name="type" string="OpenSource" domain="[('license_type','=','opensource')]" help="OpenSource Applications"/>
-                    <filter name="type" string="Commercial" domain="[('license_type','=','closedsource')]" help="ClosedSource Applications"/>
-                    <separator/>
+                    <filter
+                        name="type"
+                        string="OpenSource"
+                        domain="[('license_type','=','opensource')]"
+                        help="OpenSource Applications"
+                    />
+                    <filter
+                        name="type"
+                        string="Commercial"
+                        domain="[('license_type','=','closedsource')]"
+                        help="ClosedSource Applications"
+                    />
+                    <separator />
                     <group expand="0" string="Group By...">
-                        <filter name="by_developer" string="Developer" icon="terp-personal+" domain="[]" context="{'group_by':'developer'}"/>
-                        <filter name="by_type" string="Type" icon="terp-personal+" domain="[]" context="{'group_by':'license_type'}"/>
-                        <filter name="by_license" string="License" icon="terp-personal+" domain="[]" context="{'group_by':'license_id'}"/>
+                        <filter
+                            name="by_developer"
+                            string="Developer"
+                            icon="terp-personal+"
+                            domain="[]"
+                            context="{'group_by':'developer'}"
+                        />
+                        <filter
+                            name="by_type"
+                            string="Type"
+                            icon="terp-personal+"
+                            domain="[]"
+                            context="{'group_by':'license_type'}"
+                        />
+                        <filter
+                            name="by_license"
+                            string="License"
+                            icon="terp-personal+"
+                            domain="[]"
+                            context="{'group_by':'license_id'}"
+                        />
                     </group>
                 </search>
             </field>
@@ -131,7 +178,12 @@
             <field name="view_mode">tree,form</field>
         </record>
 
-        <menuitem action="it_application_action" id="it_application" sequence="40" parent="it_menu_others"/>
+        <menuitem
+            action="it_application_action"
+            id="it_application"
+            sequence="40"
+            parent="it_menu_others"
+        />
 
     </data>
 

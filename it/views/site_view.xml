@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
     <data>
@@ -23,10 +22,10 @@
             <field name="model">it.site</field>
             <field name="arch" type="xml">
                 <tree string="Sites">
-                    <field name="name"/>
-                    <field name="partner_id"/>
-                    <field name="equipment_count"/>
-                    <field name="access_count"/>
+                    <field name="name" />
+                    <field name="partner_id" />
+                    <field name="equipment_count" />
+                    <field name="access_count" />
                 </tree>
             </field>
         </record>
@@ -39,41 +38,52 @@
                     <sheet>
                         <div class="oe_title">
                             <div class="oe_edit_only oe_left">
-                                <label for="name"/>
+                                <label for="name" />
                             </div>
                             <h1>
-                                <field name="name"/>
+                                <field name="name" />
                             </h1>
                         </div>
                         <div class="oe_right oe_button_box" name="buttons">
-                            <button name="%(act_site_2_equipment)d"
-                                    class="oe_inline oe_stat_button"
-                                    icon="fa-th-large"
-                                    type="action">
-                                        <field name="equipment_count" widget="statinfo"/>
+                            <button
+                                name="%(act_site_2_equipment)d"
+                                class="oe_inline oe_stat_button"
+                                icon="fa-th-large"
+                                type="action"
+                            >
+                                        <field
+                                    name="equipment_count"
+                                    widget="statinfo"
+                                />
                             </button>
                         </div>
                         <div class="oe_right oe_button_box" name="buttons">
-                            <button name="%(act_site_2_access)d"
-                                    class="oe_inline oe_stat_button"
-                                    icon="fa-key"
-                                    type="action">
-                                        <field name="access_count" widget="statinfo"/>
+                            <button
+                                name="%(act_site_2_access)d"
+                                class="oe_inline oe_stat_button"
+                                icon="fa-key"
+                                type="action"
+                            >
+                                        <field name="access_count" widget="statinfo" />
                             </button>
                         </div>
                         <group>
                             <group>
-                                <field name="partner_id"/>
+                                <field name="partner_id" />
                             </group>
                             <group>
-                                <field name="company_id" string="Company" groups="base.group_multi_company"/>
+                                <field
+                                    name="company_id"
+                                    string="Company"
+                                    groups="base.group_multi_company"
+                                />
                             </group>
                         </group>
                     </sheet>
                     <div class="oe_chatter">
-                        <field name="message_follower_ids"/>
-                        <field name="activity_ids"/>
-                        <field name="message_ids"/>
+                        <field name="message_follower_ids" />
+                        <field name="activity_ids" />
+                        <field name="message_ids" />
                     </div>
                 </form>
             </field>
@@ -85,7 +95,12 @@
             <field name="view_mode">tree,form</field>
         </record>
 
-        <menuitem action="it_site_action" id="it_site" sequence="40" parent="it_menu_general"/>
+        <menuitem
+            action="it_site_action"
+            id="it_site"
+            sequence="40"
+            parent="it_menu_general"
+        />
 
     </data>
 </odoo>

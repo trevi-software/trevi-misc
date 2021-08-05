@@ -56,7 +56,9 @@ class ItEquipment(models.Model):
     @api.depends("partner_id")
     def _get_identification(self):
         for equipment in self:
-            equipment.identification = equipment.name + " - " + equipment.partner_id.name
+            equipment.identification = (
+                equipment.name + " - " + equipment.partner_id.name
+            )
 
     def name_search(self, name, args, limit=80, operator="ilike"):
         ids = None
@@ -70,17 +72,17 @@ class ItEquipment(models.Model):
         return ids.name_get()
 
     @api.depends("virtual_ids")
-    def _virtual_count(self):
+    def _compute_virtual_count(self):
         for equipment in self:
             equipment.virtual_count = len(equipment.virtual_ids)
 
     @api.depends("access_ids")
-    def _access_count(self):
+    def _compute_access_count(self):
         for equipment in self:
             equipment.access_count = len(equipment.access_ids)
 
     @api.depends("backup_ids")
-    def _backup_count(self):
+    def _compute_backup_count(self):
         for equipment in self:
             equipment.backup_count = len(equipment.backup_ids)
 
@@ -89,7 +91,7 @@ class ItEquipment(models.Model):
         image_path = get_module_resource(
             "it", "static/src/img", "default_image_equipment.png"
         )
-        return base64.b64encode(open(image_path, 'rb').read())
+        return base64.b64encode(open(image_path, "rb").read())
 
     # For openerp structure
     company_id = fields.Many2one(
@@ -100,21 +102,29 @@ class ItEquipment(models.Model):
     site_id = fields.Many2one("it.site", "Site", required=True, tracking=True)
     active = fields.Boolean(default=True, tracking=True)
     # Counts
-    access_count = fields.Integer(compute="_access_count", string="Credentials Count", store=False)
+    access_count = fields.Integer(
+        compute="_compute_access_count", string="Credentials Count", store=False
+    )
     access_ids = fields.One2many("it.access", "equipment_id", string="Credentials")
-    backup_count = fields.Integer(compute="_backup_count")
+    backup_count = fields.Integer(compute="_compute_backup_count")
     backup_ids = fields.One2many("it.backup", "equipment_id", "Backups")
-    virtual_count = fields.Integer(compute="_virtual_count", string="Guest Count", store=False)
+    virtual_count = fields.Integer(
+        compute="_compute_virtual_count", string="Guest Count", store=False
+    )
     virtual_ids = fields.One2many("it.equipment", "virtual_parent_id", "Guests")
     # General Info
     identification = fields.Char(
-        compute="_get_identification", string="Complete Name", store=True
+        compute="_compute_identification", string="Complete Name", store=True
     )
     name = fields.Char("Name", required=True, tracking=True)
     brand_id = fields.Many2one("it.equipment.brand", "Brand")
     model = fields.Char()
     partner_id = fields.Many2one(
-        "res.partner", "Partner", required=True, domain="[('manage_it','=',1)]", tracking=True,
+        "res.partner",
+        "Partner",
+        required=True,
+        domain="[('manage_it','=',1)]",
+        tracking=True,
     )
     function_ids = fields.Many2many(
         "it.equipment.function",
@@ -169,7 +179,10 @@ class ItEquipment(models.Model):
     pin = fields.Char("PIN", default=_get_pin, readonly=True, required=True, copy=False)
     # Worklogs Page
     worklog_ids = fields.One2many(
-        "it.equipment.worklog", "equipment_id", "Worklogs on this equipment", tracking=True,
+        "it.equipment.worklog",
+        "equipment_id",
+        "Worklogs on this equipment",
+        tracking=True,
     )
     # Contract Page
     contract_partner_id = fields.Many2one("res.partner", "Contractor")
@@ -198,11 +211,17 @@ class ItEquipment(models.Model):
     #    "it.equipment.nat", "equipment_id", "NAT Rules"
     # ),
     router_rules_ids = fields.One2many(
-        "it.equipment.rule", "equipment_id", "Firewall Rules", tracking=True,
+        "it.equipment.rule",
+        "equipment_id",
+        "Firewall Rules",
+        tracking=True,
     )
     # Network Configuration Page
     equipment_network_ids = fields.One2many(
-        "it.equipment.network", "equipment_id", "Network on this equipment", tracking=True,
+        "it.equipment.network",
+        "equipment_id",
+        "Network on this equipment",
+        tracking=True,
     )
     # Product Page
     product_id = fields.Many2one("product.product", "Product")
@@ -215,7 +234,10 @@ class ItEquipment(models.Model):
     ad_service_id = fields.Many2one("it.service.ad", "Active Directory Service")
     # Fileserver Page
     equipment_mapping_ids = fields.One2many(
-        "it.equipment.mapping", "equipment_id", "Network Shares", tracking=True,
+        "it.equipment.mapping",
+        "equipment_id",
+        "Network Shares",
+        tracking=True,
     )
     # OS Page
     os_name = fields.Char("OS Name")
@@ -250,13 +272,22 @@ class ItEquipment(models.Model):
     @api.model
     def create(self, vals):
         res = super(ItEquipment, self).create(vals)
-        mt_note = self.env.ref('mail.mt_note')
+        mt_note = self.env.ref("mail.mt_note")
         author = self.env.user.partner_id and self.env.user.partner_id.id or False
-        msg = _('<div class="o_mail_notification"><ul><li>A new %s was created: <a href="#" class="o_redirect" data-oe-model=it.equipment data-oe-id="%s">%s</a></li></ul></div>', res._description, res.id, res.name)
+        msg = _(
+            '<div class="o_mail_notification"><ul><li>A new %s was created: \
+                <a href="#" class="o_redirect" data-oe-model=it.equipment data-oe-id="%s"> \
+                %s</a></li></ul></div>',
+            res._description,
+            res.id,
+            res.name,
+        )
         if res.site_id:
             res.site_id.message_post(body=msg, subtype_id=mt_note.id, author_id=author)
         if res.virtual_parent_id:
-            res.virtual_parent_id.message_post(body=msg, subtype_id=mt_note.id, author_id=author)
+            res.virtual_parent_id.message_post(
+                body=msg, subtype_id=mt_note.id, author_id=author
+            )
         return res
 
     # Log a note on deletion of credential to Site and Equipment chatter. Since
@@ -265,7 +296,7 @@ class ItEquipment(models.Model):
     #
     def unlink(self):
 
-        mt_note = self.env.ref('mail.mt_note')
+        mt_note = self.env.ref("mail.mt_note")
         author = self.env.user.partner_id and self.env.user.partner_id.id or False
 
         # map access records to sites and equipment
@@ -275,29 +306,41 @@ class ItEquipment(models.Model):
         for res in self:
             if res.site_id:
                 if res.site_id.id not in sites.keys():
-                    sites.update({res.site_id.id: [{'id': res.id, 'name': res.name}]})
+                    sites.update({res.site_id.id: [{"id": res.id, "name": res.name}]})
                 else:
-                    sites[res.site_id.id].append({'id': res.id, 'name': res.name})
+                    sites[res.site_id.id].append({"id": res.id, "name": res.name})
             if res.virtual_parent_id:
                 if res.virtual_parent_id.id not in equips.keys():
-                    equips.update({res.virtual_parent_id.id: [{'id': res.id, 'name': res.name}]})
+                    equips.update(
+                        {res.virtual_parent_id.id: [{"id": res.id, "name": res.name}]}
+                    )
                 else:
-                    equips[res.virtual_parent_id.id].append({'id': res.id, 'name': res.name})
+                    equips[res.virtual_parent_id.id].append(
+                        {"id": res.id, "name": res.name}
+                    )
 
         Site = self.env["it.site"]
-        for k,v in sites.items():
+        for k, v in sites.items():
             msg = ""
             for r in v:
-                msg = msg + _("<li> %s record was deleted: %s</li>", self._description, r['name'])
-            note = '<div class="o_mail_notification"><ul>' + msg + '</ul></div>'
-            Site.browse(k).message_post(body=note, subtype_id=mt_note.id, author_id=author)
+                msg = msg + _(
+                    "<li> %s record was deleted: %s</li>", self._description, r["name"]
+                )
+            note = '<div class="o_mail_notification"><ul>' + msg + "</ul></div>"
+            Site.browse(k).message_post(
+                body=note, subtype_id=mt_note.id, author_id=author
+            )
 
-        Equipment = self.env['it.equipment']
-        for k,v in equips.items():
+        Equipment = self.env["it.equipment"]
+        for k, v in equips.items():
             msg = ""
             for r in v:
-                msg = msg + _("<li> %s record was deleted: %s</li>", self._description, r['name'])
-            note = '<div class="o_mail_notification"><ul>' + msg + '</ul></div>'
-            Equipment.browse(k).message_post(body=note, subtype_id=mt_note.id, author_id=author)
+                msg = msg + _(
+                    "<li> %s record was deleted: %s</li>", self._description, r["name"]
+                )
+            note = '<div class="o_mail_notification"><ul>' + msg + "</ul></div>"
+            Equipment.browse(k).message_post(
+                body=note, subtype_id=mt_note.id, author_id=author
+            )
 
         return super(ItEquipment, self).unlink()

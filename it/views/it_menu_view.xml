@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!--
     Copyright (C) 2014 Leandro Ezequiel Baldi
     <baldileandro@gmail.com>
@@ -16,23 +16,36 @@
     You should have received a copy of the GNU Affero General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
-
 <odoo>
 
     <data>
 
         <!-- Top menu item -->
-        <menuitem name="Infrastructure"
+        <menuitem
+            name="Infrastructure"
             web_icon="it,static/description/icon.jpg"
             id="it.menu_main_itm"
             groups="group_it_user"
-            sequence="42"/>
+            sequence="42"
+        />
 
         <!-- General Menu -->
-        <menuitem name="General Menu" id="it_menu_general" parent="it.menu_main_itm" groups="group_it_user" sequence="10" />
+        <menuitem
+            name="General Menu"
+            id="it_menu_general"
+            parent="it.menu_main_itm"
+            groups="group_it_user"
+            sequence="10"
+        />
 
         <!-- Others -->
-        <menuitem name="Configuration" id="it_menu_others" parent="it.menu_main_itm" groups="group_it_manager" sequence="20" />
+        <menuitem
+            name="Configuration"
+            id="it_menu_others"
+            parent="it.menu_main_itm"
+            groups="group_it_manager"
+            sequence="20"
+        />
 
     </data>
 

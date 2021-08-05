@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!--
     Copyright (C) 2014 Leandro Ezequiel Baldi
     <baldileandro@gmail.com>
@@ -16,7 +16,6 @@
     You should have received a copy of the GNU Affero General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
-
 <odoo>
 
     <data>
@@ -26,7 +25,9 @@
             <field name="name">Customers</field>
             <field name="res_model">res.partner</field>
             <field name="view_mode">tree,form</field>
-            <field name="context">{"search_default_manage_it":1, "default_manage_it":1}</field>
+            <field
+                name="context"
+            >{"search_default_manage_it":1, "default_manage_it":1}</field>
         </record>
 
         <!-- Supplier -->
@@ -34,11 +35,23 @@
             <field name="name">Suppliers</field>
             <field name="res_model">res.partner</field>
             <field name="view_mode">tree,form</field>
-            <field name="context">{"search_default_supplier":1, "default_supplier":1}</field>
+            <field
+                name="context"
+            >{"search_default_supplier":1, "default_supplier":1}</field>
         </record>
 
-        <menuitem action="it_partner_customer_action" id="it_partner_customer" sequence="10" parent="it_menu_others"/>
-        <menuitem action="it_partner_supplier_action" id="it_partner_supplier" sequence="11" parent="it_menu_others"/>
+        <menuitem
+            action="it_partner_customer_action"
+            id="it_partner_customer"
+            sequence="10"
+            parent="it_menu_others"
+        />
+        <menuitem
+            action="it_partner_supplier_action"
+            id="it_partner_supplier"
+            sequence="11"
+            parent="it_menu_others"
+        />
 
         <!-- Action for Buttons -->
         <record id="act_partner_2_equipment" model="ir.actions.act_window">
@@ -65,11 +78,11 @@
         <record id="it_partner_view_1" model="ir.ui.view">
             <field name="name">it.partner.view</field>
             <field name="model">res.partner</field>
-            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="inherit_id" ref="base.view_partner_form" />
             <field name="arch" type="xml">
                 <field name="company_type" position="after">
-                    <field name="manage_it" groups="it.group_it_mod"/>
-                    <label for="manage_it"/>
+                    <field name="manage_it" groups="it.group_it_mod" />
+                    <label for="manage_it" />
                 </field>
             </field>
         </record>
@@ -77,33 +90,39 @@
         <record id="it_partner_view2" model="ir.ui.view">
             <field name="name">it.partner.view</field>
             <field name="model">res.partner</field>
-            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="inherit_id" ref="base.view_partner_form" />
             <field name="arch" type="xml">
                 <data>
                     <xpath expr="//div[@name='button_box']" position="inside">
-                        <button name="%(act_partner_2_equipment)d"
-                                class="oe_inline oe_stat_button"
-                                icon="fa-th-large"
-                                type="action"
-                                groups="it.group_it_user"
-                                attrs="{'invisible':[('manage_it','=', False )]}">
-                                    <field name="equipment_count" widget="statinfo"/>
+                        <button
+                            name="%(act_partner_2_equipment)d"
+                            class="oe_inline oe_stat_button"
+                            icon="fa-th-large"
+                            type="action"
+                            groups="it.group_it_user"
+                            attrs="{'invisible':[('manage_it','=', False )]}"
+                        >
+                                    <field name="equipment_count" widget="statinfo" />
                         </button>
-                        <button name="%(act_partner_2_access)d"
-                                class="oe_inline oe_stat_button"
-                                icon="fa-key"
-                                type="action"
-                                groups="it.group_it_user"
-                                attrs="{'invisible':[('manage_it','=', False )]}">
-                                    <field name="access_count" widget="statinfo"/>
+                        <button
+                            name="%(act_partner_2_access)d"
+                            class="oe_inline oe_stat_button"
+                            icon="fa-key"
+                            type="action"
+                            groups="it.group_it_user"
+                            attrs="{'invisible':[('manage_it','=', False )]}"
+                        >
+                                    <field name="access_count" widget="statinfo" />
                         </button>
-                        <button name="%(act_partner_2_backup)d"
-                                class="oe_inline oe_stat_button"
-                                icon="fa-floppy-o"
-                                type="action"
-                                groups="it.group_it_user"
-                                attrs="{'invisible':[('manage_it','=', False )]}">
-                                    <field name="backup_count" widget="statinfo"/>
+                        <button
+                            name="%(act_partner_2_backup)d"
+                            class="oe_inline oe_stat_button"
+                            icon="fa-floppy-o"
+                            type="action"
+                            groups="it.group_it_user"
+                            attrs="{'invisible':[('manage_it','=', False )]}"
+                        >
+                                    <field name="backup_count" widget="statinfo" />
                         </button>
                     </xpath>
                 </data>
@@ -113,10 +132,14 @@
         <record id="it_partner_filter" model="ir.ui.view">
             <field name="name">it.partner.filter</field>
             <field name="model">res.partner</field>
-            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="inherit_id" ref="base.view_res_partner_filter" />
             <field name="arch" type="xml">
                 <filter name="type_company" position="after">
-                    <filter string="Manage IT" name="manage_it" domain="[('manage_it','=',1)]"/>
+                    <filter
+                        string="Manage IT"
+                        name="manage_it"
+                        domain="[('manage_it','=',1)]"
+                    />
                 </filter>
             </field>
         </record>

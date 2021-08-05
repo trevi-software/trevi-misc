@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!--
     Copyright (C) 2014 Leandro Ezequiel Baldi
     <baldileandro@gmail.com>
@@ -16,7 +16,6 @@
     You should have received a copy of the GNU Affero General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
-
 <!--HACE QUE ACTUALICE O NO LOS REGISTROS, PERO SI NO EXISTE LO CREA-->
 <odoo>
 
@@ -26,11 +25,15 @@
         </record>
 
         <record id="license_24" model="it.application.license">
-            <field name="name"> AGPLv1 / Affero General Public License (version 1)</field>
+            <field
+                name="name"
+            > AGPLv1 / Affero General Public License (version 1)</field>
         </record>
 
         <record id="license_49" model="it.application.license">
-            <field name="name"> AGPLv2 / Affero General Public License (version 2)</field>
+            <field
+                name="name"
+            > AGPLv2 / Affero General Public License (version 2)</field>
         </record>
 
         <record id="license_25" model="it.application.license">
@@ -69,12 +72,14 @@
             <field name="name">CeCILL</field>
         </record>
 
-        <record id="license_2" model="it.application.license">
+        <record id="license_51" model="it.application.license">
             <field name="name">Common Public License</field>
         </record>
 
         <record id="license_28" model="it.application.license">
-            <field name="name">Common Development and Distribution License (CDDL)</field>
+            <field
+                name="name"
+            >Common Development and Distribution License (CDDL)</field>
         </record>
 
         <record id="license_7" model="it.application.license">
@@ -101,8 +106,10 @@
             <field name="name">Free For non commercial Use</field>
         </record>
 
-        <record id="license_24" model="it.application.license">
-            <field name="name"> AGPLv3 / GNU Affero General Public License (version 3)</field>
+        <record id="license_50" model="it.application.license">
+            <field
+                name="name"
+            > AGPLv3 / GNU Affero General Public License (version 3)</field>
         </record>
 
         <record id="license_10" model="it.application.license">
