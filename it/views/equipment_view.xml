@@ -344,7 +344,7 @@
         </record>
 
         <record id="it_equipment_action" model="ir.actions.act_window">
-            <field name="name">Assets</field>
+            <field name="name">IT Assets</field>
             <field name="res_model">it.equipment</field>
             <field name="view_mode">tree,form</field>
         </record>

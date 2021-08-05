@@ -55,7 +55,8 @@ class ItAccess(models.Model):
             )
             p = ""
             p = p.join([choice(valores) for i in range(longitud)])
-            access.write({"password": p, "encrypted": False})
+            token = self.encrypt_string(p)
+            access.password = token
 
     def get_urlsafe_key(self):
 
@@ -78,24 +79,14 @@ class ItAccess(models.Model):
         )
         return base64.urlsafe_b64encode(kdf.derive(passphrase.encode()))
 
-    @api.onchange("password")
-    def onchange_password(self):
-        self.encrypted = False
-
-    def encrypt_password(self):
+    @api.model
+    def encrypt_string(self, str):
+        """Returns a URL-safe string containing the encrypted version of str."""
 
         key = self.get_urlsafe_key()
         f = Fernet(key)
-
-        for rec in self:
-            if not rec.encrypted:
-                token = f.encrypt(rec.password.encode())
-                rec.password = base64.urlsafe_b64encode(token)
-                rec.encrypted = True
-            else:
-                raise ValidationError(_("Password already encrypted"))
-
-        return True
+        token = f.encrypt(str.encode())
+        return base64.urlsafe_b64encode(token)
 
     def decrypt_password(self):
 
@@ -132,7 +123,6 @@ class ItAccess(models.Model):
     site_id = fields.Many2one("it.site", "Site", required=True, ondelete="restrict", default=_get_site_id)
     name = fields.Char("Username", required=True, tracking=True)
     password = fields.Char()
-    encrypted = fields.Boolean(default=False, tracking=True)
     partner_id = fields.Many2one(
         "res.partner",
         "Partner",
@@ -150,11 +140,19 @@ class ItAccess(models.Model):
     ssl_privatekey = fields.Binary("Private Key", tracking=True)
     ssl_privatekey_filename = fields.Char("Private Key Filename")
 
-    # Log a note on creation of credential to Site and Equipment chatter.
-    #
     @api.model
     def create(self, vals):
+
+        # Encrypt the password before saving it. The unencrypted password should not be
+        # saved to the database even temporarily.
+        #
+        if 'password' in vals.keys() and vals['password'] is not False:
+            vals['password'] = self.encrypt_string(vals['password'])
+
         res = super(ItAccess, self).create(vals)
+
+        # Log a note to Site and Equipment chatter.
+        #
         mt_note = self.env.ref('mail.mt_note')
         author = self.env.user.partner_id and self.env.user.partner_id.id or False
         msg = _('<div class="o_mail_notification"><ul><li>A new %s was created: <a href="#" class="o_redirect" data-oe-model=it.access data-oe-id="%s">%s</a></li></ul></div>', res._description, res.id, res.name)
@@ -162,6 +160,7 @@ class ItAccess(models.Model):
             res.site_id.message_post(body=msg, subtype_id=mt_note.id, author_id=author)
         if res.equipment_id:
             res.equipment_id.message_post(body=msg, subtype_id=mt_note.id, author_id=author)
+
         return res
 
     # Log a note on deletion of credential to Site and Equipment chatter. Since
@@ -193,7 +192,7 @@ class ItAccess(models.Model):
         for k,v in sites.items():
             msg = ""
             for r in v:
-                msg = msg + _("<li> %s record was deleted: %s</li>", self._description, r['name'])
+                msg = msg + _("<li> %s was deleted: %s</li>", self._description, r['name'])
             note = '<div class="o_mail_notification"><ul>' + msg + '</ul></div>'
             Site.browse(k).message_post(body=note, subtype_id=mt_note.id, author_id=author)
 

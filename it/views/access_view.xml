@@ -28,7 +28,6 @@
             <field name="arch" type="xml">
                 <tree string="credentials">
                     <field name="name"/>
-                    <field name="encrypted"/>
                     <field name="equipment_id"/>
                     <field name="partner_id"/>
                     <field name="site_id"/>
@@ -59,12 +58,8 @@
                                             <field name="password" password="True" nolabel="1" style="max-width:300px" class="oe_inline text-truncate"/>
                                             <button name="get_random_password" string="Generate" type="object" groups="it.group_it_mod"
                                                     confirm="Are you sure?" icon="fa-random"/>
-                                            <button name="encrypt_password" type="object" string="Encrypt" confirm="Are you sure?"
-                                                    icon="fa-lock"  attrs="{'invisible': [('encrypted', '=', True)]}"/>
-                                            <button name="decrypt_password" type="object" string="Decrypt" icon="fa-unlock"
-                                                    attrs="{'invisible': [('encrypted', '=', False)]}"/>
+                                           <button name="decrypt_password" type="object" string="Decrypt" icon="fa-unlock"/>
                                         </div>
-                                        <field name="encrypted" readonly="True"/>
                                     </group>
                                     <group>
                                         <field name="equipment_id"/>
@@ -123,12 +118,11 @@
                     <field name="partner_id" string="Partner"/>
                     <field name="site_id" string="Site"/>
                     <!--Filters-->
-                    <filter name="is_encrypted" domain="[('encrypted','=',True)]" help="Encrypted"/>
-                    <filter name="not_encrypted" domain="[('encrypted','=',False)]" help="Decrypted"/>
+                    <filter name="is_password" string="Has Password" domain="[('password','!=',False)]" help="Has a password"/>
+                    <filter name="not_password" string="No Password" domain="[('password','=',False)]" help="Does not have a password"/>
                     <group expand="0" string="Group By...">
                         <filter name="by_partner" string="Partner" icon="terp-personal+" domain="[]" context="{'group_by':'partner_id'}"/>
                         <filter name="by_site" string="Site" icon="terp-personal+" domain="[]" context="{'group_by':'site_id'}"/>
-                        <filter name="by_encrypted" string="Crypt" icon="terp-go-home" domain ="[]" context="{'group_by':'encrypted'}"/>
                     </group>
                 </search>
             </field>
