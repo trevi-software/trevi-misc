@@ -57,21 +57,21 @@
     <data noupdate="1">
 
         <record model="ir.rule" id="it_equipment_comp_rule">
-            <field name="name">IT Equipment: multi-company</field>
+            <field name="name">IT Assets: multi-company</field>
             <field name="model_id" ref="model_it_equipment" />
             <field name="global" eval="True" />
             <field
                 name="domain_force"
-            >['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
+            >['|',('company_id','=',False),('company_id','in',company_ids)]</field>
         </record>
 
         <record model="ir.rule" id="it_access_comp_rule">
-            <field name="name">IT Access: multi-company</field>
+            <field name="name">IT Credentials: multi-company</field>
             <field name="model_id" ref="model_it_access" />
             <field name="global" eval="True" />
             <field
                 name="domain_force"
-            >['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
+            >['|',('company_id','=',False),('company_id','in',company_ids)]</field>
         </record>
 
         <record model="ir.rule" id="it_backup_comp_rule">
@@ -80,7 +80,7 @@
             <field name="global" eval="True" />
             <field
                 name="domain_force"
-            >['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
+            >['|',('company_id','=',False),('company_id','in',company_ids)]</field>
         </record>
 
         <record model="ir.rule" id="it_application_comp_rule">
@@ -89,7 +89,7 @@
             <field name="global" eval="True" />
             <field
                 name="domain_force"
-            >['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
+            >['|',('company_id','=',False),('company_id','in',company_ids)]</field>
         </record>
 
         <!-- PORTAL -->
