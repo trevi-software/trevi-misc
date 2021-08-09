@@ -23,6 +23,7 @@ import base64
 from random import choice
 
 from odoo import _, api, fields, models
+from odoo.exceptions import ValidationError
 from odoo.modules.module import get_module_resource
 
 
@@ -279,7 +280,13 @@ class ItEquipment(models.Model):
         "it.equipment.configuration", "equipment_id", "Configuration Files"
     )
 
-    _sql_constraints = [("name_uniq", "unique(pin)", "PIN must be unique!")]
+    @api.constrains("pin")
+    def check_pin(self):
+        ItAsset = self.env["it.equipment"]
+        for rec in self:
+            duplicates = ItAsset.search([("pin", "=", rec.pin), ("id", "!=", rec.id)])
+            if duplicates:
+                raise ValidationError(_("Pin '%s' already exists.", rec.pin))
 
     # Log a note on creation of equipment to Site and Equipment chatter.
     #

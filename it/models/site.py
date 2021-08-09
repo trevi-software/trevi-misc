@@ -2,7 +2,8 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 
-from odoo import api, fields, models
+from odoo import _, api, fields, models
+from odoo.exceptions import ValidationError
 
 
 class ItSite(models.Model):
@@ -60,3 +61,11 @@ class ItSiteNetworkIp4(models.Model):
     _description = "Network IPv4 Address"
 
     name = fields.Char(required=True)
+
+    @api.constrains("name")
+    def check_name(self):
+        IpAddr = self.env["it.site.network.ip4"]
+        for rec in self:
+            duplicates = IpAddr.search([("name", "=", rec.name), ("id", "!=", rec.id)])
+            if duplicates:
+                raise ValidationError(_("IP address '%s' already exists.", rec.name))
