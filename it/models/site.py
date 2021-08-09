@@ -31,7 +31,6 @@ class ItSite(models.Model):
         compute="_compute_equipment_count",
         string="Assets",
         store=True,
-        tracking=True,
     )
     equipment_ids = fields.One2many("it.equipment", "site_id", "Asset{s)")
     access_count = fields.Integer(
@@ -39,14 +38,16 @@ class ItSite(models.Model):
     )
     access_ids = fields.One2many("it.access", "site_id", "Credential(s)")
     ad_ids = fields.One2many("it.service.ad", "site_id", "Active Directory")
+    network_ids = fields.One2many("it.site.network", "site_id", string="Networks")
 
 
 class ItSiteNetwork(models.Model):
     _name = "it.site.network"
     _description = "Network"
 
+    site_id = fields.Many2one("it.site", "Site")
     name = fields.Char(required=True)
-    domain = fields.Char()
+    domain = fields.Char(required=True)
     netmask = fields.Char(required=True)
     default_gw = fields.Many2one("it.site.network.ip4", "Default Gateway")
     dns_ids = fields.Many2many(comodel_name="it.site.network.ip4", string="DNS Servers")

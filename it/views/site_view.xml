@@ -79,6 +79,18 @@
                                 />
                             </group>
                         </group>
+                        <group string="Networks">
+                            <field name="network_ids" nolabel="1">
+                                <tree string="Networks" editable="bottom">
+                                    <field name="site_id" invisible="1" />
+                                    <field name="name" />
+                                    <field name="domain" />
+                                    <field name="netmask" />
+                                    <field name="default_gw" />
+                                    <field name="dns_ids" widget="many2many_tags" />
+                                </tree>
+                            </field>
+                        </group>
                     </sheet>
                     <div class="oe_chatter">
                         <field name="message_follower_ids" />
@@ -95,11 +107,74 @@
             <field name="view_mode">tree,form</field>
         </record>
 
+        <record model="ir.ui.view" id="it_site_network_tree">
+            <field name="name">it.site.network.tree</field>
+            <field name="model">it.site.network</field>
+            <field name="arch" type="xml">
+                <tree string="Networks">
+                    <field name="name" />
+                    <field name="domain" />
+                    <field name="netmask" />
+                    <field name="default_gw" />
+                    <field name="site_id" />
+                    <field name="dns_ids" widget="many2many_tags" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="it_site_network_form">
+            <field name="name">it.site.network.form</field>
+            <field name="model">it.site.network</field>
+            <field name="arch" type="xml">
+                <form string="IT Network">
+                    <sheet>
+                        <group>
+                            <group string="Network">
+                                <field name="name" />
+                                <field name="domain" />
+                                <field name="netmask" />
+                                <field name="default_gw" />
+                                <field name="site_id" />
+                            </group>
+                            <group string="DNS">
+                                <field name="dns_ids" nolabel="1">
+                                    <tree string="DNS" editable="bottom">
+                                        <field name="name" />
+                                    </tree>
+                                </field>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="it_network_action" model="ir.actions.act_window">
+            <field name="name">Networks</field>
+            <field name="res_model">it.site.network</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem
+            name="Sites"
+            id="it_menu_sites"
+            parent="it.menu_main_itm"
+            groups="group_it_manager"
+            sequence="20"
+        />
+
         <menuitem
             action="it_site_action"
-            id="it_site"
-            sequence="40"
-            parent="it_menu_general"
+            id="it_site_menu"
+            sequence="20"
+            parent="it_menu_sites"
+        />
+
+        <menuitem
+            action="it_network_action"
+            id="it_network_menu"
+            sequence="30"
+            parent="it_menu_sites"
         />
 
     </data>
