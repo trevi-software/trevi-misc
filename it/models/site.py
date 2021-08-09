@@ -29,15 +29,15 @@ class ItSite(models.Model):
     partner_id = fields.Many2one("res.partner", "Partner", tracking=True)
     equipment_count = fields.Integer(
         compute="_compute_equipment_count",
-        string="Asset Count",
+        string="Assets",
         store=True,
         tracking=True,
     )
-    equipment_ids = fields.One2many("it.equipment", "site_id", "Assets")
+    equipment_ids = fields.One2many("it.equipment", "site_id", "Asset{s)")
     access_count = fields.Integer(
-        compute="_compute_access_count", string="Credential Count", store=False
+        compute="_compute_access_count", string="Credentials", store=False
     )
-    access_ids = fields.One2many("it.access", "site_id", "Credentials")
+    access_ids = fields.One2many("it.access", "site_id", "Credential(s)")
     ad_ids = fields.One2many("it.service.ad", "site_id", "Active Directory")
 
 

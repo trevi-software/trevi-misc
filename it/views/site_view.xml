@@ -12,7 +12,7 @@
         </record>
         <record id="act_site_2_access" model="ir.actions.act_window">
             <field name="res_model">it.access</field>
-            <field name="name">Creds</field>
+            <field name="name">Credentials</field>
             <field name="view_mode">tree,form</field>
             <field name="context">{'search_default_site_id': active_id }</field>
         </record>
@@ -50,19 +50,19 @@
                                 class="oe_inline oe_stat_button"
                                 icon="fa-th-large"
                                 type="action"
+                                groups="it.group_it_user"
                             >
                                         <field
                                     name="equipment_count"
                                     widget="statinfo"
                                 />
                             </button>
-                        </div>
-                        <div class="oe_right oe_button_box" name="buttons">
                             <button
                                 name="%(act_site_2_access)d"
                                 class="oe_inline oe_stat_button"
                                 icon="fa-key"
                                 type="action"
+                                groups="it.group_it_user"
                             >
                                         <field name="access_count" widget="statinfo" />
                             </button>

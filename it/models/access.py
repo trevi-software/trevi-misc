@@ -1,22 +1,6 @@
-##############################################################################
-#
-#    Copyright (C) 2014 Leandro Ezequiel Baldi
-#    <baldileandro@gmail.com>
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as published
-#    by the Free Software Foundation, either version 3 of the License, or
-#    (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+# Copyright (C) 2021 TREVI Software
+# Copyright (C) 2014 Leandro Ezequiel Baldi <baldileandro@gmail.com>
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 
 import base64
@@ -103,10 +87,16 @@ class ItAccess(models.Model):
 
     @api.model
     def _get_partner_id(self):
+        # Get the partner from either asset or site
+        #
         if self.env.context.get("active_model") == "it.equipment":
             equip = self.env["it.equipment"].browse(self.env.context.get("active_id"))
             if equip.partner_id:
                 return equip.partner_id.id
+        elif self.env.context.get("active_model") == "it.site":
+            site = self.env["it.site"].browse(self.env.context.get("active_id"))
+            if site.partner_id:
+                return site.partner_id.id
         return False
 
     @api.model
@@ -132,7 +122,7 @@ class ItAccess(models.Model):
         "res.partner",
         "Partner",
         domain="[('manage_it','=',1)]",
-        default="_get_partner_id",
+        default=_get_partner_id,
         tracking=True,
     )
     active = fields.Boolean(default=True)

@@ -16,14 +16,14 @@
     You should have received a copy of the GNU Affero General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
-<openerp>
+<odoo>
 
     <data>
 
         <!-- Action for Buttons -->
         <record id="act_equipment_2_access" model="ir.actions.act_window">
             <field name="res_model">it.access</field>
-            <field name="name">Creds</field>
+            <field name="name">Credentials</field>
             <field name="view_mode">tree,form</field>
             <field name="context">{'search_default_equipment_id': active_id }</field>
         </record>
@@ -32,9 +32,12 @@
             <field name="res_model">it.equipment</field>
             <field name="name">Guests</field>
             <field name="view_mode">tree,form</field>
-            <field
-                name="context"
-            >{'search_default_virtual_parent_id': active_id }</field>
+            <field name="context">
+                {
+                    'search_default_virtual_parent_id': active_id,
+                    'search_default_equipment_type': 'virtual'
+                }
+            </field>
         </record>
 
         <record id="act_equipment_2_backup" model="ir.actions.act_window">
@@ -227,11 +230,21 @@
                             >
                                 <group>
                                     <group string="Network Configuration">
-                                        <field
-                                            name="equipment_network_ids"
-                                            nolabel="1"
-                                            colspan="4"
-                                        />
+                                        <field name="equipment_network_ids" nolabel="1">
+                                            <tree
+                                                string="Network Configuration"
+                                                editable="bottom"
+                                            >
+                                                <field name="name" />
+                                                <field name="mac" />
+                                                <field name="network_id" />
+                                                <field name="use_dhcp4" />
+                                                <field
+                                                    name="static_ipv4_id"
+                                                    attrs="{'invisible':[('use_dhcp4','=',True)]}"
+                                                />
+                                            </tree>
+                                        </field>
                                     </group>
                                 </group>
                             </page>
@@ -538,4 +551,4 @@
 
     </data>
 
-</openerp>
+</odoo>

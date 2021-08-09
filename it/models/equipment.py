@@ -60,17 +60,6 @@ class ItEquipment(models.Model):
                 equipment.name + " - " + equipment.partner_id.name
             )
 
-    def name_search(self, name, args, limit=80, operator="ilike"):
-        ids = None
-        if name:
-            ids = self.search(
-                [("identification", operator, name)] + args,
-                limit=limit,
-            )
-        if ids is None or len(ids) == 0:
-            ids = self.search([("name", operator, name)] + args, limit=limit)
-        return ids.name_get()
-
     @api.depends("virtual_ids")
     def _compute_virtual_count(self):
         for equipment in self:
@@ -93,13 +82,37 @@ class ItEquipment(models.Model):
         )
         return base64.b64encode(open(image_path, "rb").read())
 
+    @api.model
+    def _get_partner_id(self):
+        # Get the partner from either asset or site
+        #
+        if self.env.context.get("active_model") == "it.equipment":
+            equip = self.env["it.equipment"].browse(self.env.context.get("active_id"))
+            if equip.partner_id:
+                return equip.partner_id.id
+        elif self.env.context.get("active_model") == "it.site":
+            site = self.env["it.site"].browse(self.env.context.get("active_id"))
+            if site.partner_id:
+                return site.partner_id.id
+        return False
+
+    @api.model
+    def _get_site_id(self):
+        if self.env.context.get("active_model") == "it.equipment":
+            equip = self.env["it.equipment"].browse(self.env.context.get("active_id"))
+            if equip.site_id:
+                return equip.site_id.id
+        return False
+
     # For openerp structure
     company_id = fields.Many2one(
         "res.company",
         "Company",
         default=lambda self: self.env.company,
     )
-    site_id = fields.Many2one("it.site", "Site", required=True, tracking=True)
+    site_id = fields.Many2one(
+        "it.site", "Site", required=True, tracking=True, default=_get_site_id
+    )
     active = fields.Boolean(default=True, tracking=True)
     # Counts
     access_count = fields.Integer(
@@ -125,6 +138,7 @@ class ItEquipment(models.Model):
         required=True,
         domain="[('manage_it','=',1)]",
         tracking=True,
+        default=_get_partner_id,
     )
     function_ids = fields.Many2many(
         "it.equipment.function",
@@ -147,6 +161,13 @@ class ItEquipment(models.Model):
         "application_id",
         "Applications",
     )
+
+    @api.model
+    def _get_type(self):
+        if self.env.context.get("search_default_equipment_type"):
+            return self.env.context.get("search_default_equipment_type")
+        return "bundle"
+
     # Config Page
     equipment_type = fields.Selection(
         [
@@ -157,7 +178,7 @@ class ItEquipment(models.Model):
         ],
         "Equipment Type",
         required=True,
-        default="bundle",
+        default=_get_type,
     )
     is_contracted = fields.Boolean("Contracted Service")
     is_static_ip = fields.Boolean("Static IP")
