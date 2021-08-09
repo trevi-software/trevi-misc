@@ -17,6 +17,22 @@
             <field name="context">{'search_default_site_id': active_id }</field>
         </record>
 
+        <record model="ir.ui.view" id="it_site_search">
+            <field name="name">it.site.search</field>
+            <field name="model">it.site</field>
+            <field name="arch" type="xml">
+                <search string="Site Search">
+                    <field name="name" />
+                    <field name="partner_id" />
+                    <filter
+                        name="archived"
+                        string="Archived"
+                        domain="[('active','=',False)]"
+                    />
+                </search>
+            </field>
+        </record>
+
         <record model="ir.ui.view" id="it_site_tree">
             <field name="name">it.site.tree</field>
             <field name="model">it.site</field>
@@ -36,18 +52,10 @@
             <field name="arch" type="xml">
                 <form string="IT Site">
                     <sheet>
-                        <div class="oe_title">
-                            <div class="oe_edit_only oe_left">
-                                <label for="name" />
-                            </div>
-                            <h1>
-                                <field name="name" />
-                            </h1>
-                        </div>
-                        <div class="oe_right oe_button_box" name="buttons">
+                        <div class="oe_button_box" name="buttons">
                             <button
                                 name="%(act_site_2_equipment)d"
-                                class="oe_inline oe_stat_button"
+                                class="oe_stat_button"
                                 icon="fa-th-large"
                                 type="action"
                                 groups="it.group_it_user"
@@ -59,13 +67,28 @@
                             </button>
                             <button
                                 name="%(act_site_2_access)d"
-                                class="oe_inline oe_stat_button"
+                                class="oe_stat_button"
                                 icon="fa-key"
                                 type="action"
                                 groups="it.group_it_user"
                             >
                                         <field name="access_count" widget="statinfo" />
                             </button>
+                        </div>
+                        <field name="active" invisible="1" />
+                        <widget
+                            name="web_ribbon"
+                            title="Archived"
+                            bg_color="bg-danger"
+                            attrs="{'invisible': [('active', '=', True)]}"
+                        />
+                        <div class="oe_title">
+                            <div class="oe_edit_only oe_left">
+                                <label for="name" />
+                            </div>
+                            <h1>
+                                <field name="name" />
+                            </h1>
                         </div>
                         <group>
                             <group>

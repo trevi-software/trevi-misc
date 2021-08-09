@@ -36,6 +36,7 @@ class ItSite(models.Model):
     access_count = fields.Integer(
         compute="_compute_access_count", string="Credentials", store=False
     )
+    active = fields.Boolean(default=True, tracking=True)
     access_ids = fields.One2many("it.access", "site_id", "Credential(s)")
     ad_ids = fields.One2many("it.service.ad", "site_id", "Active Directory")
     network_ids = fields.One2many("it.site.network", "site_id", string="Networks")

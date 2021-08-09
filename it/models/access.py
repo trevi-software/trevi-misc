@@ -125,7 +125,7 @@ class ItAccess(models.Model):
         default=_get_partner_id,
         tracking=True,
     )
-    active = fields.Boolean(default=True)
+    active = fields.Boolean(default=True, tracking=True)
     ssl_csr = fields.Binary("CSR", tracking=True)
     ssl_csr_filename = fields.Char("CSR Filename")
     ssl_cert = fields.Binary("Cert", tracking=True)

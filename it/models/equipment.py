@@ -113,9 +113,9 @@ class ItEquipment(models.Model):
     backup_count = fields.Integer(compute="_compute_backup_count")
     backup_ids = fields.One2many("it.backup", "equipment_id", "Backups")
     virtual_count = fields.Integer(
-        compute="_compute_virtual_count", string="Guest Count", store=False
+        compute="_compute_virtual_count", string="Guests", store=False
     )
-    virtual_ids = fields.One2many("it.equipment", "virtual_parent_id", "Guests")
+    virtual_ids = fields.One2many("it.equipment", "virtual_parent_id", "Guest(s)")
     # General Info
     identification = fields.Char(
         compute="_compute_identification", string="Complete Name", store=True
