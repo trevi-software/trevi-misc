@@ -30,27 +30,11 @@
             >{"search_default_manage_it":1, "default_manage_it":1}</field>
         </record>
 
-        <!-- Supplier -->
-        <record id="it_partner_supplier_action" model="ir.actions.act_window">
-            <field name="name">Suppliers</field>
-            <field name="res_model">res.partner</field>
-            <field name="view_mode">tree,form</field>
-            <field
-                name="context"
-            >{"search_default_supplier":1, "default_supplier":1}</field>
-        </record>
-
         <menuitem
             action="it_partner_customer_action"
             id="it_partner_customer"
-            sequence="10"
-            parent="it_menu_others"
-        />
-        <menuitem
-            action="it_partner_supplier_action"
-            id="it_partner_supplier"
-            sequence="11"
-            parent="it_menu_others"
+            sequence="30"
+            parent="it.menu_main_itm"
         />
 
         <!-- Action for Buttons -->

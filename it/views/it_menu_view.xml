@@ -31,7 +31,7 @@
 
         <!-- General Menu -->
         <menuitem
-            name="General Menu"
+            name="IT Assets"
             id="it_menu_general"
             parent="it.menu_main_itm"
             groups="group_it_user"
@@ -44,7 +44,7 @@
             id="it_menu_others"
             parent="it.menu_main_itm"
             groups="group_it_manager"
-            sequence="20"
+            sequence="100"
         />
 
     </data>
