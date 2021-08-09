@@ -46,11 +46,12 @@ class ItSiteNetwork(models.Model):
     _description = "Network"
 
     site_id = fields.Many2one("it.site", "Site")
-    name = fields.Char(required=True)
-    domain = fields.Char(required=True)
+    name = fields.Char(string="Domain", required=True)
+    subnet = fields.Char(required=True)
     netmask = fields.Char(required=True)
     default_gw = fields.Many2one("it.site.network.ip4", "Default Gateway")
     dns_ids = fields.Many2many(comodel_name="it.site.network.ip4", string="DNS Servers")
+    dhcp4_ids = fields.One2many("it.service.dhcp4", "network_id", "DHCP")
 
 
 class ItSiteNetworkIp4(models.Model):

@@ -249,6 +249,26 @@
                                 </group>
                             </page>
                             <page
+                                string="DHCP"
+                                attrs="{'invisible':[('function_dhcp','=', False )]}"
+                            >
+                                <group>
+                                    <group string="DHCP Settings">
+                                        <field name="dhcp4_ids" nolabel="1">
+                                            <tree string="DHCP Settings">
+                                                <field name="name" />
+                                                <field name="network_id" />
+                                                <field name="subnet" />
+                                                <field name="subnet_mask" />
+                                                <field name="start_address" />
+                                                <field name="end_address" />
+                                                <field name="lease_time" />
+                                            </tree>
+                                        </field>
+                                    </group>
+                                </group>
+                            </page>
+                            <page
                                 string="File Server"
                                 attrs="{'invisible':[('function_fileserver','=', False )]}"
                             >

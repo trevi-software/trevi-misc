@@ -84,7 +84,7 @@
                                 <tree string="Networks" editable="bottom">
                                     <field name="site_id" invisible="1" />
                                     <field name="name" />
-                                    <field name="domain" />
+                                    <field name="subnet" />
                                     <field name="netmask" />
                                     <field name="default_gw" />
                                     <field name="dns_ids" widget="many2many_tags" />
@@ -113,7 +113,7 @@
             <field name="arch" type="xml">
                 <tree string="Networks">
                     <field name="name" />
-                    <field name="domain" />
+                    <field name="subnet" />
                     <field name="netmask" />
                     <field name="default_gw" />
                     <field name="site_id" />
@@ -131,7 +131,7 @@
                         <group>
                             <group string="Network">
                                 <field name="name" />
-                                <field name="domain" />
+                                <field name="subnet" />
                                 <field name="netmask" />
                                 <field name="default_gw" />
                                 <field name="site_id" />
@@ -140,6 +140,21 @@
                                 <field name="dns_ids" nolabel="1">
                                     <tree string="DNS" editable="bottom">
                                         <field name="name" />
+                                    </tree>
+                                </field>
+                            </group>
+                        </group>
+                        <group>
+                            <group string="DHCP Settings">
+                                <field name="dhcp4_ids" nolabel="1">
+                                    <tree string="DHCP Settings">
+                                        <field name="name" />
+                                        <field name="equipment_id" />
+                                        <field name="subnet" />
+                                        <field name="subnet_mask" />
+                                        <field name="start_address" />
+                                        <field name="end_address" />
+                                        <field name="lease_time" />
                                     </tree>
                                 </field>
                             </group>

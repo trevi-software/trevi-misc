@@ -31,6 +31,7 @@
         "views/application_license_view.xml",
         "views/brand_view.xml",
         "views/site_view.xml",
+        "views/service_dhcp_view.xml",
         "data/application_license_data.xml",
         "data/equipment_brand_data.xml",
         "data/equipment_db_engine_data.xml",

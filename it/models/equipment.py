@@ -153,6 +153,8 @@ class ItEquipment(models.Model):
         "Applications",
     )
 
+    dhcp4_ids = fields.One2many("it.service.dhcp4", "equipment_id", "DHCP")
+
     @api.model
     def _get_type(self):
         if self.env.context.get("search_default_equipment_type"):
