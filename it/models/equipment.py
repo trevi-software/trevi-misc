@@ -41,8 +41,6 @@ class ItEquipment(models.Model):
     _inherit = ["mail.activity.mixin", "mail.thread"]
     _description = "IT Asset"
 
-    _rec_name = "identification"
-
     @api.model
     def _get_pin(self):
         longitud = 12
@@ -52,13 +50,6 @@ class ItEquipment(models.Model):
         p = ""
         p = p.join([choice(valores) for i in range(longitud)])
         return p
-
-    @api.depends("partner_id")
-    def _get_identification(self):
-        for equipment in self:
-            equipment.identification = (
-                equipment.name + " - " + equipment.partner_id.name
-            )
 
     @api.depends("virtual_ids")
     def _compute_virtual_count(self):
