@@ -20,7 +20,6 @@ PARAM_SALT = "it_passsalt"
 
 class ItAccess(models.Model):
     _name = "it.access"
-    _inherit = ["mail.activity.mixin", "mail.thread"]
     _description = "Credential"
 
     @api.onchange("equipment_id")

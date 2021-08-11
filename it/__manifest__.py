@@ -6,7 +6,7 @@
     "name": "Infrastructure",
     "version": "14.0.1.0.0",
     "license": "AGPL-3",
-    "category": "Infrastructure",
+    "category": "IT Infrastructure",
     "summary": """IT Assets, Credentials, Backups, Applications.""",
     "author": """TREVI Software,
         Leandro Ezequiel Baldi""",

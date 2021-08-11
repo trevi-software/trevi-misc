@@ -115,33 +115,66 @@
                             <div class="oe_edit_only">
                                 <label for="description" />
                             </div>
-                            <h1>
+                            <h2>
                                 <field name="description" />
-                            </h1>
+                            </h2>
                             <div class="oe_edit_only">
                                 <label for="partner_id" />
                             </div>
-                            <h1>
+                            <h2>
                                 <field name="partner_id" />
-                            </h1>
+                            </h2>
                             <div class="oe_edit_only">
                                 <label for="function_ids" />
                             </div>
-                            <h1>
+                            <h2>
                                 <field
                                     name="function_ids"
                                     widget="many2many_tags"
                                     placeholder="Functions..."
                                 />
-                            </h1>
+                            </h2>
                         </div>
-                        <separator />
                         <group>
+                            <group string="Operating System">
+                                <field name="os_name" />
+                            </group>
                             <group string="Information">
                                 <field name="site_id" />
                             </group>
                         </group>
                         <notebook>
+                            <page string="Configuration" groups="it.group_it_mod">
+                                <group>
+                                    <group string="Equipment Type">
+                                        <field name="equipment_type" />
+                                    </group>
+                                    <group string="Services">
+                                        <field name="ad_service_id" />
+                                        <field name="dhcp_service_id" />
+                                    </group>
+                                </group>
+                                <group>
+                                    <group string="Basic Configuration">
+                                        <field
+                                            name="company_id"
+                                            string="Company"
+                                            groups="base.group_multi_company"
+                                        />
+                                        <field name="is_backup" />
+                                        <field name="is_application" />
+                                        <field name="is_contracted" />
+                                        <field name="is_partitioned" />
+                                        <field name="is_config_file" />
+                                    </group>
+                                    <group string="Function Configuration">
+                                        <field name="function_host" />
+                                        <field name="function_router" />
+                                        <field name="function_fileserver" />
+                                        <field name="function_database" />
+                                    </group>
+                                </group>
+                            </page>
                             <page
                                 string="Virtual Machine Data"
                                 attrs="{'invisible':[('equipment_type','!=', 'virtual' )]}"
@@ -231,48 +264,23 @@
                                     </field>
                                 </group>
                             </page>
-                            <page
-                                string="Network Configuration"
-                                attrs="{'invisible':[('is_static_ip','=', False )]}"
-                            >
-                                <group>
-                                    <group string="Network Configuration">
-                                        <field name="equipment_network_ids" nolabel="1">
-                                            <tree
-                                                string="Network Configuration"
-                                                editable="bottom"
-                                            >
-                                                <field name="name" />
-                                                <field name="mac" />
-                                                <field name="network_id" />
-                                                <field name="use_dhcp4" />
-                                                <field
-                                                    name="static_ipv4_id"
-                                                    attrs="{'invisible':[('use_dhcp4','=',True)]}"
-                                                />
-                                            </tree>
-                                        </field>
-                                    </group>
-                                </group>
-                            </page>
-                            <page
-                                string="DHCP"
-                                attrs="{'invisible':[('function_dhcp','=', False )]}"
-                            >
-                                <group>
-                                    <group string="DHCP Settings">
-                                        <field name="dhcp4_ids" nolabel="1">
-                                            <tree string="DHCP Settings">
-                                                <field name="name" />
-                                                <field name="network_id" />
-                                                <field name="subnet" />
-                                                <field name="subnet_mask" />
-                                                <field name="start_address" />
-                                                <field name="end_address" />
-                                                <field name="lease_time" />
-                                            </tree>
-                                        </field>
-                                    </group>
+                            <page string="Network Configuration">
+                                <group string="Network Configuration">
+                                    <field name="equipment_network_ids" nolabel="1">
+                                        <tree
+                                            string="Network Configuration"
+                                            editable="bottom"
+                                        >
+                                            <field name="name" />
+                                            <field name="mac" />
+                                            <field name="network_id" />
+                                            <field name="use_dhcp4" />
+                                            <field
+                                                name="static_ipv4_id"
+                                                attrs="{'invisible':[('use_dhcp4','=',True)]}"
+                                            />
+                                        </tree>
+                                    </field>
                                 </group>
                             </page>
                             <page
@@ -302,16 +310,6 @@
                                             <field name="description" />
                                         </tree>
                                     </field>
-                                </group>
-                            </page>
-                            <page
-                                string="Operating System"
-                                attrs="{'invisible':[('is_os','=', False )]}"
-                            >
-                                <group>
-                                    <field name="os_name" />
-                                    <field name="os_company" />
-                                    <field name="os_version" />
                                 </group>
                             </page>
                             <page
@@ -358,40 +356,10 @@
                                     <group>
                                         <field name="create_uid" />
                                         <field name="create_date" />
-                                        <field name="pin" />
                                     </group>
-                                </group>
-                            </page>
-                            <page string="Configuration" groups="it.group_it_mod">
-                                <group string="Equipment Type">
-                                    <field name="equipment_type" />
-                                </group>
-                                <newline />
-                                <group>
-                                    <group string="Basic Configuration">
-                                        <field
-                                            name="company_id"
-                                            string="Company"
-                                            groups="base.group_multi_company"
-                                        />
-                                        <field name="is_backup" />
-                                        <field name="is_application" />
-                                        <field name="is_contracted" />
-                                        <field name="is_static_ip" />
-                                        <field name="is_partitioned" />
-                                        <field name="is_config_file" />
-                                        <field name="is_os" />
-                                    </group>
-                                    <group string="Function Configuration">
-                                        <field name="function_host" />
-                                        <field name="function_router" />
-                                        <field name="function_dc" />
-                                        <field name="function_fileserver" />
-                                        <field name="function_database" />
-                                        <field name="function_vpn" />
-                                        <field name="function_firewall" />
-                                        <field name="function_dhcp" />
-                                        <field name="function_ap" />
+                                    <group>
+                                        <field name="write_uid" />
+                                        <field name="write_date" />
                                     </group>
                                 </group>
                             </page>
@@ -412,7 +380,6 @@
             <field name="arch" type="xml">
                 <search string="Asset">
                     <!--Searchs-->
-                    <field name="pin" string="PIN" />
                     <field name="partner_id" string="Partner" />
                     <field name="equipment_type" string="Type" />
                     <field name="virtual_parent_id" string="Host" />
@@ -427,17 +394,6 @@
                         name="is_contracted"
                         string="Own"
                         domain="[('is_contracted','=',0)]"
-                    />
-                    <separator />
-                    <filter
-                        name="is_static_ip"
-                        string="Static IP"
-                        domain="[('is_static_ip','=',1)]"
-                    />
-                    <filter
-                        name="is_static_ip"
-                        string="DHCP"
-                        domain="[('is_static_ip','=',0)]"
                     />
                     <separator />
                     <filter
@@ -508,27 +464,7 @@
                         string="Database Servers"
                         domain="[('function_database','=',1)]"
                     />
-                    <filter
-                        name="function_vpn"
-                        string="VPN Servers"
-                        domain="[('function_vpn','=',1)]"
-                    />
-                    <filter
-                        name="function_firewall"
-                        string="Firewall and Proxy"
-                        domain="[('function_firewall','=',1)]"
-                    />
-                    <filter
-                        name="function_dhcp"
-                        string="DHCP Servers"
-                        domain="[('function_dhcp','=',1)]"
-                    />
-                    <filter
-                        name="function_ap"
-                        string="Access Point"
-                        domain="[('function_ap','=',1)]"
-                    />
-                    <separator />
+                   <separator />
                     <filter
                         name="archived"
                         string="Archived"

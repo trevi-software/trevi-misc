@@ -20,10 +20,8 @@
 
 
 import base64
-from random import choice
 
 from odoo import _, api, fields, models
-from odoo.exceptions import ValidationError
 from odoo.modules.module import get_module_resource
 
 
@@ -41,16 +39,6 @@ class ItEquipment(models.Model):
     _name = "it.equipment"
     _inherit = ["mail.activity.mixin", "mail.thread"]
     _description = "IT Asset"
-
-    @api.model
-    def _get_pin(self):
-        longitud = 12
-        valores = (
-            "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ<=>@#%&+"
-        )
-        p = ""
-        p = p.join([choice(valores) for i in range(longitud)])
-        return p
 
     @api.depends("virtual_ids")
     def _compute_virtual_count(self):
@@ -154,8 +142,6 @@ class ItEquipment(models.Model):
         "Applications",
     )
 
-    dhcp4_ids = fields.One2many("it.service.dhcp4", "equipment_id", "DHCP")
-
     @api.model
     def _get_type(self):
         if self.env.context.get("search_default_equipment_type"):
@@ -175,7 +161,6 @@ class ItEquipment(models.Model):
         default=_get_type,
     )
     is_contracted = fields.Boolean("Contracted Service")
-    is_static_ip = fields.Boolean("Static IP")
     is_partitioned = fields.Boolean("Partitions")
     is_backup = fields.Boolean("Backup")
     is_os = fields.Boolean("Operating System")
@@ -186,12 +171,6 @@ class ItEquipment(models.Model):
     function_host = fields.Boolean("Host")
     function_router = fields.Boolean("Router")
     function_database = fields.Boolean("Database Server")
-    function_vpn = fields.Boolean("VPN Server")
-    function_firewall = fields.Boolean("Firewall & Proxy Server")
-    function_dhcp = fields.Boolean("DHCP Server")
-    function_ap = fields.Boolean("Access Point")
-    # Audit Page
-    pin = fields.Char("PIN", default=_get_pin, readonly=True, required=True, copy=False)
     # Worklogs Page
     worklog_ids = fields.One2many(
         "it.equipment.worklog",
@@ -222,16 +201,13 @@ class ItEquipment(models.Model):
     router_forward_ids = fields.One2many(
         "it.equipment.forward", "equipment_id", "Forward Rules", tracking=True
     )
-    # "router_nat_ids": fields.one2many(
-    #    "it.equipment.nat", "equipment_id", "NAT Rules"
-    # ),
     router_rules_ids = fields.One2many(
         "it.equipment.rule",
         "equipment_id",
         "Firewall Rules",
         tracking=True,
     )
-    # Network Configuration Page
+    # Network Configuration
     equipment_network_ids = fields.One2many(
         "it.equipment.network",
         "equipment_id",
@@ -244,9 +220,6 @@ class ItEquipment(models.Model):
     product_warranty = fields.Char("Warranty")
     product_buydate = fields.Date("Buy Date")
     product_note = fields.Text("Product Note")
-    # DC Page
-    function_dc = fields.Boolean("Domain Controller")
-    ad_service_id = fields.Many2one("it.service.ad", "Active Directory Service")
     # Fileserver Page
     equipment_mapping_ids = fields.One2many(
         "it.equipment.mapping",
@@ -256,37 +229,22 @@ class ItEquipment(models.Model):
     )
     # OS Page
     os_name = fields.Char("OS Name")
-    os_company = fields.Char("OS Company")
-    os_version = fields.Char("OS Version")
-    # DHCP Server Page
-    dhcp_service_id = fields.Many2one("it.service.dhcp4", "DHCP Service")
-    # Access Point Page
+    # Services
+    ad_service_id = fields.Many2one("it.service.ad", "Active Directory")
+    dhcp_service_id = fields.Many2one("it.service.dhcp4", "DHCP")
     wireless_service_id = fields.Many2one("it.service.wireless", "Wireless Service")
+    proxy_service_id = fields.Many2one("it.service.proxy", "Proxy Service")
+    vpn_service_id = fields.Many2one("it.service.vpn", "VPN Service")
     # Database Page
     db_ids = fields.One2many("it.equipment.db", "equipment_id", "Databases")
-    # Firewall & Proxy Page
-    # "firewall_filter_ids": fields.one2many(
-    #    "it.equipment.firewallfilter", "equipment_id", "Firewall Filters"
-    # ),
-    proxy_service_id = fields.Many2one("it.service.proxy", "Proxy Service")
     use_proxy = fields.Boolean("Use Proxy")
     proxy_client_config_id = fields.Many2one(
         "it.equipment.network.proxy", "Proxy Configuration"
     )
-    # VPN Page
-    vpn_service_id = fields.Many2one("it.service.vpn", "VPN Service")
     # Store Config File Page
     configuration_file_ids = fields.One2many(
         "it.equipment.configuration", "equipment_id", "Configuration Files"
     )
-
-    @api.constrains("pin")
-    def check_pin(self):
-        ItAsset = self.env["it.equipment"]
-        for rec in self:
-            duplicates = ItAsset.search([("pin", "=", rec.pin), ("id", "!=", rec.id)])
-            if duplicates:
-                raise ValidationError(_("Pin '%s' already exists.", rec.pin))
 
     # Log a note on creation of equipment to Site and Equipment chatter.
     #

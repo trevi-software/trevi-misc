@@ -143,7 +143,7 @@ class ItServiceAdObject(models.Model):
 
     parent_id = fields.Many2one(
         "it.service.ad.object",
-        "Domain Services Folder",
+        "AD Folder",
         domain="[('type', '=', 'folder'), ('ad_id', '=', ad_id)]",
     )
     ad_id = fields.Many2one(
