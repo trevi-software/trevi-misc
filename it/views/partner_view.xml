@@ -33,7 +33,7 @@
         <menuitem
             action="it_partner_customer_action"
             id="it_partner_customer"
-            sequence="30"
+            sequence="40"
             parent="it.menu_main_itm"
         />
 

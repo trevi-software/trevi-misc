@@ -280,11 +280,14 @@
                                 attrs="{'invisible':[('function_fileserver','=', False )]}"
                             >
                                 <group>
-                                    <field
-                                        name="equipment_mapping_ids"
-                                        nolabel="1"
-                                        colspan="4"
-                                    />
+                                    <group>
+                                        <field name="equipment_mapping_ids" nolabel="1">
+                                            <tree string="Network share mappings">
+                                                <field name="name" />
+                                                <field name="path" />
+                                            </tree>
+                                        </field>
+                                    </group>
                                 </group>
                             </page>
                             <page

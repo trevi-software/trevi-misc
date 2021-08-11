@@ -197,8 +197,8 @@
             name="Sites"
             id="it_menu_sites"
             parent="it.menu_main_itm"
-            groups="group_it_manager"
-            sequence="20"
+            groups="group_it_user"
+            sequence="30"
         />
 
         <menuitem

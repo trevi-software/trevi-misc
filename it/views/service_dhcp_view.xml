@@ -69,5 +69,12 @@
             <field name="view_mode">tree,form</field>
         </record>
 
+        <menuitem
+            action="it_service_dhcp4_action"
+            id="it_dhcp4_menu"
+            sequence="30"
+            parent="it_menu_services"
+        />
+
     </data>
 </odoo>

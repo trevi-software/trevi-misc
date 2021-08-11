@@ -38,6 +38,14 @@
             sequence="10"
         />
 
+        <menuitem
+            name="Services"
+            id="it_menu_services"
+            parent="it.menu_main_itm"
+            groups="group_it_user"
+            sequence="20"
+        />
+
         <!-- Others -->
         <menuitem
             name="Configuration"

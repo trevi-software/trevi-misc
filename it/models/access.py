@@ -30,15 +30,19 @@ class ItAccess(models.Model):
         else:
             self.partner_id = None
 
+    @api.model
+    def get_random_string(self):
+        longitud = 16
+        valores = (
+            "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ<=>@#%&+"
+        )
+        p = ""
+        p = p.join([choice(valores) for i in range(longitud)])
+        return p
+
     def get_random_password(self):
         for access in self:
-            longitud = 16
-            valores = (
-                "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ<=>@#%&+"
-            )
-            p = ""
-            p = p.join([choice(valores) for i in range(longitud)])
-            token = self.encrypt_string(p)
+            token = self.encrypt_string(self.get_random_string())
             access.password = token
 
     def get_urlsafe_key(self):

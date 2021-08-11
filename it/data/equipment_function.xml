@@ -9,6 +9,10 @@
         <field name="name">Domain Controller</field>
     </record>
 
+    <record id="equipment_function_dns" model="it.equipment.function">
+        <field name="name">Domain Name Server</field>
+    </record>
+
     <record id="equipment_function_fileserver" model="it.equipment.function">
         <field name="name">File Server</field>
     </record>
