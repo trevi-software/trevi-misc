@@ -52,23 +52,29 @@ class NewCredential(models.TransientModel):
         if self.use_random:
             self.password = ItAccess.get_random_string()
 
+    def create_cred(self):
+
+        # Remove the password so it doesn't get accidentaly written to the database.
+        #
+        plaintext = self.password
+        self.password = ""
+
+        cred_vals = {
+            "name": self.name,
+            "password": plaintext,
+            "site_id": self.site_id.id,
+            "partner_id": self.partner_id.id,
+            "equipment_id": self.equipment_id.id,
+        }
+        cred = self.env["it.access"].create(cred_vals)
+        self.aduser_id.access_id = cred
+
     @api.model
     def create(self, vals):
 
-        # Get the password then remove it from the dictionary
-        # so it doesn't get accidentaly written to the database.
+        # Remove the password from the dictionary so it doesn't
+        # get accidentaly written to the database.
         #
-        plaintext = vals.get("password", False)
-        vals["password"] = ""
+        vals.update({"password": ""})
 
-        cred_vals = {
-            "name": vals.get("name", False),
-            "password": plaintext,
-            "site_id": vals.get("site_id", False),
-            "partner_id": vals.get("partner_id", False),
-            "equipment_id": vals.get("equipment_id", False),
-        }
-        cred = self.env["it.access"].create(cred_vals)
-        aduser = self.env["it.service.ad.object"].browse(vals.get("aduser_id", False))
-        aduser.access_id = cred.id
         return super(NewCredential, self).create(vals)
