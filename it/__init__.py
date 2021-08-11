@@ -5,3 +5,4 @@
 # flake8: noqa
 from . import models
 from . import wizard
+from . import tests

@@ -139,6 +139,65 @@ class ItAccess(models.Model):
     ssl_privatekey = fields.Binary("Private Key", tracking=True)
     ssl_privatekey_filename = fields.Char("Private Key Filename")
 
+    def write(self, vals):
+
+        # Log a note to Site and Equipment chatter.
+        # Map access records to sites and equipment.
+        #
+        mt_note = self.env.ref("mail.mt_note")
+        author = self.env.user.partner_id and self.env.user.partner_id.id or False
+        sites = {}
+        equips = {}
+        for res in self:
+            if res.site_id:
+                if res.site_id.id not in sites.keys():
+                    sites.update({res.site_id.id: [{"id": res.id, "name": res.name}]})
+                else:
+                    sites[res.site_id.id].append({"id": res.id, "name": res.name})
+            if res.equipment_id:
+                if res.equipment_id.id not in equips.keys():
+                    equips.update(
+                        {res.equipment_id.id: [{"id": res.id, "name": res.name}]}
+                    )
+                else:
+                    equips[res.equipment_id.id].append({"id": res.id, "name": res.name})
+
+        Site = self.env["it.site"]
+        for k, v in sites.items():
+            msg = ""
+            for r in v:
+                msg = msg + _(
+                    "<li>A %s's password was updated: %s</li>",
+                    self._description,
+                    r["name"],
+                )
+            note = '<div class="o_mail_notification"><ul>' + msg + "</ul></div>"
+            Site.browse(k).message_post(
+                body=note, subtype_id=mt_note.id, author_id=author
+            )
+
+        Equipment = self.env["it.equipment"]
+        for k, v in equips.items():
+            msg = ""
+            for r in v:
+                msg = msg + _(
+                    "<li>A %s's password was updated: %s</li>",
+                    self._description,
+                    r["name"],
+                )
+            note = '<div class="o_mail_notification"><ul>' + msg + "</ul></div>"
+            Equipment.browse(k).message_post(
+                body=note, subtype_id=mt_note.id, author_id=author
+            )
+
+        # Encrypt the password before saving it. The unencrypted password should not be
+        # saved to the database even temporarily.
+        #
+        if "password" in vals.keys() and vals["password"] is not False:
+            vals["password"] = self.encrypt_string(vals["password"])
+
+        return super(ItAccess, self).write(vals)
+
     @api.model
     def create(self, vals):
 
