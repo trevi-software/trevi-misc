@@ -10,8 +10,10 @@
     "summary": """Hide purchase orders in the customer portal.""",
     "category": "Purchase",
     "maintainers": ["TREVI Software"],
+    "images": ["static/src/img/main_screenshot.png"],
     "website": "https://github.com/trevi-software/trevi-misc",
     "depends": [
+        "portal",
         "purchase",
     ],
     "data": [
