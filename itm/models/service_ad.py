@@ -8,7 +8,7 @@ from odoo.exceptions import ValidationError
 
 
 class ItServiceAD(models.Model):
-    _name = "it.service.ad"
+    _name = "itm.service.ad"
     _inherit = ["mail.thread"]
     _description = "Active Directory"
 
@@ -20,10 +20,10 @@ class ItServiceAD(models.Model):
         "AD Type",
     )
     obj_ids = fields.One2many(
-        "it.service.ad.object", "ad_id", "Active Directory Objects"
+        "itm.service.ad.object", "ad_id", "Active Directory Objects"
     )
-    site_id = fields.Many2one("it.site", "Site", ondelete="restrict")
-    equipment_id = fields.Many2one("it.equipment", "Asset")
+    site_id = fields.Many2one("itm.site", "Site", ondelete="restrict")
+    equipment_id = fields.Many2one("itm.equipment", "Asset")
     partner_id = fields.Many2one(
         "res.partner",
         "Partner",
@@ -53,7 +53,7 @@ class ItServiceAD(models.Model):
         author = self.env.user.partner_id and self.env.user.partner_id.id or False
         msg = _(
             '<div class="o_mail_notification"><ul><li>A new %s was created: \
-                <a href="#" class="o_redirect" data-oe-model=it.service.ad data-oe-id="%s"> \
+                <a href="#" class="o_redirect" data-oe-model=itm.service.ad data-oe-id="%s"> \
                 %s</a></li></ul></div>',
             res._description,
             res.id,
@@ -95,7 +95,7 @@ class ItServiceAD(models.Model):
                 else:
                     equips[res.equipment_id.id].append({"id": res.id, "name": res.name})
 
-        Site = self.env["it.site"]
+        Site = self.env["itm.site"]
         for k, v in sites.items():
             msg = ""
             for r in v:
@@ -107,7 +107,7 @@ class ItServiceAD(models.Model):
                 body=note, subtype_id=mt_note.id, author_id=author
             )
 
-        Equipment = self.env["it.equipment"]
+        Equipment = self.env["itm.equipment"]
         for k, v in equips.items():
             msg = ""
             for r in v:
@@ -124,7 +124,7 @@ class ItServiceAD(models.Model):
 
 class ItServiceAdObject(models.Model):
 
-    _name = "it.service.ad.object"
+    _name = "itm.service.ad.object"
     _description = "Active Directory Object"
     _rec_name = "complete_name"
     _order = "complete_name"
@@ -142,17 +142,17 @@ class ItServiceAdObject(models.Model):
         return False
 
     parent_id = fields.Many2one(
-        "it.service.ad.object",
+        "itm.service.ad.object",
         "AD Folder",
         domain="[('type', '=', 'folder'), ('ad_id', '=', ad_id)]",
     )
     ad_id = fields.Many2one(
-        "it.service.ad",
+        "itm.service.ad",
         "Active Directory",
         ondelete="cascade",
         default=_get_default_ad,
     )
-    access_id = fields.Many2one("it.access", "Related Credential")
+    access_id = fields.Many2one("itm.access", "Related Credential")
     complete_name = fields.Char(compute="_compute_complete_name", store=True)
     description = fields.Text()
     active = fields.Boolean(default=True)
@@ -226,7 +226,7 @@ class ItServiceAdObject(models.Model):
             '<div class="o_mail_notification"><ul><li>A new %s was created: \
                 <a href="#" \
                 class="o_redirect" \
-                data-oe-model=it.service.ad.object data-oe-id="%s"> \
+                data-oe-model=itm.service.ad.object data-oe-id="%s"> \
                 %s</a></li></ul></div>',
             res._description,
             res.id,
@@ -284,7 +284,7 @@ class ItServiceAdObject(models.Model):
                         {"id": obj.id, "name": obj.complete_name}
                     )
 
-        Site = self.env["it.site"]
+        Site = self.env["itm.site"]
         for k, v in sites.items():
             msg = ""
             for r in v:
@@ -296,7 +296,7 @@ class ItServiceAdObject(models.Model):
                 body=note, subtype_id=mt_note.id, author_id=author
             )
 
-        Equipment = self.env["it.equipment"]
+        Equipment = self.env["itm.equipment"]
         for k, v in equips.items():
             msg = ""
             for r in v:

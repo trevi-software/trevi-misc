@@ -23,35 +23,35 @@
         <!-- Top menu item -->
         <menuitem
             name="Infrastructure"
-            web_icon="it_infrastructure,static/description/icon.jpg"
+            web_icon="itm,static/description/icon.jpg"
             id="menu_main_itm"
-            groups="group_it_user"
+            groups="group_itm_user"
             sequence="42"
         />
 
         <!-- General Menu -->
         <menuitem
             name="IT Assets"
-            id="it_menu_general"
+            id="itm_menu_general"
             parent="menu_main_itm"
-            groups="group_it_user"
+            groups="group_itm_user"
             sequence="10"
         />
 
         <menuitem
             name="Services"
-            id="it_menu_services"
+            id="itm_menu_services"
             parent="menu_main_itm"
-            groups="group_it_user"
+            groups="group_itm_user"
             sequence="20"
         />
 
         <!-- Others -->
         <menuitem
             name="Configuration"
-            id="it_menu_others"
+            id="itm_menu_others"
             parent="menu_main_itm"
-            groups="group_it_manager"
+            groups="group_itm_manager"
             sequence="100"
         />
 

@@ -21,9 +21,9 @@
     <data>
 
         <!-- Create view for network -->
-        <record model="ir.ui.view" id="it_equipment_network_form">
-            <field name="name">it.equipment.network.form</field>
-            <field name="model">it.equipment.network</field>
+        <record model="ir.ui.view" id="itm_equipment_network_form">
+            <field name="name">itm.equipment.network.form</field>
+            <field name="model">itm.equipment.network</field>
             <field name="arch" type="xml">
                 <form string="Network">
                     <group>
@@ -45,9 +45,9 @@
         </record>
 
         <!-- Tree view for network grill on equipments -->
-        <record model="ir.ui.view" id="it_equipment_network_tree">
-            <field name="name">it.equipment.network.tree</field>
-            <field name="model">it.equipment.network</field>
+        <record model="ir.ui.view" id="itm_equipment_network_tree">
+            <field name="name">itm.equipment.network.tree</field>
+            <field name="model">itm.equipment.network</field>
             <field name="arch" type="xml">
                 <tree string="Network">
                     <field name="name" />

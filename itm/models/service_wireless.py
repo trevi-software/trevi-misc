@@ -23,7 +23,7 @@ from odoo import fields, models
 
 
 class ItServiceWireless(models.Model):
-    _name = "it.service.wireless"
+    _name = "itm.service.wireless"
     _description = "Wireless Service"
 
     name = fields.Char("SSID", required=True)
@@ -53,4 +53,4 @@ class ItServiceWireless(models.Model):
     guest = fields.Boolean("Enable Guest Access")
     guest_ssid = fields.Char("Guest SSID")
     guest_password = fields.Char("Guest Key")
-    access_id = fields.Many2one("it.access", "Access Credentials")
+    access_id = fields.Many2one("itm.access", "Access Credentials")

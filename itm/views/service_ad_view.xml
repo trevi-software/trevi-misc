@@ -2,9 +2,9 @@
 <odoo>
     <data>
 
-        <record model="ir.ui.view" id="it_service_ad_search">
-            <field name="name">it.service.ad.search</field>
-            <field name="model">it.service.ad</field>
+        <record model="ir.ui.view" id="itm_service_ad_search">
+            <field name="name">itm.service.ad.search</field>
+            <field name="model">itm.service.ad</field>
             <field name="arch" type="xml">
                 <search string="Active Directory Search">
                     <field name="name" />
@@ -38,9 +38,9 @@
             </field>
         </record>
 
-        <record model="ir.ui.view" id="it_service_ad_tree">
-            <field name="name">it.service.ad.tree</field>
-            <field name="model">it.service.ad</field>
+        <record model="ir.ui.view" id="itm_service_ad_tree">
+            <field name="name">itm.service.ad.tree</field>
+            <field name="model">itm.service.ad</field>
             <field name="arch" type="xml">
                 <tree string="Active Directories">
                     <field name="name" />
@@ -53,9 +53,9 @@
             </field>
         </record>
 
-        <record model="ir.ui.view" id="it_service_ad_form">
-            <field name="name">it.service.ad.form</field>
-            <field name="model">it.service.ad</field>
+        <record model="ir.ui.view" id="itm_service_ad_form">
+            <field name="name">itm.service.ad.form</field>
+            <field name="model">itm.service.ad</field>
             <field name="arch" type="xml">
                 <form string="Active Directory">
                     <sheet>
@@ -113,9 +113,9 @@
         <!-- Action for Button -->
         <record id="act_adobject_2_newcreds" model="ir.actions.act_window">
             <field name="name">Create Credential</field>
-            <field name="res_model">it.wizard.credential</field>
+            <field name="res_model">itm.wizard.credential</field>
             <field name="view_mode">form</field>
-            <field name="view_id" ref="it_wizard_credential_form" />
+            <field name="view_id" ref="itm_wizard_credential_form" />
             <field name="target">new</field>
             <field name="context">
                 {
@@ -127,9 +127,9 @@
             </field>
         </record>
 
-        <record model="ir.ui.view" id="it_service_ad_object_form">
-            <field name="name">it.service.ad.object.form</field>
-            <field name="model">it.service.ad.object</field>
+        <record model="ir.ui.view" id="itm_service_ad_object_form">
+            <field name="name">itm.service.ad.object.form</field>
+            <field name="model">itm.service.ad.object</field>
             <field name="arch" type="xml">
                 <form string="Active Directory Object">
                     <sheet>
@@ -195,7 +195,7 @@
                                         string="Create"
                                         icon="fa-key"
                                         type="action"
-                                        groups="it_infrastructure.group_it_mod"
+                                        groups="itm.group_itm_mod"
                                         context="{'default_name': logon_name}"
                                         attrs="{'invisible': [('access_id','!=',False)]}"
                                     />
@@ -227,30 +227,30 @@
             </field>
         </record>
 
-        <record id="it_service_ad_action" model="ir.actions.act_window">
+        <record id="itm_service_ad_action" model="ir.actions.act_window">
             <field name="name">Active Directory</field>
-            <field name="res_model">it.service.ad</field>
+            <field name="res_model">itm.service.ad</field>
             <field name="view_mode">tree,form</field>
         </record>
 
-        <record id="it_service_ad_object_action" model="ir.actions.act_window">
+        <record id="itm_service_ad_object_action" model="ir.actions.act_window">
             <field name="name">Active Directory Objects</field>
-            <field name="res_model">it.service.ad.object</field>
+            <field name="res_model">itm.service.ad.object</field>
             <field name="view_mode">tree,form</field>
         </record>
 
         <menuitem
-            action="it_service_ad_action"
-            id="it_ad_menu"
+            action="itm_service_ad_action"
+            id="itm_ad_menu"
             sequence="20"
-            parent="it_menu_services"
+            parent="itm_menu_services"
         />
 
         <menuitem
-            action="it_service_ad_object_action"
-            id="it_ad_object_menu"
+            action="itm_service_ad_object_action"
+            id="itm_ad_object_menu"
             sequence="25"
-            parent="it_menu_services"
+            parent="itm_menu_services"
         />
 
     </data>

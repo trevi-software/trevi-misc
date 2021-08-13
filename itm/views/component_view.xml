@@ -20,17 +20,17 @@
 
     <data>
 
-        <record id="it_component_action" model="ir.actions.act_window">
+        <record id="itm_component_action" model="ir.actions.act_window">
             <field name="name">Components</field>
             <field name="res_model">product.product</field>
             <field name="view_mode">tree,form</field>
         </record>
 
         <menuitem
-            action="it_component_action"
-            id="it_component"
+            action="itm_component_action"
+            id="itm_component"
             sequence="20"
-            parent="it_menu_others"
+            parent="itm_menu_others"
         />
 
     </data>
