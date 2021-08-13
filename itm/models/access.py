@@ -14,12 +14,12 @@ from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 from odoo import _, api, fields, models
 from odoo.exceptions import AccessDenied
 
-PARAM_PASS = "it_passkey"
-PARAM_SALT = "it_passsalt"
+PARAM_PASS = "itm_passkey"
+PARAM_SALT = "itm_salt"
 
 
 class ItAccess(models.Model):
-    _name = "it.access"
+    _name = "itm.access"
     _inherit = ["mail.thread"]
     _description = "Credential"
 
@@ -93,20 +93,20 @@ class ItAccess(models.Model):
     def _get_partner_id(self):
         # Get the partner from either asset or site
         #
-        if self.env.context.get("active_model") == "it.equipment":
-            equip = self.env["it.equipment"].browse(self.env.context.get("active_id"))
+        if self.env.context.get("active_model") == "itm.equipment":
+            equip = self.env["itm.equipment"].browse(self.env.context.get("active_id"))
             if equip.partner_id:
                 return equip.partner_id.id
-        elif self.env.context.get("active_model") == "it.site":
-            site = self.env["it.site"].browse(self.env.context.get("active_id"))
+        elif self.env.context.get("active_model") == "itm.site":
+            site = self.env["itm.site"].browse(self.env.context.get("active_id"))
             if site.partner_id:
                 return site.partner_id.id
         return False
 
     @api.model
     def _get_site_id(self):
-        if self.env.context.get("active_model") == "it.equipment":
-            equip = self.env["it.equipment"].browse(self.env.context.get("active_id"))
+        if self.env.context.get("active_model") == "itm.equipment":
+            equip = self.env["itm.equipment"].browse(self.env.context.get("active_id"))
             if equip.site_id:
                 return equip.site_id.id
         return False
@@ -116,9 +116,9 @@ class ItAccess(models.Model):
         "Company",
         default=lambda self: self.env.company,
     )
-    equipment_id = fields.Many2one("it.equipment", "Asset", ondelete="restrict")
+    equipment_id = fields.Many2one("itm.equipment", "Asset", ondelete="restrict")
     site_id = fields.Many2one(
-        "it.site", "Site", required=True, ondelete="restrict", default=_get_site_id
+        "itm.site", "Site", required=True, ondelete="restrict", default=_get_site_id
     )
     name = fields.Char("Username", required=True, tracking=True)
     password = fields.Char()
@@ -162,7 +162,7 @@ class ItAccess(models.Model):
                 else:
                     equips[res.equipment_id.id].append({"id": res.id, "name": res.name})
 
-        Site = self.env["it.site"]
+        Site = self.env["itm.site"]
         for k, v in sites.items():
             msg = ""
             for r in v:
@@ -176,7 +176,7 @@ class ItAccess(models.Model):
                 body=note, subtype_id=mt_note.id, author_id=author
             )
 
-        Equipment = self.env["it.equipment"]
+        Equipment = self.env["itm.equipment"]
         for k, v in equips.items():
             msg = ""
             for r in v:
@@ -215,7 +215,7 @@ class ItAccess(models.Model):
         author = self.env.user.partner_id and self.env.user.partner_id.id or False
         msg = _(
             '<div class="o_mail_notification"><ul><li>A new %s was created: \
-                <a href="#" class="o_redirect" data-oe-model=it.access data-oe-id="%s"> \
+                <a href="#" class="o_redirect" data-oe-model=itm.access data-oe-id="%s"> \
                 %s</a></li></ul></div>',
             res._description,
             res.id,
@@ -257,7 +257,7 @@ class ItAccess(models.Model):
                 else:
                     equips[res.equipment_id.id].append({"id": res.id, "name": res.name})
 
-        Site = self.env["it.site"]
+        Site = self.env["itm.site"]
         for k, v in sites.items():
             msg = ""
             for r in v:
@@ -269,7 +269,7 @@ class ItAccess(models.Model):
                 body=note, subtype_id=mt_note.id, author_id=author
             )
 
-        Equipment = self.env["it.equipment"]
+        Equipment = self.env["itm.equipment"]
         for k, v in equips.items():
             msg = ""
             for r in v:

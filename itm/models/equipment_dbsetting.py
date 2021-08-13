@@ -23,10 +23,10 @@ from odoo import fields, models
 
 
 class ItEquipmentDbsetting(models.Model):
-    _name = "it.equipment.dbsetting"
+    _name = "itm.equipment.dbsetting"
     _description = "Database Setting"
 
     name = fields.Char("Parameter", required=True)
     value = fields.Char(required=True)
     description = fields.Text()
-    db_id = fields.Many2one("it.equipment.dbsetting", "Database", ondelete="cascade")
+    db_id = fields.Many2one("itm.equipment.dbsetting", "Database", ondelete="cascade")

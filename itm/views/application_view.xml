@@ -21,9 +21,9 @@
     <data>
 
         <!-- Application -->
-        <record model="ir.ui.view" id="it_application_tree">
-            <field name="name">it.application.tree</field>
-            <field name="model">it.application</field>
+        <record model="ir.ui.view" id="itm_application_tree">
+            <field name="name">itm.application.tree</field>
+            <field name="model">itm.application</field>
             <field name="arch" type="xml">
                 <tree string="Applications">
                     <field name="name" />
@@ -34,9 +34,9 @@
             </field>
         </record>
 
-        <record model="ir.ui.view" id="it_application_form">
-            <field name="name">it.application.form</field>
-            <field name="model">it.application</field>
+        <record model="ir.ui.view" id="itm_application_form">
+            <field name="name">itm.application.form</field>
+            <field name="model">itm.application</field>
             <field name="arch" type="xml">
                 <form string="Application">
                     <sheet>
@@ -93,7 +93,7 @@
                                     />
                                 </group>
                             </page>
-                            <page string="Audit Data" groups="it_infrastructure.group_it_mod">
+                            <page string="Audit Data" groups="itm.group_itm_mod">
                                 <group>
                                     <group>
                                         <field name="create_uid" />
@@ -105,7 +105,7 @@
                                     </group>
                                 </group>
                             </page>
-                            <page string="Configuration" groups="it_infrastructure.group_it_mod">
+                            <page string="Configuration" groups="itm.group_itm_mod">
                                 <group>
                                     <group>
                                         <field name="active" />
@@ -123,9 +123,9 @@
             </field>
         </record>
 
-        <record model="ir.ui.view" id="it_application_search">
-            <field name="name">it.application.search</field>
-            <field name="model">it.application</field>
+        <record model="ir.ui.view" id="itm_application_search">
+            <field name="name">itm.application.search</field>
+            <field name="model">itm.application</field>
             <field name="arch" type="xml">
                 <search string="Application">
                     <!--Searchs-->
@@ -172,17 +172,17 @@
             </field>
         </record>
 
-        <record model="ir.actions.act_window" id="it_application_action">
+        <record model="ir.actions.act_window" id="itm_application_action">
             <field name="name">Applications</field>
-            <field name="res_model">it.application</field>
+            <field name="res_model">itm.application</field>
             <field name="view_mode">tree,form</field>
         </record>
 
         <menuitem
-            action="it_application_action"
-            id="it_application"
+            action="itm_application_action"
+            id="itm_application"
             sequence="40"
-            parent="it_menu_others"
+            parent="itm_menu_others"
         />
 
     </data>
