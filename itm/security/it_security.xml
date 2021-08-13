@@ -27,27 +27,27 @@
             >Helps you manage your infrastructure equipment, access and backups.</field>
         </record>
 
-        <record id="group_it_user" model="res.groups">
+        <record id="group_itm_user" model="res.groups">
             <field name="name">User</field>
             <field name="category_id" ref="module_category_it" />
         </record>
 
-        <record id="group_it_mod" model="res.groups">
+        <record id="group_itm_mod" model="res.groups">
             <field name="name">Moderator</field>
             <field name="category_id" ref="module_category_it" />
-            <field name="implied_ids" eval="[(4, ref('group_it_user'))]" />
+            <field name="implied_ids" eval="[(4, ref('group_itm_user'))]" />
         </record>
 
-        <record id="group_it_portal" model="res.groups">
+        <record id="group_itm_portal" model="res.groups">
             <field name="name">Portal</field>
             <field name="category_id" ref="module_category_it" />
-            <field name="implied_ids" eval="[(4, ref('group_it_user'))]" />
+            <field name="implied_ids" eval="[(4, ref('group_itm_user'))]" />
         </record>
 
-        <record id="group_it_manager" model="res.groups" context="{'noadmin':True}">
+        <record id="group_itm_manager" model="res.groups" context="{'noadmin':True}">
             <field name="name">Manager</field>
             <field name="category_id" ref="module_category_it" />
-            <field name="implied_ids" eval="[(4, ref('group_it_mod'))]" />
+            <field name="implied_ids" eval="[(4, ref('group_itm_mod'))]" />
             <field name="users" eval="[(4, ref('base.user_root'))]" />
         </record>
 
@@ -56,36 +56,36 @@
     <!-- RULES REISTRY -->
     <data noupdate="1">
 
-        <record model="ir.rule" id="it_equipment_comp_rule">
+        <record model="ir.rule" id="itm_equipment_comp_rule">
             <field name="name">IT Assets: multi-company</field>
-            <field name="model_id" ref="model_it_equipment" />
+            <field name="model_id" ref="model_itm_equipment" />
             <field name="global" eval="True" />
             <field
                 name="domain_force"
             >['|',('company_id','=',False),('company_id','in',company_ids)]</field>
         </record>
 
-        <record model="ir.rule" id="it_access_comp_rule">
+        <record model="ir.rule" id="itm_access_comp_rule">
             <field name="name">IT Credentials: multi-company</field>
-            <field name="model_id" ref="model_it_access" />
+            <field name="model_id" ref="model_itm_access" />
             <field name="global" eval="True" />
             <field
                 name="domain_force"
             >['|',('company_id','=',False),('company_id','in',company_ids)]</field>
         </record>
 
-        <record model="ir.rule" id="it_backup_comp_rule">
+        <record model="ir.rule" id="itm_backup_comp_rule">
             <field name="name">IT Backup: multi-company</field>
-            <field name="model_id" ref="model_it_backup" />
+            <field name="model_id" ref="model_itm_backup" />
             <field name="global" eval="True" />
             <field
                 name="domain_force"
             >['|',('company_id','=',False),('company_id','in',company_ids)]</field>
         </record>
 
-        <record model="ir.rule" id="it_application_comp_rule">
+        <record model="ir.rule" id="itm_application_comp_rule">
             <field name="name">IT Application: multi-company</field>
-            <field name="model_id" ref="model_it_application" />
+            <field name="model_id" ref="model_itm_application" />
             <field name="global" eval="True" />
             <field
                 name="domain_force"
@@ -93,27 +93,27 @@
         </record>
 
         <!-- PORTAL -->
-        <record model="ir.rule" id="it_portal_equipment">
+        <record model="ir.rule" id="itm_portal_equipment">
             <field name="name">IT Portal - Equipment</field>
-            <field name="model_id" ref="model_it_equipment" />
+            <field name="model_id" ref="model_itm_equipment" />
             <field name="global" eval="False" />
-            <field name="groups" eval="[(6,0,[ref('group_it_portal')])]" />
+            <field name="groups" eval="[(6,0,[ref('group_itm_portal')])]" />
             <field name="domain_force">[('partner_id','=',user.partner_id.id)]</field>
         </record>
 
-        <record model="ir.rule" id="it_portal_access">
+        <record model="ir.rule" id="itm_portal_access">
             <field name="name">IT Portal - Access</field>
-            <field name="model_id" ref="model_it_access" />
+            <field name="model_id" ref="model_itm_access" />
             <field name="global" eval="False" />
-            <field name="groups" eval="[(6,0,[ref('group_it_portal')])]" />
+            <field name="groups" eval="[(6,0,[ref('group_itm_portal')])]" />
             <field name="domain_force">[('partner_id','=',user.partner_id.id)]</field>
         </record>
 
-        <record model="ir.rule" id="it_portal_backup">
+        <record model="ir.rule" id="itm_portal_backup">
             <field name="name">IT Portal - Backup</field>
-            <field name="model_id" ref="model_it_backup" />
+            <field name="model_id" ref="model_itm_backup" />
             <field name="global" eval="False" />
-            <field name="groups" eval="[(6,0,[ref('group_it_portal')])]" />
+            <field name="groups" eval="[(6,0,[ref('group_itm_portal')])]" />
             <field name="domain_force">[('partner_id','=',user.partner_id.id)]</field>
         </record>
 

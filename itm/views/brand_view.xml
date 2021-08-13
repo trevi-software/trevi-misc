@@ -3,9 +3,9 @@
     <data>
 
         <!-- Tree view-->
-        <record model="ir.ui.view" id="it_equipment_brand_tree">
-            <field name="name">it.equipment.brand.tree</field>
-            <field name="model">it.equipment.brand</field>
+        <record model="ir.ui.view" id="itm_equipment_brand_tree">
+            <field name="name">itm.equipment.brand.tree</field>
+            <field name="model">itm.equipment.brand</field>
             <field name="arch" type="xml">
                 <tree string="Equipment Brands">
                     <field name="name" />
@@ -17,9 +17,9 @@
         </record>
 
         <!-- Form view -->
-        <record model="ir.ui.view" id="it_equipment_brand_form">
-            <field name="name">it.equipment.brand.form</field>
-            <field name="model">it.equipment.brand</field>
+        <record model="ir.ui.view" id="itm_equipment_brand_form">
+            <field name="name">itm.equipment.brand.form</field>
+            <field name="model">itm.equipment.brand</field>
             <field name="arch" type="xml">
                 <form string="Equipment Brand">
                     <sheet>
@@ -34,17 +34,17 @@
             </field>
         </record>
 
-        <record id="it_equipment_brand_action" model="ir.actions.act_window">
+        <record id="itm_equipment_brand_action" model="ir.actions.act_window">
             <field name="name">Brands</field>
-            <field name="res_model">it.equipment.brand</field>
+            <field name="res_model">itm.equipment.brand</field>
             <field name="view_mode">tree,form</field>
         </record>
 
         <menuitem
-            action="it_equipment_brand_action"
-            id="it_equipment_brand"
+            action="itm_equipment_brand_action"
+            id="itm_equipment_brand"
             sequence="50"
-            parent="it_menu_others"
+            parent="itm_menu_others"
         />
 
     </data>

@@ -23,7 +23,7 @@ from odoo import fields, models
 
 
 class ItEquipmentWorklog(models.Model):
-    _name = "it.equipment.worklog"
+    _name = "itm.equipment.worklog"
     _description = "Asset Worklog"
 
     _order = "date desc"
@@ -32,7 +32,7 @@ class ItEquipmentWorklog(models.Model):
     description = fields.Text("Long Description")
     date = fields.Datetime(default=fields.Datetime.now())
     spent_time = fields.Float()
-    equipment_id = fields.Many2one("it.equipment", "Asset", ondelete="cascade")
+    equipment_id = fields.Many2one("itm.equipment", "Asset", ondelete="cascade")
     user_id = fields.Many2one(
         "res.users", "User", required=True, default=lambda self: self.env.user_id.id
     )

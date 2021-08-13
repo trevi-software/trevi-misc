@@ -21,9 +21,9 @@
     <data>
 
         <!-- Access -->
-        <record model="ir.ui.view" id="it_access_tree">
-            <field name="name">it.access.tree</field>
-            <field name="model">it.access</field>
+        <record model="ir.ui.view" id="itm_access_tree">
+            <field name="name">itm.access.tree</field>
+            <field name="model">itm.access</field>
             <field name="arch" type="xml">
                 <tree string="credentials">
                     <field name="name" />
@@ -34,9 +34,9 @@
             </field>
         </record>
 
-        <record model="ir.ui.view" id="it_access_form">
-            <field name="name">it.access.form</field>
-            <field name="model">it.access</field>
+        <record model="ir.ui.view" id="itm_access_form">
+            <field name="name">itm.access.form</field>
+            <field name="model">itm.access</field>
             <field name="arch" type="xml">
                 <form string="Credential">
                     <sheet>
@@ -72,7 +72,7 @@
                                                 name="get_random_password"
                                                 string="Generate"
                                                 type="object"
-                                                groups="it_infrastructure.group_it_mod"
+                                                groups="itm.group_itm_mod"
                                                 confirm="Are you sure?"
                                                 icon="fa-random"
                                             />
@@ -118,7 +118,7 @@
                                     />
                                 </group>
                             </page>
-                            <page string="Audit Data" groups="it_infrastructure.group_it_mod">
+                            <page string="Audit Data" groups="itm.group_itm_mod">
                                 <group>
                                     <group>
                                         <field name="create_uid" />
@@ -126,7 +126,7 @@
                                     </group>
                                 </group>
                             </page>
-                            <page string="Configuration" groups="it_infrastructure.group_it_mod">
+                            <page string="Configuration" groups="itm.group_itm_mod">
                                 <group>
                                     <group>
                                         <field
@@ -147,9 +147,9 @@
             </field>
         </record>
 
-        <record model="ir.ui.view" id="it_access_search">
-            <field name="name">it.access.search</field>
-            <field name="model">it.access</field>
+        <record model="ir.ui.view" id="itm_access_search">
+            <field name="name">itm.access.search</field>
+            <field name="model">itm.access</field>
             <field name="arch" type="xml">
                 <search string="Access">
                     <!--Searchs-->
@@ -196,17 +196,17 @@
             </field>
         </record>
 
-        <record model="ir.actions.act_window" id="it_access_action">
+        <record model="ir.actions.act_window" id="itm_access_action">
             <field name="name">Credentials</field>
-            <field name="res_model">it.access</field>
+            <field name="res_model">itm.access</field>
             <field name="view_mode">tree,form</field>
         </record>
 
         <menuitem
-            action="it_access_action"
-            id="it_access"
+            action="itm_access_action"
+            id="itm_access"
             sequence="20"
-            parent="it_menu_general"
+            parent="itm_menu_general"
         />
 
     </data>
