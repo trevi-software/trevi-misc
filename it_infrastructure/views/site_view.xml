@@ -58,7 +58,7 @@
                                 class="oe_stat_button"
                                 icon="fa-th-large"
                                 type="action"
-                                groups="it.group_it_user"
+                                groups="it_infrastructure.group_it_user"
                             >
                                         <field
                                     name="equipment_count"
@@ -70,7 +70,7 @@
                                 class="oe_stat_button"
                                 icon="fa-key"
                                 type="action"
-                                groups="it.group_it_user"
+                                groups="it_infrastructure.group_it_user"
                             >
                                         <field name="access_count" widget="statinfo" />
                             </button>
@@ -196,8 +196,8 @@
         <menuitem
             name="Sites"
             id="it_menu_sites"
-            parent="it.menu_main_itm"
-            groups="group_it_user"
+            parent="menu_main_itm"
+            groups="it_infrastructure.group_it_user"
             sequence="30"
         />
 

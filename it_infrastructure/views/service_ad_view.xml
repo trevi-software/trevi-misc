@@ -195,7 +195,7 @@
                                         string="Create"
                                         icon="fa-key"
                                         type="action"
-                                        groups="it.group_it_mod"
+                                        groups="it_infrastructure.group_it_mod"
                                         context="{'default_name': logon_name}"
                                         attrs="{'invisible': [('access_id','!=',False)]}"
                                     />

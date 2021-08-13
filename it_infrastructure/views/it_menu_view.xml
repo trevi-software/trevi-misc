@@ -23,8 +23,8 @@
         <!-- Top menu item -->
         <menuitem
             name="Infrastructure"
-            web_icon="it,static/description/icon.jpg"
-            id="it.menu_main_itm"
+            web_icon="it_infrastructure,static/description/icon.jpg"
+            id="menu_main_itm"
             groups="group_it_user"
             sequence="42"
         />
@@ -33,7 +33,7 @@
         <menuitem
             name="IT Assets"
             id="it_menu_general"
-            parent="it.menu_main_itm"
+            parent="menu_main_itm"
             groups="group_it_user"
             sequence="10"
         />
@@ -41,7 +41,7 @@
         <menuitem
             name="Services"
             id="it_menu_services"
-            parent="it.menu_main_itm"
+            parent="menu_main_itm"
             groups="group_it_user"
             sequence="20"
         />
@@ -50,7 +50,7 @@
         <menuitem
             name="Configuration"
             id="it_menu_others"
-            parent="it.menu_main_itm"
+            parent="menu_main_itm"
             groups="group_it_manager"
             sequence="100"
         />

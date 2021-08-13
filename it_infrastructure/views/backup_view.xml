@@ -77,7 +77,7 @@
                                     <field name="script_location" widget="url" />
                                 </group>
                             </page>
-                            <page string="Audit Data" groups="it.group_it_mod">
+                            <page string="Audit Data" groups="it_infrastructure.group_it_mod">
                                 <group>
                                     <group>
                                         <field name="create_uid" />
@@ -89,7 +89,7 @@
                                     </group>
                                 </group>
                             </page>
-                            <page string="Configuration" groups="it.group_it_mod">
+                            <page string="Configuration" groups="it_infrastructure.group_it_mod">
                                 <group>
                                     <group>
                                         <field name="active" />

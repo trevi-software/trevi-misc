@@ -11,7 +11,10 @@
     "author": """TREVI Software,
         Leandro Ezequiel Baldi""",
     "website": "https://github.com/trevi-software/trevi-misc",
-    "images": ["static/src/img/default_image_equipment.png"],
+    "images": [
+        "static/src/img/main_screenshot.png",
+        "static/src/img/default_image_equipment.png",
+    ],
     "depends": ["mail", "product"],
     "data": [
         "security/it_security.xml",

@@ -34,7 +34,7 @@
             action="it_partner_customer_action"
             id="it_partner_customer"
             sequence="40"
-            parent="it.menu_main_itm"
+            parent="menu_main_itm"
         />
 
         <!-- Action for Buttons -->
@@ -65,7 +65,7 @@
             <field name="inherit_id" ref="base.view_partner_form" />
             <field name="arch" type="xml">
                 <field name="company_type" position="after">
-                    <field name="manage_it" groups="it.group_it_mod" />
+                    <field name="manage_it" groups="it_infrastructure.group_it_mod" />
                     <label for="manage_it" />
                 </field>
             </field>
@@ -83,7 +83,7 @@
                             class="oe_inline oe_stat_button"
                             icon="fa-th-large"
                             type="action"
-                            groups="it.group_it_user"
+                            groups="it_infrastructure.group_it_user"
                             attrs="{'invisible':[('manage_it','=', False )]}"
                         >
                                     <field name="equipment_count" widget="statinfo" />
@@ -93,7 +93,7 @@
                             class="oe_inline oe_stat_button"
                             icon="fa-key"
                             type="action"
-                            groups="it.group_it_user"
+                            groups="it_infrastructure.group_it_user"
                             attrs="{'invisible':[('manage_it','=', False )]}"
                         >
                                     <field name="access_count" widget="statinfo" />
@@ -103,7 +103,7 @@
                             class="oe_inline oe_stat_button"
                             icon="fa-floppy-o"
                             type="action"
-                            groups="it.group_it_user"
+                            groups="it_infrastructure.group_it_user"
                             attrs="{'invisible':[('manage_it','=', False )]}"
                         >
                                     <field name="backup_count" widget="statinfo" />
