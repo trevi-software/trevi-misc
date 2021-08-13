@@ -23,20 +23,20 @@ from odoo import fields, models
 
 
 class ItEquipmentNetwork(models.Model):
-    _name = "it.equipment.network"
+    _name = "itm.equipment.network"
     _description = "Network Interface"
 
-    equipment_id = fields.Many2one("it.equipment", "Asset", ondelete="cascade")
+    equipment_id = fields.Many2one("itm.equipment", "Asset", ondelete="cascade")
     name = fields.Char("Interface Name", required=True)
     mac = fields.Char("MAC Address", required=True)
-    network_id = fields.Many2one("it.site.network", "Network")
-    static_ipv4_id = fields.Many2one("it.site.network.ip4", "Static IPv4 Address")
+    network_id = fields.Many2one("itm.site.network", "Network")
+    static_ipv4_id = fields.Many2one("itm.site.network.ip4", "Static IPv4 Address")
     use_dhcp4 = fields.Boolean("Use IPv4 DHCP", default=True)
     note = fields.Text()
 
 
 class ItEquipmentNetworkProxy(models.Model):
-    _name = "it.equipment.network.proxy"
+    _name = "itm.equipment.network.proxy"
     _description = "Network Proxy Configuration"
 
     name = fields.Char("Proxy Hostname", required=True)

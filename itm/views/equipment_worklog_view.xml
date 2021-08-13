@@ -21,9 +21,9 @@
     <data>
 
         <!-- Create view for worklogs -->
-        <record model="ir.ui.view" id="it_equipment_worklog_form">
-            <field name="name">it.equipment.worklog.form</field>
-            <field name="model">it.equipment.worklog</field>
+        <record model="ir.ui.view" id="itm_equipment_worklog_form">
+            <field name="name">itm.equipment.worklog.form</field>
+            <field name="model">itm.equipment.worklog</field>
             <field name="arch" type="xml">
                 <form string="Worklog">
                     <group>
@@ -39,9 +39,9 @@
         </record>
 
         <!-- Tree view for worklogs grill on equipments -->
-        <record model="ir.ui.view" id="it_equipment_worklog_tree">
-            <field name="name">it.equipment.worklog.tree</field>
-            <field name="model">it.equipment.worklog</field>
+        <record model="ir.ui.view" id="itm_equipment_worklog_tree">
+            <field name="name">itm.equipment.worklog.tree</field>
+            <field name="model">itm.equipment.worklog</field>
             <field name="arch" type="xml">
                 <tree string="Worklogs">
                     <field name="name" />

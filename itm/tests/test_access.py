@@ -13,8 +13,8 @@ class TestAccess(TransactionCase):
     def setUp(self):
         super().setUp()
 
-        self.ItAccess = self.env["it.access"]
-        self.ItSite = self.env["it.site"]
+        self.ItAccess = self.env["itm.access"]
+        self.ItSite = self.env["itm.site"]
         self.defaultSite = self.ItSite.create({"name": "site"})
 
         # Prime salt and decryption password creation

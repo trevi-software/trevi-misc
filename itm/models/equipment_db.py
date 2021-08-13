@@ -23,20 +23,20 @@ from odoo import fields, models
 
 
 class ItEquipmentDb(models.Model):
-    _name = "it.equipment.db"
+    _name = "itm.equipment.db"
     _description = "Database"
 
     name = fields.Char(required=True)
     codification = fields.Char()
     description = fields.Text()
-    setting_ids = fields.One2many("it.equipment.dbsetting", "db_id", "Settings")
-    engine_id = fields.Many2one("it.equipment.db.engine", "Database Engine")
-    application_id = fields.Many2one("it.application", "Application")
-    equipment_id = fields.Many2one("it.equipment", "Asset", ondelete="restrict")
+    setting_ids = fields.One2many("itm.equipment.dbsetting", "db_id", "Settings")
+    engine_id = fields.Many2one("itm.equipment.db.engine", "Database Engine")
+    application_id = fields.Many2one("itm.application", "Application")
+    equipment_id = fields.Many2one("itm.equipment", "Asset", ondelete="restrict")
 
 
 class ItEquipmentDbEngine(models.Model):
-    _name = "it.equipment.db.engine"
+    _name = "itm.equipment.db.engine"
     _description = "Database Engine"
 
     name = fields.Char(required=True)

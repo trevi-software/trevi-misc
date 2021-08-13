@@ -23,10 +23,10 @@ from odoo import fields, models
 
 
 class ItEquipmentRule(models.Model):
-    _name = "it.equipment.rule"
+    _name = "itm.equipment.rule"
     _description = "Router Rule"
 
-    equipment_id = fields.Many2one("it.equipment", "Asset", ondelete="cascade")
+    equipment_id = fields.Many2one("itm.equipment", "Asset", ondelete="cascade")
     name = fields.Char(required=True)
     source_port = fields.Char()
     destination_port = fields.Char()

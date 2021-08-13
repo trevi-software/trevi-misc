@@ -23,7 +23,7 @@ from odoo import fields, models
 
 
 class ItApplication(models.Model):
-    _name = "it.application"
+    _name = "itm.application"
     _description = "Application"
 
     name = fields.Char(required=True)
@@ -37,7 +37,7 @@ class ItApplication(models.Model):
     developer = fields.Char("Developer")
     link_download = fields.Char("Download Link")
     link_page = fields.Char("Link")
-    license_id = fields.Many2one("it.application.license", "License")
+    license_id = fields.Many2one("itm.application.license", "License")
     license_type = fields.Selection(
         [("opensource", "OPEN SOURCE"), ("closedsource", "COMMERCIAL")],
         required=True,
@@ -47,13 +47,13 @@ class ItApplication(models.Model):
     documentation_filename = fields.Char()
     note = fields.Text()
     equipment_ids = fields.Many2many(
-        "it.equipment",
+        "itm.equipment",
         "equipment_application_rel",
         "application_id",
         "equipment_id",
         "Assets",
     )
-    db_ids = fields.One2many("it.equipment.db", "application_id", "Databases")
+    db_ids = fields.One2many("itm.equipment.db", "application_id", "Databases")
     # Closed Source
     key = fields.Char()
     keygen = fields.Binary()

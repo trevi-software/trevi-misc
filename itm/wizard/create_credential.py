@@ -6,7 +6,7 @@ from odoo import api, fields, models
 
 
 class NewCredential(models.TransientModel):
-    _name = "it.wizard.credential"
+    _name = "itm.wizard.credential"
     _description = "Create New Credential Wizard"
 
     @api.model
@@ -17,16 +17,16 @@ class NewCredential(models.TransientModel):
         _l.warning("_get_aduser: %s", self.env.context.get("active_id"))
         active_id = self.env.context.get("active_id")
         if active_id:
-            ad = self.env["it.service.ad.object"].browse(active_id)
+            ad = self.env["itm.service.ad.object"].browse(active_id)
             return ad.id
         return False
 
     name = fields.Char(required=True)
     password = fields.Char(required=True)
-    aduser_id = fields.Many2one("it.service.ad.object", "AD User", default=_get_aduser)
-    equipment_id = fields.Many2one("it.equipment", "Asset")
-    ad_id = fields.Many2one("it.service.ad", "Active Directory")
-    site_id = fields.Many2one("it.site", "Site")
+    aduser_id = fields.Many2one("itm.service.ad.object", "AD User", default=_get_aduser)
+    equipment_id = fields.Many2one("itm.equipment", "Asset")
+    ad_id = fields.Many2one("itm.service.ad", "Active Directory")
+    site_id = fields.Many2one("itm.site", "Site")
     partner_id = fields.Many2one("res.partner", "Partner")
     use_random = fields.Boolean("Random password")
 
@@ -48,7 +48,7 @@ class NewCredential(models.TransientModel):
 
     @api.onchange("use_random")
     def onchange_use_random(self):
-        ItAccess = self.env["it.access"]
+        ItAccess = self.env["itm.access"]
         if self.use_random:
             self.password = ItAccess.get_random_string()
 
@@ -66,7 +66,7 @@ class NewCredential(models.TransientModel):
             "partner_id": self.partner_id.id,
             "equipment_id": self.equipment_id.id,
         }
-        cred = self.env["it.access"].create(cred_vals)
+        cred = self.env["itm.access"].create(cred_vals)
         self.aduser_id.access_id = cred
 
     @api.model

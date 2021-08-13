@@ -23,7 +23,7 @@ from odoo import fields, models
 
 
 class ItServiceVpn(models.Model):
-    _name = "it.service.vpn"
+    _name = "itm.service.vpn"
     _description = "VPN Service"
 
     name = fields.Char(required=True)

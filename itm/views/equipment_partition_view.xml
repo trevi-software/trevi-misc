@@ -23,9 +23,9 @@
         <!-- Partitions -->
 
         <!-- Create view for partition -->
-        <record model="ir.ui.view" id="it_equipment_partition_form">
-            <field name="name">it.equipment.partition.form</field>
-            <field name="model">it.equipment.partition</field>
+        <record model="ir.ui.view" id="itm_equipment_partition_form">
+            <field name="name">itm.equipment.partition.form</field>
+            <field name="model">itm.equipment.partition</field>
             <field name="arch" type="xml">
                 <form string="Enter a partition entry">
                     <group>
@@ -45,9 +45,9 @@
         </record>
 
         <!-- Tree view for partition grill on equipments -->
-        <record model="ir.ui.view" id="it_equipment_partition_tree">
-            <field name="name">it.equipment.partition.tree</field>
-            <field name="model">it.equipment.partition</field>
+        <record model="ir.ui.view" id="itm_equipment_partition_tree">
+            <field name="name">itm.equipment.partition.tree</field>
+            <field name="model">itm.equipment.partition</field>
             <field name="arch" type="xml">
                 <tree string="Partitions">
                     <field name="name" />

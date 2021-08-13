@@ -7,7 +7,7 @@ from odoo.exceptions import ValidationError
 
 
 class ItSite(models.Model):
-    _name = "it.site"
+    _name = "itm.site"
     _inherit = ["mail.activity.mixin", "mail.thread"]
     _description = "IT Site"
 
@@ -33,38 +33,40 @@ class ItSite(models.Model):
         string="Assets",
         store=True,
     )
-    equipment_ids = fields.One2many("it.equipment", "site_id", "Asset{s)")
+    equipment_ids = fields.One2many("itm.equipment", "site_id", "Asset{s)")
     access_count = fields.Integer(
         compute="_compute_access_count", string="Credentials", store=False
     )
     active = fields.Boolean(default=True, tracking=True)
-    access_ids = fields.One2many("it.access", "site_id", "Credential(s)")
-    ad_ids = fields.One2many("it.service.ad", "site_id", "Active Directory")
-    network_ids = fields.One2many("it.site.network", "site_id", string="Networks")
+    access_ids = fields.One2many("itm.access", "site_id", "Credential(s)")
+    ad_ids = fields.One2many("itm.service.ad", "site_id", "Active Directory")
+    network_ids = fields.One2many("itm.site.network", "site_id", string="Networks")
 
 
 class ItSiteNetwork(models.Model):
-    _name = "it.site.network"
+    _name = "itm.site.network"
     _description = "Network"
 
-    site_id = fields.Many2one("it.site", "Site")
+    site_id = fields.Many2one("itm.site", "Site")
     name = fields.Char(string="Domain", required=True)
     subnet = fields.Char(required=True)
     netmask = fields.Char(required=True)
-    default_gw = fields.Many2one("it.site.network.ip4", "Default Gateway")
-    dns_ids = fields.Many2many(comodel_name="it.site.network.ip4", string="DNS Servers")
-    dhcp4_ids = fields.One2many("it.service.dhcp4", "network_id", "DHCP")
+    default_gw = fields.Many2one("itm.site.network.ip4", "Default Gateway")
+    dns_ids = fields.Many2many(
+        comodel_name="itm.site.network.ip4", string="DNS Servers"
+    )
+    dhcp4_ids = fields.One2many("itm.service.dhcp4", "network_id", "DHCP")
 
 
 class ItSiteNetworkIp4(models.Model):
-    _name = "it.site.network.ip4"
+    _name = "itm.site.network.ip4"
     _description = "Network IPv4 Address"
 
     name = fields.Char(required=True)
 
     @api.constrains("name")
     def check_name(self):
-        IpAddr = self.env["it.site.network.ip4"]
+        IpAddr = self.env["itm.site.network.ip4"]
         for rec in self:
             duplicates = IpAddr.search([("name", "=", rec.name), ("id", "!=", rec.id)])
             if duplicates:

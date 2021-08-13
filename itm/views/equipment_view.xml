@@ -22,14 +22,14 @@
 
         <!-- Action for Buttons -->
         <record id="act_equipment_2_access" model="ir.actions.act_window">
-            <field name="res_model">it.access</field>
+            <field name="res_model">itm.access</field>
             <field name="name">Credentials</field>
             <field name="view_mode">tree,form</field>
             <field name="context">{'search_default_equipment_id': active_id }</field>
         </record>
 
         <record id="act_equipment_2_equipment" model="ir.actions.act_window">
-            <field name="res_model">it.equipment</field>
+            <field name="res_model">itm.equipment</field>
             <field name="name">Guests</field>
             <field name="view_mode">tree,form</field>
             <field name="context">
@@ -41,16 +41,16 @@
         </record>
 
         <record id="act_equipment_2_backup" model="ir.actions.act_window">
-            <field name="res_model">it.backup</field>
+            <field name="res_model">itm.backup</field>
             <field name="name">Backups</field>
             <field name="view_mode">tree,form</field>
             <field name="context">{'search_default_equipment_id': active_id }</field>
         </record>
 
         <!-- Assets -->
-        <record model="ir.ui.view" id="it_equipment_tree">
-            <field name="name">it.equipment.tree</field>
-            <field name="model">it.equipment</field>
+        <record model="ir.ui.view" id="itm_equipment_tree">
+            <field name="name">itm.equipment.tree</field>
+            <field name="model">itm.equipment</field>
             <field name="arch" type="xml">
                 <tree string="Assets">
                     <field name="name" />
@@ -63,9 +63,9 @@
             </field>
         </record>
 
-        <record model="ir.ui.view" id="it_equipment_form">
-            <field name="name">it.equipment.form</field>
-            <field name="model">it.equipment</field>
+        <record model="ir.ui.view" id="itm_equipment_form">
+            <field name="name">itm.equipment.form</field>
+            <field name="model">itm.equipment</field>
             <field name="arch" type="xml">
                 <form string="Assets">
                     <sheet>
@@ -144,7 +144,7 @@
                             </group>
                         </group>
                         <notebook>
-                            <page string="Configuration" groups="it_infrastructure.group_it_mod">
+                            <page string="Configuration" groups="itm.group_itm_mod">
                                 <group>
                                     <group string="Equipment Type">
                                         <field name="equipment_type" />
@@ -351,7 +351,7 @@
                             <page string="Worklog">
                                 <field name="worklog_ids" nolabel="1" colspan="4" />
                             </page>
-                            <page string="Audit Data" groups="it_infrastructure.group_it_mod">
+                            <page string="Audit Data" groups="itm.group_itm_mod">
                                 <group>
                                     <group>
                                         <field name="create_uid" />
@@ -374,9 +374,9 @@
             </field>
         </record>
 
-        <record model="ir.ui.view" id="it_equipment_search">
-            <field name="name">it.equipment.search</field>
-            <field name="model">it.equipment</field>
+        <record model="ir.ui.view" id="itm_equipment_search">
+            <field name="name">itm.equipment.search</field>
+            <field name="model">itm.equipment</field>
             <field name="arch" type="xml">
                 <search string="Asset">
                     <!--Searchs-->
@@ -506,17 +506,17 @@
             </field>
         </record>
 
-        <record id="it_equipment_action" model="ir.actions.act_window">
+        <record id="itm_equipment_action" model="ir.actions.act_window">
             <field name="name">IT Assets</field>
-            <field name="res_model">it.equipment</field>
+            <field name="res_model">itm.equipment</field>
             <field name="view_mode">tree,form</field>
         </record>
 
         <menuitem
-            action="it_equipment_action"
-            id="it_equipment"
+            action="itm_equipment_action"
+            id="itm_equipment"
             sequence="20"
-            parent="it_menu_general"
+            parent="itm_menu_general"
         />
 
     </data>

@@ -23,7 +23,7 @@ from odoo import fields, models
 
 
 class ItEquipmentConfiguration(models.Model):
-    _name = "it.equipment.configuration"
+    _name = "itm.equipment.configuration"
     _description = "Equipment Configuration"
 
     _order = "date desc"
@@ -32,4 +32,4 @@ class ItEquipmentConfiguration(models.Model):
     date = fields.Datetime(default=fields.Datetime.now())
     config_file = fields.Binary("Configuration File")
     config_file_filename = fields.Char("Configuration File Filename")
-    equipment_id = fields.Many2one("it.equipment", "Asset", ondelete="restrict")
+    equipment_id = fields.Many2one("itm.equipment", "Asset", ondelete="restrict")

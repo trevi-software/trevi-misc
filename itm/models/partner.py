@@ -41,9 +41,9 @@ class ResPartner(models.Model):
             partner.backup_count = len(partner.backup_ids)
 
     manage_it = fields.Boolean("Manage IT")
-    equipment_ids = fields.One2many("it.equipment", "partner_id", "Assets")
+    equipment_ids = fields.One2many("itm.equipment", "partner_id", "Assets")
     equipment_count = fields.Integer(compute=_equipment_count)
-    access_ids = fields.One2many("it.access", "partner_id", "Credentials")
+    access_ids = fields.One2many("itm.access", "partner_id", "Credentials")
     access_count = fields.Integer(compute=_access_count)
-    backup_ids = fields.One2many("it.backup", "partner_id", "Backups")
+    backup_ids = fields.One2many("itm.backup", "partner_id", "Backups")
     backup_count = fields.Integer(compute=_backup_count)

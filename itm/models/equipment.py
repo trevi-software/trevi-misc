@@ -26,7 +26,7 @@ from odoo.modules.module import get_module_resource
 
 
 class ItEquipmentBrand(models.Model):
-    _name = "it.equipment.brand"
+    _name = "itm.equipment.brand"
     _description = "IT Asset Brand Name"
 
     name = fields.Char(required=True)
@@ -36,7 +36,7 @@ class ItEquipmentBrand(models.Model):
 
 
 class ItEquipment(models.Model):
-    _name = "it.equipment"
+    _name = "itm.equipment"
     _inherit = ["mail.activity.mixin", "mail.thread"]
     _description = "IT Asset"
 
@@ -58,7 +58,7 @@ class ItEquipment(models.Model):
     @api.model
     def _get_default_image(self):
         image_path = get_module_resource(
-            "it", "static/src/img", "default_image_equipment.png"
+            "itm", "static/src/img", "default_image_equipment.png"
         )
         return base64.b64encode(open(image_path, "rb").read())
 
@@ -66,20 +66,20 @@ class ItEquipment(models.Model):
     def _get_partner_id(self):
         # Get the partner from either asset or site
         #
-        if self.env.context.get("active_model") == "it.equipment":
-            equip = self.env["it.equipment"].browse(self.env.context.get("active_id"))
+        if self.env.context.get("active_model") == "itm.equipment":
+            equip = self.env["itm.equipment"].browse(self.env.context.get("active_id"))
             if equip.partner_id:
                 return equip.partner_id.id
-        elif self.env.context.get("active_model") == "it.site":
-            site = self.env["it.site"].browse(self.env.context.get("active_id"))
+        elif self.env.context.get("active_model") == "itm.site":
+            site = self.env["itm.site"].browse(self.env.context.get("active_id"))
             if site.partner_id:
                 return site.partner_id.id
         return False
 
     @api.model
     def _get_site_id(self):
-        if self.env.context.get("active_model") == "it.equipment":
-            equip = self.env["it.equipment"].browse(self.env.context.get("active_id"))
+        if self.env.context.get("active_model") == "itm.equipment":
+            equip = self.env["itm.equipment"].browse(self.env.context.get("active_id"))
             if equip.site_id:
                 return equip.site_id.id
         return False
@@ -91,26 +91,26 @@ class ItEquipment(models.Model):
         default=lambda self: self.env.company,
     )
     site_id = fields.Many2one(
-        "it.site", "Site", required=True, tracking=True, default=_get_site_id
+        "itm.site", "Site", required=True, tracking=True, default=_get_site_id
     )
     active = fields.Boolean(default=True, tracking=True)
     # Counts
     access_count = fields.Integer(
         compute="_compute_access_count", string="Credentials Count", store=False
     )
-    access_ids = fields.One2many("it.access", "equipment_id", string="Credentials")
+    access_ids = fields.One2many("itm.access", "equipment_id", string="Credentials")
     backup_count = fields.Integer(compute="_compute_backup_count")
-    backup_ids = fields.One2many("it.backup", "equipment_id", "Backups")
+    backup_ids = fields.One2many("itm.backup", "equipment_id", "Backups")
     virtual_count = fields.Integer(
         compute="_compute_virtual_count", string="Guests", store=False
     )
-    virtual_ids = fields.One2many("it.equipment", "virtual_parent_id", "Guest(s)")
+    virtual_ids = fields.One2many("itm.equipment", "virtual_parent_id", "Guest(s)")
     # General Info
     identification = fields.Char(
         compute="_compute_identification", string="Complete Name", store=True
     )
     name = fields.Char("Name", required=True, tracking=True)
-    brand_id = fields.Many2one("it.equipment.brand", "Brand")
+    brand_id = fields.Many2one("itm.equipment.brand", "Brand")
     model = fields.Char()
     partner_id = fields.Many2one(
         "res.partner",
@@ -121,7 +121,7 @@ class ItEquipment(models.Model):
         default=_get_partner_id,
     )
     function_ids = fields.Many2many(
-        "it.equipment.function",
+        "itm.equipment.function",
         "equipment_function_rel",
         "equipment_id",
         "function_id",
@@ -135,7 +135,7 @@ class ItEquipment(models.Model):
     )
     # Applications Page
     application_ids = fields.Many2many(
-        "it.application",
+        "itm.application",
         "equipment_application_rel",
         "equipment_id",
         "application_id",
@@ -173,7 +173,7 @@ class ItEquipment(models.Model):
     function_database = fields.Boolean("Database Server")
     # Worklogs Page
     worklog_ids = fields.One2many(
-        "it.equipment.worklog",
+        "itm.equipment.worklog",
         "equipment_id",
         "Worklogs on this equipment",
         tracking=True,
@@ -186,7 +186,7 @@ class ItEquipment(models.Model):
     contract_direction = fields.Char("Invoice Direction")
     # Virtual Machine Page
     virtual_parent_id = fields.Many2one(
-        "it.equipment", "Virtual Machine", domain="[('function_host','=',1)]"
+        "itm.equipment", "Virtual Machine", domain="[('function_host','=',1)]"
     )
     virtual_memory_amount = fields.Char("Memory")
     virtual_disk_amount = fields.Char("Disk Size")
@@ -194,22 +194,22 @@ class ItEquipment(models.Model):
     virtual_network_amount = fields.Char("Number of Network")
     # Partition Page
     partitions_ids = fields.One2many(
-        "it.equipment.partition", "equipment_id", "Partitions on this equipment"
+        "itm.equipment.partition", "equipment_id", "Partitions on this equipment"
     )
     # Router Page
     router_dmz = fields.Char("DMZ")
     router_forward_ids = fields.One2many(
-        "it.equipment.forward", "equipment_id", "Forward Rules", tracking=True
+        "itm.equipment.forward", "equipment_id", "Forward Rules", tracking=True
     )
     router_rules_ids = fields.One2many(
-        "it.equipment.rule",
+        "itm.equipment.rule",
         "equipment_id",
         "Firewall Rules",
         tracking=True,
     )
     # Network Configuration
     equipment_network_ids = fields.One2many(
-        "it.equipment.network",
+        "itm.equipment.network",
         "equipment_id",
         "Network on this equipment",
         tracking=True,
@@ -222,7 +222,7 @@ class ItEquipment(models.Model):
     product_note = fields.Text("Product Note")
     # Fileserver Page
     equipment_mapping_ids = fields.One2many(
-        "it.equipment.mapping",
+        "itm.equipment.mapping",
         "equipment_id",
         "Network Shares",
         tracking=True,
@@ -230,20 +230,20 @@ class ItEquipment(models.Model):
     # OS Page
     os_name = fields.Char("OS Name")
     # Services
-    ad_service_id = fields.Many2one("it.service.ad", "Active Directory")
-    dhcp_service_id = fields.Many2one("it.service.dhcp4", "DHCP")
-    wireless_service_id = fields.Many2one("it.service.wireless", "Wireless Service")
-    proxy_service_id = fields.Many2one("it.service.proxy", "Proxy Service")
-    vpn_service_id = fields.Many2one("it.service.vpn", "VPN Service")
+    ad_service_id = fields.Many2one("itm.service.ad", "Active Directory")
+    dhcp_service_id = fields.Many2one("itm.service.dhcp4", "DHCP")
+    wireless_service_id = fields.Many2one("itm.service.wireless", "Wireless Service")
+    proxy_service_id = fields.Many2one("itm.service.proxy", "Proxy Service")
+    vpn_service_id = fields.Many2one("itm.service.vpn", "VPN Service")
     # Database Page
-    db_ids = fields.One2many("it.equipment.db", "equipment_id", "Databases")
+    db_ids = fields.One2many("itm.equipment.db", "equipment_id", "Databases")
     use_proxy = fields.Boolean("Use Proxy")
     proxy_client_config_id = fields.Many2one(
-        "it.equipment.network.proxy", "Proxy Configuration"
+        "itm.equipment.network.proxy", "Proxy Configuration"
     )
     # Store Config File Page
     configuration_file_ids = fields.One2many(
-        "it.equipment.configuration", "equipment_id", "Configuration Files"
+        "itm.equipment.configuration", "equipment_id", "Configuration Files"
     )
 
     # Log a note on creation of equipment to Site and Equipment chatter.
@@ -255,7 +255,7 @@ class ItEquipment(models.Model):
         author = self.env.user.partner_id and self.env.user.partner_id.id or False
         msg = _(
             '<div class="o_mail_notification"><ul><li>A new %s was created: \
-                <a href="#" class="o_redirect" data-oe-model=it.equipment data-oe-id="%s"> \
+                <a href="#" class="o_redirect" data-oe-model=itm.equipment data-oe-id="%s"> \
                 %s</a></li></ul></div>',
             res._description,
             res.id,
@@ -298,7 +298,7 @@ class ItEquipment(models.Model):
                         {"id": res.id, "name": res.name}
                     )
 
-        Site = self.env["it.site"]
+        Site = self.env["itm.site"]
         for k, v in sites.items():
             msg = ""
             for r in v:
@@ -310,7 +310,7 @@ class ItEquipment(models.Model):
                 body=note, subtype_id=mt_note.id, author_id=author
             )
 
-        Equipment = self.env["it.equipment"]
+        Equipment = self.env["itm.equipment"]
         for k, v in equips.items():
             msg = ""
             for r in v:

@@ -23,7 +23,7 @@ from odoo import fields, models
 
 
 class ItApplicationLicense(models.Model):
-    _name = "it.application.license"
+    _name = "itm.application.license"
     _description = "License"
 
     name = fields.Char(required=True)

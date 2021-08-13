@@ -23,10 +23,10 @@ from odoo import fields, models
 
 
 class ItEquipmentIpreservation(models.Model):
-    _name = "it.equipment.ipreservation"
+    _name = "itm.equipment.ipreservation"
     _description = "IP Reservation"
 
     name = fields.Char(required=True, string="Description")
     mac_address = fields.Char(required=True)
-    ip_address = fields.Many2one("it.site.network.ip4", "IP address", required=True)
-    dhcp_id = fields.Many2one("it.service.dhcp4", "DHCP Service", ondelete="cascade")
+    ip_address = fields.Many2one("itm.site.network.ip4", "IP address", required=True)
+    dhcp_id = fields.Many2one("itm.service.dhcp4", "DHCP Service", ondelete="cascade")

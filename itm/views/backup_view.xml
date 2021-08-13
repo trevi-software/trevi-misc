@@ -20,9 +20,9 @@
     <data>
 
         <!-- Backup -->
-        <record model="ir.ui.view" id="it_backup_tree">
-            <field name="name">it.backup.tree</field>
-            <field name="model">it.backup</field>
+        <record model="ir.ui.view" id="itm_backup_tree">
+            <field name="name">itm.backup.tree</field>
+            <field name="model">itm.backup</field>
             <field name="arch" type="xml">
                 <tree string="Backup">
                     <field name="equipment_id" />
@@ -37,9 +37,9 @@
             </field>
         </record>
 
-        <record model="ir.ui.view" id="it_backup_form">
-            <field name="name">it.backup.form</field>
-            <field name="model">it.backup</field>
+        <record model="ir.ui.view" id="itm_backup_form">
+            <field name="name">itm.backup.form</field>
+            <field name="model">itm.backup</field>
             <field name="arch" type="xml">
                 <form string="Backup">
                     <sheet>
@@ -77,7 +77,7 @@
                                     <field name="script_location" widget="url" />
                                 </group>
                             </page>
-                            <page string="Audit Data" groups="it_infrastructure.group_it_mod">
+                            <page string="Audit Data" groups="itm.group_itm_mod">
                                 <group>
                                     <group>
                                         <field name="create_uid" />
@@ -89,7 +89,7 @@
                                     </group>
                                 </group>
                             </page>
-                            <page string="Configuration" groups="it_infrastructure.group_it_mod">
+                            <page string="Configuration" groups="itm.group_itm_mod">
                                 <group>
                                     <group>
                                         <field name="active" />
@@ -107,9 +107,9 @@
             </field>
         </record>
 
-        <record model="ir.ui.view" id="it_backup_search">
-            <field name="name">it.backup.search</field>
-            <field name="model">it.backup</field>
+        <record model="ir.ui.view" id="itm_backup_search">
+            <field name="name">itm.backup.search</field>
+            <field name="model">itm.backup</field>
             <field name="arch" type="xml">
                 <search string="Backup">
                     <!--Searchs-->
@@ -153,17 +153,17 @@
             </field>
         </record>
 
-        <record model="ir.actions.act_window" id="it_backup_action">
+        <record model="ir.actions.act_window" id="itm_backup_action">
             <field name="name">Backups</field>
-            <field name="res_model">it.backup</field>
+            <field name="res_model">itm.backup</field>
             <field name="view_mode">tree,form</field>
         </record>
 
         <menuitem
-            action="it_backup_action"
-            id="it_backup"
+            action="itm_backup_action"
+            id="itm_backup"
             sequence="30"
-            parent="it_menu_general"
+            parent="itm_menu_general"
         />
 
     </data>

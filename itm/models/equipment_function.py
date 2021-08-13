@@ -22,7 +22,7 @@ from odoo import fields, models
 
 
 class ItEquipmentFunction(models.Model):
-    _name = "it.equipment.function"
+    _name = "itm.equipment.function"
     _description = "IT Function"
 
     name = fields.Char(required=True)

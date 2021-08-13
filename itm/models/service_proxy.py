@@ -23,7 +23,7 @@ from odoo import fields, models
 
 
 class ItServiceProxy(models.Model):
-    _name = "it.service.proxy"
+    _name = "itm.service.proxy"
     _description = "Network Proxy Service"
 
     name = fields.Char(required=True)

@@ -23,25 +23,25 @@ from odoo import fields, models
 
 
 class ItEquipmentPartition(models.Model):
-    _name = "it.equipment.partition"
+    _name = "itm.equipment.partition"
     _description = "Partition"
 
-    equipment_id = fields.Many2one("it.equipment", "Asset", ondelete="cascade")
+    equipment_id = fields.Many2one("itm.equipment", "Asset", ondelete="cascade")
     name = fields.Char("Identificator", required=True)
     disks = fields.Char(help="Disks splitted by , ")
     type = fields.Char()
     format = fields.Char()
     mount_ids = fields.One2many(
-        "it.equipment.partition.mount", "partition_id", "Mount on this partition"
+        "itm.equipment.partition.mount", "partition_id", "Mount on this partition"
     )
 
 
 class ItEquipmentPartitionMount(models.Model):
-    _name = "it.equipment.partition.mount"
+    _name = "itm.equipment.partition.mount"
     _description = "Partition Mounts"
 
     partition_id = fields.Many2one(
-        "it.equipment.partition", "Partition", ondelete="cascade"
+        "itm.equipment.partition", "Partition", ondelete="cascade"
     )
     name = fields.Char(required=True)
     size = fields.Char()
