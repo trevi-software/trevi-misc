@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+
+        <!-- Tree view-->
+        <record model="ir.ui.view" id="it_equipment_brand_tree">
+            <field name="name">it.equipment.brand.tree</field>
+            <field name="model">it.equipment.brand</field>
+            <field name="arch" type="xml">
+                <tree string="Equipment Brands">
+                    <field name="name" />
+                    <field name="is_computer" />
+                    <field name="is_network" />
+                    <field name="is_accessories" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form view -->
+        <record model="ir.ui.view" id="it_equipment_brand_form">
+            <field name="name">it.equipment.brand.form</field>
+            <field name="model">it.equipment.brand</field>
+            <field name="arch" type="xml">
+                <form string="Equipment Brand">
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                            <field name="is_computer" />
+                            <field name="is_network" />
+                            <field name="is_accessories" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="it_equipment_brand_action" model="ir.actions.act_window">
+            <field name="name">Brands</field>
+            <field name="res_model">it.equipment.brand</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem
+            action="it_equipment_brand_action"
+            id="it_equipment_brand"
+            sequence="50"
+            parent="it_menu_others"
+        />
+
+    </data>
+</odoo>
