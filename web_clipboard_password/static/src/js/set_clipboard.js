@@ -5,7 +5,7 @@
  *
  */
 
-odoo.define('web_clipboard.set_clipboard', function () {
+odoo.define('web_clipboard_password.set_clipboard', function () {
     return function (value) {
         const tempInput = document.createElement("input");
         tempInput.style = "position: absolute; left: -1000px; top: -1000px";

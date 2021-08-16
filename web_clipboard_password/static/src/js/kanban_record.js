@@ -5,9 +5,9 @@
  *
  */
 
-odoo.define('web_clipboard.KanbanRecord', function (require) {
+odoo.define('web_clipboard_password.KanbanRecord', function (require) {
     const KanbanRecord = require("web.KanbanRecord");
-    const setClipboard = require("web_clipboard.set_clipboard");
+    const setClipboard = require("web_clipboard_password.set_clipboard");
     const core = require('web.core');
     const _t = core._t;
 

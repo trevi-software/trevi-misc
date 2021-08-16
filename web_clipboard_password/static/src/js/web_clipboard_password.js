@@ -5,9 +5,9 @@
  *
  */
 
-odoo.define('web_clipboard', function (require) {
+odoo.define('web_clipboard_password', function (require) {
     const InputField = require("web.basic_fields").InputField;
-    const setClipboard = require("web_clipboard.set_clipboard");
+    const setClipboard = require("web_clipboard_password.set_clipboard");
     const field_registry = require('web.field_registry');
     const core = require('web.core');
     const _t = core._t;

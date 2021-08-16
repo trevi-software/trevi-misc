@@ -1,14 +1,15 @@
+# Copyright 2021 TREVI Software <support@trevi.et>
 # Copyright 2017 - 2018 Modoolar <info@modoolar.com>
 # License LGPLv3.0 or later (https://www.gnu.org/licenses/lgpl-3.0.en.html).
 {
     "name": "Web clipboard",
     "summary": """
-                This module extends input field so that it can be quickly
-                copied to clipboard.""",
-    "author": "Modoolar",
-    "website": "https://modoolar.com",
+                This module extends a password input field so that it can be
+                copied to clipboard or show the password.""",
+    "author": "TREVI Software, Modoolar",
+    "website": "https://trevi.et",
     "category": "Tools",
-    "version": "11.0.1.0.0",
+    "version": "14.0.1.0.0",
     "license": "LGPL-3",
     "images": ["static/description/banner.png"],
     "depends": [
