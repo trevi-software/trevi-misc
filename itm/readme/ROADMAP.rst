@@ -1,0 +1,1 @@
+* The password for encrypting and decrypting credentials is stored in Odoo as a system parameter. An attacker who has the 'Administration/Settings' priviledge or has access to the Odoo database itself can easily decrypt a credential's password field.
