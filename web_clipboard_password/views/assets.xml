@@ -6,9 +6,7 @@
 <odoo>
     <template id="assets_backend" name="web_clipboard_password assets" inherit_id="web.assets_backend">
         <xpath expr="." position="inside">
-            <script type="text/javascript" src="/web_clipboard_password/static/src/js/set_clipboard.js"/>
             <script type="text/javascript" src="/web_clipboard_password/static/src/js/web_clipboard_password.js"/>
-            <script type="text/javascript" src="/web_clipboard_password/static/src/js/kanban_record.js"/>
         </xpath>
     </template>
 </odoo>
