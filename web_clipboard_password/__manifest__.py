@@ -7,7 +7,7 @@
                 This module extends a password input field so that it can be
                 copied to clipboard or show the password.""",
     "author": "TREVI Software, Modoolar",
-    "website": "https://trevi.et",
+    "website": "https://github.com/trevi-software/trevi-misc",
     "category": "Tools",
     "version": "14.0.1.0.0",
     "license": "LGPL-3",
@@ -15,7 +15,6 @@
     "depends": [
         "web",
     ],
-
     "data": [
         "views/assets.xml",
     ],
