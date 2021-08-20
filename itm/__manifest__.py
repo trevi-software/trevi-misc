@@ -4,7 +4,7 @@
 
 {
     "name": "IT Infrastructure Management",
-    "version": "14.0.1.0.0",
+    "version": "14.0.1.0.1",
     "license": "AGPL-3",
     "category": "IT Infrastructure Management",
     "summary": """IT Assets, Credentials, Backups, Applications.""",
@@ -15,7 +15,7 @@
         "static/src/img/main_screenshot.png",
         "static/src/img/default_image_equipment.png",
     ],
-    "depends": ["mail", "product"],
+    "depends": ["mail", "product", "web"],
     "data": [
         "security/it_security.xml",
         "security/ir.model.access.csv",
@@ -42,6 +42,7 @@
         "views/site_view.xml",
         "views/service_ad_view.xml",
         "views/service_dhcp_view.xml",
+        "views/assets.xml",
     ],
     "demo": [],
     "test": [],

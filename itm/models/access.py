@@ -12,7 +12,6 @@ from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 
 from odoo import _, api, fields, models
-from odoo.exceptions import AccessDenied
 
 PARAM_PASS = "itm_passkey"
 PARAM_SALT = "itm_salt"
@@ -79,15 +78,19 @@ class ItAccess(models.Model):
         cipher = f.encrypt(plaintext.encode())
         return base64.urlsafe_b64encode(cipher)
 
-    def decrypt_password(self):
+    @api.model
+    def decrypt_password_as_string(self, obj_id):
+        """Returns a string representing the plaintext password in record with
+        database ID obj_id."""
 
         key = self.get_urlsafe_key()
         f = Fernet(key)
 
-        for rec in self:
-            token = base64.urlsafe_b64decode(rec.password)
-            password = f.decrypt(token).decode()
-            raise AccessDenied(password)
+        plaintext = False
+        rec = self.browse(obj_id)
+        token = base64.urlsafe_b64decode(rec.password)
+        plaintext = f.decrypt(token).decode()
+        return plaintext
 
     @api.model
     def _get_partner_id(self):
