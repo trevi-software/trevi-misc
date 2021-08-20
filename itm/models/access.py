@@ -41,8 +41,7 @@ class ItAccess(models.Model):
 
     def get_random_password(self):
         for access in self:
-            token = self.encrypt_string(self.get_random_string())
-            access.password = token
+            access.password = self.get_random_string()
 
     def get_urlsafe_key(self):
 
