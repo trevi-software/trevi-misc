@@ -22,12 +22,6 @@ odoo.define('web_clipboard_password', function (require) {
             this.nodeOptions.isCopyable = 'copyable' in this.attrs;
 
         },
-        _renderEdit: function () {
-            this._super.apply(this, arguments);
-            if (this.nodeOptions.isCopyable) {
-                this.$el.append('<a class="btn btn-default o_clipboard_button" href="#"><i class="fa fa-clipboard"/></a>');
-            }
-        },
         _renderReadonly() {
             this._super.apply(this, arguments);
             if (this.nodeOptions.isCopyable) {
