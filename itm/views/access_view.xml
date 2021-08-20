@@ -65,8 +65,12 @@
                                                 name="password"
                                                 password="True"
                                                 nolabel="1"
-                                                style="max-width:300px"
+                                                style="max-width:250px"
                                                 class="oe_inline text-truncate"
+                                            />
+                                            <widget
+                                                name="copy_to_clipboard"
+                                                attrs="{'invisible': [('password', '=', '')]}"
                                             />
                                             <button
                                                 name="get_random_password"
@@ -75,12 +79,6 @@
                                                 groups="itm.group_itm_mod"
                                                 confirm="Are you sure?"
                                                 icon="fa-random"
-                                            />
-                                           <button
-                                                name="decrypt_password"
-                                                type="object"
-                                                string="Decrypt"
-                                                icon="fa-unlock"
                                             />
                                         </div>
                                     </group>
