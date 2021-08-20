@@ -39,3 +39,15 @@ class TestAccess(TransactionCase):
         self.assertEqual("123", self._decrypt(cred.password))
         cred.write({"password": "456"})
         self.assertEqual("456", self._decrypt(cred.password))
+
+    def test_random_password(self):
+        """Random password isn't mangled"""
+
+        # Not sure there's a way to test randomness. Just test that
+        # it's the expected length.
+        #
+        cred = self.ItAccess.create({"name": "a", "site_id": self.defaultSite.id})
+        self.assertFalse(cred.password)
+        cred.get_random_password()
+        strRandom = self.ItAccess.decrypt_password_as_string(cred.id)
+        self.assertEqual(16, len(strRandom))
