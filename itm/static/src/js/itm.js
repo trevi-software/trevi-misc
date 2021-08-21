@@ -38,6 +38,7 @@ odoo.define("itm", function (require) {
                 method: "decrypt_password_as_string",
                 args: [this.res_id],
             }).then(function (plaintext) {
+                // eslint-disable-next-line no-undef
                 var clipboard = new ClipboardJS($clipboardBtn[0], {
                     text: function () {
                         return plaintext;
