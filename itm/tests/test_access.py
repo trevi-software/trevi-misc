@@ -51,3 +51,27 @@ class TestAccess(TransactionCase):
         cred.get_random_password()
         strRandom = self.ItAccess.decrypt_password_as_string(cred.id)
         self.assertEqual(16, len(strRandom))
+
+    def test_uniqueness(self):
+        """Identical passwords have differing encrypted outputs"""
+
+        cred1 = self.ItAccess.create(
+            {
+                "name": "a",
+                "password": "P@$$w0rd",
+                "site_id": self.defaultSite.id,
+            }
+        )
+        cred2 = self.ItAccess.create(
+            {
+                "name": "b",
+                "password": "P@$$w0rd",
+                "site_id": self.defaultSite.id,
+            }
+        )
+        strPass1 = self.ItAccess.decrypt_password_as_string(cred1.id)
+        strPass2 = self.ItAccess.decrypt_password_as_string(cred2.id)
+        self.assertEqual(strPass2, strPass1)
+        token1 = base64.urlsafe_b64decode(cred1.password)
+        token2 = base64.urlsafe_b64decode(cred2.password)
+        self.assertNotEqual(token1, token2)
