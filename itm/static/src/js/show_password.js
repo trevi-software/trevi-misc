@@ -18,8 +18,8 @@ odoo.define("itm.show_password", function (require) {
         }),
         _renderReadonly() {
             this._super.apply(this, arguments);
-            this.$el.text("***************".padEnd(20, "\u00a0"));
             if (this.nodeOptions.isPassword) {
+                this.$el.text("***************".padEnd(20, "\u00a0"));
                 this.$el.append(
                     '<a class="btn btn-default o_show_password" href="#"><i class="fa fa-eye"/></a>'
                 );
