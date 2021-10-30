@@ -21,7 +21,7 @@
     <data>
 
         <record id="itm_component_action" model="ir.actions.act_window">
-            <field name="name">Components</field>
+            <field name="name">Products</field>
             <field name="res_model">product.product</field>
             <field name="view_mode">tree,form</field>
         </record>

@@ -33,6 +33,7 @@ class ItEquipmentBrand(models.Model):
     is_computer = fields.Boolean("Computing Devices")
     is_network = fields.Boolean("Network Devices")
     is_accessories = fields.Boolean("Computing Accessories")
+    is_components = fields.Boolean("Component Devices")
 
 
 class ItEquipment(models.Model):
@@ -54,6 +55,11 @@ class ItEquipment(models.Model):
     def _compute_backup_count(self):
         for equipment in self:
             equipment.backup_count = len(equipment.backup_ids)
+
+    @api.depends("component_ids")
+    def _compute_component_count(self):
+        for equipment in self:
+            equipment.component_count = len(equipment.component_ids)
 
     @api.model
     def _get_default_image(self):
@@ -244,6 +250,11 @@ class ItEquipment(models.Model):
     # Store Config File Page
     configuration_file_ids = fields.One2many(
         "itm.equipment.configuration", "equipment_id", "Configuration Files"
+    )
+    # Components
+    component_count = fields.Integer(compute=_compute_component_count)
+    component_ids = fields.One2many(
+        "itm.equipment.component", "equipment_id", "Components"
     )
 
     # Log a note on creation of equipment to Site and Equipment chatter.
