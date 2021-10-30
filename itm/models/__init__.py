@@ -8,6 +8,7 @@ from . import application
 from . import application_license
 from . import backup
 from . import equipment
+from . import equipment_component
 from . import equipment_configuration
 from . import equipment_db
 from . import equipment_dbsetting
