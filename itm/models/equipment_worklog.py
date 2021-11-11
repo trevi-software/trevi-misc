@@ -34,5 +34,5 @@ class ItEquipmentWorklog(models.Model):
     spent_time = fields.Float()
     equipment_id = fields.Many2one("itm.equipment", "Asset", ondelete="cascade")
     user_id = fields.Many2one(
-        "res.users", "User", required=True, default=lambda self: self.env.user_id.id
+        "res.users", "User", required=True, default=lambda self: self.env.user.id
     )
