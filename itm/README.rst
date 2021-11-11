@@ -35,6 +35,10 @@ Known issues / Roadmap
 Changelog
 =========
 
+14.0.1.1.5 (2021-10-30)
+~~~~~~~~~~~~~~~~~~~~~~~
+* [FIX] An unhandled exception when creating a worklog from Equipment form view
+
 14.0.1.1.4 (2021-10-30)
 ~~~~~~~~~~~~~~~~~~~~~~~
 * [IMP] Add ability to register components (network cards, SATA controllers, etc) and associate them with assets
