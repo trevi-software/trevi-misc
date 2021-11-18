@@ -18,7 +18,8 @@ Available addons
 ----------------
 addon | version | summary
 --- | --- | ---
-[itm](itm/) | 14.0.1.0.3 | IT Assets, Credentials, Backups, Applications.
+[itm](itm/) | 14.0.1.1.5 | IT Assets, Credentials, Backups, Applications.
+[partner_contact_it](partner_contact_it/) | 14.0.1.0.0 | Designate a contact as an IT Contact of the parent company
 [project_portal_hide](project_portal_hide/) | 14.0.1.0.0 | Hide projects &amp; tasks in the customer portal.
 [purchase_portal_hide](purchase_portal_hide/) | 14.0.1.0.0 | Hide purchase orders in the customer portal.
 [sale_portal_hide](sale_portal_hide/) | 14.0.1.0.0 | Hide orders &amp; quotations in the customer portal.
