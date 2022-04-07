@@ -17,7 +17,7 @@ IT Infrastructure Management
     :target: https://github.com/trevi-software/trevi-misc/tree/14.0/itm
     :alt: trevi-software/trevi-misc
 
-|badge1| |badge2| |badge3| 
+|badge1| |badge2| |badge3|
 
 This module is used to record information about a site's IT infrastructure. You can record information about equipment, software, backups, networks and access credentials.
 
@@ -77,6 +77,7 @@ Authors
 
 * TREVI Software
 * Leandro Ezequiel Baldi
+* Altela Eleviansyah Pramardhika
 
 Other credits
 ~~~~~~~~~~~~~
