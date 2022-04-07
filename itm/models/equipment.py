@@ -97,7 +97,7 @@ class ItEquipment(models.Model):
         default=lambda self: self.env.company,
     )
     site_id = fields.Many2one(
-        "itm.site", "Site", required=True, tracking=True, default=_get_site_id
+        "itm.site", "Site", required=True, tracking=True, default=_get_site_id, help="A site or place of which this device is deployed"
     )
     active = fields.Boolean(default=True, tracking=True)
     # Counts
@@ -115,7 +115,7 @@ class ItEquipment(models.Model):
     identification = fields.Char(
         compute="_compute_identification", string="Complete Name", store=True
     )
-    name = fields.Char("Name", required=True, tracking=True)
+    name = fields.Char("Name", required=True, tracking=True, help="A device name, eg. Scanner")
     brand_id = fields.Many2one("itm.equipment.brand", "Brand")
     model = fields.Char()
     partner_id = fields.Many2one(
@@ -125,6 +125,7 @@ class ItEquipment(models.Model):
         domain="[('manage_it','=',1)]",
         tracking=True,
         default=_get_partner_id,
+        help="A partner or user which are using this device"
     )
     function_ids = fields.Many2many(
         "itm.equipment.function",
@@ -132,8 +133,9 @@ class ItEquipment(models.Model):
         "equipment_id",
         "function_id",
         "Functions",
+        help="Defining the function of the devices, eg. scanning"
     )
-    description = fields.Char("Description", required=False)
+    description = fields.Char("Description", required=False, help="A device description, eg. 'A basic scanner device for scanning paper into .pdf files' ")
     image = fields.Binary(
         "Photo",
         default=_get_default_image,
@@ -234,7 +236,7 @@ class ItEquipment(models.Model):
         tracking=True,
     )
     # OS Page
-    os_name = fields.Char("OS Name")
+    os_name = fields.Char("OS Name", help="Operating system which is installed on device, eg. Windows 10, Ubuntu")
     # Services
     ad_service_id = fields.Many2one("itm.service.ad", "Active Directory")
     dhcp_service_id = fields.Many2one("itm.service.dhcp4", "DHCP")
