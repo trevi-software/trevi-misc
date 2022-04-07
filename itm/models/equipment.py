@@ -167,18 +167,20 @@ class ItEquipment(models.Model):
         "Equipment Type",
         required=True,
         default=_get_type,
+        help="PHYSICAL means that the asset or device can be physically touched\n VIRTUAL means the asset or device is virtually deployed inside a pyshical device\n PRODUCT means that the asset or device can be physical or virtual but packed as a product along with certain attributes (barcodes, etc)\n OTHER is option for asset or device that beyond the registered specification"
+
     )
-    is_contracted = fields.Boolean("Contracted Service")
-    is_partitioned = fields.Boolean("Partitions")
-    is_backup = fields.Boolean("Backup")
+    is_contracted = fields.Boolean("Contracted Service", help="This asset or device is contracted")
+    is_partitioned = fields.Boolean("Partitions", help="This device is partitioned")
+    is_backup = fields.Boolean("Backup", help="This asset or device is a backup")
     is_os = fields.Boolean("Operating System")
-    is_application = fields.Boolean("Application")
-    is_config_file = fields.Boolean("Store Config Files")
+    is_application = fields.Boolean("Application", help="This asset or device is an application")
+    is_config_file = fields.Boolean("Store Config Files", help="Has a configuration files")
     # Config Page - Functions
-    function_fileserver = fields.Boolean("File Server")
-    function_host = fields.Boolean("Host")
-    function_router = fields.Boolean("Router")
-    function_database = fields.Boolean("Database Server")
+    function_fileserver = fields.Boolean("File Server", help="This asset or device is a fileserver")
+    function_host = fields.Boolean("Host", help="This asset or device is a host")
+    function_router = fields.Boolean("Router", help="This asset or device is a network router")
+    function_database = fields.Boolean("Database Server", help="This asset or device is a database server")
     # Worklogs Page
     worklog_ids = fields.One2many(
         "itm.equipment.worklog",
@@ -238,8 +240,8 @@ class ItEquipment(models.Model):
     # OS Page
     os_name = fields.Char("OS Name", help="Operating system which is installed on device, eg. Windows 10, Ubuntu")
     # Services
-    ad_service_id = fields.Many2one("itm.service.ad", "Active Directory")
-    dhcp_service_id = fields.Many2one("itm.service.dhcp4", "DHCP")
+    ad_service_id = fields.Many2one("itm.service.ad", "Active Directory", help="Domain Active Directory that related to this asset")
+    dhcp_service_id = fields.Many2one("itm.service.dhcp4", "DHCP", help="Domain Host Control Protocol address which related to this asset")
     wireless_service_id = fields.Many2one("itm.service.wireless", "Wireless Service")
     proxy_service_id = fields.Many2one("itm.service.proxy", "Proxy Service")
     vpn_service_id = fields.Many2one("itm.service.vpn", "VPN Service")
