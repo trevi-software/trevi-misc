@@ -206,7 +206,7 @@ class ItEquipment(models.Model):
     virtual_network_amount = fields.Char("Number of Network")
     # Partition Page
     partitions_ids = fields.One2many(
-        "itm.equipment.partition", "equipment_id", "Partitions on this equipment"
+        "itm.equipment.partition", "equipment_id", "Partitions on this equipment", help="Partition on this equipment"
     )
     # Router Page
     router_dmz = fields.Char("DMZ")
