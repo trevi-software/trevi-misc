@@ -211,13 +211,14 @@ class ItEquipment(models.Model):
     # Router Page
     router_dmz = fields.Char("DMZ")
     router_forward_ids = fields.One2many(
-        "itm.equipment.forward", "equipment_id", "Forward Rules", tracking=True
+        "itm.equipment.forward", "equipment_id", "Forward Rules", tracking=True, help="Router's forward rules"
     )
     router_rules_ids = fields.One2many(
         "itm.equipment.rule",
         "equipment_id",
         "Firewall Rules",
         tracking=True,
+        help="Router's firewall rules"
     )
     # Network Configuration
     equipment_network_ids = fields.One2many(
