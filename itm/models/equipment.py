@@ -148,6 +148,7 @@ class ItEquipment(models.Model):
         "equipment_id",
         "application_id",
         "Applications",
+        help="App information of this asset or device"
     )
 
     @api.model
