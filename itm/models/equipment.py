@@ -187,10 +187,11 @@ class ItEquipment(models.Model):
         "equipment_id",
         "Worklogs on this equipment",
         tracking=True,
+        help="Historical progress of work that spent on the asset or device"
     )
     # Contract Page
     contract_partner_id = fields.Many2one("res.partner", "Contractor")
-    contract_client_number = fields.Char("Client Nummber")
+    contract_client_number = fields.Char("Client Number")
     contract_owner = fields.Char("Titular")
     contract_nif = fields.Char("NIF")
     contract_direction = fields.Char("Invoice Direction")
@@ -223,6 +224,7 @@ class ItEquipment(models.Model):
         "equipment_id",
         "Network on this equipment",
         tracking=True,
+        help="Network setup that configured within this asset or device"
     )
     # Product Page
     product_id = fields.Many2one("product.product", "Product")
