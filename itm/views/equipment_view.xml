@@ -154,14 +154,14 @@
                             </h2>
                         </div>
                         <group>
+                            <group string="Product Brand">
+                                <field name="brand" />
+                            </group>
                             <group string="Operating System">
                                 <field name="os_name" />
                             </group>
                             <group string="Information">
                                 <field name="site_id" />
-                            </group>
-                            <group string="Brand">
-                                <field name="brand" />
                             </group>
                         </group>
                         <notebook>
