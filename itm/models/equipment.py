@@ -101,7 +101,7 @@ class ItEquipment(models.Model):
     )
 
     brand = fields.Many2one(
-        "itm.equipment.brand", "Brand", help="A brand"
+        "itm.equipment.brand", "Brand Name", help="The assets or device brand"
     )
 
     active = fields.Boolean(default=True, tracking=True)
