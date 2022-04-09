@@ -1,9 +1,9 @@
 14.0.1.1.6 (2022-04-08)
 ~~~~~~~~~~~~~~~~~~~~~~~
 * [IMP] Enhancement of module's icon image
-* [IMP] Added help or hover message
+* [IMP] Added help or a hover message
 * [IMP] Added brand to IT Asset page
-* [FIX] Asset image alignment
+* [FIX] Asset image alignment to the right
 
 14.0.1.1.5 (2021-10-30)
 ~~~~~~~~~~~~~~~~~~~~~~~
