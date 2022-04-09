@@ -171,7 +171,7 @@ class ItEquipment(models.Model):
         help="PHYSICAL means that the asset or device can be physically touched\n VIRTUAL means the asset or device is virtually deployed inside a pyshical device\n PRODUCT means that the asset or device can be physical or virtual but packed as a product along with certain attributes (barcodes, etc)\n OTHER is option for asset or device that beyond the registered specification"
 
     )
-    is_contracted = fields.Boolean("Contracted Service", help="This asset or device is contracted")
+    is_contracted = fields.Boolean("Contracted Service", help="This asset or device is contracted from other company")
     is_partitioned = fields.Boolean("Partitions", help="This device is partitioned")
     is_backup = fields.Boolean("Backup", help="This asset or device is a backup")
     is_os = fields.Boolean("Operating System")
@@ -191,11 +191,11 @@ class ItEquipment(models.Model):
         help="Historical progress of work that spent on the asset or device"
     )
     # Contract Page
-    contract_partner_id = fields.Many2one("res.partner", "Contractor")
-    contract_client_number = fields.Char("Client Number")
-    contract_owner = fields.Char("Titular")
-    contract_nif = fields.Char("NIF")
-    contract_direction = fields.Char("Invoice Direction")
+    contract_partner_id = fields.Many2one("res.partner", "Contractor", help="Contractor name")
+    contract_client_number = fields.Char("Client Number", help="The client number of the contractor")
+    contract_owner = fields.Char("Titular", help="A person holding the title")
+    contract_nif = fields.Char("NIF", help="The tax number for natural and legal person")
+    contract_direction = fields.Char("Invoice Direction", help="Invoice Direction")
     # Virtual Machine Page
     virtual_parent_id = fields.Many2one(
         "itm.equipment", "Virtual Machine", domain="[('function_host','=',1)]"
