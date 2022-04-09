@@ -240,6 +240,7 @@ class ItEquipment(models.Model):
         "equipment_id",
         "Network Shares",
         tracking=True,
+        help="File server information"
     )
     # OS Page
     os_name = fields.Char("OS Name", help="Operating system which is installed on device, eg. Windows 10, Ubuntu")
