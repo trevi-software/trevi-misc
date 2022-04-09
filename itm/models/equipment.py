@@ -256,7 +256,7 @@ class ItEquipment(models.Model):
     )
     # Store Config File Page
     configuration_file_ids = fields.One2many(
-        "itm.equipment.configuration", "equipment_id", "Configuration Files"
+        "itm.equipment.configuration", "equipment_id", "Configuration Files", help="configuration file of this asset or device"
     )
     # Components
     component_count = fields.Integer(compute=_compute_component_count)
