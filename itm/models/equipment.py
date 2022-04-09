@@ -251,7 +251,7 @@ class ItEquipment(models.Model):
     proxy_service_id = fields.Many2one("itm.service.proxy", "Proxy Service")
     vpn_service_id = fields.Many2one("itm.service.vpn", "VPN Service")
     # Database Page
-    db_ids = fields.One2many("itm.equipment.db", "equipment_id", "Databases")
+    db_ids = fields.One2many("itm.equipment.db", "equipment_id", "Databases", help="Database list")
     use_proxy = fields.Boolean("Use Proxy")
     proxy_client_config_id = fields.Many2one(
         "itm.equipment.network.proxy", "Proxy Configuration"
