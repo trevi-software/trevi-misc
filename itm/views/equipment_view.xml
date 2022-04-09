@@ -160,6 +160,9 @@
                             <group string="Information">
                                 <field name="site_id" />
                             </group>
+                            <group string="Brand">
+                                <field name="brand" />
+                            </group>
                         </group>
                         <notebook>
                             <page string="Configuration" groups="itm.group_itm_mod">
