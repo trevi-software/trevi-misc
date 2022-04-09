@@ -99,6 +99,11 @@ class ItEquipment(models.Model):
     site_id = fields.Many2one(
         "itm.site", "Site", required=True, tracking=True, default=_get_site_id, help="A site or place of which this device is deployed"
     )
+
+    brand = fields.Many2one(
+        "itm.equipment.brand", "Brand", help="A brand"
+    )
+
     active = fields.Boolean(default=True, tracking=True)
     # Counts
     access_count = fields.Integer(
