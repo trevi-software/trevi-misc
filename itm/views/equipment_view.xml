@@ -63,6 +63,7 @@
                     <field name="name" />
                     <field name="partner_id" />
                     <field name="description" />
+                    <field name="owner" />
                     <field name="equipment_type" />
                     <field name="brand_id" />
                     <field name="function_ids" />
@@ -154,14 +155,13 @@
                             </h2>
                         </div>
                         <group>
-                            <group string="Product Brand">
+                            <group>
                                 <field name="brand" />
-                            </group>
-                            <group string="Operating System">
                                 <field name="os_name" />
                             </group>
-                            <group string="Information">
+                            <group>
                                 <field name="site_id" />
+                                <field name="owner" />
                             </group>
                         </group>
                         <notebook>
