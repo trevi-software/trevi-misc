@@ -146,6 +146,7 @@ class ItEquipment(models.Model):
         default=_get_default_image,
         help="Equipment Photo, limited to 1024x1024px.",
     )
+    owner = fields.Char()
     # Applications Page
     application_ids = fields.Many2many(
         "itm.application",
