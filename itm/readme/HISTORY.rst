@@ -1,3 +1,8 @@
+14.0.1.2.6 (2022-06-25)
+~~~~~~~~~~~~~~~~~~~~~~~
+* [IMP] Add Wireless Network info
+* [IMP] Add field for equipment owner
+
 14.0.1.1.6 (2022-04-08)
 ~~~~~~~~~~~~~~~~~~~~~~~
 * [IMP] Enhancement of module's icon image

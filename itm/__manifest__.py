@@ -4,7 +4,7 @@
 
 {
     "name": "IT Infrastructure Management",
-    "version": "14.0.1.1.6",
+    "version": "14.0.1.2.6",
     "license": "AGPL-3",
     "category": "IT Infrastructure Management",
     "summary": """IT Assets, Credentials, Backups, Applications.""",
@@ -48,6 +48,7 @@
         "views/site_view.xml",
         "views/service_ad_view.xml",
         "views/service_dhcp_view.xml",
+        "views/service_wireless_view.xml",
         "views/assets.xml",
     ],
     "demo": [],
