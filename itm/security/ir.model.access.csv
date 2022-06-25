@@ -68,6 +68,9 @@ itm_rule_service_vpn_user,itm_service_vpn,model_itm_service_vpn,group_itm_user,1
 itm_rule_service_wireless_manager,itm_service_wireless,model_itm_service_wireless,group_itm_manager,1,1,1,1
 itm_rule_service_wireless_mode,itm_service_wireless,model_itm_service_wireless,group_itm_mod,1,1,1,0
 itm_rule_service_wireless_user,itm_service_wireless,model_itm_service_wireless,group_itm_user,1,0,0,0
+itm_rule_service_wireless_ssid_manager,itm_service_wireless_ssid,model_itm_service_wireless_ssid,group_itm_manager,1,1,1,1
+itm_rule_service_wireless_ssid_mode,itm_service_wireless_ssid,model_itm_service_wireless_ssid,group_itm_mod,1,1,1,0
+itm_rule_service_wireless_ssid_user,itm_service_wireless_ssid,model_itm_service_wireless_ssid,group_itm_user,1,0,0,0
 itm_rule_site_manager,itm_site,model_itm_site,group_itm_manager,1,1,1,1
 itm_rule_site_mod,itm_site,model_itm_site,group_itm_mod,1,1,0,0
 itm_rule_site_user,itm_site,model_itm_site,group_itm_user,1,0,0,0
