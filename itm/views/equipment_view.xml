@@ -173,6 +173,10 @@
                                     <group string="Services">
                                         <field name="ad_service_id" />
                                         <field name="dhcp_service_id" />
+                                        <field
+                                            name="wireless_service_id"
+                                            attrs="{'invisible':[('function_wireless','=', False )]}"
+                                        />
                                     </group>
                                 </group>
                                 <group>
@@ -193,6 +197,7 @@
                                         <field name="function_router" />
                                         <field name="function_fileserver" />
                                         <field name="function_database" />
+                                        <field name="function_wireless" />
                                     </group>
                                 </group>
                             </page>
@@ -437,7 +442,7 @@
                         help="Assets with applications"
                     />
                     <filter
-                        name="is_application"
+                        name="isnot_application"
                         string="Without Applications"
                         domain="[('is_application','=',0)]"
                         help="Assets without applications"
@@ -467,23 +472,28 @@
                     />
                     <filter
                         name="function_fileserver"
-                        string="FileServers"
+                        string="File Server"
                         domain="[('function_fileserver','=',1)]"
                     />
                     <filter
                         name="function_host"
-                        string="Hosts"
+                        string="Host"
                         domain="[('function_host','=',1)]"
                     />
                     <filter
                         name="function_router"
-                        string="Routers"
+                        string="Router"
                         domain="[('function_router','=',1)]"
                     />
                     <filter
                         name="function_database"
-                        string="Database Servers"
+                        string="Database Server"
                         domain="[('function_database','=',1)]"
+                    />
+                    <filter
+                        name="function_wireless"
+                        string="Wireless Device"
+                        domain="[('function_wireless','=',1)]"
                     />
                    <separator />
                     <filter
