@@ -26,31 +26,61 @@ class ItServiceWireless(models.Model):
     _name = "itm.service.wireless"
     _description = "Wireless Service"
 
-    name = fields.Char("SSID", required=True)
+    name = fields.Char("Description", required=True)
     type = fields.Selection(
         [
             ("ap", "Access Point"),
             ("bridge", "Bridge"),
             ("extender", "Extender"),
             ("router_wireless", "Wireless Router"),
-            ("router_wired", "Wired Router"),
         ],
     )
+    network_id = fields.Many2one("itm.site.network", "Network")
+    access_id = fields.Many2one("itm.access", "Access Credentials")
+    bssid_ids = fields.One2many("itm.service.wireless.ssid", "wireless_id", "SSI")
+
+    def _compute_display_name(self):
+
+        super()._compute_display_name()
+
+        for rec in self:
+            if len(rec.bssid_ids) == 1:
+                rec.display_name = f"{rec.name} ({rec.bssid_ids.name})"
+            elif len(rec.bssid_ids) > 1:
+                rec.display_name = f"{rec.name} (multi SSID)"
+
+
+class WirelessSsid(models.Model):
+
+    _name = "itm.service.wireless.ssid"
+    _description = "Wireless Base Station ID"
+
+    name = fields.Char("SSID", required=True)
+    wireless_id = fields.Many2one("itm.service.wireless", "Wireless service")
+    is_guest = fields.Boolean(help="If checked, this is a Guest SSID")
     auth_type = fields.Selection(
         [
             ("none", "NONE"),
             ("wep64", "WEP-64bits"),
             ("wep128", "WEP-128bits"),
-            ("wpa_tkip", "WPA-TKIP"),
-            ("wpa_aes", "WPA-AES"),
-            ("wpa2_aes", "WPA2-AES"),
-            ("wpa2_tkip", "WPA2-TKIP"),
-            ("other", "OTHER"),
+            ("wpa", "WPA Personal (Pre-shared key)"),
+            ("wpa_ent", "WPA Enterprise"),
+            ("wpa2", "WPA2 Personal (Pre-shared key)"),
+            ("wpa2_ent", "WPA2 Enterprise"),
+            ("auto", "Auto"),
+            ("other", "Other"),
         ],
         "Authentication Type",
+        default="wpa2"
     )
-    password = fields.Char("Key")
-    guest = fields.Boolean("Enable Guest Access")
-    guest_ssid = fields.Char("Guest SSID")
-    guest_password = fields.Char("Guest Key")
-    access_id = fields.Many2one("itm.access", "Access Credentials")
+    encryption_type = fields.Selection(
+        [
+            ("none", "NONE"),
+            ("auto", "Auto"),
+            ("tkip", "TKIP"),
+            ("aes", "AES"),
+        ],
+        "Encryption Type",
+        default="auto"
+    )
+    passkey = fields.Char("Key")

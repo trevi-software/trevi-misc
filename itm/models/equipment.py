@@ -187,6 +187,7 @@ class ItEquipment(models.Model):
     function_host = fields.Boolean("Host", help="This asset or device is a host")
     function_router = fields.Boolean("Router", help="This asset or device is a network router")
     function_database = fields.Boolean("Database Server", help="This asset or device is a database server")
+    function_wireless = fields.Boolean("Wireless Access Device", help="This asset acts as a wireless access point or router")
     # Worklogs Page
     worklog_ids = fields.One2many(
         "itm.equipment.worklog",
