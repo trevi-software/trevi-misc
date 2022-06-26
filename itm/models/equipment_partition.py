@@ -27,12 +27,19 @@ class ItEquipmentPartition(models.Model):
     _description = "Partition"
 
     equipment_id = fields.Many2one("itm.equipment", "Asset", ondelete="cascade")
-    name = fields.Char("Identificator", required=True, help="Identificator or flag for ease identification")
+    name = fields.Char(
+        "Identificator",
+        required=True,
+        help="Identificator or flag for ease identification",
+    )
     disks = fields.Char(help="Disks")
     type = fields.Char(help="Disk storage controllers")
     format = fields.Char(help="Partition format type")
     mount_ids = fields.One2many(
-        "itm.equipment.partition.mount", "partition_id", "Mount on this partition", help="Mount partition"
+        "itm.equipment.partition.mount",
+        "partition_id",
+        "Mount on this partition",
+        help="Mount partition",
     )
 
 
