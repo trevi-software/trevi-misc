@@ -1,0 +1,6 @@
+diff a/.pre-commit-config.yaml b/.pre-commit-config.yaml	(rejected hunks)
+@@ -36,3 +35,3 @@ repos:
+       - id: oca-fix-manifest-website
+-        args: ["https://github.com/OCA/trevi-misc"]
++        args: ["https://github.com/trevi-software/trevi-misc"]
+   - repo: https://github.com/myint/autoflake

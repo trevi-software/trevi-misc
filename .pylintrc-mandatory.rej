@@ -1,0 +1,6 @@
+diff a/.pylintrc-mandatory b/.pylintrc-mandatory	(rejected hunks)
+@@ -6,3 +6,3 @@ score=n
+ readme_template_url="https://github.com/OCA/maintainer-tools/blob/master/template/module/README.rst"
+-manifest_required_authors=Odoo Community Association (OCA)
++manifest_required_authors=TREVI Software
+ manifest_required_keys=license
