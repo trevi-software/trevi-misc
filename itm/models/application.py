@@ -33,18 +33,28 @@ class ItApplication(models.Model):
         "Company",
         default=lambda self: self.env.company,
     )
-    active = fields.Boolean("Active", default=True, help="Mark if this app is currently used and running")
-    developer = fields.Char("Developer", help="A company or person who create and develop this application")
-    link_download = fields.Char("Download Link", help="Download link of the application")
+    active = fields.Boolean(
+        "Active", default=True, help="Mark if this app is currently used and running"
+    )
+    developer = fields.Char(
+        "Developer", help="A company or person who create and develop this application"
+    )
+    link_download = fields.Char(
+        "Download Link", help="Download link of the application"
+    )
     link_page = fields.Char("Link", help="Official website link of the application")
-    license_id = fields.Many2one("itm.application.license", "License", help="License type")
+    license_id = fields.Many2one(
+        "itm.application.license", "License", help="License type"
+    )
     license_type = fields.Selection(
         [("opensource", "OPEN SOURCE"), ("closedsource", "COMMERCIAL")],
         required=True,
         default="opensource",
-        help="License name"
+        help="License name",
     )
-    documentation = fields.Binary(help="Documentation sheet of technical use or standard operational procedure")
+    documentation = fields.Binary(
+        help="Documentation sheet of technical use or standard operational procedure"
+    )
     documentation_filename = fields.Char()
     note = fields.Text(help="Note for this application eg")
     equipment_ids = fields.Many2many(
