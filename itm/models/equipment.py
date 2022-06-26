@@ -97,7 +97,12 @@ class ItEquipment(models.Model):
         default=lambda self: self.env.company,
     )
     site_id = fields.Many2one(
-        "itm.site", "Site", required=True, tracking=True, default=_get_site_id, help="A site or place of which this device is deployed"
+        "itm.site",
+        "Site",
+        required=True,
+        tracking=True,
+        default=_get_site_id,
+        help="A site or place of which this device is deployed",
     )
 
     brand = fields.Many2one(
@@ -120,7 +125,9 @@ class ItEquipment(models.Model):
     identification = fields.Char(
         compute="_compute_identification", string="Complete Name", store=True
     )
-    name = fields.Char("Name", required=True, tracking=True, help="A device name, eg. Scanner")
+    name = fields.Char(
+        "Name", required=True, tracking=True, help="A device name, eg. Scanner"
+    )
     brand_id = fields.Many2one("itm.equipment.brand", "Brand")
     model = fields.Char()
     partner_id = fields.Many2one(
@@ -130,7 +137,7 @@ class ItEquipment(models.Model):
         domain="[('manage_it','=',1)]",
         tracking=True,
         default=_get_partner_id,
-        help="A partner or user which are using this device"
+        help="A partner or user which are using this device",
     )
     function_ids = fields.Many2many(
         "itm.equipment.function",
@@ -138,9 +145,14 @@ class ItEquipment(models.Model):
         "equipment_id",
         "function_id",
         "Functions",
-        help="Defining the function of the devices, eg. scanning"
+        help="Defining the function of the devices, eg. scanning",
     )
-    description = fields.Char("Description", required=False, help="A device description, eg. 'A basic scanner device for scanning paper into .pdf files' ")
+    description = fields.Char(
+        "Description",
+        required=False,
+        help="A device description, eg. 'A basic scanner device for "
+        "scanning paper into .pdf files' ",
+    )
     image = fields.Binary(
         "Photo",
         default=_get_default_image,
@@ -154,7 +166,7 @@ class ItEquipment(models.Model):
         "equipment_id",
         "application_id",
         "Applications",
-        help="App information of this asset or device"
+        help="App information of this asset or device",
     )
 
     @api.model
@@ -174,34 +186,59 @@ class ItEquipment(models.Model):
         "Equipment Type",
         required=True,
         default=_get_type,
-        help="PHYSICAL means that the asset or device can be physically touched\n VIRTUAL means the asset or device is virtually deployed inside a pyshical device\n PRODUCT means that the asset or device can be physical or virtual but packed as a product along with certain attributes (barcodes, etc)\n OTHER is option for asset or device that beyond the registered specification"
-
+        help="""PHYSICAL means that the asset or device can be physically touched
+        VIRTUAL means the asset is virtually deployed inside a pyshical device
+        PRODUCT means that the asset can be physical or virtual but packed as
+        a product along with certain attributes (barcodes, etc)
+        OTHER is option for an asset that is beyond the registered specification.""",
     )
-    is_contracted = fields.Boolean("Contracted Service", help="This asset or device is contracted from other company")
+    is_contracted = fields.Boolean(
+        "Contracted Service",
+        help="This asset or device is contracted from other company",
+    )
     is_partitioned = fields.Boolean("Partitions", help="This device is partitioned")
     is_backup = fields.Boolean("Backup", help="This asset or device is a backup")
     is_os = fields.Boolean("Operating System")
-    is_application = fields.Boolean("Application", help="This asset or device is an application")
-    is_config_file = fields.Boolean("Store Config Files", help="Has a configuration files")
+    is_application = fields.Boolean(
+        "Application", help="This asset or device is an application"
+    )
+    is_config_file = fields.Boolean(
+        "Store Config Files", help="Has a configuration files"
+    )
     # Config Page - Functions
-    function_fileserver = fields.Boolean("File Server", help="This asset or device is a fileserver")
+    function_fileserver = fields.Boolean(
+        "File Server", help="This asset or device is a fileserver"
+    )
     function_host = fields.Boolean("Host", help="This asset or device is a host")
-    function_router = fields.Boolean("Router", help="This asset or device is a network router")
-    function_database = fields.Boolean("Database Server", help="This asset or device is a database server")
-    function_wireless = fields.Boolean("Wireless Access Device", help="This asset acts as a wireless access point or router")
+    function_router = fields.Boolean(
+        "Router", help="This asset or device is a network router"
+    )
+    function_database = fields.Boolean(
+        "Database Server", help="This asset or device is a database server"
+    )
+    function_wireless = fields.Boolean(
+        "Wireless Access Device",
+        help="This asset acts as a wireless access point or router",
+    )
     # Worklogs Page
     worklog_ids = fields.One2many(
         "itm.equipment.worklog",
         "equipment_id",
         "Worklogs on this equipment",
         tracking=True,
-        help="Historical progress of work that spent on the asset or device"
+        help="Historical progress of work that spent on the asset or device",
     )
     # Contract Page
-    contract_partner_id = fields.Many2one("res.partner", "Contractor", help="Contractor name")
-    contract_client_number = fields.Char("Client Number", help="The client number of the contractor")
+    contract_partner_id = fields.Many2one(
+        "res.partner", "Contractor", help="Contractor name"
+    )
+    contract_client_number = fields.Char(
+        "Client Number", help="The client number of the contractor"
+    )
     contract_owner = fields.Char("Titular", help="A person holding the title")
-    contract_nif = fields.Char("NIF", help="The tax number for natural and legal person")
+    contract_nif = fields.Char(
+        "NIF", help="The tax number for natural and legal person"
+    )
     contract_direction = fields.Char("Invoice Direction", help="Invoice Direction")
     # Virtual Machine Page
     virtual_parent_id = fields.Many2one(
@@ -213,19 +250,26 @@ class ItEquipment(models.Model):
     virtual_network_amount = fields.Char("Number of Network")
     # Partition Page
     partitions_ids = fields.One2many(
-        "itm.equipment.partition", "equipment_id", "Partitions on this equipment", help="Partition on this equipment"
+        "itm.equipment.partition",
+        "equipment_id",
+        "Partitions on this equipment",
+        help="Partition on this equipment",
     )
     # Router Page
     router_dmz = fields.Char("DMZ")
     router_forward_ids = fields.One2many(
-        "itm.equipment.forward", "equipment_id", "Forward Rules", tracking=True, help="Router's forward rules"
+        "itm.equipment.forward",
+        "equipment_id",
+        "Forward Rules",
+        tracking=True,
+        help="Router's forward rules",
     )
     router_rules_ids = fields.One2many(
         "itm.equipment.rule",
         "equipment_id",
         "Firewall Rules",
         tracking=True,
-        help="Router's firewall rules"
+        help="Router's firewall rules",
     )
     # Network Configuration
     equipment_network_ids = fields.One2many(
@@ -233,7 +277,7 @@ class ItEquipment(models.Model):
         "equipment_id",
         "Network on this equipment",
         tracking=True,
-        help="Network setup that configured within this asset or device"
+        help="Network setup that configured within this asset or device",
     )
     # Product Page
     product_id = fields.Many2one("product.product", "Product")
@@ -247,25 +291,41 @@ class ItEquipment(models.Model):
         "equipment_id",
         "Network Shares",
         tracking=True,
-        help="File server information"
+        help="File server information",
     )
     # OS Page
-    os_name = fields.Char("OS Name", help="Operating system which is installed on device, eg. Windows 10, Ubuntu")
+    os_name = fields.Char(
+        "OS Name",
+        help="Operating system which is installed on device, eg. Windows 10, Ubuntu",
+    )
     # Services
-    ad_service_id = fields.Many2one("itm.service.ad", "Active Directory", help="Domain Active Directory that related to this asset")
-    dhcp_service_id = fields.Many2one("itm.service.dhcp4", "DHCP", help="Domain Host Control Protocol address which related to this asset")
+    ad_service_id = fields.Many2one(
+        "itm.service.ad",
+        "Active Directory",
+        help="Domain Active Directory that related to this asset",
+    )
+    dhcp_service_id = fields.Many2one(
+        "itm.service.dhcp4",
+        "DHCP",
+        help="Domain Host Control Protocol address which related to this asset",
+    )
     wireless_service_id = fields.Many2one("itm.service.wireless", "Wireless Service")
     proxy_service_id = fields.Many2one("itm.service.proxy", "Proxy Service")
     vpn_service_id = fields.Many2one("itm.service.vpn", "VPN Service")
     # Database Page
-    db_ids = fields.One2many("itm.equipment.db", "equipment_id", "Databases", help="Database list")
+    db_ids = fields.One2many(
+        "itm.equipment.db", "equipment_id", "Databases", help="Database list"
+    )
     use_proxy = fields.Boolean("Use Proxy")
     proxy_client_config_id = fields.Many2one(
         "itm.equipment.network.proxy", "Proxy Configuration"
     )
     # Store Config File Page
     configuration_file_ids = fields.One2many(
-        "itm.equipment.configuration", "equipment_id", "Configuration Files", help="configuration file of this asset or device"
+        "itm.equipment.configuration",
+        "equipment_id",
+        "Configuration Files",
+        help="configuration file of this asset or device",
     )
     # Components
     component_count = fields.Integer(compute=_compute_component_count)
