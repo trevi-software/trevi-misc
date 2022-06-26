@@ -14,7 +14,10 @@ class ItEquipmentMapping(models.Model):
     name = fields.Char("Share Name", required=True)
     path = fields.Char("Filesystem Path", required=True, help="Filesystem Path")
     line_ids = fields.One2many(
-        "itm.equipment.mapping.line", "map_id", "Permission lines", help="Permission setup"
+        "itm.equipment.mapping.line",
+        "map_id",
+        "Permission lines",
+        help="Permission setup",
     )
 
 
@@ -30,7 +33,12 @@ class ItEquipmentMappingLine(models.Model):
             rec.name = _name
 
     map_id = fields.Many2one("itm.equipment.mapping", "Mapping")
-    name = fields.Char(string="Name", compute="_compute_name", store=True, help="Sharing partition or folder name")
+    name = fields.Char(
+        string="Name",
+        compute="_compute_name",
+        store=True,
+        help="Sharing partition or folder name",
+    )
     adobj_id = fields.Many2one(
         comodel_name="itm.service.ad.object", string="AD object name"
     )

@@ -71,7 +71,7 @@ class WirelessSsid(models.Model):
             ("other", "Other"),
         ],
         "Authentication Type",
-        default="wpa2"
+        default="wpa2",
     )
     encryption_type = fields.Selection(
         [
@@ -81,6 +81,6 @@ class WirelessSsid(models.Model):
             ("aes", "AES"),
         ],
         "Encryption Type",
-        default="auto"
+        default="auto",
     )
     passkey = fields.Char("Key")
