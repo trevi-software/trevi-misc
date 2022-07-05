@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    <data noupdate="1">
+    <data noupdate="0">
 
         <!-- For compatibility with defunct field 'equipment_type' -->
         <record id="type_bundle" model="itm.equipment.type">
