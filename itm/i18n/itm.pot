@@ -384,8 +384,19 @@ msgid "Asset Component Type"
 msgstr ""
 
 #. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_type
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Asset Type"
+msgstr ""
+
+#. module: itm
 #: model:ir.model,name:itm.model_itm_equipment_worklog
 msgid "Asset Worklog"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__asset_type_id
+msgid "Asset type"
 msgstr ""
 
 #. module: itm
@@ -527,11 +538,6 @@ msgid "Bridge"
 msgstr ""
 
 #. module: itm
-#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
-msgid "Bundle Type"
-msgstr ""
-
-#. module: itm
 #: model:ir.model.fields,field_description:itm.field_itm_equipment__product_buydate
 msgid "Buy Date"
 msgstr ""
@@ -584,6 +590,12 @@ msgstr ""
 #. module: itm
 #: model_terms:ir.ui.view,arch_db:itm.itm_application_search
 msgid "ClosedSource Applications"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__code
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Code"
 msgstr ""
 
 #. module: itm
@@ -833,6 +845,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_partition__create_uid
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_partition_mount__create_uid
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_rule__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_type__create_uid
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_worklog__create_uid
 #: model:ir.model.fields,field_description:itm.field_itm_service_ad__create_uid
 #: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__create_uid
@@ -876,6 +889,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_partition__create_date
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_partition_mount__create_date
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_rule__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_type__create_date
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_worklog__create_date
 #: model:ir.model.fields,field_description:itm.field_itm_service_ad__create_date
 #: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__create_date
@@ -1108,6 +1122,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_partition__display_name
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_partition_mount__display_name
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_rule__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_type__display_name
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_worklog__display_name
 #: model:ir.model.fields,field_description:itm.field_itm_service_ad__display_name
 #: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__display_name
@@ -1223,7 +1238,6 @@ msgid "Equipment Photo, limited to 1024x1024px."
 msgstr ""
 
 #. module: itm
-#: model:ir.model.fields,field_description:itm.field_itm_equipment__equipment_type
 #: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
 msgid "Equipment Type"
 msgstr ""
@@ -1466,6 +1480,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_partition__id
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_partition_mount__id
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_rule__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_type__id
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_worklog__id
 #: model:ir.model.fields,field_description:itm.field_itm_service_ad__id
 #: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__id
@@ -1712,6 +1727,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_partition____last_update
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_partition_mount____last_update
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_rule____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_type____last_update
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_worklog____last_update
 #: model:ir.model.fields,field_description:itm.field_itm_service_ad____last_update
 #: model:ir.model.fields,field_description:itm.field_itm_service_ad_object____last_update
@@ -1761,6 +1777,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_partition__write_uid
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_partition_mount__write_uid
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_rule__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_type__write_uid
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_worklog__write_uid
 #: model:ir.model.fields,field_description:itm.field_itm_service_ad__write_uid
 #: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__write_uid
@@ -1804,6 +1821,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_partition__write_date
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_partition_mount__write_date
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_rule__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_type__write_date
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_worklog__write_date
 #: model:ir.model.fields,field_description:itm.field_itm_service_ad__write_date
 #: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__write_date
@@ -1862,6 +1880,12 @@ msgstr ""
 #. module: itm
 #: model_terms:ir.ui.view,arch_db:itm.itm_application_form
 msgid "Links and Docs"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__location
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Location"
 msgstr ""
 
 #. module: itm
@@ -2007,6 +2031,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_permission_advanced__name
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_partition_mount__name
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_rule__name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_type__name
 #: model:ir.model.fields,field_description:itm.field_itm_service_dhcp4__name
 #: model:ir.model.fields,field_description:itm.field_itm_service_proxy__name
 #: model:ir.model.fields,field_description:itm.field_itm_service_vpn__name
@@ -2037,6 +2062,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:itm.itm_equipment_network_tree
 #: model_terms:ir.ui.view,arch_db:itm.itm_site_network_form
 msgid "Network"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Network Asset"
 msgstr ""
 
 #. module: itm
@@ -2219,7 +2249,6 @@ msgstr ""
 
 #. module: itm
 #: model:ir.model.fields.selection,name:itm.selection__itm_backup__type__other
-#: model:ir.model.fields.selection,name:itm.selection__itm_equipment__equipment_type__other
 #: model_terms:ir.ui.view,arch_db:itm.itm_backup_search
 msgid "OTHER"
 msgstr ""
@@ -2255,6 +2284,11 @@ msgid "Operating system which is installed on device, eg. Windows 10, Ubuntu"
 msgstr ""
 
 #. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__code
+msgid "Organization specific inventory code"
+msgstr ""
+
+#. module: itm
 #: model:ir.model.fields.selection,name:itm.selection__itm_service_wireless_ssid__auth_type__other
 msgid "Other"
 msgstr ""
@@ -2270,33 +2304,23 @@ msgid "Owner"
 msgstr ""
 
 #. module: itm
-#: model:ir.model.fields.selection,name:itm.selection__itm_equipment__equipment_type__bundle
-msgid "PHYSICAL"
-msgstr ""
-
-#. module: itm
-#: model:ir.model.fields,help:itm.field_itm_equipment__equipment_type
-msgid ""
-"PHYSICAL means that the asset or device can be physically touched\n"
-"        VIRTUAL means the asset is virtually deployed inside a pyshical device\n"
-"        PRODUCT means that the asset can be physical or virtual but packed as\n"
-"        a product along with certain attributes (barcodes, etc)\n"
-"        OTHER is option for an asset that is beyond the registered specification."
-msgstr ""
-
-#. module: itm
 #: model:ir.model.fields.selection,name:itm.selection__itm_service_ad__type__primary
 msgid "PRIMARY"
 msgstr ""
 
 #. module: itm
-#: model:ir.model.fields.selection,name:itm.selection__itm_equipment__equipment_type__product
-msgid "PRODUCT"
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_dbsetting__name
+msgid "Parameter"
 msgstr ""
 
 #. module: itm
-#: model:ir.model.fields,field_description:itm.field_itm_equipment_dbsetting__name
-msgid "Parameter"
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_type__parent_id
+msgid "Parent"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_type__parent_path
+msgid "Parent Path"
 msgstr ""
 
 #. module: itm
@@ -2392,6 +2416,11 @@ msgid "Photo"
 msgstr ""
 
 #. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Physical Asset"
+msgstr ""
+
+#. module: itm
 #: model:res.groups,name:itm.group_itm_portal
 msgid "Portal"
 msgstr ""
@@ -2424,11 +2453,6 @@ msgstr ""
 #. module: itm
 #: model:ir.model.fields,field_description:itm.field_itm_equipment__product_note
 msgid "Product Note"
-msgstr ""
-
-#. module: itm
-#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
-msgid "Product Type"
 msgstr ""
 
 #. module: itm
@@ -2695,6 +2719,11 @@ msgstr ""
 #. module: itm
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_partition_mount__size
 msgid "Size"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Software Asset"
 msgstr ""
 
 #. module: itm
@@ -2984,11 +3013,6 @@ msgid "Username"
 msgstr ""
 
 #. module: itm
-#: model:ir.model.fields.selection,name:itm.selection__itm_equipment__equipment_type__virtual
-msgid "VIRTUAL"
-msgstr ""
-
-#. module: itm
 #: model:ir.model.fields,field_description:itm.field_itm_service_vpn__address
 msgid "VPN Address"
 msgstr ""
@@ -3065,6 +3089,11 @@ msgid "Value Type"
 msgstr ""
 
 #. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Virtual Asset"
+msgstr ""
+
+#. module: itm
 #: model:ir.model.fields,field_description:itm.field_itm_equipment__virtual_parent_id
 msgid "Virtual Machine"
 msgstr ""
@@ -3072,11 +3101,6 @@ msgstr ""
 #. module: itm
 #: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
 msgid "Virtual Machine Data"
-msgstr ""
-
-#. module: itm
-#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
-msgid "Virtual Type"
 msgstr ""
 
 #. module: itm
