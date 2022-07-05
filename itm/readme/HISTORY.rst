@@ -1,3 +1,9 @@
+14.0.2.2.6 (2022-07-05)
+~~~~~~~~~~~~~~~~~~~~~~~
+* [IMP] Remove field Equipment Type and replace with Asset Type which points to a new model "itm.equipment.type"
+* [IMP] Add new field "location" for storing location of assets
+* [IMP] Add new field "code" for organization specific coding of assets
+
 14.0.1.2.6 (2022-06-25)
 ~~~~~~~~~~~~~~~~~~~~~~~
 * [IMP] Add Wireless Network info
