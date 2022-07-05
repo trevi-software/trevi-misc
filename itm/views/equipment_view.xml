@@ -35,7 +35,7 @@
             <field name="context">
                 {
                     'search_default_virtual_parent_id': active_id,
-                    'search_default_equipment_type': 'virtual'
+                    'search_default_type_virtual': 1,
                 }
             </field>
         </record>
@@ -61,10 +61,12 @@
             <field name="arch" type="xml">
                 <tree string="Assets">
                     <field name="name" />
+                    <field name="code" />
                     <field name="partner_id" />
                     <field name="description" />
+                    <field name="location" />
                     <field name="owner" />
-                    <field name="equipment_type" />
+                    <field name="asset_type_id" />
                     <field name="brand_id" />
                     <field name="function_ids" />
                 </tree>
@@ -156,11 +158,13 @@
                         </div>
                         <group>
                             <group>
+                                <field name="site_id" />
                                 <field name="brand" />
                                 <field name="os_name" />
                             </group>
                             <group>
-                                <field name="site_id" />
+                                <field name="code" />
+                                <field name="location" />
                                 <field name="owner" />
                             </group>
                         </group>
@@ -168,7 +172,7 @@
                             <page string="Configuration" groups="itm.group_itm_mod">
                                 <group>
                                     <group string="Equipment Type">
-                                        <field name="equipment_type" />
+                                        <field name="asset_type_id" />
                                     </group>
                                     <group string="Services">
                                         <field name="ad_service_id" />
@@ -203,7 +207,7 @@
                             </page>
                             <page
                                 string="Virtual Machine Data"
-                                attrs="{'invisible':[('equipment_type','!=', 'virtual' )]}"
+                                attrs="{'invisible':[('asset_type_id','!=', %(itm.type_virtual)d)]}"
                             >
                                 <group>
                                     <group string="Host">
@@ -219,7 +223,7 @@
                             </page>
                             <page
                                 string="Product Data"
-                                attrs="{'invisible':[('equipment_type','!=', 'product' )]}"
+                                attrs="{'invisible':[('asset_type_id','!=', %(itm.type_bundle)d)]}"
                             >
                                 <group>
                                     <group>
@@ -407,9 +411,10 @@
                 <search string="Asset">
                     <!--Searchs-->
                     <field name="partner_id" string="Partner" />
-                    <field name="equipment_type" string="Type" />
+                    <field name="asset_type_id" string="Type" />
                     <field name="virtual_parent_id" string="Host" />
                     <field name="site_id" string="Site" />
+                    <field name="code" string="Code" />
                     <!--Filters-->
                     <filter
                         name="is_contracted"
@@ -447,21 +452,50 @@
                         domain="[('is_application','=',0)]"
                         help="Assets without applications"
                     />
-                    <separator />
+                    <separator string="Asset Type" />
                     <filter
                         name="type_bundle"
-                        string="Bundle Type"
-                        domain="[('equipment_type','=','bundle')]"
+                        string="Physical Asset"
+                        domain="[('asset_type_id','child_of', %(itm.type_bundle)d)]"
+                        context="{
+                            'search_default_type_bundle': 1,
+                            'search_default_type_virtual': 0,
+                            'search_default_type_network': 0,
+                            'search_default_type_software': 0
+                        }"
                     />
                     <filter
                         name="type_virtual"
-                        string="Virtual Type"
-                        domain="[('equipment_type','=','virtual')]"
+                        string="Virtual Asset"
+                        domain="[('asset_type_id','child_of', %(itm.type_virtual)d)]"
+                        context="{
+                            'search_default_type_virtual': 1,
+                            'search_default_type_bundle': 0,
+                            'search_default_type_network': 0,
+                            'search_default_type_software': 0
+                        }"
                     />
                     <filter
-                        name="type_product"
-                        string="Product Type"
-                        domain="[('equipment_type','=','product')]"
+                        name="type_network"
+                        string="Network Asset"
+                        domain="[('asset_type_id','child_of', %(itm.type_network)d)]"
+                        context="{
+                            'search_default_type_network': 1,
+                            'search_default_type_virtual': 0,
+                            'search_default_type_bundle': 0,
+                            'search_default_type_software': 0
+                        }"
+                    />
+                    <filter
+                        name="type_software"
+                        string="Software Asset"
+                        domain="[('asset_type_id','child_of', %(itm.type_software)d)]"
+                        context="{
+                            'search_default_type_software': 1,
+                            'search_default_type_network': 0,
+                            'search_default_type_virtual': 0,
+                            'search_default_type_bundle': 0,
+                        }"
                     />
                     <separator string="Functions" />
                     <filter
@@ -516,7 +550,7 @@
                             string="Type"
                             icon="terp-personal"
                             domain="[]"
-                            context="{'group_by':'equipment_type'}"
+                            context="{'group_by':'asset_type_id'}"
                         />
                         <filter
                             name="by_parent"
@@ -531,6 +565,13 @@
                             icon="terp-personal"
                             domain="[]"
                             context="{'group_by':'contract_partner_id'}"
+                        />
+                        <filter
+                            name="by_location"
+                            string="Location"
+                            icon="terp-personal"
+                            domain="[]"
+                            context="{'group_by':'location'}"
                         />
                     </group>
                 </search>
