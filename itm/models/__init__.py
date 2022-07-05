@@ -19,6 +19,7 @@ from . import equipment_mapping
 from . import equipment_network
 from . import equipment_partition
 from . import equipment_rule
+from . import equipment_type
 from . import equipment_worklog
 from . import partner
 from . import service_ad

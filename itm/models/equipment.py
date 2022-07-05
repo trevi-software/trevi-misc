@@ -90,6 +90,16 @@ class ItEquipment(models.Model):
                 return equip.site_id.id
         return False
 
+    @api.model
+    def _get_type(self):
+        if self.env.context.get("search_default_type_virtual"):
+            return self.env.ref("itm.type_virtual").id
+        elif self.env.context.get("search_default_type_network"):
+            return self.env.ref("itm.type_network").id
+        elif self.env.context.get("search_default_type_software"):
+            return self.env.ref("itm.type_software").id
+        return self.env.ref("itm.type_bundle").id
+
     # For openerp structure
     company_id = fields.Many2one(
         "res.company",
@@ -128,6 +138,7 @@ class ItEquipment(models.Model):
     name = fields.Char(
         "Name", required=True, tracking=True, help="A device name, eg. Scanner"
     )
+    code = fields.Char(tracking=True, help="Organization specific inventory code")
     brand_id = fields.Many2one("itm.equipment.brand", "Brand")
     model = fields.Char()
     partner_id = fields.Many2one(
@@ -158,7 +169,11 @@ class ItEquipment(models.Model):
         default=_get_default_image,
         help="Equipment Photo, limited to 1024x1024px.",
     )
+    asset_type_id = fields.Many2one(
+        "itm.equipment.type", "Asset type", default=_get_type
+    )
     owner = fields.Char()
+    location = fields.Char()
     # Applications Page
     application_ids = fields.Many2many(
         "itm.application",
@@ -169,29 +184,7 @@ class ItEquipment(models.Model):
         help="App information of this asset or device",
     )
 
-    @api.model
-    def _get_type(self):
-        if self.env.context.get("search_default_equipment_type"):
-            return self.env.context.get("search_default_equipment_type")
-        return "bundle"
-
     # Config Page
-    equipment_type = fields.Selection(
-        [
-            ("bundle", "PHYSICAL"),
-            ("virtual", "VIRTUAL"),
-            ("product", "PRODUCT"),
-            ("other", "OTHER"),
-        ],
-        "Equipment Type",
-        required=True,
-        default=_get_type,
-        help="""PHYSICAL means that the asset or device can be physically touched
-        VIRTUAL means the asset is virtually deployed inside a pyshical device
-        PRODUCT means that the asset can be physical or virtual but packed as
-        a product along with certain attributes (barcodes, etc)
-        OTHER is option for an asset that is beyond the registered specification.""",
-    )
     is_contracted = fields.Boolean(
         "Contracted Service",
         help="This asset or device is contracted from other company",
