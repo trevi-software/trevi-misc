@@ -92,6 +92,9 @@ class ItEquipment(models.Model):
 
     @api.model
     def _get_type(self):
+        # work-arround for upgrading a module
+        if not self.env.ref("itm.type_bundle", False):
+            return False
         if self.env.context.get("search_default_type_virtual"):
             return self.env.ref("itm.type_virtual").id
         elif self.env.context.get("search_default_type_network"):
