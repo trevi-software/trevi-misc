@@ -217,6 +217,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:itm.field_itm_equipment__active
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_component__active
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_value__active
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_type__active
 #: model:ir.model.fields,field_description:itm.field_itm_service_ad__active
 #: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__active
 #: model:ir.model.fields,field_description:itm.field_itm_site__active
@@ -339,6 +340,8 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:itm.itm_access_search
 #: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
 #: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_type_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_type_search
 #: model_terms:ir.ui.view,arch_db:itm.itm_service_ad_form
 #: model_terms:ir.ui.view,arch_db:itm.itm_service_ad_object_form
 #: model_terms:ir.ui.view,arch_db:itm.itm_service_ad_search
@@ -384,9 +387,16 @@ msgid "Asset Component Type"
 msgstr ""
 
 #. module: itm
+#: model:ir.actions.act_window,name:itm.itm_equipment_type_action
 #: model:ir.model,name:itm.model_itm_equipment_type
+#: model:ir.ui.menu,name:itm.itm_equipment_type_menu
 #: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
 msgid "Asset Type"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_type_search
+msgid "Asset Type Search"
 msgstr ""
 
 #. module: itm
@@ -1239,6 +1249,8 @@ msgstr ""
 
 #. module: itm
 #: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_type_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_type_tree
 msgid "Equipment Type"
 msgstr ""
 
@@ -1634,6 +1646,21 @@ msgid "If checked, this is a Guest SSID"
 msgstr ""
 
 #. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_equipment__state__in_repair
+msgid "In repair"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_equipment__state__in_store
+msgid "In store"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_equipment__state__in_use
+msgid "In use"
+msgstr ""
+
+#. module: itm
 #: model_terms:ir.ui.view,arch_db:itm.itm_access_form
 #: model_terms:ir.ui.view,arch_db:itm.itm_backup_form
 msgid "Information"
@@ -1880,6 +1907,11 @@ msgstr ""
 #. module: itm
 #: model_terms:ir.ui.view,arch_db:itm.itm_application_form
 msgid "Links and Docs"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_equipment__state__loaned
+msgid "Loaned"
 msgstr ""
 
 #. module: itm
@@ -2548,6 +2580,11 @@ msgid "Responsible User"
 msgstr ""
 
 #. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_equipment__state__retired
+msgid "Retired"
+msgstr ""
+
+#. module: itm
 #: model:ir.model.fields,field_description:itm.field_itm_equipment__function_router
 #: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
 msgid "Router"
@@ -2802,6 +2839,11 @@ msgstr ""
 #. module: itm
 #: model:ir.model.fields,field_description:itm.field_itm_service_dhcp4__start_address
 msgid "Start Address"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__state
+msgid "State"
 msgstr ""
 
 #. module: itm
