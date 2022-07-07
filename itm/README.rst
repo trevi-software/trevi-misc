@@ -35,6 +35,11 @@ Known issues / Roadmap
 Changelog
 =========
 
+14.0.2.3.6 (2022-07-05)
+~~~~~~~~~~~~~~~~~~~~~~~
+* [IMP] Add views for Asset Type under "Configuration" menu
+* [IMP] Track state of IT Assets
+
 14.0.2.2.6 (2022-07-05)
 ~~~~~~~~~~~~~~~~~~~~~~~
 * [IMP] Remove field Equipment Type and replace with Asset Type which points to a new model "itm.equipment.type"
