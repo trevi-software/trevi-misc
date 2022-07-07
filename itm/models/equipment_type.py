@@ -12,3 +12,4 @@ class ItEquipmentType(models.Model):
     name = fields.Char(required=True)
     parent_id = fields.Many2one("itm.equipment.type", "Parent")
     parent_path = fields.Char(index=True)
+    active = fields.Boolean(default=True)
