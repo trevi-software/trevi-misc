@@ -64,11 +64,12 @@
                     <field name="code" />
                     <field name="partner_id" />
                     <field name="description" />
+                    <field name="site_id" />
                     <field name="location" />
                     <field name="owner" />
                     <field name="asset_type_id" />
                     <field name="brand_id" />
-                    <field name="function_ids" />
+                    <field name="state" widget="badge" />
                 </tree>
             </field>
         </record>
@@ -78,6 +79,14 @@
             <field name="model">itm.equipment</field>
             <field name="arch" type="xml">
                 <form string="Assets">
+                    <header>
+                        <field
+                            name="state"
+                            widget="statusbar"
+                            clickable="1"
+                            statusbar_visible="in_store,in_use,loaned,in_repair,retired"
+                        />
+                    </header>
                     <sheet>
                         <div class="oe_button_box" name="buttons">
                             <button

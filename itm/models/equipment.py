@@ -139,9 +139,15 @@ class ItEquipment(models.Model):
         compute="_compute_identification", string="Complete Name", store=True
     )
     name = fields.Char(
-        "Name", required=True, tracking=True, help="A device name, eg. Scanner"
+        "Name",
+        required=True,
+        tracking=True,
+        index=True,
+        help="A device name, eg. Scanner",
     )
-    code = fields.Char(tracking=True, help="Organization specific inventory code")
+    code = fields.Char(
+        tracking=True, index=True, help="Organization specific inventory code"
+    )
     brand_id = fields.Many2one("itm.equipment.brand", "Brand")
     model = fields.Char()
     partner_id = fields.Many2one(
@@ -177,6 +183,18 @@ class ItEquipment(models.Model):
     )
     owner = fields.Char()
     location = fields.Char()
+    state = fields.Selection(
+        selection=[
+            ("in_store", "In store"),
+            ("in_use", "In use"),
+            ("loaned", "Loaned"),
+            ("in_repair", "In repair"),
+            ("retired", "Retired"),
+        ],
+        default="in_store",
+        tracking=True,
+        index=True,
+    )
     # Applications Page
     application_ids = fields.Many2many(
         "itm.application",

@@ -4,7 +4,7 @@
 
 {
     "name": "IT Infrastructure Management",
-    "version": "14.0.2.2.6",
+    "version": "14.0.2.3.6",
     "license": "AGPL-3",
     "category": "IT Infrastructure Management",
     "summary": """IT Assets, Credentials, Backups, Applications.""",
@@ -43,6 +43,7 @@
         "views/backup_view.xml",
         "views/equipment_function_view.xml",
         "views/equipment_mapping_view.xml",
+        "views/equipment_type_view.xml",
         "views/application_view.xml",
         "views/application_license_view.xml",
         "views/brand_view.xml",

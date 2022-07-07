@@ -5,22 +5,82 @@
         <!-- For compatibility with defunct field 'equipment_type' -->
         <record id="type_bundle" model="itm.equipment.type">
             <field name="name">Physical</field>
-        </record>
-        <record id="type_virtual" model="itm.equipment.type">
-            <field name="name">Virtual</field>
+            <field name="active" eval="False" />
         </record>
         <record id="type_product" model="itm.equipment.type">
             <field name="name">Product</field>
+            <field name="active" eval="False" />
         </record>
 
+        <record id="type_it" model="itm.equipment.type">
+            <field name="name">IT Assets</field>
+        </record>
+        <record id="type_nonit" model="itm.equipment.type">
+            <field name="name">Non IT Assets</field>
+        </record>
+        <record id="type_virtual" model="itm.equipment.type">
+            <field name="name">Virtual</field>
+            <field name="parent_id" ref="type_it" />
+        </record>
+        <record id="type_component" model="itm.equipment.type">
+            <field name="name">Components</field>
+            <field name="parent_id" ref="type_it" />
+        </record>
+        <record id="type_kb" model="itm.equipment.type">
+            <field name="name">Keyboard</field>
+            <field name="parent_id" ref="type_component" />
+        </record>
+        <record id="type_mouse" model="itm.equipment.type">
+            <field name="name">Mouse</field>
+            <field name="parent_id" ref="type_component" />
+        </record>
+        <record id="type_mon" model="itm.equipment.type">
+            <field name="name">Monitor</field>
+            <field name="parent_id" ref="type_component" />
+        </record>
+        <record id="type_webcam" model="itm.equipment.type">
+            <field name="name">Webcam</field>
+            <field name="parent_id" ref="type_component" />
+        </record>
+        <record id="type_scanner" model="itm.equipment.type">
+            <field name="name">Scanner</field>
+            <field name="parent_id" ref="type_it" />
+        </record>
+        <record id="type_projector" model="itm.equipment.type">
+            <field name="name">Projector</field>
+            <field name="parent_id" ref="type_nonit" />
+        </record>
+        <record id="type_ipphone" model="itm.equipment.type">
+            <field name="name">IP Phone</field>
+            <field name="parent_id" ref="type_nonit" />
+        </record>
+        <record id="type_mobile" model="itm.equipment.type">
+            <field name="name">Mobile Phone</field>
+            <field name="parent_id" ref="type_nonit" />
+        </record>
+        <record id="type_copier" model="itm.equipment.type">
+            <field name="name">Copier</field>
+            <field name="parent_id" ref="type_nonit" />
+        </record>
         <record id="type_printer" model="itm.equipment.type">
             <field name="name">Printer</field>
+            <field name="parent_id" ref="type_it" />
         </record>
         <record id="type_software" model="itm.equipment.type">
             <field name="name">Software</field>
+            <field name="parent_id" ref="type_it" />
+        </record>
+        <record id="type_app" model="itm.equipment.type">
+            <field name="name">Application</field>
+            <field name="parent_id" ref="type_software" />
+        </record>
+        <record id="type_license" model="itm.equipment.type">
+            <field name="name">License</field>
+            <field name="parent_id" ref="type_software" />
         </record>
         <record id="type_network" model="itm.equipment.type">
             <field name="name">Network Devices</field>
+            <field name="parent_id" ref="type_it" />
         </record>
         <record id="type_router" model="itm.equipment.type">
             <field name="name">Router</field>
@@ -56,6 +116,7 @@
         </record>
         <record id="type_computing_machine" model="itm.equipment.type">
             <field name="name">Computing Machine</field>
+            <field name="parent_id" ref="type_it" />
         </record>
         <record id="type_server" model="itm.equipment.type">
             <field name="name">Server</field>
