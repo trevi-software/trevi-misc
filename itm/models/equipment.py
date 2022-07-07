@@ -183,6 +183,18 @@ class ItEquipment(models.Model):
     )
     owner = fields.Char()
     location = fields.Char()
+    state = fields.Selection(
+        selection=[
+            ("in_store", "In store"),
+            ("in_use", "In use"),
+            ("loaned", "Loaned"),
+            ("in_repair", "In repair"),
+            ("retired", "Retired"),
+        ],
+        default="in_store",
+        tracking=True,
+        index=True,
+    )
     # Applications Page
     application_ids = fields.Many2many(
         "itm.application",
