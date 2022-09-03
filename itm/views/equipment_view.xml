@@ -324,10 +324,14 @@
                                             <field
                                                 name="static_ipv4_id"
                                                 attrs="{'invisible':[('use_dhcp4','=',True)]}"
+                                                context="{'default_network_id': network_id}"
+                                                domain="[('network_id', '=', network_id)]"
                                             />
                                             <field
                                                 name="dhcp_ipv4_id"
                                                 attrs="{'invisible':[('use_dhcp4','=',False)]}"
+                                                context="{'default_network_id': network_id}"
+                                                domain="[('network_id', '=', network_id)]"
                                             />
                                         </tree>
                                     </field>
