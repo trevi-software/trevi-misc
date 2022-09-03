@@ -35,6 +35,10 @@ Known issues / Roadmap
 Changelog
 =========
 
+14.0.3.3.6 (2022-07-05)
+~~~~~~~~~~~~~~~~~~~~~~~
+* [IMP] Allow multiple ip addresses with the same name if they are in different networks.
+
 14.0.2.3.6 (2022-07-05)
 ~~~~~~~~~~~~~~~~~~~~~~~
 * [IMP] Add views for Asset Type under "Configuration" menu
