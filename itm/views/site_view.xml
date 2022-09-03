@@ -181,6 +181,9 @@
                                     </tree>
                                 </field>
                             </group>
+                            <group string="IP Addresses">
+                                <field name="ip4_ids" nolabel="1" />
+                            </group>
                         </group>
                     </sheet>
                 </form>
