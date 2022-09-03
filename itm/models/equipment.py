@@ -1,5 +1,6 @@
 ##############################################################################
 #
+#    Copyright (C) 2021,2022 TREVI Software
 #    Copyright (C) 2014 Leandro Ezequiel Baldi
 #    <baldileandro@gmail.com>
 #
@@ -195,6 +196,13 @@ class ItEquipment(models.Model):
         tracking=True,
         index=True,
     )
+    ip4_ids = fields.Many2many(
+        "itm.site.network.ip4",
+        string="IPv4 Addresses",
+        readonly=True,
+        compute="_compute_ip4_ids",
+    )
+
     # Applications Page
     application_ids = fields.Many2many(
         "itm.application",
@@ -347,6 +355,21 @@ class ItEquipment(models.Model):
         "itm.equipment.component", "equipment_id", "Components"
     )
 
+    @api.depends(
+        "equipment_network_ids",
+        "equipment_network_ids.static_ipv4_id",
+        "equipment_network_ids.dhcp_ipv4_id",
+    )
+    def _compute_ip4_ids(self):
+        for equip in self:
+            ifs = self.env["itm.site.network.ip4"]
+            for net in equip.equipment_network_ids:
+                if net.static_ipv4_id:
+                    ifs |= net.static_ipv4_id
+                if net.dhcp_ipv4_id:
+                    ifs |= net.dhcp_ipv4_id
+            equip.ip4_ids = ifs
+
     # Log a note on creation of equipment to Site and Equipment chatter.
     #
     @api.model
@@ -424,3 +447,28 @@ class ItEquipment(models.Model):
             )
 
         return super(ItEquipment, self).unlink()
+
+    def add_ip4_network_interface(
+        self, name, network, mac, static_ip, dhcp_ip, use_dhcp, note=False
+    ):
+
+        # If an IPv4 address does not exist, create it
+        ip_obj = self.env["itm.site.network.ip4"]
+        static_ip4 = ip_obj.search([("name", "=", static_ip)])
+        if static_ip and not static_ip4:
+            static_ip4 = ip_obj.create({"name": static_ip})
+        dhcp_ip4 = ip_obj.search([("name", "=", dhcp_ip)])
+        if dhcp_ip and not dhcp_ip4:
+            dhcp_ip4 = ip_obj.create({"name": dhcp_ip})
+        return self.env["itm.equipment.network"].create(
+            {
+                "equipment_id": self.id,
+                "name": name,
+                "mac": mac,
+                "network_id": network.id,
+                "note": note,
+                "use_dhcp4": use_dhcp,
+                "static_ipv4_id": static_ip4.id,
+                "dhcp_ipv4_id": dhcp_ip4.id,
+            }
+        )

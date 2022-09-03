@@ -1,5 +1,6 @@
 ##############################################################################
 #
+#    Copyright (C) 2022 TREVI Software
 #    Copyright (C) 2014 Leandro Ezequiel Baldi
 #    <baldileandro@gmail.com>
 #
@@ -19,7 +20,7 @@
 ##############################################################################
 
 
-from odoo import fields, models
+from odoo import api, fields, models
 
 
 class ItEquipmentNetwork(models.Model):
@@ -31,8 +32,20 @@ class ItEquipmentNetwork(models.Model):
     mac = fields.Char("MAC Address", required=True)
     network_id = fields.Many2one("itm.site.network", "Network")
     static_ipv4_id = fields.Many2one("itm.site.network.ip4", "Static IPv4 Address")
+    dhcp_ipv4_id = fields.Many2one("itm.site.network.ip4", "IPv4 Address")
+    display_ipv4 = fields.Char(
+        "DHCP IPv4 Address", compute="_compute_display_ipv4_address"
+    )
     use_dhcp4 = fields.Boolean("Use IPv4 DHCP", default=True)
     note = fields.Text()
+
+    @api.depends("use_dhcp4", "static_ipv4_id")
+    def _compute_display_ipv4_address(self):
+        for net in self:
+            if net.use_dhcp4:
+                net.display_ipv4 = net.dhcp_ipv4_id.name
+            else:
+                net.display_ipv4 = net.static_ipv4_id.name
 
 
 class ItEquipmentNetworkProxy(models.Model):

@@ -75,6 +75,7 @@
                     <field name="owner" />
                     <field name="asset_type_id" />
                     <field name="brand_id" />
+                    <field name="ip4_ids" widget="many2many_tags" />
                     <field name="state" widget="badge" />
                 </tree>
             </field>
@@ -323,6 +324,10 @@
                                             <field
                                                 name="static_ipv4_id"
                                                 attrs="{'invisible':[('use_dhcp4','=',True)]}"
+                                            />
+                                            <field
+                                                name="dhcp_ipv4_id"
+                                                attrs="{'invisible':[('use_dhcp4','=',False)]}"
                                             />
                                         </tree>
                                     </field>
