@@ -56,6 +56,9 @@ class ItSiteNetwork(models.Model):
         comodel_name="itm.site.network.ip4", string="DNS Servers"
     )
     dhcp4_ids = fields.One2many("itm.service.dhcp4", "network_id", "DHCP")
+    ip4_ids = fields.One2many(
+        "itm.site.network.ip4", "network_id", string="IPv4 Addresses"
+    )
 
 
 class ItSiteNetworkIp4(models.Model):
@@ -63,11 +66,18 @@ class ItSiteNetworkIp4(models.Model):
     _description = "Network IPv4 Address"
 
     name = fields.Char(required=True)
+    network_id = fields.Many2one("itm.site.network", required=True)
 
-    @api.constrains("name")
+    @api.constrains("name", "network_id")
     def check_name(self):
         IpAddr = self.env["itm.site.network.ip4"]
         for rec in self:
-            duplicates = IpAddr.search([("name", "=", rec.name), ("id", "!=", rec.id)])
+            duplicates = IpAddr.search(
+                [
+                    ("name", "=", rec.name),
+                    ("network_id", "=", rec.network_id.id),
+                    ("id", "!=", rec.id),
+                ]
+            )
             if duplicates:
                 raise ValidationError(_("IP address '%s' already exists.", rec.name))
