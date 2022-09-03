@@ -59,7 +59,13 @@
             <field name="name">itm.equipment.tree</field>
             <field name="model">itm.equipment</field>
             <field name="arch" type="xml">
-                <tree string="Assets">
+                <tree
+                    string="Assets"
+                    decoration-info="state == 'in_store'"
+                    decoration-warning="state == 'loaned'"
+                    decoration-danger="state == 'in_repair'"
+                    decoration-muted="state == 'retired'"
+                >
                     <field name="name" />
                     <field name="code" />
                     <field name="partner_id" />
