@@ -33,6 +33,7 @@
                         <field name="network_id" />
                         <field name="static_ipv4_id" />
                         <field name="use_dhcp4" />
+                        <field name="dhcp_ipv4_id" />
                     </group>
                     <field
                         name="note"
@@ -55,6 +56,7 @@
                     <field name="equipment_id" />
                     <field name="network_id" />
                     <field name="static_ipv4_id" />
+                    <field name="dhcp_ipv4_id" />
                     <field name="use_dhcp4" />
                 </tree>
             </field>
