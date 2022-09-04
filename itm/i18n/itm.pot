@@ -2870,6 +2870,7 @@ msgstr ""
 
 #. module: itm
 #: model:ir.model.fields,field_description:itm.field_itm_equipment__state
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
 msgid "State"
 msgstr ""
 

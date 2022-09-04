@@ -577,6 +577,13 @@
                             context="{'group_by':'asset_type_id'}"
                         />
                         <filter
+                            name="by_state"
+                            string="State"
+                            icon="terp-personal"
+                            domain="[]"
+                            context="{'group_by':'state'}"
+                        />
+                        <filter
                             name="by_parent"
                             string="Host"
                             icon="terp-personal"
