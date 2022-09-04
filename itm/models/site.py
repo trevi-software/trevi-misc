@@ -1,9 +1,12 @@
 # Copyright (C) 2021 TREVI Software
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
+import logging
 
 from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
+
+_logger = logging.getLogger(__name__)
 
 
 class ItSite(models.Model):
@@ -67,6 +70,27 @@ class ItSiteNetworkIp4(models.Model):
 
     name = fields.Char(required=True)
     network_id = fields.Many2one("itm.site.network", required=True)
+
+    # Upgrade earlier installations that didn't have 'network_id' field
+    #
+    def _initialize_network_id(self):
+        _logger.warning(
+            "Beginning initialize of 'network_id' field of itm.site.network.ip4"
+        )
+        iface_obj = self.env["itm.equipment.network"]
+        ips = self.env["itm.site.network.ip4"].search([("network_id", "=", False)])
+        _logger.warning(f"Found {len(ips)} records to update")
+        for ip in ips:
+            iface = iface_obj.search(
+                [
+                    "|",
+                    ("static_ipv4_id", "=", ip.id),
+                    ("dhcp_ipv4_id", "=", ip.id),
+                ]
+            )
+            if iface:
+                _logger.warning(f"IP {ip.name}: set network: {iface.network_id.name}")
+                ip.network_id = iface.network_id
 
     @api.constrains("name", "network_id")
     def check_name(self):
