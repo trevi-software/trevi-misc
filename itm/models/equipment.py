@@ -454,12 +454,22 @@ class ItEquipment(models.Model):
 
         # If an IPv4 address does not exist, create it
         ip_obj = self.env["itm.site.network.ip4"]
-        static_ip4 = ip_obj.search([("name", "=", static_ip)])
+        static_ip4 = ip_obj.search(
+            [
+                ("name", "=", static_ip),
+                ("network_id", "=", network.id),
+            ]
+        )
         if static_ip and not static_ip4:
-            static_ip4 = ip_obj.create({"name": static_ip})
-        dhcp_ip4 = ip_obj.search([("name", "=", dhcp_ip)])
+            static_ip4 = ip_obj.create({"name": static_ip, "network_id": network.id})
+        dhcp_ip4 = ip_obj.search(
+            [
+                ("name", "=", dhcp_ip),
+                ("network_id", "=", network.id),
+            ]
+        )
         if dhcp_ip and not dhcp_ip4:
-            dhcp_ip4 = ip_obj.create({"name": dhcp_ip})
+            dhcp_ip4 = ip_obj.create({"name": dhcp_ip, "network_id": network.id})
         return self.env["itm.equipment.network"].create(
             {
                 "equipment_id": self.id,
