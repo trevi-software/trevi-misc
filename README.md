@@ -21,7 +21,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[itm](itm/) | 14.0.2.3.6 |  | IT Assets, Credentials, Backups, Applications.
+[itm](itm/) | 14.0.3.3.6 |  | IT Assets, Credentials, Backups, Applications.
 [partner_contact_it](partner_contact_it/) | 14.0.1.0.0 |  | Designate a contact as an IT Contact of the parent company
 [project_portal_hide](project_portal_hide/) | 14.0.1.0.0 | [![TREVI Software](https://github.com/TREVI Software.png?size=30px)](https://github.com/TREVI Software) | Hide projects &amp; tasks in the customer portal.
 [purchase_portal_hide](purchase_portal_hide/) | 14.0.1.0.0 | [![TREVI Software](https://github.com/TREVI Software.png?size=30px)](https://github.com/TREVI Software) | Hide purchase orders in the customer portal.
