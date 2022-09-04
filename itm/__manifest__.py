@@ -19,6 +19,7 @@
     "data": [
         "security/it_security.xml",
         "security/ir.model.access.csv",
+        "data/migration.xml",
         "data/application_license_data.xml",
         "data/equipment_brand_data.xml",
         "data/equipment_db_engine_data.xml",
