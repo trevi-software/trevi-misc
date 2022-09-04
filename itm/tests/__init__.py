@@ -3,4 +3,6 @@
 
 from . import test_access
 from . import test_component
+from . import test_equipment
+from . import test_network
 from . import test_worklog

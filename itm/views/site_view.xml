@@ -181,6 +181,14 @@
                                     </tree>
                                 </field>
                             </group>
+                            <group string="IP Addresses">
+                                <field name="ip4_ids" nolabel="1">
+                                    <tree string="IP addresses" editable="bottom">
+                                        <field name="name" />
+                                        <field name="network_id" />
+                                    </tree>
+                                </field>
+                            </group>
                         </group>
                     </sheet>
                 </form>

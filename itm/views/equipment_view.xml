@@ -59,14 +59,21 @@
             <field name="name">itm.equipment.tree</field>
             <field name="model">itm.equipment</field>
             <field name="arch" type="xml">
-                <tree string="Assets">
+                <tree
+                    string="Assets"
+                    decoration-info="state == 'in_store'"
+                    decoration-warning="state == 'loaned'"
+                    decoration-danger="state == 'in_repair'"
+                    decoration-muted="state == 'retired'"
+                >
                     <field name="name" />
                     <field name="code" />
-                    <field name="partner_id" />
                     <field name="description" />
+                    <field name="ip4_ids" widget="many2many_tags" />
                     <field name="site_id" />
                     <field name="location" />
                     <field name="owner" />
+                    <field name="partner_id" />
                     <field name="asset_type_id" />
                     <field name="brand_id" />
                     <field name="state" widget="badge" />
@@ -317,6 +324,14 @@
                                             <field
                                                 name="static_ipv4_id"
                                                 attrs="{'invisible':[('use_dhcp4','=',True)]}"
+                                                context="{'default_network_id': network_id}"
+                                                domain="[('network_id', '=', network_id)]"
+                                            />
+                                            <field
+                                                name="dhcp_ipv4_id"
+                                                attrs="{'invisible':[('use_dhcp4','=',False)]}"
+                                                context="{'default_network_id': network_id}"
+                                                domain="[('network_id', '=', network_id)]"
                                             />
                                         </tree>
                                     </field>
