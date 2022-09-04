@@ -137,7 +137,9 @@ class TestEquipment(common.SavepointCase):
             "The IP of the interface is in the server's list of ip addresses",
         )
 
-        ip4 = self.NetworkIp4.create({"name": "10.250.250.250"})
+        ip4 = self.NetworkIp4.create(
+            {"name": "10.250.250.250", "network_id": self.defaultNetwork.id}
+        )
         iface1.static_ipv4_id = ip4
         self.assertIn(
             ip4,
@@ -156,7 +158,9 @@ class TestEquipment(common.SavepointCase):
             len(server.ip4_ids), 1, "There is already one IP in the IP4 list"
         )
 
-        ip4 = self.NetworkIp4.create({"name": "10.250.250.250"})
+        ip4 = self.NetworkIp4.create(
+            {"name": "10.250.250.250", "network_id": self.defaultNetwork.id}
+        )
         iface1.dhcp_ipv4_id = ip4
         self.assertIn(
             iface1.static_ipv4_id,
