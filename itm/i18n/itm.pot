@@ -964,6 +964,11 @@ msgid "DHCP"
 msgstr ""
 
 #. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network__display_ipv4
+msgid "DHCP IPv4 Address"
+msgstr ""
+
+#. module: itm
 #: model:ir.model,name:itm.model_itm_service_dhcp4
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_ipreservation__dhcp_id
 msgid "DHCP Service"
@@ -1520,6 +1525,11 @@ msgid "INCREMENTAL"
 msgstr ""
 
 #. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_site_network_form
+msgid "IP Addresses"
+msgstr ""
+
+#. module: itm
 #: model:ir.model,name:itm.model_itm_equipment_ipreservation
 msgid "IP Reservation"
 msgstr ""
@@ -1541,8 +1551,24 @@ msgid "IP address '%s' already exists."
 msgstr ""
 
 #. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_site_network_form
+msgid "IP addresses"
+msgstr ""
+
+#. module: itm
 #: model_terms:ir.ui.view,arch_db:itm.itm_service_dhcp4_form
 msgid "IP reservations"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network__dhcp_ipv4_id
+msgid "IPv4 Address"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__ip4_ids
+#: model:ir.model.fields,field_description:itm.field_itm_site_network__ip4_ids
+msgid "IPv4 Addresses"
 msgstr ""
 
 #. module: itm
@@ -2090,6 +2116,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_network__network_id
 #: model:ir.model.fields,field_description:itm.field_itm_service_dhcp4__network_id
 #: model:ir.model.fields,field_description:itm.field_itm_service_wireless__network_id
+#: model:ir.model.fields,field_description:itm.field_itm_site_network_ip4__network_id
 #: model_terms:ir.ui.view,arch_db:itm.itm_equipment_network_form
 #: model_terms:ir.ui.view,arch_db:itm.itm_equipment_network_tree
 #: model_terms:ir.ui.view,arch_db:itm.itm_site_network_form
