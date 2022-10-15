@@ -3,12 +3,12 @@
     <data>
         <!-- Configuration Menus -->
         <menuitem
-            name="Components"
-            id="itm_menu_component_config"
-            parent="itm_menu_others"
-            groups="group_itm_manager"
-            sequence="60"
-        />
+      name="Components"
+      id="itm_menu_component_config"
+      parent="itm_menu_others"
+      groups="group_itm_manager"
+      sequence="60"
+    />
 
         <!-- Component Views -->
 
@@ -23,30 +23,30 @@
                     <field name="equipment_id" string="Component of" />
                     <separator />
                     <filter
-                        name="archived"
-                        string="Archived"
-                        domain="[('active','=',False)]"
-                    />
+            name="archived"
+            string="Archived"
+            domain="[('active','=',False)]"
+          />
                     <separator />
                     <group expand="0" string="Group By...">
                         <filter
-                            name="by_component"
-                            string="Component Type"
-                            domain="[]"
-                            context="{'group_by':'component_type_id'}"
-                        />
+              name="by_component"
+              string="Component Type"
+              domain="[]"
+              context="{'group_by':'component_type_id'}"
+            />
                         <filter
-                            name="by_manufacturer"
-                            string="Manufacturer"
-                            domain="[]"
-                            context="{'group_by':'manufacturer_id'}"
-                        />
+              name="by_manufacturer"
+              string="Manufacturer"
+              domain="[]"
+              context="{'group_by':'manufacturer_id'}"
+            />
                         <filter
-                            name="by_equipment"
-                            string="Asset"
-                            domain="[]"
-                            context="{'group_by':'equipment_id'}"
-                        />
+              name="by_equipment"
+              string="Asset"
+              domain="[]"
+              context="{'group_by':'equipment_id'}"
+            />
                     </group>
                 </search>
             </field>
@@ -74,11 +74,11 @@
                     <sheet>
                         <field name="active" invisible="1" />
                         <widget
-                            name="web_ribbon"
-                            title="Archived"
-                            bg_color="bg-danger"
-                            attrs="{'invisible': [('active', '=', True)]}"
-                        />
+              name="web_ribbon"
+              title="Archived"
+              bg_color="bg-danger"
+              attrs="{'invisible': [('active', '=', True)]}"
+            />
                         <group>
                             <group>
                                 <field name="name" />
@@ -92,41 +92,47 @@
                         </group>
                         <group name="specs" string="Specifications">
                             <field
-                                name="spec_line_ids"
-                                nolabel="1"
-                                widget="one2many"
-                                context="{'default_component_type_id': component_type_id}"
-                            >
+                name="spec_line_ids"
+                nolabel="1"
+                widget="one2many"
+                context="{'default_component_type_id': component_type_id}"
+              >
                                 <tree string="Specifications" editable="bottom">
-                                    <field name="component_type_id" invisible="1" />
-                                    <field name="possible_key_ids" invisible="1" />
                                     <field
-                                        name="key_id"
-                                        context="{'default_component_type_id': component_type_id}"
-                                    />
+                    name="component_type_id"
+                    invisible="1"
+                  />
+                                    <field
+                    name="possible_key_ids"
+                    invisible="1"
+                  />
+                                    <field
+                    name="key_id"
+                    context="{'default_component_type_id': component_type_id}"
+                  />
                                     <field name="value_type_id" invisible="1" />
                                     <field
-                                        name="value_id"
-                                        context="{'default_value_type_id': value_type_id}"
-                                    />
+                    name="value_id"
+                    context="{'default_value_type_id': value_type_id}"
+                  />
                                 </tree>
                                 <form string="Specification">
                                     <sheet>
                                         <group>
                                             <group>
                                                 <field
-                                                    name="component_type_id"
-                                                    invisible="1"
-                                                />
+                          name="component_type_id"
+                          invisible="1"
+                        />
                                                 <field
-                                                    name="possible_key_ids"
-                                                    invisible="1"
-                                                />
+                          name="possible_key_ids"
+                          invisible="1"
+                        />
                                                 <field name="key_id" />
                                                 <field
-                                                    name="value_type_id"
-                                                    invisible="1"
-                                                />
+                          name="value_type_id"
+                          invisible="1"
+                        />
                                                 <field name="value_id" />
                                             </group>
                                             <group />
@@ -151,11 +157,11 @@
             <field name="view_mode">tree,form</field>
         </record>
         <menuitem
-            action="component_action"
-            id="component_menu"
-            sequence="40"
-            parent="itm_menu_general"
-        />
+      action="component_action"
+      id="component_menu"
+      sequence="40"
+      parent="itm_menu_general"
+    />
 
         <!-- Component Types -->
 
@@ -181,7 +187,11 @@
                                 <field name="name" />
                             </group>
                             <group string="Valid Keys">
-                                <field name="key_ids" nolabel="1" editable="bottom">
+                                <field
+                  name="key_ids"
+                  nolabel="1"
+                  editable="bottom"
+                >
                                     <tree string="Key List">
                                         <field name="name" />
                                         <field name="value_type_id" />
@@ -209,11 +219,11 @@
             <field name="view_mode">tree,form</field>
         </record>
         <menuitem
-            action="component_type_action"
-            id="component_type_menu"
-            sequence="30"
-            parent="itm_menu_component_config"
-        />
+      action="component_type_action"
+      id="component_type_menu"
+      sequence="30"
+      parent="itm_menu_component_config"
+    />
 
         <!-- Specification -->
 
@@ -255,8 +265,12 @@
         <!-- Specification Selectors -->
 
         <record id="spec_selector_tree" model="ir.ui.view">
-            <field name="name">ITM Component Specification Selector Tree View</field>
-            <field name="model">itm.equipment.component.specification.selector</field>
+            <field
+        name="name"
+      >ITM Component Specification Selector Tree View</field>
+            <field
+        name="model"
+      >itm.equipment.component.specification.selector</field>
             <field name="arch" type="xml">
                 <tree string="Component Selectors">
                     <field name="name" />
@@ -267,8 +281,12 @@
         </record>
 
         <record id="spec_selector_form" model="ir.ui.view">
-            <field name="name">ITM Component Specification Selector Form View</field>
-            <field name="model">itm.equipment.component.specification.selector</field>
+            <field
+        name="name"
+      >ITM Component Specification Selector Form View</field>
+            <field
+        name="model"
+      >itm.equipment.component.specification.selector</field>
             <field name="arch" type="xml">
                 <form string="Component Selector">
                     <sheet>
@@ -280,14 +298,22 @@
                         </group>
                         <group>
                             <group string="Valid Keys">
-                                <field name="key_ids" nolabel="1" editable="bottom">
+                                <field
+                  name="key_ids"
+                  nolabel="1"
+                  editable="bottom"
+                >
                                     <tree string="Key List">
                                         <field name="name" />
                                     </tree>
                                 </field>
                             </group>
                             <group string="Valid Values">
-                                <field name="value_ids" nolabel="1" editable="bottom">
+                                <field
+                  name="value_ids"
+                  nolabel="1"
+                  editable="bottom"
+                >
                                     <tree string="Value List">
                                         <field name="name" />
                                     </tree>
@@ -302,22 +328,24 @@
         <record id="spec_selector_action" model="ir.actions.act_window">
             <field name="name">Specification Selectors</field>
             <field
-                name="res_model"
-            >itm.equipment.component.specification.selector</field>
+        name="res_model"
+      >itm.equipment.component.specification.selector</field>
             <field name="view_mode">tree,form</field>
         </record>
         <menuitem
-            action="spec_selector_action"
-            id="spec_selector_menu"
-            sequence="40"
-            parent="itm_menu_component_config"
-        />
+      action="spec_selector_action"
+      id="spec_selector_menu"
+      sequence="40"
+      parent="itm_menu_component_config"
+    />
 
         <!-- Specification Keys -->
 
         <record id="spec_key_tree" model="ir.ui.view">
             <field name="name">ITM Specification Key Tree View</field>
-            <field name="model">itm.equipment.component.specification.key</field>
+            <field
+        name="model"
+      >itm.equipment.component.specification.key</field>
             <field name="arch" type="xml">
                 <tree string="Component Types">
                     <field name="name" />
@@ -329,7 +357,9 @@
 
         <record id="spec_key_form" model="ir.ui.view">
             <field name="name">ITM Specification Key Form View</field>
-            <field name="model">itm.equipment.component.specification.key</field>
+            <field
+        name="model"
+      >itm.equipment.component.specification.key</field>
             <field name="arch" type="xml">
                 <form string="Component Type">
                     <sheet>
@@ -340,10 +370,10 @@
                             </group>
                             <group string="Component Types">
                                 <field
-                                    name="component_type_ids"
-                                    nolabel="1"
-                                    editable="bottom"
-                                >
+                  name="component_type_ids"
+                  nolabel="1"
+                  editable="bottom"
+                >
                                     <tree string="Component Types">
                                         <field name="name" />
                                     </tree>
@@ -365,39 +395,46 @@
 
         <record id="spec_key_action" model="ir.actions.act_window">
             <field name="name">Specification Keys</field>
-            <field name="res_model">itm.equipment.component.specification.key</field>
+            <field
+        name="res_model"
+      >itm.equipment.component.specification.key</field>
             <field name="view_mode">tree,form</field>
         </record>
         <menuitem
-            action="spec_key_action"
-            id="spec_key_menu"
-            sequence="50"
-            parent="itm_menu_component_config"
-        />
+      action="spec_key_action"
+      id="spec_key_menu"
+      sequence="50"
+      parent="itm_menu_component_config"
+    />
 
         <!-- Specification Values -->
 
         <record id="spec_value_search" model="ir.ui.view">
             <field name="name">ITM Component Specification Value Search</field>
-            <field name="model">itm.equipment.component.specification.value</field>
+            <field
+        name="model"
+      >itm.equipment.component.specification.value</field>
             <field name="arch" type="xml">
                 <search string="Specification Value Search">
                     <!--Searchs-->
                     <field name="name" string="Name" />
-                    <field name="value_type_id" string="Specification Selector" />
+                    <field
+            name="value_type_id"
+            string="Specification Selector"
+          />
                     <!--Filters-->
                     <filter
-                        name="archived"
-                        string="Archived"
-                        domain="[('active','=',False)]"
-                    />
+            name="archived"
+            string="Archived"
+            domain="[('active','=',False)]"
+          />
                     <group expand="0" string="Group By...">
                         <filter
-                            name="by_selector"
-                            string="Specification Selector"
-                            domain="[]"
-                            context="{'group_by':'value_type_id'}"
-                        />
+              name="by_selector"
+              string="Specification Selector"
+              domain="[]"
+              context="{'group_by':'value_type_id'}"
+            />
                     </group>
                 </search>
             </field>
@@ -405,7 +442,9 @@
 
         <record id="spec_value_tree" model="ir.ui.view">
             <field name="name">ITM Specification Value Tree View</field>
-            <field name="model">itm.equipment.component.specification.value</field>
+            <field
+        name="model"
+      >itm.equipment.component.specification.value</field>
             <field name="arch" type="xml">
                 <tree string="Specification Values">
                     <field name="name" />
@@ -416,17 +455,19 @@
 
         <record id="spec_value_form" model="ir.ui.view">
             <field name="name">ITM Specification Value Form View</field>
-            <field name="model">itm.equipment.component.specification.value</field>
+            <field
+        name="model"
+      >itm.equipment.component.specification.value</field>
             <field name="arch" type="xml">
                 <form string="Specification Value">
                     <sheet>
                         <field name="active" invisible="1" />
                         <widget
-                            name="web_ribbon"
-                            title="Archived"
-                            bg_color="bg-danger"
-                            attrs="{'invisible': [('active', '=', True)]}"
-                        />
+              name="web_ribbon"
+              title="Archived"
+              bg_color="bg-danger"
+              attrs="{'invisible': [('active', '=', True)]}"
+            />
                         <group>
                             <group>
                                 <field name="name" />
@@ -441,15 +482,17 @@
 
         <record id="spec_value_action" model="ir.actions.act_window">
             <field name="name">Specification Values</field>
-            <field name="res_model">itm.equipment.component.specification.value</field>
+            <field
+        name="res_model"
+      >itm.equipment.component.specification.value</field>
             <field name="view_mode">tree,form</field>
         </record>
         <menuitem
-            action="spec_value_action"
-            id="spec_value_menu"
-            sequence="60"
-            parent="itm_menu_component_config"
-        />
+      action="spec_value_action"
+      id="spec_value_menu"
+      sequence="60"
+      parent="itm_menu_component_config"
+    />
 
     </data>
 </odoo>

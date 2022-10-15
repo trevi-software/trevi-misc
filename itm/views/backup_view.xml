@@ -71,13 +71,28 @@
                                     <field name="destination" />
                                     <field name="frequency" />
                                     <field name="source" />
-                                    <field name="time_schedule" widget="float_time" />
-                                    <field name="script" filename="script_filename" />
-                                    <field name="script_filename" invisible="1" />
-                                    <field name="script_location" widget="url" />
+                                    <field
+                    name="time_schedule"
+                    widget="float_time"
+                  />
+                                    <field
+                    name="script"
+                    filename="script_filename"
+                  />
+                                    <field
+                    name="script_filename"
+                    invisible="1"
+                  />
+                                    <field
+                    name="script_location"
+                    widget="url"
+                  />
                                 </group>
                             </page>
-                            <page string="Audit Data" groups="itm.group_itm_mod">
+                            <page
+                string="Audit Data"
+                groups="itm.group_itm_mod"
+              >
                                 <group>
                                     <group>
                                         <field name="create_uid" />
@@ -89,15 +104,18 @@
                                     </group>
                                 </group>
                             </page>
-                            <page string="Configuration" groups="itm.group_itm_mod">
+                            <page
+                string="Configuration"
+                groups="itm.group_itm_mod"
+              >
                                 <group>
                                     <group>
                                         <field name="active" />
                                         <field
-                                            name="company_id"
-                                            string="Company"
-                                            groups="base.group_multi_company"
-                                        />
+                      name="company_id"
+                      string="Company"
+                      groups="base.group_multi_company"
+                    />
                                     </group>
                                 </group>
                             </page>
@@ -117,37 +135,49 @@
                     <field name="name" string="Backup Name" />
                     <field name="partner_id" string="Partner" />
                     <!--Filters-->
-                    <filter name="type" string="FULL" domain="[('type','=','full')]" />
-                    <filter name="type" string="DIFF" domain="[('type','=','diff')]" />
-                    <filter name="type" string="INC" domain="[('type','=','inc')]" />
                     <filter
-                        name="type"
-                        string="OTHER"
-                        domain="[('type','=','other')]"
-                    />
+            name="type"
+            string="FULL"
+            domain="[('type','=','full')]"
+          />
+                    <filter
+            name="type"
+            string="DIFF"
+            domain="[('type','=','diff')]"
+          />
+                    <filter
+            name="type"
+            string="INC"
+            domain="[('type','=','inc')]"
+          />
+                    <filter
+            name="type"
+            string="OTHER"
+            domain="[('type','=','other')]"
+          />
                     <separator />
                     <group expand="0" string="Group By...">
                         <filter
-                            name="by_partner"
-                            string="Partner"
-                            icon="terp-personal+"
-                            domain="[]"
-                            context="{'group_by':'partner_id'}"
-                        />
+              name="by_partner"
+              string="Partner"
+              icon="terp-personal+"
+              domain="[]"
+              context="{'group_by':'partner_id'}"
+            />
                         <filter
-                            name="by_equipment"
-                            string="Equipment"
-                            icon="terp-stock_effects-object-colorize"
-                            domain="[]"
-                            context="{'group_by':'equipment_id'}"
-                        />
+              name="by_equipment"
+              string="Equipment"
+              icon="terp-stock_effects-object-colorize"
+              domain="[]"
+              context="{'group_by':'equipment_id'}"
+            />
                         <filter
-                            name="by_type"
-                            string="Type"
-                            icon="terp-go-home"
-                            domain="[]"
-                            context="{'group_by':'type'}"
-                        />
+              name="by_type"
+              string="Type"
+              icon="terp-go-home"
+              domain="[]"
+              context="{'group_by':'type'}"
+            />
                     </group>
                 </search>
             </field>
@@ -160,11 +190,11 @@
         </record>
 
         <menuitem
-            action="itm_backup_action"
-            id="itm_backup"
-            sequence="30"
-            parent="itm_menu_general"
-        />
+      action="itm_backup_action"
+      id="itm_backup"
+      sequence="30"
+      parent="itm_menu_general"
+    />
 
     </data>
 </odoo>

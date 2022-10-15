@@ -41,11 +41,11 @@
         </record>
 
         <menuitem
-            action="itm_equipment_brand_action"
-            id="itm_equipment_brand"
-            sequence="50"
-            parent="itm_menu_others"
-        />
+      action="itm_equipment_brand_action"
+      id="itm_equipment_brand"
+      sequence="50"
+      parent="itm_menu_others"
+    />
 
     </data>
 </odoo>

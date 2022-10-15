@@ -47,18 +47,21 @@
             </field>
         </record>
 
-        <record id="itm_application_license_action" model="ir.actions.act_window">
+        <record
+      id="itm_application_license_action"
+      model="ir.actions.act_window"
+    >
             <field name="name">Licenses</field>
             <field name="res_model">itm.application.license</field>
             <field name="view_mode">tree,form</field>
         </record>
 
         <menuitem
-            action="itm_application_license_action"
-            id="itm_application_license"
-            sequence="41"
-            parent="itm_menu_others"
-        />
+      action="itm_application_license_action"
+      id="itm_application_license"
+      sequence="41"
+      parent="itm_menu_others"
+    />
 
     </data>
 

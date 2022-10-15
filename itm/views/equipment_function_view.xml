@@ -51,18 +51,21 @@
             </field>
         </record>
 
-        <record id="itm_equipment_function_action" model="ir.actions.act_window">
+        <record
+      id="itm_equipment_function_action"
+      model="ir.actions.act_window"
+    >
             <field name="name">Functions</field>
             <field name="res_model">itm.equipment.function</field>
             <field name="view_mode">tree,form</field>
         </record>
 
         <menuitem
-            action="itm_equipment_function_action"
-            id="itm_equipment_function"
-            sequence="30"
-            parent="itm_menu_others"
-        />
+      action="itm_equipment_function_action"
+      id="itm_equipment_function"
+      sequence="30"
+      parent="itm_menu_others"
+    />
 
     </data>
 

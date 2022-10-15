@@ -65,15 +65,24 @@
         <field name="name">Wireless AP</field>
     </record>
 
-    <record id="equipment_function_wirelessbridge" model="itm.equipment.function">
+    <record
+    id="equipment_function_wirelessbridge"
+    model="itm.equipment.function"
+  >
         <field name="name">Wireless Bridge</field>
     </record>
 
-    <record id="equipment_function_wirelessextender" model="itm.equipment.function">
+    <record
+    id="equipment_function_wirelessextender"
+    model="itm.equipment.function"
+  >
         <field name="name">Wireless Extender</field>
     </record>
 
-    <record id="equipment_function_wirelessclient" model="itm.equipment.function">
+    <record
+    id="equipment_function_wirelessclient"
+    model="itm.equipment.function"
+  >
         <field name="name">Wireless Client</field>
     </record>
 

@@ -41,14 +41,14 @@
                                     <field name="adobj_id" />
                                     <field name="type" />
                                     <field
-                                        name="perm_simple"
-                                        attrs="{'invisible': [('type', '=', 'advanced')]}"
-                                    />
+                    name="perm_simple"
+                    attrs="{'invisible': [('type', '=', 'advanced')]}"
+                  />
                                     <field
-                                        name="perm_advanced"
-                                        widget="many2many_tags"
-                                        attrs="{'invisible': [('type', '=', 'simple')]}"
-                                    />
+                    name="perm_advanced"
+                    widget="many2many_tags"
+                    attrs="{'invisible': [('type', '=', 'simple')]}"
+                  />
                                 </tree>
                             </field>
                         </group>

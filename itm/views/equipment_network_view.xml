@@ -36,11 +36,11 @@
                         <field name="dhcp_ipv4_id" />
                     </group>
                     <field
-                        name="note"
-                        colspan="4"
-                        nolabel="1"
-                        placeholder="Write a note ..."
-                    />
+            name="note"
+            colspan="4"
+            nolabel="1"
+            placeholder="Write a note ..."
+          />
                 </form>
             </field>
         </record>

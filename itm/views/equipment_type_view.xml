@@ -10,10 +10,10 @@
                 <field name="parent_id" />
                 <separator />
                 <filter
-                    name="archived"
-                    string="Archived"
-                    domain="[('active','=',False)]"
-                />
+          name="archived"
+          string="Archived"
+          domain="[('active','=',False)]"
+        />
             </search>
         </field>
     </record>
@@ -26,11 +26,11 @@
                 <sheet>
                     <field name="active" invisible="1" />
                     <widget
-                        name="web_ribbon"
-                        title="Archived"
-                        bg_color="bg-danger"
-                        attrs="{'invisible': [('active', '=', True)]}"
-                    />
+            name="web_ribbon"
+            title="Archived"
+            bg_color="bg-danger"
+            attrs="{'invisible': [('active', '=', True)]}"
+          />
                     <group>
                         <group>
                             <field name="name" />
@@ -64,10 +64,10 @@
     </record>
 
     <menuitem
-        action="itm_equipment_type_action"
-        id="itm_equipment_type_menu"
-        sequence="60"
-        parent="itm_menu_others"
-    />
+    action="itm_equipment_type_action"
+    id="itm_equipment_type_menu"
+    sequence="60"
+    parent="itm_menu_others"
+  />
 
 </odoo>
