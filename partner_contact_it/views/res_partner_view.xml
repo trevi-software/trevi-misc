@@ -9,14 +9,14 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='category_id']" position="after">
                     <field
-                        name="it_contact"
-                        attrs="{'invisible': [('is_company','=', True)]}"
-                    />
+            name="it_contact"
+            attrs="{'invisible': [('is_company','=', True)]}"
+          />
                 </xpath>
                 <xpath
-                    expr="//field[@name='child_ids']/form/sheet/group/group[2]/field[@name='mobile']"
-                    position="after"
-                >
+          expr="//field[@name='child_ids']/form/sheet/group/group[2]/field[@name='mobile']"
+          position="after"
+        >
                     <field name="it_contact" />
                 </xpath>
             </field>
@@ -41,10 +41,10 @@
             <field name="arch" type="xml">
                 <xpath expr="//filter[@name='type_company']" position="after">
                     <filter
-                        string="IT Contacts"
-                        name="it_contact"
-                        domain="[('it_contact', '=', True)]"
-                    />
+            string="IT Contacts"
+            name="it_contact"
+            domain="[('it_contact', '=', True)]"
+          />
                 </xpath>
             </field>
         </record>
