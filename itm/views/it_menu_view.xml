@@ -22,38 +22,38 @@
 
         <!-- Top menu item -->
         <menuitem
-            name="Infrastructure"
-            web_icon="itm,static/description/icon.jpg"
-            id="menu_main_itm"
-            groups="group_itm_user"
-            sequence="42"
-        />
+      name="Infrastructure"
+      web_icon="itm,static/description/icon.jpg"
+      id="menu_main_itm"
+      groups="group_itm_user"
+      sequence="42"
+    />
 
         <!-- General Menu -->
         <menuitem
-            name="IT Assets"
-            id="itm_menu_general"
-            parent="menu_main_itm"
-            groups="group_itm_user"
-            sequence="10"
-        />
+      name="IT Assets"
+      id="itm_menu_general"
+      parent="menu_main_itm"
+      groups="group_itm_user"
+      sequence="10"
+    />
 
         <menuitem
-            name="Services"
-            id="itm_menu_services"
-            parent="menu_main_itm"
-            groups="group_itm_user"
-            sequence="20"
-        />
+      name="Services"
+      id="itm_menu_services"
+      parent="menu_main_itm"
+      groups="group_itm_user"
+      sequence="20"
+    />
 
         <!-- Others -->
         <menuitem
-            name="Configuration"
-            id="itm_menu_others"
-            parent="menu_main_itm"
-            groups="group_itm_manager"
-            sequence="100"
-        />
+      name="Configuration"
+      id="itm_menu_others"
+      parent="menu_main_itm"
+      groups="group_itm_manager"
+      sequence="100"
+    />
 
     </data>
 

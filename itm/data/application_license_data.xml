@@ -26,14 +26,14 @@
 
         <record id="license_24" model="itm.application.license">
             <field
-                name="name"
-            > AGPLv1 / Affero General Public License (version 1)</field>
+        name="name"
+      > AGPLv1 / Affero General Public License (version 1)</field>
         </record>
 
         <record id="license_49" model="itm.application.license">
             <field
-                name="name"
-            > AGPLv2 / Affero General Public License (version 2)</field>
+        name="name"
+      > AGPLv2 / Affero General Public License (version 2)</field>
         </record>
 
         <record id="license_25" model="itm.application.license">
@@ -78,8 +78,8 @@
 
         <record id="license_28" model="itm.application.license">
             <field
-                name="name"
-            >Common Development and Distribution License (CDDL)</field>
+        name="name"
+      >Common Development and Distribution License (CDDL)</field>
         </record>
 
         <record id="license_7" model="itm.application.license">
@@ -108,8 +108,8 @@
 
         <record id="license_50" model="itm.application.license">
             <field
-                name="name"
-            > AGPLv3 / GNU Affero General Public License (version 3)</field>
+        name="name"
+      > AGPLv3 / GNU Affero General Public License (version 3)</field>
         </record>
 
         <record id="license_10" model="itm.application.license">
@@ -121,7 +121,9 @@
         </record>
 
         <record id="license_13" model="itm.application.license">
-            <field name="name">GNU LGPL / GNU Lesser General Public License</field>
+            <field
+        name="name"
+      >GNU LGPL / GNU Lesser General Public License</field>
         </record>
 
         <record id="license_31" model="itm.application.license">
@@ -201,7 +203,9 @@
         </record>
 
         <record id="license_41" model="itm.application.license">
-            <field name="name">Sun Industry Standards Source License (SISSL)</field>
+            <field
+        name="name"
+      >Sun Industry Standards Source License (SISSL)</field>
         </record>
 
         <record id="license_42" model="itm.application.license">

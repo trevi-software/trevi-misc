@@ -49,7 +49,10 @@
                         <group>
                             <group string="IP Reservations">
                                 <field name="reservation_ids" nolabel="1">
-                                    <tree string="IP reservations" editable="bottom">
+                                    <tree
+                    string="IP reservations"
+                    editable="bottom"
+                  >
                                         <field name="dhcp_id" invisible="1" />
                                         <field name="ip_address" />
                                         <field name="mac_address" />
@@ -70,11 +73,11 @@
         </record>
 
         <menuitem
-            action="itm_service_dhcp4_action"
-            id="itm_dhcp4_menu"
-            sequence="30"
-            parent="itm_menu_services"
-        />
+      action="itm_service_dhcp4_action"
+      id="itm_dhcp4_menu"
+      sequence="30"
+      parent="itm_menu_services"
+    />
 
     </data>
 </odoo>
