@@ -25,10 +25,10 @@
                     <field name="name" />
                     <field name="partner_id" />
                     <filter
-                        name="archived"
-                        string="Archived"
-                        domain="[('active','=',False)]"
-                    />
+            name="archived"
+            string="Archived"
+            domain="[('active','=',False)]"
+          />
                 </search>
             </field>
         </record>
@@ -54,34 +54,37 @@
                     <sheet>
                         <div class="oe_button_box" name="buttons">
                             <button
-                                name="%(act_site_2_equipment)d"
-                                class="oe_stat_button"
-                                icon="fa-th-large"
-                                type="action"
-                                groups="itm.group_itm_user"
-                            >
+                name="%(act_site_2_equipment)d"
+                class="oe_stat_button"
+                icon="fa-th-large"
+                type="action"
+                groups="itm.group_itm_user"
+              >
                                         <field
-                                    name="equipment_count"
-                                    widget="statinfo"
-                                />
+                  name="equipment_count"
+                  widget="statinfo"
+                />
                             </button>
                             <button
-                                name="%(act_site_2_access)d"
-                                class="oe_stat_button"
-                                icon="fa-key"
-                                type="action"
-                                groups="itm.group_itm_user"
-                            >
-                                        <field name="access_count" widget="statinfo" />
+                name="%(act_site_2_access)d"
+                class="oe_stat_button"
+                icon="fa-key"
+                type="action"
+                groups="itm.group_itm_user"
+              >
+                                        <field
+                  name="access_count"
+                  widget="statinfo"
+                />
                             </button>
                         </div>
                         <field name="active" invisible="1" />
                         <widget
-                            name="web_ribbon"
-                            title="Archived"
-                            bg_color="bg-danger"
-                            attrs="{'invisible': [('active', '=', True)]}"
-                        />
+              name="web_ribbon"
+              title="Archived"
+              bg_color="bg-danger"
+              attrs="{'invisible': [('active', '=', True)]}"
+            />
                         <div class="oe_title">
                             <div class="oe_edit_only oe_left">
                                 <label for="name" />
@@ -96,10 +99,10 @@
                             </group>
                             <group>
                                 <field
-                                    name="company_id"
-                                    string="Company"
-                                    groups="base.group_multi_company"
-                                />
+                  name="company_id"
+                  string="Company"
+                  groups="base.group_multi_company"
+                />
                             </group>
                         </group>
                         <group string="Networks">
@@ -110,7 +113,10 @@
                                     <field name="subnet" />
                                     <field name="netmask" />
                                     <field name="default_gw" />
-                                    <field name="dns_ids" widget="many2many_tags" />
+                                    <field
+                    name="dns_ids"
+                    widget="many2many_tags"
+                  />
                                 </tree>
                             </field>
                         </group>
@@ -183,7 +189,10 @@
                             </group>
                             <group string="IP Addresses">
                                 <field name="ip4_ids" nolabel="1">
-                                    <tree string="IP addresses" editable="bottom">
+                                    <tree
+                    string="IP addresses"
+                    editable="bottom"
+                  >
                                         <field name="name" />
                                         <field name="network_id" />
                                     </tree>
@@ -202,26 +211,26 @@
         </record>
 
         <menuitem
-            name="Sites"
-            id="itm_menu_sites"
-            parent="menu_main_itm"
-            groups="itm.group_itm_user"
-            sequence="30"
-        />
+      name="Sites"
+      id="itm_menu_sites"
+      parent="menu_main_itm"
+      groups="itm.group_itm_user"
+      sequence="30"
+    />
 
         <menuitem
-            action="itm_site_action"
-            id="itm_site_menu"
-            sequence="20"
-            parent="itm_menu_sites"
-        />
+      action="itm_site_action"
+      id="itm_site_menu"
+      sequence="20"
+      parent="itm_menu_sites"
+    />
 
         <menuitem
-            action="itm_network_action"
-            id="itm_network_menu"
-            sequence="30"
-            parent="itm_menu_sites"
-        />
+      action="itm_network_action"
+      id="itm_network_menu"
+      sequence="30"
+      parent="itm_menu_sites"
+    />
 
     </data>
 </odoo>

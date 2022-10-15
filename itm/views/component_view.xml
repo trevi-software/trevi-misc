@@ -27,11 +27,11 @@
         </record>
 
         <menuitem
-            action="itm_component_action"
-            id="itm_component"
-            sequence="20"
-            parent="itm_menu_others"
-        />
+      action="itm_component_action"
+      id="itm_component"
+      sequence="20"
+      parent="itm_menu_others"
+    />
 
     </data>
 

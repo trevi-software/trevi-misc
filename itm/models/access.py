@@ -10,7 +10,6 @@ from random import choice
 from cryptography.fernet import Fernet
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
-
 from odoo import _, api, fields, models
 
 PARAM_PASS = "itm_passkey"
