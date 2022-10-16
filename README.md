@@ -7,7 +7,7 @@
 
 <!-- /!\ do not modify above this line -->
 
-# Miscellaneous Trevi Addons
+# trevi-software
 
 Miscellaneous Odoo addons by Trevi that do not belong elsewhere.
 

@@ -15,7 +15,7 @@ org_name: TREVI Software
 org_slug: trevi-software
 rebel_module_groups: []
 repo_description: Miscellaneous Odoo addons by Trevi that do not belong elsewhere.
-repo_name: Miscellaneous Trevi Addons
+repo_name: trevi-software
 repo_slug: trevi-misc
 repo_website: https://github.com/trevi-software/trevi-misc
 travis_apt_packages: []
