@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <data>
 
         <record model="ir.ui.view" id="itm_service_wireless_tree">
             <field name="name">itm.service.wireless.tree</field>
             <field name="model">itm.service.wireless</field>
             <field name="arch" type="xml">
-                <tree string="Wireless Settings">
+                <tree>
                     <field name="name" />
                     <field name="type" />
                     <field name="network_id" />
@@ -40,14 +39,8 @@
                         <group>
                             <group string="SSID List">
                                 <field name="bssid_ids" nolabel="1">
-                                    <tree
-                    string="Wireless SSID List"
-                    editable="bottom"
-                  >
-                                        <field
-                      name="wireless_id"
-                      invisible="1"
-                    />
+                                    <tree editable="bottom">
+                                        <field name="wireless_id" invisible="1" />
                                         <field name="name" />
                                         <field name="is_guest" />
                                         <field name="auth_type" />
@@ -69,11 +62,10 @@
         </record>
 
         <menuitem
-      action="itm_service_wireless_action"
-      id="itm_wireless_menu"
-      sequence="40"
-      parent="itm_menu_services"
+        action="itm_service_wireless_action"
+        id="itm_wireless_menu"
+        sequence="40"
+        parent="itm_menu_services"
     />
 
-    </data>
 </odoo>

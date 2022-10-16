@@ -18,40 +18,36 @@
 -->
 <odoo>
 
-    <data>
-
-        <!-- Create view for worklogs -->
-        <record model="ir.ui.view" id="itm_equipment_worklog_form">
-            <field name="name">itm.equipment.worklog.form</field>
-            <field name="model">itm.equipment.worklog</field>
-            <field name="arch" type="xml">
-                <form string="Worklog">
-                    <group>
-                        <field name="name" />
-                        <field name="date" />
-                        <field name="spent_time" widget="float_time" />
-                        <field name="user_id" />
-                    </group>
-                    <separator string="Description" colspan="4" />
-                    <field name="description" colspan="4" nolabel="1" />
-                </form>
-            </field>
-        </record>
-
-        <!-- Tree view for worklogs grill on equipments -->
-        <record model="ir.ui.view" id="itm_equipment_worklog_tree">
-            <field name="name">itm.equipment.worklog.tree</field>
-            <field name="model">itm.equipment.worklog</field>
-            <field name="arch" type="xml">
-                <tree string="Worklogs">
+    <!-- Create view for worklogs -->
+    <record model="ir.ui.view" id="itm_equipment_worklog_form">
+        <field name="name">itm.equipment.worklog.form</field>
+        <field name="model">itm.equipment.worklog</field>
+        <field name="arch" type="xml">
+            <form string="Worklog">
+                <group>
                     <field name="name" />
                     <field name="date" />
                     <field name="spent_time" widget="float_time" />
                     <field name="user_id" />
-                </tree>
-            </field>
-        </record>
+                </group>
+                <separator string="Description" colspan="4" />
+                <field name="description" colspan="4" nolabel="1" />
+            </form>
+        </field>
+    </record>
 
-    </data>
+    <!-- Tree view for worklogs grill on equipments -->
+    <record model="ir.ui.view" id="itm_equipment_worklog_tree">
+        <field name="name">itm.equipment.worklog.tree</field>
+        <field name="model">itm.equipment.worklog</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="date" />
+                <field name="spent_time" widget="float_time" />
+                <field name="user_id" />
+            </tree>
+        </field>
+    </record>
 
 </odoo>

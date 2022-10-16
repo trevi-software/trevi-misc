@@ -4,7 +4,7 @@
 from odoo.tests import common
 
 
-class TestEquipment(common.SavepointCase):
+class TestEquipment(common.TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()

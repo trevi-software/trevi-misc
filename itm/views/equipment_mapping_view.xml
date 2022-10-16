@@ -18,57 +18,53 @@
 -->
 <odoo>
 
-    <data>
-
-        <!-- Create view for mapping -->
-        <record model="ir.ui.view" id="itm_equipment_mapping_form">
-            <field name="name">itm.equipment.mapping.form</field>
-            <field name="model">itm.equipment.mapping</field>
-            <field name="arch" type="xml">
-                <form string="Mapping">
-                    <sheet>
-                        <header />
+    <!-- Create view for mapping -->
+    <record model="ir.ui.view" id="itm_equipment_mapping_form">
+        <field name="name">itm.equipment.mapping.form</field>
+        <field name="model">itm.equipment.mapping</field>
+        <field name="arch" type="xml">
+            <form string="Mapping">
+                <sheet>
+                    <header />
+                    <group>
                         <group>
-                            <group>
-                                <field name="name" />
-                                <field name="path" />
-                            </group>
+                            <field name="name" />
+                            <field name="path" />
                         </group>
-                        <group string="Permission Lines">
-                            <field name="line_ids">
-                                <tree string="Permissions" editable="bottom">
-                                    <field name="map_id" invisible="1" />
-                                    <field name="adobj_id" />
-                                    <field name="type" />
-                                    <field
-                    name="perm_simple"
-                    attrs="{'invisible': [('type', '=', 'advanced')]}"
-                  />
-                                    <field
-                    name="perm_advanced"
-                    widget="many2many_tags"
-                    attrs="{'invisible': [('type', '=', 'simple')]}"
-                  />
-                                </tree>
-                            </field>
-                        </group>
-                    </sheet>
-                </form>
-            </field>
-        </record>
+                    </group>
+                    <group string="Permission Lines">
+                        <field name="line_ids">
+                            <tree editable="bottom">
+                                <field name="map_id" invisible="1" />
+                                <field name="adobj_id" />
+                                <field name="type" />
+                                <field
+                                    name="perm_simple"
+                                    attrs="{'invisible': [('type', '=', 'advanced')]}"
+                                />
+                                <field
+                                    name="perm_advanced"
+                                    widget="many2many_tags"
+                                    attrs="{'invisible': [('type', '=', 'simple')]}"
+                                />
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
 
-        <!-- Tree view for mapping grill on equipments -->
-        <record model="ir.ui.view" id="itm_equipment_mapping_tree">
-            <field name="name">itm.equipment.mapping.tree</field>
-            <field name="model">itm.equipment.mapping</field>
-            <field name="arch" type="xml">
-                <tree string="Mapping Registry">
-                    <field name="name" colspan="4" />
-                    <field name="path" />
-                </tree>
-            </field>
-        </record>
-
-    </data>
+    <!-- Tree view for mapping grill on equipments -->
+    <record model="ir.ui.view" id="itm_equipment_mapping_tree">
+        <field name="name">itm.equipment.mapping.tree</field>
+        <field name="model">itm.equipment.mapping</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" colspan="4" />
+                <field name="path" />
+            </tree>
+        </field>
+    </record>
 
 </odoo>

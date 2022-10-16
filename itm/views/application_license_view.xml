@@ -18,51 +18,44 @@
 -->
 <odoo>
 
-    <data>
+    <!-- Form view -->
+    <record model="ir.ui.view" id="itm_application_license_form">
+        <field name="name">itm.application.license.form</field>
+        <field name="model">itm.application.license</field>
+        <field name="arch" type="xml">
+            <form string="License">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="copy" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
 
-        <!-- Form view -->
-        <record model="ir.ui.view" id="itm_application_license_form">
-            <field name="name">itm.application.license.form</field>
-            <field name="model">itm.application.license</field>
-            <field name="arch" type="xml">
-                <form string="License">
-                    <sheet>
-                        <group>
-                            <field name="name" />
-                            <field name="copy" />
-                        </group>
-                    </sheet>
-                </form>
-            </field>
-        </record>
+    <!-- Tree view-->
+    <record model="ir.ui.view" id="itm_application_license_tree">
+        <field name="name">itm.application.license.tree</field>
+        <field name="model">itm.application.license</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" colspan="4" />
+            </tree>
+        </field>
+    </record>
 
-        <!-- Tree view-->
-        <record model="ir.ui.view" id="itm_application_license_tree">
-            <field name="name">itm.application.license.tree</field>
-            <field name="model">itm.application.license</field>
-            <field name="arch" type="xml">
-                <tree string="License">
-                    <field name="name" colspan="4" />
-                </tree>
-            </field>
-        </record>
+    <record id="itm_application_license_action" model="ir.actions.act_window">
+        <field name="name">Licenses</field>
+        <field name="res_model">itm.application.license</field>
+        <field name="view_mode">tree,form</field>
+    </record>
 
-        <record
-      id="itm_application_license_action"
-      model="ir.actions.act_window"
-    >
-            <field name="name">Licenses</field>
-            <field name="res_model">itm.application.license</field>
-            <field name="view_mode">tree,form</field>
-        </record>
-
-        <menuitem
-      action="itm_application_license_action"
-      id="itm_application_license"
-      sequence="41"
-      parent="itm_menu_others"
+    <menuitem
+        action="itm_application_license_action"
+        id="itm_application_license"
+        sequence="41"
+        parent="itm_menu_others"
     />
-
-    </data>
 
 </odoo>

@@ -1,4 +1,4 @@
-# Copyright (C) 2021 TREVI Software
+# Copyright (C) 2021,2022 TREVI Software
 # Copyright (C) 2014 Leandro Ezequiel Baldi
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
@@ -51,13 +51,17 @@ class ItServiceAD(models.Model):
         #
         mt_note = self.env.ref("mail.mt_note")
         author = self.env.user.partner_id and self.env.user.partner_id.id or False
-        msg = _(
-            '<div class="o_mail_notification"><ul><li>A new %s was created: \
-                <a href="#" class="o_redirect" data-oe-model=itm.service.ad data-oe-id="%s"> \
-                %s</a></li></ul></div>',
-            res._description,
-            res.id,
-            res.name,
+        msg = (
+            _(
+                '<div class="o_mail_notification"><ul><li>A new %(dsc)s was created: \
+                <a href="#" class="o_redirect" data-oe-model=itm.service.ad \
+                data-oe-id="%(id)s"> %(name)s</a></li></ul></div>'
+            )
+            % {
+                "dsc": res._description,
+                "id": res.id,
+                "name": res.name,
+            }
         )
         if res.site_id:
             res.site_id.message_post(body=msg, subtype_id=mt_note.id, author_id=author)
@@ -99,9 +103,10 @@ class ItServiceAD(models.Model):
         for k, v in sites.items():
             msg = ""
             for r in v:
-                msg = msg + _(
-                    "<li> %s was deleted: %s</li>", self._description, r["name"]
-                )
+                msg = msg + _("<li> %(dsc)s was deleted: %(name)s</li>") % {
+                    "dsc": self._description,
+                    "name": r["name"],
+                }
             note = '<div class="o_mail_notification"><ul>' + msg + "</ul></div>"
             Site.browse(k).message_post(
                 body=note, subtype_id=mt_note.id, author_id=author
@@ -111,9 +116,10 @@ class ItServiceAD(models.Model):
         for k, v in equips.items():
             msg = ""
             for r in v:
-                msg = msg + _(
-                    "<li> %s record was deleted: %s</li>", self._description, r["name"]
-                )
+                msg = msg + _("<li> %s(dsc) record was deleted: %(name)s</li>") % {
+                    "dsc": self._description,
+                    "name": r["name"],
+                }
             note = '<div class="o_mail_notification"><ul>' + msg + "</ul></div>"
             Equipment.browse(k).message_post(
                 body=note, subtype_id=mt_note.id, author_id=author
@@ -153,7 +159,9 @@ class ItServiceAdObject(models.Model):
         default=_get_default_ad,
     )
     access_id = fields.Many2one("itm.access", "Related Credential")
-    complete_name = fields.Char(compute="_compute_complete_name", store=True)
+    complete_name = fields.Char(
+        compute="_compute_complete_name", store=True, recursive=True
+    )
     description = fields.Text()
     active = fields.Boolean(default=True)
     type = fields.Selection(
@@ -222,15 +230,19 @@ class ItServiceAdObject(models.Model):
         #
         mt_note = self.env.ref("mail.mt_note")
         author = self.env.user.partner_id and self.env.user.partner_id.id or False
-        msg = _(
-            '<div class="o_mail_notification"><ul><li>A new %s was created: \
+        msg = (
+            _(
+                '<div class="o_mail_notification"><ul><li>A new %(dsc)s was created: \
                 <a href="#" \
                 class="o_redirect" \
-                data-oe-model=itm.service.ad.object data-oe-id="%s"> \
-                %s</a></li></ul></div>',
-            res._description,
-            res.id,
-            res.complete_name,
+                data-oe-model=itm.service.ad.object data-oe-id="%(id)s"> \
+                %(name)s</a></li></ul></div>'
+            )
+            % {
+                "dsc": res._description,
+                "id": res.id,
+                "name": res.complete_name,
+            }
         )
         if res.ad_id and res.ad_id.site_id:
             res.ad_id.site_id.message_post(
@@ -288,9 +300,10 @@ class ItServiceAdObject(models.Model):
         for k, v in sites.items():
             msg = ""
             for r in v:
-                msg = msg + _(
-                    "<li> %s was deleted: %s</li>", self._description, r["name"]
-                )
+                msg = msg + _("<li> %(dsc)s was deleted: %(name)s</li>") % {
+                    "dsc": self._description,
+                    "name": r["name"],
+                }
             note = '<div class="o_mail_notification"><ul>' + msg + "</ul></div>"
             Site.browse(k).message_post(
                 body=note, subtype_id=mt_note.id, author_id=author
@@ -300,9 +313,10 @@ class ItServiceAdObject(models.Model):
         for k, v in equips.items():
             msg = ""
             for r in v:
-                msg = msg + _(
-                    "<li> %s record was deleted: %s</li>", self._description, r["name"]
-                )
+                msg = msg + _("<li> %(dsc)s record was deleted: %(name)s</li>") % {
+                    "dsc": self._description,
+                    "name": r["name"],
+                }
             note = '<div class="o_mail_notification"><ul>' + msg + "</ul></div>"
             Equipment.browse(k).message_post(
                 body=note, subtype_id=mt_note.id, author_id=author

@@ -18,49 +18,46 @@
 -->
 <odoo>
 
-    <data>
-
-        <!-- Create view for network -->
-        <record model="ir.ui.view" id="itm_equipment_network_form">
-            <field name="name">itm.equipment.network.form</field>
-            <field name="model">itm.equipment.network</field>
-            <field name="arch" type="xml">
-                <form string="Network">
-                    <group>
-                        <field name="name" placeholder="eth0" />
-                        <field name="mac" />
-                        <field name="equipment_id" />
-                        <field name="network_id" />
-                        <field name="static_ipv4_id" />
-                        <field name="use_dhcp4" />
-                        <field name="dhcp_ipv4_id" />
-                    </group>
-                    <field
-            name="note"
-            colspan="4"
-            nolabel="1"
-            placeholder="Write a note ..."
-          />
-                </form>
-            </field>
-        </record>
-
-        <!-- Tree view for network grill on equipments -->
-        <record model="ir.ui.view" id="itm_equipment_network_tree">
-            <field name="name">itm.equipment.network.tree</field>
-            <field name="model">itm.equipment.network</field>
-            <field name="arch" type="xml">
-                <tree string="Network">
-                    <field name="name" />
+    <!-- Create view for network -->
+    <record model="ir.ui.view" id="itm_equipment_network_form">
+        <field name="name">itm.equipment.network.form</field>
+        <field name="model">itm.equipment.network</field>
+        <field name="arch" type="xml">
+            <form string="Network">
+                <group>
+                    <field name="name" placeholder="eth0" />
                     <field name="mac" />
                     <field name="equipment_id" />
                     <field name="network_id" />
                     <field name="static_ipv4_id" />
-                    <field name="dhcp_ipv4_id" />
                     <field name="use_dhcp4" />
-                </tree>
-            </field>
-        </record>
+                    <field name="dhcp_ipv4_id" />
+                </group>
+                <field
+                    name="note"
+                    colspan="4"
+                    nolabel="1"
+                    placeholder="Write a note ..."
+                />
+            </form>
+        </field>
+    </record>
 
-    </data>
+    <!-- Tree view for network grill on equipments -->
+    <record model="ir.ui.view" id="itm_equipment_network_tree">
+        <field name="name">itm.equipment.network.tree</field>
+        <field name="model">itm.equipment.network</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="mac" />
+                <field name="equipment_id" />
+                <field name="network_id" />
+                <field name="static_ipv4_id" />
+                <field name="dhcp_ipv4_id" />
+                <field name="use_dhcp4" />
+            </tree>
+        </field>
+    </record>
+
 </odoo>

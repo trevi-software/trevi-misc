@@ -34,6 +34,5 @@ class ItEquipmentRule(models.Model):
     destination_address = fields.Char()
     permission = fields.Selection(
         [("allow", "ALLOW"), ("deny", "DENY")],
-        "Permission",
         default="allow",
     )

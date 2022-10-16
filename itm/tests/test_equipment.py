@@ -4,7 +4,7 @@
 from odoo.tests import common
 
 
-class TestEquipment(common.SavepointCase):
+class TestEquipment(common.TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -55,7 +55,7 @@ class TestEquipment(common.SavepointCase):
         )
 
         self.assertTrue(
-            iface.static_ipv4_id, "The network interface has a static IP address"
+            iface.static_ipv4_id, "The network interface has a " "static IP address"
         )
         self.assertEqual(
             iface.display_ipv4,
@@ -83,7 +83,7 @@ class TestEquipment(common.SavepointCase):
             iface.dhcp_ipv4_id, "The DHCP network interface has an IP address"
         )
         self.assertFalse(
-            iface.static_ipv4_id, "The static interface does NOT have an IP address"
+            iface.static_ipv4_id, "The static interface does NOT have " "an IP address"
         )
 
     def test_ip_no_dhcp(self):
@@ -96,10 +96,10 @@ class TestEquipment(common.SavepointCase):
         )
 
         self.assertTrue(
-            iface.static_ipv4_id, "The network interface has a static IP address"
+            iface.static_ipv4_id, "The network interface has a " "static IP address"
         )
         self.assertFalse(
-            iface.dhcp_ipv4_id, "The DHCP interface does NOT have an IP address"
+            iface.dhcp_ipv4_id, "The DHCP interface does NOT have " "an IP address"
         )
 
     def test_equipment_ip4_addresses(self):
@@ -116,12 +116,12 @@ class TestEquipment(common.SavepointCase):
         self.assertIn(
             iface1.static_ipv4_id,
             server.ip4_ids,
-            "The IP of the first interface is in the server's list of ip addresses",
+            "The IP of the first interface is in the server's list of " "ip addresses",
         )
         self.assertIn(
             iface2.static_ipv4_id,
             server.ip4_ids,
-            "The IP of the second interface is in the server's list of ip addresses",
+            "The IP of the second interface is in the server's " "list of ip addresses",
         )
 
     def test_equipment_change_ip4_00(self):

@@ -1,4 +1,4 @@
-# Copyright (C) 2021 TREVI Software
+# Copyright (C) 2021,2022 TREVI Software
 # Copyright (C) 2014 Leandro Ezequiel Baldi <baldileandro@gmail.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
@@ -34,7 +34,6 @@ class ItEquipmentMappingLine(models.Model):
 
     map_id = fields.Many2one("itm.equipment.mapping", "Mapping")
     name = fields.Char(
-        string="Name",
         compute="_compute_name",
         store=True,
         help="Sharing partition or folder name",

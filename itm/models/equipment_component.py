@@ -1,6 +1,6 @@
 ##############################################################################
 #
-#    Copyright (C) 2021 TREVI Software
+#    Copyright (C) 2021,2022 TREVI Software
 #    Copyright (C) 2014 Leandro Ezequiel Baldi
 #    <baldileandro@gmail.com>
 #
@@ -40,7 +40,7 @@ class EquipmentComponent(models.Model):
     component_type_id = fields.Many2one("itm.equipment.component.type", required=True)
     serial_number = fields.Char()
     manufacturer_id = fields.Many2one("itm.equipment.brand")
-    note = fields.Text("Note")
+    note = fields.Text()
     active = fields.Boolean(default=True)
     spec_line_ids = fields.Many2many(
         "itm.equipment.component.specification",
@@ -81,11 +81,10 @@ class EquipmentComponent(models.Model):
         for k, v in old_equips.items():
             msg = ""
             for r in v:
-                msg = msg + _(
-                    "<li>A %s was removed: %s</li>",
-                    self._description,
-                    r["name"],
-                )
+                msg = msg + _("<li>A %(dsc)s was removed: %(name)s</li>") % {
+                    "dsc": self._description,
+                    "name": r["name"],
+                }
             note = '<div class="o_mail_notification"><ul>' + msg + "</ul></div>"
             Equipment.browse(k).message_post(
                 body=note, subtype_id=mt_note.id, author_id=author
@@ -94,11 +93,10 @@ class EquipmentComponent(models.Model):
         # Log installation in new
         msg = ""
         for r in new_equip:
-            msg = msg + _(
-                "<li>A %s was installed: %s</li>",
-                self._description,
-                r["name"],
-            )
+            msg = msg + _("<li>A %(dsc)s was installed: %(name)s</li>") % {
+                "dsc": self._description,
+                "name": r["name"],
+            }
         note = '<div class="o_mail_notification"><ul>' + msg + "</ul></div>"
         Equipment.browse(new_eq_id).message_post(
             body=note, subtype_id=mt_note.id, author_id=author
@@ -115,14 +113,18 @@ class EquipmentComponent(models.Model):
         #
         mt_note = self.env.ref("mail.mt_note")
         author = self.env.user.partner_id and self.env.user.partner_id.id or False
-        msg = _(
-            '<div class="o_mail_notification"><ul><li>A new %s was installed: \
+        msg = (
+            _(
+                '<div class="o_mail_notification"><ul><li>A new %(dsc)s was installed: \
                 <a href="#" class="o_redirect" \
-                data-oe-model=itm.equipment.component data-oe-id="%s"> \
-                %s</a></li></ul></div>',
-            res._description,
-            res.id,
-            res.name,
+                data-oe-model=itm.equipment.component data-oe-id="%(id)s"> \
+                %(name)s</a></li></ul></div>'
+            )
+            % {
+                "dsc": res._description,
+                "id": res.id,
+                "name": res.name,
+            }
         )
         if res.equipment_id:
             res.equipment_id.message_post(
@@ -156,9 +158,10 @@ class EquipmentComponent(models.Model):
         for k, v in equips.items():
             msg = ""
             for r in v:
-                msg = msg + _(
-                    "<li>A %s record was deleted: %s</li>", self._description, r["name"]
-                )
+                msg = msg + _("<li>A %(dsc)s record was deleted: %(name)s</li>") % {
+                    "dsc": self._description,
+                    "name": r["name"],
+                }
             note = '<div class="o_mail_notification"><ul>' + msg + "</ul></div>"
             Equipment.browse(k).message_post(
                 body=note, subtype_id=mt_note.id, author_id=author
@@ -296,9 +299,12 @@ class SpecificationValue(models.Model):
                 raise ValidationError(
                     _(
                         "The value you entered must be unique within its Value Type.\n"
-                        "Previous record: Value Type: %s, Name: %s"
-                        % (ids[0].value_type_id.name, ids[0].name)
+                        "Previous record: Value Type: %(vname)s, Name: %(name)s"
                     )
+                    % {
+                        "vname": ids[0].value_type_id.name,
+                        "name": ids[0].name,
+                    }
                 )
 
     @api.model

@@ -34,6 +34,5 @@ class ItEquipmentForward(models.Model):
     destination_address = fields.Char()
     type = fields.Selection(
         [("tcp", "TCP"), ("udp", "UDP"), ("both", "BOTH")],
-        "Type",
         default="both",
     )

@@ -140,7 +140,6 @@ class ItEquipment(models.Model):
         compute="_compute_identification", string="Complete Name", store=True
     )
     name = fields.Char(
-        "Name",
         required=True,
         tracking=True,
         index=True,
@@ -169,7 +168,6 @@ class ItEquipment(models.Model):
         help="Defining the function of the devices, eg. scanning",
     )
     description = fields.Char(
-        "Description",
         required=False,
         help="A device description, eg. 'A basic scanner device for "
         "scanning paper into .pdf files' ",
@@ -306,7 +304,7 @@ class ItEquipment(models.Model):
     product_serial_number = fields.Char("Serial Number")
     product_warranty = fields.Char("Warranty")
     product_buydate = fields.Date("Buy Date")
-    product_note = fields.Text("Product Note")
+    product_note = fields.Text()
     # Fileserver Page
     equipment_mapping_ids = fields.One2many(
         "itm.equipment.mapping",
@@ -338,7 +336,7 @@ class ItEquipment(models.Model):
     db_ids = fields.One2many(
         "itm.equipment.db", "equipment_id", "Databases", help="Database list"
     )
-    use_proxy = fields.Boolean("Use Proxy")
+    use_proxy = fields.Boolean()
     proxy_client_config_id = fields.Many2one(
         "itm.equipment.network.proxy", "Proxy Configuration"
     )
@@ -377,13 +375,17 @@ class ItEquipment(models.Model):
         res = super(ItEquipment, self).create(vals)
         mt_note = self.env.ref("mail.mt_note")
         author = self.env.user.partner_id and self.env.user.partner_id.id or False
-        msg = _(
-            '<div class="o_mail_notification"><ul><li>A new %s was created: \
-                <a href="#" class="o_redirect" data-oe-model=itm.equipment data-oe-id="%s"> \
-                %s</a></li></ul></div>',
-            res._description,
-            res.id,
-            res.name,
+        msg = (
+            _(
+                '<div class="o_mail_notification"><ul><li>A new %(desc)s was created: \
+                <a href="#" class="o_redirect" data-oe-model=itm.equipment \
+                data-oe-id="%(id)s"> %(name)s</a></li></ul></div>'
+            )
+            % {
+                "desc": res._description,
+                "id": res.id,
+                "name": res.name,
+            }
         )
         if res.site_id:
             res.site_id.message_post(body=msg, subtype_id=mt_note.id, author_id=author)
@@ -426,9 +428,10 @@ class ItEquipment(models.Model):
         for k, v in sites.items():
             msg = ""
             for r in v:
-                msg = msg + _(
-                    "<li> %s record was deleted: %s</li>", self._description, r["name"]
-                )
+                msg = msg + _("<li> %(dsc)s record was deleted: %(name)s</li>") % {
+                    "dsc": self._description,
+                    "name": r["name"],
+                }
             note = '<div class="o_mail_notification"><ul>' + msg + "</ul></div>"
             Site.browse(k).message_post(
                 body=note, subtype_id=mt_note.id, author_id=author
@@ -438,9 +441,10 @@ class ItEquipment(models.Model):
         for k, v in equips.items():
             msg = ""
             for r in v:
-                msg = msg + _(
-                    "<li> %s record was deleted: %s</li>", self._description, r["name"]
-                )
+                msg = msg + _("<li> %(dsc)s record was deleted: %(name)s</li>") % {
+                    "dsc": self._description,
+                    "name": r["name"],
+                }
             note = '<div class="o_mail_notification"><ul>' + msg + "</ul></div>"
             Equipment.browse(k).message_post(
                 body=note, subtype_id=mt_note.id, author_id=author
