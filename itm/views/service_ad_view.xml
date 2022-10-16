@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record model="ir.ui.view" id="itm_service_ad_search">
+        <field name="name">itm.service.ad.search</field>
+        <field name="model">itm.service.ad</field>
+        <field name="arch" type="xml">
+            <search string="Active Directory Search">
+                <field name="name" />
+                <field name="name_pre2000" />
+                <!--Filters-->
+                <separator />
+                <filter
+                    name="archived"
+                    string="Archived"
+                    domain="[('active','=',False)]"
+                />
+                <separator />
+                <!--Groups-->
+                <group expand="0" string="Group By...">
+                    <filter
+                        name="by_site"
+                        string="Site"
+                        icon="terp-personal"
+                        domain="[]"
+                        context="{'group_by':'site_id'}"
+                    />
+                    <filter
+                        name="by_partner"
+                        string="Partner"
+                        icon="terp-personal"
+                        domain="[]"
+                        context="{'group_by':'partner_id'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="itm_service_ad_tree">
+        <field name="name">itm.service.ad.tree</field>
+        <field name="model">itm.service.ad</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="name_pre2000" />
+                <field name="type" />
+                <field name="equipment_id" />
+                <field name="site_id" />
+                <field name="partner_id" />
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="itm_service_ad_form">
+        <field name="name">itm.service.ad.form</field>
+        <field name="model">itm.service.ad</field>
+        <field name="arch" type="xml">
+            <form string="Active Directory">
+                <sheet>
+                    <field name="active" invisible="1" />
+                    <widget
+                        name="web_ribbon"
+                        title="Archived"
+                        bg_color="bg-danger"
+                        attrs="{'invisible': [('active', '=', True)]}"
+                    />
+                    <div class="oe_title">
+                        <div class="oe_edit_only oe_left">
+                            <label for="name" />
+                        </div>
+                        <h1>
+                            <field name="name" />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="name_pre2000" />
+                            <field name="type" />
+                        </group>
+                        <group>
+                            <field name="equipment_id" />
+                            <field name="site_id" />
+                            <field name="partner_id" />
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Active Directory Objects">
+                            <field
+                                name="obj_ids"
+                                nolabel="1"
+                                context="{'default_ad_id': active_id}"
+                            >
+                                <tree>
+                                    <field name="ad_id" invisible="1" />
+                                    <field name="complete_name" />
+                                    <field name="type" />
+                                    <field name="description" />
+                                </tree>
+                            </field>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" />
+                    <field name="message_ids" />
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action for Button -->
+    <record id="act_adobject_2_newcreds" model="ir.actions.act_window">
+        <field name="name">Create Credential</field>
+        <field name="res_model">itm.wizard.credential</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="itm_wizard_credential_form" />
+        <field name="target">new</field>
+        <field name="context">
+            {
+                'default_equipment_id': ad_id.equipment_id.id,
+                'default_site_id': ad_id.site_id.id,
+                'default_partner_id': ad_id.site_id.partner_id.id,
+                'default_name': logon_name,
+            }
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="itm_service_ad_object_form">
+        <field name="name">itm.service.ad.object.form</field>
+        <field name="model">itm.service.ad.object</field>
+        <field name="arch" type="xml">
+            <form string="Active Directory Object">
+                <sheet>
+                    <field name="active" invisible="1" />
+                    <widget
+                        name="web_ribbon"
+                        title="Archived"
+                        bg_color="bg-danger"
+                        attrs="{'invisible': [('active', '=', True)]}"
+                    />
+                <div>
+                    <field
+                            name="type"
+                            class="oe_edit_only"
+                            widget="radio"
+                            options="{'horizontal': true}"
+                        />
+                </div>
+                <div class="oe_title">
+                        <div class="oe_edit_only oe_left">
+                            <label
+                                for="folder_name"
+                                attrs="{'invisible': [('type','!=','folder')]}"
+                            />
+                            <label
+                                for="group_name"
+                                attrs="{'invisible': [('type','!=','group')]}"
+                            />
+                            <label
+                                for="logon_name"
+                                attrs="{'invisible': [('type','!=','user')]}"
+                            />
+                        </div>
+                        <h1>
+                            <field
+                                name="folder_name"
+                                attrs="{'invisible': [('type','!=','folder')], 'required': [('type','=','folder')]}"
+                            />
+                            <field
+                                name="group_name"
+                                attrs="{'invisible': [('type','!=','group')], 'required': [('type','=','group')]}"
+                            />
+                            <field
+                                name="logon_name"
+                                attrs="{'invisible': [('type','!=','user')], 'required': [('type','=','user')]}"
+                            />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="parent_id" />
+                            <field name="description" />
+                            <label
+                                for="access_id"
+                                class="oe_inline"
+                                attrs="{'invisible': [('type','!=','user')]}"
+                            />
+                            <div attrs="{'invisible': [('type','!=','user')]}">
+                                <field name="access_id" class="oe_inline" />
+                                <![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+                                <button
+                                    name="%(new_credential_wizard_action)d"
+                                    string="Create"
+                                    icon="fa-key"
+                                    type="action"
+                                    groups="itm.group_itm_mod"
+                                    context="{'default_name': logon_name}"
+                                    attrs="{'invisible': [('access_id','!=',False)]}"
+                                />
+                            </div>
+                            <field name="ad_id" />
+                            <field
+                                name="complete_logon"
+                                readonly="1"
+                                attrs="{'invisible': [('type','!=','user')]}"
+                            />
+                        </group>
+                        <group>
+                            <field
+                                name="first_name"
+                                attrs="{'invisible': [('type','!=','user')]}"
+                            />
+                            <field
+                                name="last_name"
+                                attrs="{'invisible': [('type','!=','user')]}"
+                            />
+                            <field
+                                name="full_name"
+                                attrs="{'invisible': [('type','!=','user')]}"
+                            />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="itm_service_ad_action" model="ir.actions.act_window">
+        <field name="name">Active Directory</field>
+        <field name="res_model">itm.service.ad</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="itm_service_ad_object_action" model="ir.actions.act_window">
+        <field name="name">Active Directory Objects</field>
+        <field name="res_model">itm.service.ad.object</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        action="itm_service_ad_action"
+        id="itm_ad_menu"
+        sequence="20"
+        parent="itm_menu_services"
+    />
+
+    <menuitem
+        action="itm_service_ad_object_action"
+        id="itm_ad_object_menu"
+        sequence="25"
+        parent="itm_menu_services"
+    />
+
+</odoo>

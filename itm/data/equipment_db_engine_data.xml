@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+
+    <record id="" model="itm.equipment.db.engine">
+        <field name="name">Cassandra</field>
+    </record>
+
+    <record id="dbe_elasticsearch" model="itm.equipment.db.engine">
+        <field name="name">Elasticsearch</field>
+    </record>
+
+    <record id="dbe_filemaker" model="itm.equipment.db.engine">
+        <field name="name">FileMaker</field>
+    </record>
+
+    <record id="dbe_ibmdb2" model="itm.equipment.db.engine">
+        <field name="name">IBM Db2</field>
+    </record>
+
+    <record id="dbe_mariadb" model="itm.equipment.db.engine">
+        <field name="name">MariaDB</field>
+    </record>
+
+    <record id="dbe_msaccess" model="itm.equipment.db.engine">
+        <field name="name">Microsoft Access</field>
+    </record>
+
+    <record id="dbe_mssqlserver" model="itm.equipment.db.engine">
+        <field name="name">MS SQL Server</field>
+    </record>
+
+    <record id="dbe_mongodb" model="itm.equipment.db.engine">
+        <field name="name">MongoDB</field>
+    </record>
+
+    <record id="dbe_mysql" model="itm.equipment.db.engine">
+        <field name="name">MySQL</field>
+    </record>
+
+    <record id="dbe_oracle" model="itm.equipment.db.engine">
+        <field name="name">Oracle</field>
+    </record>
+
+    <record id="dbe_postgresql" model="itm.equipment.db.engine">
+        <field name="name">PostgreSQL</field>
+    </record>
+
+    <record id="dbe_redis" model="itm.equipment.db.engine">
+        <field name="name">Redis</field>
+    </record>
+
+    <record id="dbe_saphana" model="itm.equipment.db.engine">
+        <field name="name">SAP HANA</field>
+    </record>
+
+    <record id="dbe_sqlite" model="itm.equipment.db.engine">
+        <field name="name">SQLite</field>
+    </record>
+
+</odoo>

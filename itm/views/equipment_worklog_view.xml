@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    Copyright (C) 2014 Leandro Ezequiel Baldi
+    <baldileandro@gmail.com>
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published
+    by the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<odoo>
+
+    <!-- Create view for worklogs -->
+    <record model="ir.ui.view" id="itm_equipment_worklog_form">
+        <field name="name">itm.equipment.worklog.form</field>
+        <field name="model">itm.equipment.worklog</field>
+        <field name="arch" type="xml">
+            <form string="Worklog">
+                <group>
+                    <field name="name" />
+                    <field name="date" />
+                    <field name="spent_time" widget="float_time" />
+                    <field name="user_id" />
+                </group>
+                <separator string="Description" colspan="4" />
+                <field name="description" colspan="4" nolabel="1" />
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree view for worklogs grill on equipments -->
+    <record model="ir.ui.view" id="itm_equipment_worklog_tree">
+        <field name="name">itm.equipment.worklog.tree</field>
+        <field name="model">itm.equipment.worklog</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="date" />
+                <field name="spent_time" widget="float_time" />
+                <field name="user_id" />
+            </tree>
+        </field>
+    </record>
+
+</odoo>

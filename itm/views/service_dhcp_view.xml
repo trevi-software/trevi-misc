@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record model="ir.ui.view" id="itm_service_dhcp4_tree">
+        <field name="name">itm.service.dhcp4.tree</field>
+        <field name="model">itm.service.dhcp4</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="equipment_id" />
+                <field name="network_id" />
+                <field name="subnet" />
+                <field name="subnet_mask" />
+                <field name="start_address" />
+                <field name="end_address" />
+                <field name="lease_time" />
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="itm_service_dhcp4_form">
+        <field name="name">itm.service.dhcp4.form</field>
+        <field name="model">itm.service.dhcp4</field>
+        <field name="arch" type="xml">
+            <form string="DHCP Settings">
+                <sheet>
+                    <div class="oe_title">
+                        <div class="oe_edit_only oe_left">
+                            <label for="name" />
+                        </div>
+                        <h1>
+                            <field name="name" />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="subnet" />
+                            <field name="subnet_mask" />
+                            <field name="start_address" />
+                            <field name="end_address" />
+                            <field name="lease_time" />
+                        </group>
+                        <group>
+                            <field name="equipment_id" />
+                            <field name="network_id" />
+                        </group>
+                    </group>
+                    <group>
+                        <group string="IP Reservations">
+                            <field name="reservation_ids" nolabel="1">
+                                <tree editable="bottom">
+                                    <field name="dhcp_id" invisible="1" />
+                                    <field name="ip_address" />
+                                    <field name="mac_address" />
+                                    <field name="name" />
+                                </tree>
+                            </field>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="itm_service_dhcp4_action" model="ir.actions.act_window">
+        <field name="name">DHCP</field>
+        <field name="res_model">itm.service.dhcp4</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        action="itm_service_dhcp4_action"
+        id="itm_dhcp4_menu"
+        sequence="30"
+        parent="itm_menu_services"
+    />
+
+</odoo>

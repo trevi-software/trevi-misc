@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <!-- Action for Buttons -->
+    <record id="act_site_2_equipment" model="ir.actions.act_window">
+        <field name="res_model">itm.equipment</field>
+        <field name="name">Assets</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_site_id': active_id }</field>
+    </record>
+    <record id="act_site_2_access" model="ir.actions.act_window">
+        <field name="res_model">itm.access</field>
+        <field name="name">Credentials</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_site_id': active_id }</field>
+    </record>
+
+    <record model="ir.ui.view" id="itm_site_search">
+        <field name="name">itm.site.search</field>
+        <field name="model">itm.site</field>
+        <field name="arch" type="xml">
+            <search string="Site Search">
+                <field name="name" />
+                <field name="partner_id" />
+                <filter
+                    name="archived"
+                    string="Archived"
+                    domain="[('active','=',False)]"
+                />
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="itm_site_tree">
+        <field name="name">itm.site.tree</field>
+        <field name="model">itm.site</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="partner_id" />
+                <field name="equipment_count" />
+                <field name="access_count" />
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="itm_site_form">
+        <field name="name">itm.site.form</field>
+        <field name="model">itm.site</field>
+        <field name="arch" type="xml">
+            <form string="IT Site">
+                <sheet>
+                    <div class="oe_button_box" name="buttons">
+                        <button
+                            name="%(act_site_2_equipment)d"
+                            class="oe_stat_button"
+                            icon="fa-th-large"
+                            type="action"
+                            groups="itm.group_itm_user"
+                        >
+                            <field name="equipment_count" widget="statinfo" />
+                        </button>
+                        <button
+                            name="%(act_site_2_access)d"
+                            class="oe_stat_button"
+                            icon="fa-key"
+                            type="action"
+                            groups="itm.group_itm_user"
+                        >
+                            <field name="access_count" widget="statinfo" />
+                        </button>
+                    </div>
+                    <field name="active" invisible="1" />
+                    <widget
+                        name="web_ribbon"
+                        title="Archived"
+                        bg_color="bg-danger"
+                        attrs="{'invisible': [('active', '=', True)]}"
+                    />
+                    <div class="oe_title">
+                        <div class="oe_edit_only oe_left">
+                            <label for="name" />
+                        </div>
+                        <h1>
+                            <field name="name" />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="partner_id" />
+                        </group>
+                        <group>
+                            <field
+                                name="company_id"
+                                string="Company"
+                                groups="base.group_multi_company"
+                            />
+                        </group>
+                    </group>
+                    <group string="Networks">
+                        <field name="network_ids" nolabel="1">
+                            <tree editable="bottom">
+                                <field name="site_id" invisible="1" />
+                                <field name="name" />
+                                <field name="subnet" />
+                                <field name="netmask" />
+                                <field name="default_gw" />
+                                <field name="dns_ids" widget="many2many_tags" />
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" />
+                    <field name="activity_ids" />
+                    <field name="message_ids" />
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="itm_site_action" model="ir.actions.act_window">
+        <field name="name">Sites</field>
+        <field name="res_model">itm.site</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.ui.view" id="itm_site_network_tree">
+        <field name="name">itm.site.network.tree</field>
+        <field name="model">itm.site.network</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="subnet" />
+                <field name="netmask" />
+                <field name="default_gw" />
+                <field name="site_id" />
+                <field name="dns_ids" widget="many2many_tags" />
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="itm_site_network_form">
+        <field name="name">itm.site.network.form</field>
+        <field name="model">itm.site.network</field>
+        <field name="arch" type="xml">
+            <form string="IT Network">
+                <sheet>
+                    <group>
+                        <group string="Network">
+                            <field name="name" />
+                            <field name="subnet" />
+                            <field name="netmask" />
+                            <field name="default_gw" />
+                            <field name="site_id" />
+                        </group>
+                        <group string="DNS">
+                            <field name="dns_ids" nolabel="1">
+                                <tree editable="bottom">
+                                    <field name="name" />
+                                </tree>
+                            </field>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="DHCP Settings">
+                            <field name="dhcp4_ids" nolabel="1">
+                                <tree>
+                                    <field name="name" />
+                                    <field name="equipment_id" />
+                                    <field name="subnet" />
+                                    <field name="subnet_mask" />
+                                    <field name="start_address" />
+                                    <field name="end_address" />
+                                    <field name="lease_time" />
+                                </tree>
+                            </field>
+                        </group>
+                        <group string="IP Addresses">
+                            <field name="ip4_ids" nolabel="1">
+                                <tree editable="bottom">
+                                    <field name="name" />
+                                    <field name="network_id" />
+                                </tree>
+                            </field>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="itm_network_action" model="ir.actions.act_window">
+        <field name="name">Networks</field>
+        <field name="res_model">itm.site.network</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        name="Sites"
+        id="itm_menu_sites"
+        parent="menu_main_itm"
+        groups="itm.group_itm_user"
+        sequence="30"
+    />
+
+    <menuitem
+        action="itm_site_action"
+        id="itm_site_menu"
+        sequence="20"
+        parent="itm_menu_sites"
+    />
+
+    <menuitem
+        action="itm_network_action"
+        id="itm_network_menu"
+        sequence="30"
+        parent="itm_menu_sites"
+    />
+
+</odoo>

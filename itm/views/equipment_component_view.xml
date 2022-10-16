@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+        <!-- Configuration Menus -->
+        <menuitem
+        name="Components"
+        id="itm_menu_component_config"
+        parent="itm_menu_others"
+        groups="group_itm_manager"
+        sequence="60"
+    />
+
+        <!-- Component Views -->
+
+        <record id="component_search" model="ir.ui.view">
+            <field name="name">ITM Component Search</field>
+            <field name="model">itm.equipment.component</field>
+            <field name="arch" type="xml">
+                <search string="Component Search">
+                    <field name="name" string="Name" />
+                    <field name="component_type_id" string="Component Type" />
+                    <field name="manufacturer_id" string="Manufacturer" />
+                    <field name="equipment_id" string="Component of" />
+                    <separator />
+                    <filter
+                    name="archived"
+                    string="Archived"
+                    domain="[('active','=',False)]"
+                />
+                    <separator />
+                    <group expand="0" string="Group By...">
+                        <filter
+                        name="by_component"
+                        string="Component Type"
+                        domain="[]"
+                        context="{'group_by':'component_type_id'}"
+                    />
+                        <filter
+                        name="by_manufacturer"
+                        string="Manufacturer"
+                        domain="[]"
+                        context="{'group_by':'manufacturer_id'}"
+                    />
+                        <filter
+                        name="by_equipment"
+                        string="Asset"
+                        domain="[]"
+                        context="{'group_by':'equipment_id'}"
+                    />
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="component_tree" model="ir.ui.view">
+            <field name="name">ITM Component Tree View</field>
+            <field name="model">itm.equipment.component</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                    <field name="component_type_id" />
+                    <field name="serial_number" />
+                    <field name="manufacturer_id" />
+                    <field name="equipment_id" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="component_form" model="ir.ui.view">
+            <field name="name">ITM Component Form View</field>
+            <field name="model">itm.equipment.component</field>
+            <field name="arch" type="xml">
+                <form string="Component">
+                    <sheet>
+                        <field name="active" invisible="1" />
+                        <widget
+                        name="web_ribbon"
+                        title="Archived"
+                        bg_color="bg-danger"
+                        attrs="{'invisible': [('active', '=', True)]}"
+                    />
+                        <group>
+                            <group>
+                                <field name="name" />
+                                <field name="equipment_id" />
+                                <field name="component_type_id" />
+                            </group>
+                            <group>
+                                <field name="serial_number" />
+                                <field name="manufacturer_id" />
+                            </group>
+                        </group>
+                        <group name="specs" string="Specifications">
+                            <field
+                            name="spec_line_ids"
+                            nolabel="1"
+                            widget="one2many"
+                            context="{'default_component_type_id': component_type_id}"
+                        >
+                                <tree editable="bottom">
+                                    <field name="component_type_id" invisible="1" />
+                                    <field name="possible_key_ids" invisible="1" />
+                                    <field
+                                    name="key_id"
+                                    context="{'default_component_type_id': component_type_id}"
+                                />
+                                    <field name="value_type_id" invisible="1" />
+                                    <field
+                                    name="value_id"
+                                    context="{'default_value_type_id': value_type_id}"
+                                />
+                                </tree>
+                                <form string="Specification">
+                                    <sheet>
+                                        <group>
+                                            <group>
+                                                <field
+                                                name="component_type_id"
+                                                invisible="1"
+                                            />
+                                                <field
+                                                name="possible_key_ids"
+                                                invisible="1"
+                                            />
+                                                <field name="key_id" />
+                                                <field
+                                                name="value_type_id"
+                                                invisible="1"
+                                            />
+                                                <field name="value_id" />
+                                            </group>
+                                            <group />
+                                        </group>
+                                    </sheet>
+                                </form>
+                            </field>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" />
+                        <field name="activity_ids" />
+                        <field name="message_ids" />
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="component_action" model="ir.actions.act_window">
+            <field name="name">Components</field>
+            <field name="res_model">itm.equipment.component</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem
+        action="component_action"
+        id="component_menu"
+        sequence="40"
+        parent="itm_menu_general"
+    />
+
+        <!-- Component Types -->
+
+        <record id="component_type_tree" model="ir.ui.view">
+            <field name="name">ITM Component Type Tree View</field>
+            <field name="model">itm.equipment.component.type</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                    <field name="key_ids" widget="x2many" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="component_type_form" model="ir.ui.view">
+            <field name="name">ITM Component Type Form View</field>
+            <field name="model">itm.equipment.component.type</field>
+            <field name="arch" type="xml">
+                <form string="Component Type">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" />
+                            </group>
+                            <group string="Valid Keys">
+                                <field name="key_ids" nolabel="1" editable="bottom">
+                                    <tree>
+                                        <field name="name" />
+                                        <field name="value_type_id" />
+                                    </tree>
+                                    <form string="Key Form">
+                                        <group>
+                                            <group>
+                                                <field name="name" />
+                                                <field name="value_type_id" />
+                                            </group>
+                                            <group />
+                                        </group>
+                                    </form>
+                                </field>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="component_type_action" model="ir.actions.act_window">
+            <field name="name">Component Types</field>
+            <field name="res_model">itm.equipment.component.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem
+        action="component_type_action"
+        id="component_type_menu"
+        sequence="30"
+        parent="itm_menu_component_config"
+    />
+
+        <!-- Specification -->
+
+        <record id="specification_tree" model="ir.ui.view">
+            <field name="name">ITM Component Specification Tree View</field>
+            <field name="model">itm.equipment.component.specification</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="component_type_id" invisible="1" />
+                    <field name="possible_key_ids" invisible="1" />
+                    <field name="key_id" />
+                    <field name="value_type_id" invisible="1" />
+                    <field name="value_id" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="specification_form" model="ir.ui.view">
+            <field name="name">ITM Component Specification Form View</field>
+            <field name="model">itm.equipment.component.specification</field>
+            <field name="arch" type="xml">
+                <form string="Specification">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="component_type_id" invisible="1" />
+                                <field name="possible_key_ids" invisible="1" />
+                                <field name="key_id" />
+                                <field name="value_type_id" invisible="1" />
+                                <field name="value_id" />
+                            </group>
+                            <group />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Specification Selectors -->
+
+        <record id="spec_selector_tree" model="ir.ui.view">
+            <field name="name">ITM Component Specification Selector Tree View</field>
+            <field name="model">itm.equipment.component.specification.selector</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                    <field name="key_ids" widget="x2many_counter" />
+                    <field name="value_ids" widget="x2many_counter" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="spec_selector_form" model="ir.ui.view">
+            <field name="name">ITM Component Specification Selector Form View</field>
+            <field name="model">itm.equipment.component.specification.selector</field>
+            <field name="arch" type="xml">
+                <form string="Component Selector">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" />
+                            </group>
+                            <group />
+                        </group>
+                        <group>
+                            <group string="Valid Keys">
+                                <field name="key_ids" nolabel="1" editable="bottom">
+                                    <tree>
+                                        <field name="name" />
+                                    </tree>
+                                </field>
+                            </group>
+                            <group string="Valid Values">
+                                <field name="value_ids" nolabel="1" editable="bottom">
+                                    <tree>
+                                        <field name="name" />
+                                    </tree>
+                                </field>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="spec_selector_action" model="ir.actions.act_window">
+            <field name="name">Specification Selectors</field>
+            <field
+            name="res_model"
+        >itm.equipment.component.specification.selector</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem
+        action="spec_selector_action"
+        id="spec_selector_menu"
+        sequence="40"
+        parent="itm_menu_component_config"
+    />
+
+        <!-- Specification Keys -->
+
+        <record id="spec_key_tree" model="ir.ui.view">
+            <field name="name">ITM Specification Key Tree View</field>
+            <field name="model">itm.equipment.component.specification.key</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                    <field name="value_type_id" />
+                    <field name="component_type_ids" widget="x2many_tags" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="spec_key_form" model="ir.ui.view">
+            <field name="name">ITM Specification Key Form View</field>
+            <field name="model">itm.equipment.component.specification.key</field>
+            <field name="arch" type="xml">
+                <form string="Component Type">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" />
+                                <field name="value_type_id" />
+                            </group>
+                            <group string="Component Types">
+                                <field
+                                name="component_type_ids"
+                                nolabel="1"
+                                editable="bottom"
+                            >
+                                    <tree>
+                                        <field name="name" />
+                                    </tree>
+                                    <form string="Component Type">
+                                        <group>
+                                            <group>
+                                                <field name="name" />
+                                            </group>
+                                            <group />
+                                        </group>
+                                    </form>
+                                </field>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="spec_key_action" model="ir.actions.act_window">
+            <field name="name">Specification Keys</field>
+            <field name="res_model">itm.equipment.component.specification.key</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem
+        action="spec_key_action"
+        id="spec_key_menu"
+        sequence="50"
+        parent="itm_menu_component_config"
+    />
+
+        <!-- Specification Values -->
+
+        <record id="spec_value_search" model="ir.ui.view">
+            <field name="name">ITM Component Specification Value Search</field>
+            <field name="model">itm.equipment.component.specification.value</field>
+            <field name="arch" type="xml">
+                <search string="Specification Value Search">
+                    <!--Searchs-->
+                    <field name="name" string="Name" />
+                    <field name="value_type_id" string="Specification Selector" />
+                    <!--Filters-->
+                    <filter
+                    name="archived"
+                    string="Archived"
+                    domain="[('active','=',False)]"
+                />
+                    <group expand="0" string="Group By...">
+                        <filter
+                        name="by_selector"
+                        string="Specification Selector"
+                        domain="[]"
+                        context="{'group_by':'value_type_id'}"
+                    />
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="spec_value_tree" model="ir.ui.view">
+            <field name="name">ITM Specification Value Tree View</field>
+            <field name="model">itm.equipment.component.specification.value</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                    <field name="value_type_id" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="spec_value_form" model="ir.ui.view">
+            <field name="name">ITM Specification Value Form View</field>
+            <field name="model">itm.equipment.component.specification.value</field>
+            <field name="arch" type="xml">
+                <form string="Specification Value">
+                    <sheet>
+                        <field name="active" invisible="1" />
+                        <widget
+                        name="web_ribbon"
+                        title="Archived"
+                        bg_color="bg-danger"
+                        attrs="{'invisible': [('active', '=', True)]}"
+                    />
+                        <group>
+                            <group>
+                                <field name="name" />
+                                <field name="value_type_id" />
+                            </group>
+                            <group />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="spec_value_action" model="ir.actions.act_window">
+            <field name="name">Specification Values</field>
+            <field name="res_model">itm.equipment.component.specification.value</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem
+        action="spec_value_action"
+        id="spec_value_menu"
+        sequence="60"
+        parent="itm_menu_component_config"
+    />
+
+</odoo>

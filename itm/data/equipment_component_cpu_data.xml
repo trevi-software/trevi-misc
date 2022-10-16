@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo noupdate="1">
+
+    <!-- Component Spec Value: Intel CPUs-->
+    <record id="cpuval_pentium" model="itm.equipment.component.specification.value">
+        <field name="name">Pentium</field>
+        <field name="value_type_id" ref="sel_cpuintel" />
+    </record>
+    <record id="cpuval_celeron" model="itm.equipment.component.specification.value">
+        <field name="name">Celeron</field>
+        <field name="value_type_id" ref="sel_cpuintel" />
+    </record>
+    <record id="cpuval_core2duo" model="itm.equipment.component.specification.value">
+        <field name="name">Core 2 duo</field>
+        <field name="value_type_id" ref="sel_cpuintel" />
+    </record>
+    <record id="cpuval_i3" model="itm.equipment.component.specification.value">
+        <field name="name">Core i3</field>
+        <field name="value_type_id" ref="sel_cpuintel" />
+    </record>
+    <record id="cpuval_i5" model="itm.equipment.component.specification.value">
+        <field name="name">Core i5</field>
+        <field name="value_type_id" ref="sel_cpuintel" />
+    </record>
+    <record id="cpuval_i7" model="itm.equipment.component.specification.value">
+        <field name="name">Core i7</field>
+        <field name="value_type_id" ref="sel_cpuintel" />
+    </record>
+    <record id="cpuval_i9" model="itm.equipment.component.specification.value">
+        <field name="name">Core i9</field>
+        <field name="value_type_id" ref="sel_cpuintel" />
+    </record>
+    <record id="cpuval_zeon" model="itm.equipment.component.specification.value">
+        <field name="name">Zeon</field>
+        <field name="value_type_id" ref="sel_cpuintel" />
+    </record>
+
+    <!-- Component Spec Value: AMD CPUs-->
+    <record id="cpuval_epyc" model="itm.equipment.component.specification.value">
+        <field name="name">EPYC</field>
+        <field name="value_type_id" ref="sel_cpuamd" />
+    </record>
+    <record id="cpuval_opteron" model="itm.equipment.component.specification.value">
+        <field name="name">Opteron</field>
+        <field name="value_type_id" ref="sel_cpuamd" />
+    </record>
+    <record id="cpuval_zen3" model="itm.equipment.component.specification.value">
+        <field name="name">Ryzen 3</field>
+        <field name="value_type_id" ref="sel_cpuamd" />
+    </record>
+    <record id="cpuval_zen5" model="itm.equipment.component.specification.value">
+        <field name="name">Ryzen 5</field>
+        <field name="value_type_id" ref="sel_cpuamd" />
+    </record>
+    <record id="cpuval_zen7" model="itm.equipment.component.specification.value">
+        <field name="name">Ryzen 7</field>
+        <field name="value_type_id" ref="sel_cpuamd" />
+    </record>
+    <record id="cpuval_zen9" model="itm.equipment.component.specification.value">
+        <field name="name">Ryzen 9</field>
+        <field name="value_type_id" ref="sel_cpuamd" />
+    </record>
+    <record id="cpuval_zenth" model="itm.equipment.component.specification.value">
+        <field name="name">Ryzen Threadripper</field>
+        <field name="value_type_id" ref="sel_cpuamd" />
+    </record>
+
+    <!-- Component Spec Value: Cores-->
+    <record id="cpucore_1" model="itm.equipment.component.specification.value">
+        <field name="name">1</field>
+        <field name="value_type_id" ref="sel_cpucores" />
+    </record>
+    <record id="cpucore_2" model="itm.equipment.component.specification.value">
+        <field name="name">2</field>
+        <field name="value_type_id" ref="sel_cpucores" />
+    </record>
+    <record id="cpucore_4" model="itm.equipment.component.specification.value">
+        <field name="name">4</field>
+        <field name="value_type_id" ref="sel_cpucores" />
+    </record>
+    <record id="cpucore_6" model="itm.equipment.component.specification.value">
+        <field name="name">6</field>
+        <field name="value_type_id" ref="sel_cpucores" />
+    </record>
+    <record id="cpucore_8" model="itm.equipment.component.specification.value">
+        <field name="name">8</field>
+        <field name="value_type_id" ref="sel_cpucores" />
+    </record>
+    <record id="cpucore_10" model="itm.equipment.component.specification.value">
+        <field name="name">10</field>
+        <field name="value_type_id" ref="sel_cpucores" />
+    </record>
+    <record id="cpucore_12" model="itm.equipment.component.specification.value">
+        <field name="name">12</field>
+        <field name="value_type_id" ref="sel_cpucores" />
+    </record>
+    <record id="cpucore_14" model="itm.equipment.component.specification.value">
+        <field name="name">14</field>
+        <field name="value_type_id" ref="sel_cpucores" />
+    </record>
+    <record id="cpucore_16" model="itm.equipment.component.specification.value">
+        <field name="name">16</field>
+        <field name="value_type_id" ref="sel_cpucores" />
+    </record>
+    <record id="cpucore_24" model="itm.equipment.component.specification.value">
+        <field name="name">24</field>
+        <field name="value_type_id" ref="sel_cpucores" />
+    </record>
+    <record id="cpucore_32" model="itm.equipment.component.specification.value">
+        <field name="name">32</field>
+        <field name="value_type_id" ref="sel_cpucores" />
+    </record>
+    <record id="cpucore_64" model="itm.equipment.component.specification.value">
+        <field name="name">64</field>
+        <field name="value_type_id" ref="sel_cpucores" />
+    </record>
+
+    <!-- Component Spec Value: Threads-->
+    <record id="cputhread_2" model="itm.equipment.component.specification.value">
+        <field name="name">2</field>
+        <field name="value_type_id" ref="sel_cputhreads" />
+    </record>
+    <record id="cputhread_4" model="itm.equipment.component.specification.value">
+        <field name="name">4</field>
+        <field name="value_type_id" ref="sel_cputhreads" />
+    </record>
+    <record id="cputhread_8" model="itm.equipment.component.specification.value">
+        <field name="name">8</field>
+        <field name="value_type_id" ref="sel_cputhreads" />
+    </record>
+    <record id="cputhread_12" model="itm.equipment.component.specification.value">
+        <field name="name">12</field>
+        <field name="value_type_id" ref="sel_cputhreads" />
+    </record>
+    <record id="cputhread_16" model="itm.equipment.component.specification.value">
+        <field name="name">16</field>
+        <field name="value_type_id" ref="sel_cputhreads" />
+    </record>
+    <record id="cputhread_20" model="itm.equipment.component.specification.value">
+        <field name="name">20</field>
+        <field name="value_type_id" ref="sel_cputhreads" />
+    </record>
+    <record id="cputhread_24" model="itm.equipment.component.specification.value">
+        <field name="name">24</field>
+        <field name="value_type_id" ref="sel_cputhreads" />
+    </record>
+    <record id="cputhread_28" model="itm.equipment.component.specification.value">
+        <field name="name">28</field>
+        <field name="value_type_id" ref="sel_cputhreads" />
+    </record>
+    <record id="cputhread_32" model="itm.equipment.component.specification.value">
+        <field name="name">32</field>
+        <field name="value_type_id" ref="sel_cputhreads" />
+    </record>
+    <record id="cputhread_64" model="itm.equipment.component.specification.value">
+        <field name="name">64</field>
+        <field name="value_type_id" ref="sel_cputhreads" />
+    </record>
+    <record id="cputhread_128" model="itm.equipment.component.specification.value">
+        <field name="name">128</field>
+        <field name="value_type_id" ref="sel_cputhreads" />
+</record>
+
+</odoo>

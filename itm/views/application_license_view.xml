@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    Copyright (C) 2014 Leandro Ezequiel Baldi
+    <baldileandro@gmail.com>
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published
+    by the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<odoo>
+
+    <!-- Form view -->
+    <record model="ir.ui.view" id="itm_application_license_form">
+        <field name="name">itm.application.license.form</field>
+        <field name="model">itm.application.license</field>
+        <field name="arch" type="xml">
+            <form string="License">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="copy" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree view-->
+    <record model="ir.ui.view" id="itm_application_license_tree">
+        <field name="name">itm.application.license.tree</field>
+        <field name="model">itm.application.license</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" colspan="4" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="itm_application_license_action" model="ir.actions.act_window">
+        <field name="name">Licenses</field>
+        <field name="res_model">itm.application.license</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        action="itm_application_license_action"
+        id="itm_application_license"
+        sequence="41"
+        parent="itm_menu_others"
+    />
+
+</odoo>

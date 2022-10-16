@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record model="ir.ui.view" id="itm_equipment_type_search">
+        <field name="name">itm.equipment.type.search</field>
+        <field name="model">itm.equipment.type</field>
+        <field name="arch" type="xml">
+            <search string="Asset Type Search">
+                <field name="name" />
+                <field name="parent_id" />
+                <separator />
+                <filter
+                    name="archived"
+                    string="Archived"
+                    domain="[('active','=',False)]"
+                />
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="itm_equipment_type_form">
+        <field name="name">itm.equipment.type.form</field>
+        <field name="model">itm.equipment.type</field>
+        <field name="arch" type="xml">
+            <form string="Equipment Type">
+                <sheet>
+                    <field name="active" invisible="1" />
+                    <widget
+                        name="web_ribbon"
+                        title="Archived"
+                        bg_color="bg-danger"
+                        attrs="{'invisible': [('active', '=', True)]}"
+                    />
+                    <group>
+                        <group>
+                            <field name="name" />
+                            <field name="parent_id" />
+                        </group>
+                        <group>
+                            <field name="active" widget="boolean_toggle" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="itm_equipment_type_tree">
+        <field name="name">itm.equipment.type.tree</field>
+        <field name="model">itm.equipment.type</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="parent_id" />
+                <field name="active" widget="boolean_toggle" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="itm_equipment_type_action" model="ir.actions.act_window">
+        <field name="name">Asset Type</field>
+        <field name="res_model">itm.equipment.type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        action="itm_equipment_type_action"
+        id="itm_equipment_type_menu"
+        sequence="60"
+        parent="itm_menu_others"
+    />
+
+</odoo>

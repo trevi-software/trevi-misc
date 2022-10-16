@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+        <record model="ir.ui.view" id="itm_service_wireless_tree">
+            <field name="name">itm.service.wireless.tree</field>
+            <field name="model">itm.service.wireless</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                    <field name="type" />
+                    <field name="network_id" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="itm_service_wireless_form">
+            <field name="name">itm.service.wireless.form</field>
+            <field name="model">itm.service.wireless</field>
+            <field name="arch" type="xml">
+                <form string="Wireless Settings">
+                    <sheet>
+                        <div class="oe_title">
+                            <div class="oe_edit_only oe_left">
+                                <label for="name" />
+                            </div>
+                            <h1>
+                                <field name="name" />
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="type" />
+                                <field name="access_id" />
+                            </group>
+                            <group>
+                                <field name="network_id" />
+                            </group>
+                        </group>
+                        <group>
+                            <group string="SSID List">
+                                <field name="bssid_ids" nolabel="1">
+                                    <tree editable="bottom">
+                                        <field name="wireless_id" invisible="1" />
+                                        <field name="name" />
+                                        <field name="is_guest" />
+                                        <field name="auth_type" />
+                                        <field name="encryption_type" />
+                                        <field name="passkey" />
+                                    </tree>
+                                </field>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="itm_service_wireless_action" model="ir.actions.act_window">
+            <field name="name">Wireless</field>
+            <field name="res_model">itm.service.wireless</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem
+        action="itm_service_wireless_action"
+        id="itm_wireless_menu"
+        sequence="40"
+        parent="itm_menu_services"
+    />
+
+</odoo>
