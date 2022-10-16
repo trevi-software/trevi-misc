@@ -17,7 +17,12 @@ Miscellaneous Odoo addons by Trevi that do not belong elsewhere.
 
 [//]: # (addons)
 
-This part will be replaced when running the oca-gen-addons-table script from OCA/maintainer-tools.
+Available addons
+----------------
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[itm](itm/) | 15.0.1.0.0 |  | IT Assets, Credentials, Backups, Applications.
+[partner_contact_it](partner_contact_it/) | 15.0.1.0.0 |  | Designate a contact as an IT Contact of the parent company
 
 [//]: # (end addons)
 
