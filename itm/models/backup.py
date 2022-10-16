@@ -54,7 +54,7 @@ class ItBackup(models.Model):
     )
     destination = fields.Char()
     source = fields.Char()
-    script = fields.Binary("Script")
+    script = fields.Binary()
     script_filename = fields.Char()
     script_location = fields.Char()
     frequency = fields.Char()

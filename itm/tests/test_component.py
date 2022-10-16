@@ -6,7 +6,7 @@ from odoo.exceptions import ValidationError
 from odoo.tests import common
 
 
-class TestEquipmentComponent(common.SavepointCase):
+class TestEquipmentComponent(common.TransactionCase):
     @classmethod
     def setUpClass(cls):
         super(TestEquipmentComponent, cls).setUpClass()
@@ -66,7 +66,7 @@ class TestEquipmentComponent(common.SavepointCase):
         )
         selector = self.Selector.create({"name": "Some Selector"})
         key = self.Key.with_context(
-            {"default_component_type_id": component.component_type_id.id}
+            default_component_type_id=component.component_type_id.id
         ).create(
             {
                 "name": "K",
@@ -82,10 +82,8 @@ class TestEquipmentComponent(common.SavepointCase):
         """
 
         selector = self.Selector.create({"name": "Some Selector"})
-        val = self.Value.with_context({"default_value_type_id": selector.id}).create(
-            {
-                "name": "V",
-            }
+        val = self.Value.with_context(default_value_type_id=selector.id).create(
+            {"name": "V"}
         )
 
         self.assertEqual(val.value_type_id, selector)

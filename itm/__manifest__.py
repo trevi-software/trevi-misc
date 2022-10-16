@@ -1,10 +1,10 @@
-# Copyright (C) 2021 TREVI Software
+# Copyright (C) 2021,2022 TREVI Software
 # Copyright (C) 2014 Leandro Ezequiel Baldi
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {
     "name": "IT Infrastructure Management",
-    "version": "14.0.3.3.6",
+    "version": "15.0.1.0.0",
     "license": "AGPL-3",
     "category": "IT Infrastructure Management",
     "summary": """IT Assets, Credentials, Backups, Applications.""",
@@ -52,12 +52,17 @@
         "views/service_ad_view.xml",
         "views/service_dhcp_view.xml",
         "views/service_wireless_view.xml",
-        "views/assets.xml",
     ],
     "demo": [],
     "test": [],
+    "assets": {
+        "web.assets.backend": [
+            "/itm/static/src/js/itm.js",
+            "/itm/static/src/js/show_password.js",
+        ]
+    },
     "external_dependencies": {
-        "python": ["cryptography"],
+        "python": ["cryptography==36.0.2"],
     },
     "installable": True,
     "application": True,
