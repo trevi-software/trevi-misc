@@ -1,4 +1,4 @@
-# Copyright (C) 2021 TREVI Software
+# Copyright (C) 2021,2022 TREVI Software
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 
@@ -24,13 +24,14 @@ class ItServiceWireless(models.Model):
 
     def _compute_display_name(self):
 
-        super()._compute_display_name()
+        res = super()._compute_display_name()
 
         for rec in self:
             if len(rec.bssid_ids) == 1:
                 rec.display_name = f"{rec.name} ({rec.bssid_ids.name})"
             elif len(rec.bssid_ids) > 1:
                 rec.display_name = f"{rec.name} (multi SSID)"
+        return res
 
 
 class WirelessSsid(models.Model):
@@ -63,7 +64,6 @@ class WirelessSsid(models.Model):
             ("tkip", "TKIP"),
             ("aes", "AES"),
         ],
-        "Encryption Type",
         default="auto",
     )
     passkey = fields.Char("Key")

@@ -1,4 +1,4 @@
-# Copyright (C) 2021 TREVI Software
+# Copyright (C) 2021,2022 TREVI Software
 # Copyright (C) 2014 Leandro Ezequiel Baldi <baldileandro@gmail.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
@@ -10,6 +10,7 @@ from random import choice
 from cryptography.fernet import Fernet
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
+
 from odoo import _, api, fields, models
 
 PARAM_PASS = "itm_passkey"
@@ -167,11 +168,10 @@ class ItAccess(models.Model):
         for k, v in sites.items():
             msg = ""
             for r in v:
-                msg = msg + _(
-                    "<li>A %s's password was updated: %s</li>",
-                    self._description,
-                    r["name"],
-                )
+                msg = msg + _("<li>A %(dsc)s's password was updated: %(name)s</li>") % {
+                    "dsc": self._description,
+                    "name": r["name"],
+                }
             note = '<div class="o_mail_notification"><ul>' + msg + "</ul></div>"
             Site.browse(k).message_post(
                 body=note, subtype_id=mt_note.id, author_id=author
@@ -181,11 +181,10 @@ class ItAccess(models.Model):
         for k, v in equips.items():
             msg = ""
             for r in v:
-                msg = msg + _(
-                    "<li>A %s's password was updated: %s</li>",
-                    self._description,
-                    r["name"],
-                )
+                msg = msg + _("<li>A %(dsc)s's password was updated: %(name)s</li>") % {
+                    "dsc": self._description,
+                    "name": r["name"],
+                }
             note = '<div class="o_mail_notification"><ul>' + msg + "</ul></div>"
             Equipment.browse(k).message_post(
                 body=note, subtype_id=mt_note.id, author_id=author
@@ -214,13 +213,13 @@ class ItAccess(models.Model):
         #
         mt_note = self.env.ref("mail.mt_note")
         author = self.env.user.partner_id and self.env.user.partner_id.id or False
-        msg = _(
-            '<div class="o_mail_notification"><ul><li>A new %s was created: \
-                <a href="#" class="o_redirect" data-oe-model=itm.access data-oe-id="%s"> \
-                %s</a></li></ul></div>',
-            res._description,
-            res.id,
-            res.name,
+        msg = (
+            _(
+                '<div class="o_mail_notification"><ul><li>A new %(dsc)s was created: \
+                <a href="#" class="o_redirect" data-oe-model=itm.access data-oe-id="%(id)s"> \
+                %(name)s</a></li></ul></div>'
+            )
+            % {"dsc": res._description, "id": res.id, "name": res.name}
         )
         if res.site_id:
             res.site_id.message_post(body=msg, subtype_id=mt_note.id, author_id=author)
@@ -262,9 +261,10 @@ class ItAccess(models.Model):
         for k, v in sites.items():
             msg = ""
             for r in v:
-                msg = msg + _(
-                    "<li> %s was deleted: %s</li>", self._description, r["name"]
-                )
+                msg = msg + _("<li> %(dsc)s was deleted: %(name)s</li>") % {
+                    "dsc": self._description,
+                    "name": r["name"],
+                }
             note = '<div class="o_mail_notification"><ul>' + msg + "</ul></div>"
             Site.browse(k).message_post(
                 body=note, subtype_id=mt_note.id, author_id=author
@@ -274,9 +274,10 @@ class ItAccess(models.Model):
         for k, v in equips.items():
             msg = ""
             for r in v:
-                msg = msg + _(
-                    "<li> %s record was deleted: %s</li>", self._description, r["name"]
-                )
+                msg = msg + _("<li> %(dsc)s record was deleted: %(name)s</li>") % {
+                    "dsc": self._description,
+                    "name": r["name"],
+                }
             note = '<div class="o_mail_notification"><ul>' + msg + "</ul></div>"
             Equipment.browse(k).message_post(
                 body=note, subtype_id=mt_note.id, author_id=author

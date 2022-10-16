@@ -34,10 +34,10 @@ class ItApplication(models.Model):
         default=lambda self: self.env.company,
     )
     active = fields.Boolean(
-        "Active", default=True, help="Mark if this app is currently used and running"
+        default=True, help="Mark if this app is currently used and running"
     )
     developer = fields.Char(
-        "Developer", help="A company or person who create and develop this application"
+        help="A company or person who create and develop this application"
     )
     link_download = fields.Char(
         "Download Link", help="Download link of the application"
