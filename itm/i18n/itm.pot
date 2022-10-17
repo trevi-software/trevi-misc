@@ -3129,6 +3129,24 @@ msgid "Web Application"
 msgstr ""
 
 #. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__website_message_ids
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__website_message_ids
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__website_message_ids
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__website_message_ids
+#: model:ir.model.fields,field_description:itm.field_itm_site__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_access__website_message_ids
+#: model:ir.model.fields,help:itm.field_itm_equipment__website_message_ids
+#: model:ir.model.fields,help:itm.field_itm_equipment_component__website_message_ids
+#: model:ir.model.fields,help:itm.field_itm_service_ad__website_message_ids
+#: model:ir.model.fields,help:itm.field_itm_site__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: itm
 #: model:ir.actions.act_window,name:itm.itm_service_wireless_action
 #: model:ir.ui.menu,name:itm.itm_wireless_menu
 msgid "Wireless"
