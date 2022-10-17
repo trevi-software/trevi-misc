@@ -179,7 +179,7 @@
                         </group>
                     </group>
                     <notebook>
-                        <page string="Configuration" groups="itm.group_itm_mod">
+                        <page string="Configuration">
                             <group>
                                 <group string="Equipment Type">
                                     <field name="asset_type_id" />

@@ -63,7 +63,7 @@
         <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
             <field name="company_type" position="after">
-                <field name="manage_it" groups="itm.group_itm_mod" />
+                <field name="manage_it" />
                 <label for="manage_it" />
             </field>
         </field>
@@ -91,7 +91,6 @@
                         class="oe_inline oe_stat_button"
                         icon="fa-key"
                         type="action"
-                        groups="itm.group_itm_user"
                         attrs="{'invisible':[('manage_it','=', False )]}"
                     >
                         <field name="access_count" widget="statinfo" />
@@ -101,7 +100,6 @@
                         class="oe_inline oe_stat_button"
                         icon="fa-floppy-o"
                         type="action"
-                        groups="itm.group_itm_user"
                         attrs="{'invisible':[('manage_it','=', False )]}"
                     >
                         <field name="backup_count" widget="statinfo" />
