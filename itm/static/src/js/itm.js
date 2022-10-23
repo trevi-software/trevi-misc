@@ -30,7 +30,7 @@ odoo.define("itm", function (require) {
         _onClick(event) {
             event.preventDefault();
             event.stopPropagation();
-            var do_notify = this.do_notify;
+            var me = this;
             var $clipboardBtn = this.$el.find(".o_clipboard_button");
 
             rpc.query({
@@ -46,7 +46,7 @@ odoo.define("itm", function (require) {
                 });
                 clipboard.onClick(event);
                 clipboard.destroy();
-                do_notify(_t("Copied password to clipboard"));
+                me.displayNotification({message: _t("Copied password to clipboard")});
             });
         },
     });
