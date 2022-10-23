@@ -56,10 +56,12 @@
     "demo": [],
     "test": [],
     "assets": {
-        "web.assets.backend": [
-            "/itm/static/src/js/itm.js",
-            "/itm/static/src/js/show_password.js",
-        ]
+        "web.assets_backend": [
+            "itm/static/src/js/itm_clipboard.js",
+            "itm/static/src/js/itm_password_char_field.js",
+            "/itm/static/src/xml/itm_clipboard.xml",
+            "/itm/static/src/xml/itm_password_char_field.xml",
+        ],
     },
     "external_dependencies": {
         "python": ["cryptography"],

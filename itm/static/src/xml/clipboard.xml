@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<templates id="copy_to_clipboard_template">
-    <span t-name="Copy_to_Clipboard">
-        <a class="btn btn-default o_clipboard_button" href="#">
-            <i class="fa fa-clipboard" />
-        </a>
-    </span>
-</templates>
