@@ -56,9 +56,10 @@
     "demo": [],
     "test": [],
     "assets": {
-        "web.assets.backend": [
+        "web.assets_backend": [
             "/itm/static/src/js/itm.js",
             "/itm/static/src/js/show_password.js",
+            "/itm/static/src/xml/clipboard.xml",
         ]
     },
     "external_dependencies": {
