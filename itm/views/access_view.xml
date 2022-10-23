@@ -59,25 +59,30 @@
                                 <group>
                                     <label for="password" class="oe_inline" />
                                     <div>
+                                        <span>
                                         <field
-                                            name="password"
-                                            password="True"
-                                            nolabel="1"
-                                            style="max-width:250px"
-                                            class="oe_inline text-truncate"
-                                        />
+                                                name="password"
+                                                password="True"
+                                                nolabel="1"
+                                                style="max-width:250px"
+                                                class="oe_inline text-truncate"
+                                                widget="password_char"
+                                            />
                                         <widget
-                                            name="copy_to_clipboard"
-                                            attrs="{'invisible': [('password', '=', '')]}"
-                                        />
+                                                name="copy_to_clipboard"
+                                                attrs="{'invisible': [('password', '=', '')]}"
+                                                class="oe_inline"
+                                            />
                                         <button
-                                            name="get_random_password"
-                                            string="Generate"
-                                            type="object"
-                                            groups="itm.group_itm_mod"
-                                            confirm="Are you sure?"
-                                            icon="fa-random"
-                                        />
+                                                name="get_random_password"
+                                                string="Generate"
+                                                type="object"
+                                                groups="itm.group_itm_mod"
+                                                confirm="Are you sure?"
+                                                icon="fa-random"
+                                                class="oe_inline"
+                                            />
+                                        </span>
                                     </div>
                                 </group>
                                 <group>
