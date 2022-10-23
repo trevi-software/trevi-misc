@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    Copyright (C) 2014 Leandro Ezequiel Baldi
+    <baldileandro@gmail.com>
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published
+    by the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<odoo>
+
+    <!-- Partitions -->
+
+    <!-- Create view for partition -->
+    <record model="ir.ui.view" id="itm_equipment_partition_form">
+        <field name="name">itm.equipment.partition.form</field>
+        <field name="model">itm.equipment.partition</field>
+        <field name="arch" type="xml">
+            <form string="Enter a partition entry">
+                <group>
+                    <field name="name" />
+                    <field name="disks" />
+                    <field name="type" placeholder="RAID1" />
+                    <field name="format" placeholder="ext4" />
+                    <field name="mount_ids">
+                        <tree editable="bottom">
+                            <field name="name" />
+                            <field name="size" />
+                        </tree>
+                    </field>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree view for partition grill on equipments -->
+    <record model="ir.ui.view" id="itm_equipment_partition_tree">
+        <field name="name">itm.equipment.partition.tree</field>
+        <field name="model">itm.equipment.partition</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="disks" />
+                <field name="type" />
+                <field name="format" />
+                <field name="mount_ids" />
+            </tree>
+        </field>
+    </record>
+
+</odoo>

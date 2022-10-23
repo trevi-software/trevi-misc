@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    Copyright (C) 2014 Leandro Ezequiel Baldi
+    <baldileandro@gmail.com>
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published
+    by the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<odoo>
+
+    <!-- Create view for mapping -->
+    <record model="ir.ui.view" id="itm_equipment_mapping_form">
+        <field name="name">itm.equipment.mapping.form</field>
+        <field name="model">itm.equipment.mapping</field>
+        <field name="arch" type="xml">
+            <form string="Mapping">
+                <sheet>
+                    <header />
+                    <group>
+                        <group>
+                            <field name="name" />
+                            <field name="path" />
+                        </group>
+                    </group>
+                    <group string="Permission Lines">
+                        <field name="line_ids">
+                            <tree editable="bottom">
+                                <field name="map_id" invisible="1" />
+                                <field name="adobj_id" />
+                                <field name="type" />
+                                <field
+                                    name="perm_simple"
+                                    attrs="{'invisible': [('type', '=', 'advanced')]}"
+                                />
+                                <field
+                                    name="perm_advanced"
+                                    widget="many2many_tags"
+                                    attrs="{'invisible': [('type', '=', 'simple')]}"
+                                />
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree view for mapping grill on equipments -->
+    <record model="ir.ui.view" id="itm_equipment_mapping_tree">
+        <field name="name">itm.equipment.mapping.tree</field>
+        <field name="model">itm.equipment.mapping</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" colspan="4" />
+                <field name="path" />
+            </tree>
+        </field>
+    </record>
+
+</odoo>

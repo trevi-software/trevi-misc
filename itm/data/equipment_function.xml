@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+
+    <record id="equipment_function_ad" model="itm.equipment.function">
+        <field name="name">Active Directory</field>
+    </record>
+
+    <record id="equipment_function_dc" model="itm.equipment.function">
+        <field name="name">Domain Controller</field>
+    </record>
+
+    <record id="equipment_function_dns" model="itm.equipment.function">
+        <field name="name">Domain Name Server</field>
+    </record>
+
+    <record id="equipment_function_fileserver" model="itm.equipment.function">
+        <field name="name">File Server</field>
+    </record>
+
+    <record id="equipment_function_dbserver" model="itm.equipment.function">
+        <field name="name">Database Server</field>
+    </record>
+
+    <record id="equipment_function_fw" model="itm.equipment.function">
+        <field name="name">Firewall</field>
+    </record>
+
+    <record id="equipment_function_vpn" model="itm.equipment.function">
+        <field name="name">VPN Server</field>
+    </record>
+
+    <record id="equipment_function_dhcp" model="itm.equipment.function">
+        <field name="name">DHCP Server</field>
+    </record>
+
+    <record id="equipment_function_ftp" model="itm.equipment.function">
+        <field name="name">FTP Server</field>
+    </record>
+
+    <record id="equipment_function_vps" model="itm.equipment.function">
+        <field name="name">VPS</field>
+    </record>
+
+    <record id="equipment_function_vmhost" model="itm.equipment.function">
+        <field name="name">VM Host</field>
+    </record>
+
+    <record id="equipment_function_vmguest" model="itm.equipment.function">
+        <field name="name">VM Guest</field>
+    </record>
+
+    <record id="equipment_function_switch" model="itm.equipment.function">
+        <field name="name">Switch</field>
+    </record>
+
+    <record id="equipment_function_router" model="itm.equipment.function">
+        <field name="name">Router</field>
+    </record>
+
+    <record id="equipment_function_webserver" model="itm.equipment.function">
+        <field name="name">Web Server</field>
+    </record>
+
+    <record id="equipment_function_wirelessap" model="itm.equipment.function">
+        <field name="name">Wireless AP</field>
+    </record>
+
+    <record id="equipment_function_wirelessbridge" model="itm.equipment.function">
+        <field name="name">Wireless Bridge</field>
+    </record>
+
+    <record id="equipment_function_wirelessextender" model="itm.equipment.function">
+        <field name="name">Wireless Extender</field>
+    </record>
+
+    <record id="equipment_function_wirelessclient" model="itm.equipment.function">
+        <field name="name">Wireless Client</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    Copyright (C) 2014 Leandro Ezequiel Baldi
+    <baldileandro@gmail.com>
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published
+    by the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<odoo>
+
+    <!-- Backup -->
+    <record model="ir.ui.view" id="itm_backup_tree">
+        <field name="name">itm.backup.tree</field>
+        <field name="model">itm.backup</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="equipment_id" />
+                <field name="name" />
+                <field name="type" />
+                <field name="destination" />
+                <field name="source" />
+                <field name="script_location" widget="url" />
+                <field name="frequency" />
+                <field name="time_schedule" widget="float_time" />
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="itm_backup_form">
+        <field name="name">itm.backup.form</field>
+        <field name="model">itm.backup</field>
+        <field name="arch" type="xml">
+            <form string="Backup">
+                <sheet>
+                    <div class="oe_title">
+                        <div class="oe_edit_only oe_left">
+                            <label for="name" />
+                        </div>
+                        <h1>
+                            <field name="name" />
+                        </h1>
+                        <div class="oe_edit_only oe_left">
+                            <label for="equipment_id" />
+                        </div>
+                        <h1>
+                            <field name="equipment_id" />
+                        </h1>
+                        <div class="oe_edit_only oe_left">
+                            <label for="type" />
+                        </div>
+                        <field name="type" />
+                    </div>
+                    <group>
+                        <!--fields-->
+                    </group>
+                    <field name="note" nolabel="1" />
+                    <notebook>
+                        <page string="Information">
+                            <group>
+                                <field name="destination" />
+                                <field name="frequency" />
+                                <field name="source" />
+                                <field name="time_schedule" widget="float_time" />
+                                <field name="script" filename="script_filename" />
+                                <field name="script_filename" invisible="1" />
+                                <field name="script_location" widget="url" />
+                            </group>
+                        </page>
+                        <page string="Audit Data" groups="itm.group_itm_mod">
+                            <group>
+                                <group>
+                                    <field name="create_uid" />
+                                    <field name="create_date" />
+                                </group>
+                                <group>
+                                    <field name="write_uid" />
+                                    <field name="write_date" />
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Configuration" groups="itm.group_itm_mod">
+                            <group>
+                                <group>
+                                    <field name="active" />
+                                    <field
+                                        name="company_id"
+                                        string="Company"
+                                        groups="base.group_multi_company"
+                                    />
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="itm_backup_search">
+        <field name="name">itm.backup.search</field>
+        <field name="model">itm.backup</field>
+        <field name="arch" type="xml">
+            <search string="Backup">
+                <!--Searchs-->
+                <field name="equipment_id" string="Equipment" />
+                <field name="name" string="Backup Name" />
+                <field name="partner_id" string="Partner" />
+                <!--Filters-->
+                <filter name="type" string="FULL" domain="[('type','=','full')]" />
+                <filter name="type" string="DIFF" domain="[('type','=','diff')]" />
+                <filter name="type" string="INC" domain="[('type','=','inc')]" />
+                <filter name="type" string="OTHER" domain="[('type','=','other')]" />
+                <separator />
+                <group expand="0" string="Group By...">
+                    <filter
+                        name="by_partner"
+                        string="Partner"
+                        icon="terp-personal+"
+                        domain="[]"
+                        context="{'group_by':'partner_id'}"
+                    />
+                    <filter
+                        name="by_equipment"
+                        string="Equipment"
+                        icon="terp-stock_effects-object-colorize"
+                        domain="[]"
+                        context="{'group_by':'equipment_id'}"
+                    />
+                    <filter
+                        name="by_type"
+                        string="Type"
+                        icon="terp-go-home"
+                        domain="[]"
+                        context="{'group_by':'type'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="itm_backup_action">
+        <field name="name">Backups</field>
+        <field name="res_model">itm.backup</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        action="itm_backup_action"
+        id="itm_backup"
+        sequence="30"
+        parent="itm_menu_general"
+    />
+
+</odoo>
