@@ -4,7 +4,7 @@
 
 {
     "name": "IT Infrastructure Management",
-    "version": "16.0.1.0.0",
+    "version": "16.0.2.0.0",
     "license": "AGPL-3",
     "category": "IT Infrastructure Management",
     "summary": """IT Assets, Credentials, Backups, Applications.""",
@@ -57,10 +57,8 @@
     "test": [],
     "assets": {
         "web.assets_backend": [
-            "itm/static/src/js/itm_clipboard.js",
-            "itm/static/src/js/itm_password_char_field.js",
-            "/itm/static/src/xml/itm_clipboard.xml",
-            "/itm/static/src/xml/itm_password_char_field.xml",
+            "/itm/static/src/js/itm_password_char_field.esm.js",
+            "/itm/static/src/js/itm_password_char_field.xml",
         ],
     },
     "external_dependencies": {
