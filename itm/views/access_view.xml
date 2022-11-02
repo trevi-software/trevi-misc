@@ -68,11 +68,6 @@
                                                 class="oe_inline text-truncate"
                                                 widget="password_char"
                                             />
-                                        <widget
-                                                name="copy_to_clipboard"
-                                                attrs="{'invisible': [('password', '=', '')]}"
-                                                class="oe_inline"
-                                            />
                                         <button
                                                 name="get_random_password"
                                                 string="Generate"
