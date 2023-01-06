@@ -80,15 +80,16 @@ class ItAccess(models.Model):
     @api.model
     def decrypt_password_as_string(self, obj_id):
         """Returns a string representing the plaintext password in record with
-        database ID obj_id."""
+        database ID obj_id. Returns empty string if the password is not set."""
 
         key = self.get_urlsafe_key()
         f = Fernet(key)
 
-        plaintext = False
+        plaintext = ""
         rec = self.browse(obj_id)
-        token = base64.urlsafe_b64decode(rec.password)
-        plaintext = f.decrypt(token).decode()
+        if rec and rec.password:
+            token = base64.urlsafe_b64decode(rec.password)
+            plaintext = f.decrypt(token).decode()
         return plaintext
 
     @api.model
