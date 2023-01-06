@@ -75,3 +75,11 @@ class TestAccess(TransactionCase):
         token1 = base64.urlsafe_b64decode(cred1.password)
         token2 = base64.urlsafe_b64decode(cred2.password)
         self.assertNotEqual(token1, token2)
+
+    def test_unset_password(self):
+        """Unset password returns empty string"""
+
+        cred = self.ItAccess.create({"name": "a", "site_id": self.defaultSite.id})
+        self.assertFalse(cred.password)
+        strRandom = self.ItAccess.decrypt_password_as_string(cred.id)
+        self.assertEqual(0, len(strRandom))
