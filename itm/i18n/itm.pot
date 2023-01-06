@@ -19,6 +19,7 @@ msgid "&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"
 msgstr ""
 
 #. module: itm
+#. odoo-python
 #: code:addons/itm/models/equipment.py:0
 #, python-format
 msgid ""
@@ -29,6 +30,7 @@ msgid ""
 msgstr ""
 
 #. module: itm
+#. odoo-python
 #: code:addons/itm/models/service_ad.py:0
 #, python-format
 msgid ""
@@ -39,6 +41,7 @@ msgid ""
 msgstr ""
 
 #. module: itm
+#. odoo-python
 #: code:addons/itm/models/access.py:0
 #, python-format
 msgid ""
@@ -48,6 +51,7 @@ msgid ""
 msgstr ""
 
 #. module: itm
+#. odoo-python
 #: code:addons/itm/models/service_ad.py:0
 #, python-format
 msgid ""
@@ -58,6 +62,7 @@ msgid ""
 msgstr ""
 
 #. module: itm
+#. odoo-python
 #: code:addons/itm/models/equipment_component.py:0
 #, python-format
 msgid ""
@@ -68,6 +73,7 @@ msgid ""
 msgstr ""
 
 #. module: itm
+#. odoo-python
 #: code:addons/itm/models/access.py:0 code:addons/itm/models/equipment.py:0
 #: code:addons/itm/models/equipment.py:0
 #: code:addons/itm/models/service_ad.py:0
@@ -76,6 +82,7 @@ msgid "<li> %(dsc)s record was deleted: %(name)s</li>"
 msgstr ""
 
 #. module: itm
+#. odoo-python
 #: code:addons/itm/models/access.py:0 code:addons/itm/models/service_ad.py:0
 #: code:addons/itm/models/service_ad.py:0
 #, python-format
@@ -83,30 +90,35 @@ msgid "<li> %(dsc)s was deleted: %(name)s</li>"
 msgstr ""
 
 #. module: itm
+#. odoo-python
 #: code:addons/itm/models/service_ad.py:0
 #, python-format
 msgid "<li> %s(dsc) record was deleted: %(name)s</li>"
 msgstr ""
 
 #. module: itm
+#. odoo-python
 #: code:addons/itm/models/equipment_component.py:0
 #, python-format
 msgid "<li>A %(dsc)s record was deleted: %(name)s</li>"
 msgstr ""
 
 #. module: itm
+#. odoo-python
 #: code:addons/itm/models/equipment_component.py:0
 #, python-format
 msgid "<li>A %(dsc)s was installed: %(name)s</li>"
 msgstr ""
 
 #. module: itm
+#. odoo-python
 #: code:addons/itm/models/equipment_component.py:0
 #, python-format
 msgid "<li>A %(dsc)s was removed: %(name)s</li>"
 msgstr ""
 
 #. module: itm
+#. odoo-python
 #: code:addons/itm/models/access.py:0 code:addons/itm/models/access.py:0
 #, python-format
 msgid "<li>A %(dsc)s's password was updated: %(name)s</li>"
@@ -289,6 +301,7 @@ msgid "Advanced Share Mapping Permission"
 msgstr ""
 
 #. module: itm
+#. odoo-python
 #: code:addons/itm/models/equipment_mapping.py:0
 #: model:ir.model.fields.selection,name:itm.selection__itm_equipment_mapping_line__type__advanced
 #, python-format
@@ -1268,6 +1281,7 @@ msgid "First Name"
 msgstr ""
 
 #. module: itm
+#. odoo-python
 #: code:addons/itm/models/service_ad.py:0
 #: model:ir.model.fields.selection,name:itm.selection__itm_service_ad_object__type__folder
 #, python-format
@@ -1358,6 +1372,7 @@ msgid "Generate"
 msgstr ""
 
 #. module: itm
+#. odoo-python
 #: code:addons/itm/models/service_ad.py:0
 #: model:ir.model.fields.selection,name:itm.selection__itm_service_ad_object__type__group
 #, python-format
@@ -1507,6 +1522,7 @@ msgid "IP address"
 msgstr ""
 
 #. module: itm
+#. odoo-python
 #: code:addons/itm/models/site.py:0
 #, python-format
 msgid "IP address '%s' already exists."
@@ -2357,7 +2373,7 @@ msgid "Password"
 msgstr ""
 
 #. module: itm
-#. openerp-web
+#. odoo-javascript
 #: code:addons/itm/static/src/js/itm_password_char_field.esm.js:0
 #, python-format
 msgid "Password copied to clipboard"
@@ -2490,6 +2506,7 @@ msgid "Random password"
 msgstr ""
 
 #. module: itm
+#. odoo-python
 #: code:addons/itm/models/equipment_mapping.py:0
 #: model:ir.model.fields.selection,name:itm.selection__itm_equipment_mapping_line__perm_simple__read
 #, python-format
@@ -2497,6 +2514,7 @@ msgid "Read"
 msgstr ""
 
 #. module: itm
+#. odoo-python
 #: code:addons/itm/models/equipment_mapping.py:0
 #: model:ir.model.fields.selection,name:itm.selection__itm_equipment_mapping_line__perm_simple__write
 #, python-format
@@ -2653,6 +2671,7 @@ msgid "Short Description"
 msgstr ""
 
 #. module: itm
+#. odoo-python
 #: code:addons/itm/models/equipment_mapping.py:0
 #: model:ir.model.fields.selection,name:itm.selection__itm_equipment_mapping_line__type__simple
 #, python-format
@@ -2844,6 +2863,7 @@ msgid "The tax number for natural and legal person"
 msgstr ""
 
 #. module: itm
+#. odoo-python
 #: code:addons/itm/models/equipment_component.py:0
 #, python-format
 msgid ""
@@ -2936,6 +2956,7 @@ msgid "UDP"
 msgstr ""
 
 #. module: itm
+#. odoo-python
 #: code:addons/itm/models/equipment_mapping.py:0
 #, python-format
 msgid "Unknown"
@@ -2952,6 +2973,7 @@ msgid "Use Proxy"
 msgstr ""
 
 #. module: itm
+#. odoo-python
 #: code:addons/itm/models/service_ad.py:0
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_worklog__user_id
 #: model:ir.model.fields.selection,name:itm.selection__itm_service_ad_object__type__user
@@ -3194,6 +3216,7 @@ msgid "Write a note ..."
 msgstr ""
 
 #. module: itm
+#. odoo-python
 #: code:addons/itm/models/service_ad.py:0
 #, python-format
 msgid "You cannot create recursive Active Directory objects."
