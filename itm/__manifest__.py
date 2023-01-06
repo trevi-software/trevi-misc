@@ -4,7 +4,7 @@
 
 {
     "name": "IT Infrastructure Management",
-    "version": "15.0.1.0.0",
+    "version": "15.0.1.0.1",
     "license": "AGPL-3",
     "category": "IT Infrastructure Management",
     "summary": """IT Assets, Credentials, Backups, Applications.""",
