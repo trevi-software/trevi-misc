@@ -1617,15 +1617,10 @@ msgstr ""
 
 #. module: itm
 #: model:ir.model.fields,help:itm.field_itm_access__message_has_error
-#: model:ir.model.fields,help:itm.field_itm_access__message_has_sms_error
 #: model:ir.model.fields,help:itm.field_itm_equipment__message_has_error
-#: model:ir.model.fields,help:itm.field_itm_equipment__message_has_sms_error
 #: model:ir.model.fields,help:itm.field_itm_equipment_component__message_has_error
-#: model:ir.model.fields,help:itm.field_itm_equipment_component__message_has_sms_error
 #: model:ir.model.fields,help:itm.field_itm_service_ad__message_has_error
-#: model:ir.model.fields,help:itm.field_itm_service_ad__message_has_sms_error
 #: model:ir.model.fields,help:itm.field_itm_site__message_has_error
-#: model:ir.model.fields,help:itm.field_itm_site__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr ""
 
@@ -2213,7 +2208,7 @@ msgstr ""
 #: model:ir.model.fields,help:itm.field_itm_equipment_component__message_needaction_counter
 #: model:ir.model.fields,help:itm.field_itm_service_ad__message_needaction_counter
 #: model:ir.model.fields,help:itm.field_itm_site__message_needaction_counter
-msgid "Number of messages which requires an action"
+msgid "Number of messages requiring action"
 msgstr ""
 
 #. module: itm
@@ -2582,15 +2577,6 @@ msgstr ""
 #. module: itm
 #: model:ir.model.fields.selection,name:itm.selection__itm_service_ad__type__slave
 msgid "SLAVE"
-msgstr ""
-
-#. module: itm
-#: model:ir.model.fields,field_description:itm.field_itm_access__message_has_sms_error
-#: model:ir.model.fields,field_description:itm.field_itm_equipment__message_has_sms_error
-#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__message_has_sms_error
-#: model:ir.model.fields,field_description:itm.field_itm_service_ad__message_has_sms_error
-#: model:ir.model.fields,field_description:itm.field_itm_site__message_has_sms_error
-msgid "SMS Delivery error"
 msgstr ""
 
 #. module: itm
