@@ -4,7 +4,7 @@
 {
     "name": "IT Contact",
     "summary": "Designate a contact as an IT Contact of the parent company",
-    "version": "15.0.1.0.0",
+    "version": "16.0.1.0.0",
     "category": "CRM",
     "license": "AGPL-3",
     "author": "TREVI Software",
