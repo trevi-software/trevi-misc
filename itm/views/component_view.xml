@@ -18,21 +18,17 @@
 -->
 <odoo>
 
-    <data>
+    <record id="itm_component_action" model="ir.actions.act_window">
+        <field name="name">Products</field>
+        <field name="res_model">product.product</field>
+        <field name="view_mode">tree,form</field>
+    </record>
 
-        <record id="itm_component_action" model="ir.actions.act_window">
-            <field name="name">Products</field>
-            <field name="res_model">product.product</field>
-            <field name="view_mode">tree,form</field>
-        </record>
-
-        <menuitem
-            action="itm_component_action"
-            id="itm_component"
-            sequence="20"
-            parent="itm_menu_others"
-        />
-
-    </data>
+    <menuitem
+        action="itm_component_action"
+        id="itm_component"
+        sequence="20"
+        parent="itm_menu_others"
+    />
 
 </odoo>

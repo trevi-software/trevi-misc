@@ -49,7 +49,7 @@
         <field name="name">itm.equipment.type.tree</field>
         <field name="model">itm.equipment.type</field>
         <field name="arch" type="xml">
-            <tree string="Equipment Type">
+            <tree>
                 <field name="name" />
                 <field name="parent_id" />
                 <field name="active" widget="boolean_toggle" />
