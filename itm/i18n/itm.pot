@@ -146,11 +146,6 @@ msgid "AD Folder"
 msgstr ""
 
 #. module: itm
-#: model_terms:ir.ui.view,arch_db:itm.itm_service_ad_form
-msgid "AD Services Objects"
-msgstr ""
-
-#. module: itm
 #: model:ir.model.fields,field_description:itm.field_itm_service_ad__type
 msgid "AD Type"
 msgstr ""
@@ -222,11 +217,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__active
 #: model:ir.model.fields,field_description:itm.field_itm_site__active
 msgid "Active"
-msgstr ""
-
-#. module: itm
-#: model_terms:ir.ui.view,arch_db:itm.itm_service_ad_tree
-msgid "Active Directories"
 msgstr ""
 
 #. module: itm
@@ -328,7 +318,6 @@ msgstr ""
 #: model:ir.actions.act_window,name:itm.itm_application_action
 #: model:ir.model.fields,field_description:itm.field_itm_equipment__application_ids
 #: model:ir.ui.menu,name:itm.itm_application
-#: model_terms:ir.ui.view,arch_db:itm.itm_application_tree
 #: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
 msgid "Applications"
 msgstr ""
@@ -417,7 +406,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:itm.field_res_partner__equipment_ids
 #: model:ir.model.fields,field_description:itm.field_res_users__equipment_ids
 #: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
-#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_tree
 msgid "Assets"
 msgstr ""
 
@@ -490,7 +478,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:itm.field_itm_equipment__is_backup
 #: model_terms:ir.ui.view,arch_db:itm.itm_backup_form
 #: model_terms:ir.ui.view,arch_db:itm.itm_backup_search
-#: model_terms:ir.ui.view,arch_db:itm.itm_backup_tree
 msgid "Backup"
 msgstr ""
 
@@ -670,11 +657,6 @@ msgid "Component Selector"
 msgstr ""
 
 #. module: itm
-#: model_terms:ir.ui.view,arch_db:itm.spec_selector_tree
-msgid "Component Selectors"
-msgstr ""
-
-#. module: itm
 #: model:ir.model,name:itm.model_itm_equipment_component_specification_key
 msgid "Component Specification Key"
 msgstr ""
@@ -702,9 +684,7 @@ msgstr ""
 #. module: itm
 #: model:ir.actions.act_window,name:itm.component_type_action
 #: model:ir.ui.menu,name:itm.component_type_menu
-#: model_terms:ir.ui.view,arch_db:itm.component_type_tree
 #: model_terms:ir.ui.view,arch_db:itm.spec_key_form
-#: model_terms:ir.ui.view,arch_db:itm.spec_key_tree
 msgid "Component Types"
 msgstr ""
 
@@ -720,7 +700,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:itm.field_itm_equipment__component_ids
 #: model:ir.ui.menu,name:itm.component_menu
 #: model:ir.ui.menu,name:itm.itm_menu_component_config
-#: model_terms:ir.ui.view,arch_db:itm.component_tree
 msgid "Components"
 msgstr ""
 
@@ -976,7 +955,6 @@ msgstr ""
 
 #. module: itm
 #: model_terms:ir.ui.view,arch_db:itm.itm_service_dhcp4_form
-#: model_terms:ir.ui.view,arch_db:itm.itm_service_dhcp4_tree
 #: model_terms:ir.ui.view,arch_db:itm.itm_site_network_form
 msgid "DHCP Settings"
 msgstr ""
@@ -1232,11 +1210,6 @@ msgid "Equipment Brand"
 msgstr ""
 
 #. module: itm
-#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_brand_tree
-msgid "Equipment Brands"
-msgstr ""
-
-#. module: itm
 #: model:ir.model,name:itm.model_itm_equipment_configuration
 msgid "Equipment Configuration"
 msgstr ""
@@ -1255,7 +1228,6 @@ msgstr ""
 #. module: itm
 #: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
 #: model_terms:ir.ui.view,arch_db:itm.itm_equipment_type_form
-#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_type_tree
 msgid "Equipment Type"
 msgstr ""
 
@@ -1350,11 +1322,6 @@ msgid "Format"
 msgstr ""
 
 #. module: itm
-#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
-msgid "Forward Registry"
-msgstr ""
-
-#. module: itm
 #: model:ir.model.fields,field_description:itm.field_itm_equipment__router_forward_ids
 msgid "Forward Rules"
 msgstr ""
@@ -1371,7 +1338,6 @@ msgstr ""
 
 #. module: itm
 #: model_terms:ir.ui.view,arch_db:itm.itm_equipment_function_form
-#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_function_tree
 msgid "Function"
 msgstr ""
 
@@ -1551,16 +1517,6 @@ msgid "IP address '%s' already exists."
 msgstr ""
 
 #. module: itm
-#: model_terms:ir.ui.view,arch_db:itm.itm_site_network_form
-msgid "IP addresses"
-msgstr ""
-
-#. module: itm
-#: model_terms:ir.ui.view,arch_db:itm.itm_service_dhcp4_form
-msgid "IP reservations"
-msgstr ""
-
-#. module: itm
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_network__dhcp_ipv4_id
 msgid "IPv4 Address"
 msgstr ""
@@ -1737,12 +1693,6 @@ msgid "Key Form"
 msgstr ""
 
 #. module: itm
-#: model_terms:ir.ui.view,arch_db:itm.component_type_form
-#: model_terms:ir.ui.view,arch_db:itm.spec_selector_form
-msgid "Key List"
-msgstr ""
-
-#. module: itm
 #: model:ir.model.fields,field_description:itm.field_itm_application__keygen
 msgid "Keygen"
 msgstr ""
@@ -1894,7 +1844,6 @@ msgstr ""
 #: model:ir.model,name:itm.model_itm_application_license
 #: model:ir.model.fields,field_description:itm.field_itm_application__license_id
 #: model_terms:ir.ui.view,arch_db:itm.itm_application_license_form
-#: model_terms:ir.ui.view,arch_db:itm.itm_application_license_tree
 #: model_terms:ir.ui.view,arch_db:itm.itm_application_search
 msgid "License"
 msgstr ""
@@ -1990,11 +1939,6 @@ msgid "Mapping"
 msgstr ""
 
 #. module: itm
-#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_mapping_tree
-msgid "Mapping Registry"
-msgstr ""
-
-#. module: itm
 #: model:ir.model.fields,help:itm.field_itm_application__active
 msgid "Mark if this app is currently used and running"
 msgstr ""
@@ -2040,11 +1984,6 @@ msgstr ""
 #. module: itm
 #: model:ir.model.fields,help:itm.field_itm_equipment_partition__mount_ids
 msgid "Mount partition"
-msgstr ""
-
-#. module: itm
-#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_partition_form
-msgid "Mounts"
 msgstr ""
 
 #. module: itm
@@ -2113,7 +2052,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:itm.field_itm_service_wireless__network_id
 #: model:ir.model.fields,field_description:itm.field_itm_site_network_ip4__network_id
 #: model_terms:ir.ui.view,arch_db:itm.itm_equipment_network_form
-#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_network_tree
 #: model_terms:ir.ui.view,arch_db:itm.itm_site_network_form
 msgid "Network"
 msgstr ""
@@ -2179,16 +2117,10 @@ msgid "Network setup that configured within this asset or device"
 msgstr ""
 
 #. module: itm
-#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
-msgid "Network share mappings"
-msgstr ""
-
-#. module: itm
 #: model:ir.actions.act_window,name:itm.itm_network_action
 #: model:ir.model.fields,field_description:itm.field_itm_site__network_ids
 #: model:ir.ui.menu,name:itm.itm_network_menu
 #: model_terms:ir.ui.view,arch_db:itm.itm_site_form
-#: model_terms:ir.ui.view,arch_db:itm.itm_site_network_tree
 msgid "Networks"
 msgstr ""
 
@@ -2410,7 +2342,6 @@ msgstr ""
 
 #. module: itm
 #: model:ir.model.fields,field_description:itm.field_itm_equipment__is_partitioned
-#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_partition_tree
 msgid "Partitions"
 msgstr ""
 
@@ -2457,11 +2388,6 @@ msgstr ""
 #. module: itm
 #: model:ir.model.fields,help:itm.field_itm_equipment_mapping__line_ids
 msgid "Permission setup"
-msgstr ""
-
-#. module: itm
-#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_mapping_form
-msgid "Permissions"
 msgstr ""
 
 #. module: itm
@@ -2638,11 +2564,6 @@ msgid "Router's forward rules"
 msgstr ""
 
 #. module: itm
-#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
-msgid "Rules Registry"
-msgstr ""
-
-#. module: itm
 #: model:ir.model.fields.selection,name:itm.selection__itm_service_ad__type__secundary
 msgid "SECONDARY"
 msgstr ""
@@ -2762,7 +2683,6 @@ msgstr ""
 #: model:ir.actions.act_window,name:itm.itm_site_action
 #: model:ir.ui.menu,name:itm.itm_menu_sites
 #: model:ir.ui.menu,name:itm.itm_site_menu
-#: model_terms:ir.ui.view,arch_db:itm.itm_site_tree
 msgid "Sites"
 msgstr ""
 
@@ -2834,13 +2754,11 @@ msgstr ""
 #. module: itm
 #: model:ir.actions.act_window,name:itm.spec_value_action
 #: model:ir.ui.menu,name:itm.spec_value_menu
-#: model_terms:ir.ui.view,arch_db:itm.spec_value_tree
 msgid "Specification Values"
 msgstr ""
 
 #. module: itm
 #: model_terms:ir.ui.view,arch_db:itm.component_form
-#: model_terms:ir.ui.view,arch_db:itm.specification_tree
 msgid "Specifications"
 msgstr ""
 
@@ -3133,11 +3051,6 @@ msgid "Value"
 msgstr ""
 
 #. module: itm
-#: model_terms:ir.ui.view,arch_db:itm.spec_selector_form
-msgid "Value List"
-msgstr ""
-
-#. module: itm
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification__value_type_id
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_key__value_type_id
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_value__value_type_id
@@ -3244,11 +3157,6 @@ msgid "Wireless Router"
 msgstr ""
 
 #. module: itm
-#: model_terms:ir.ui.view,arch_db:itm.itm_service_wireless_form
-msgid "Wireless SSID List"
-msgstr ""
-
-#. module: itm
 #: model:ir.model,name:itm.model_itm_service_wireless
 #: model:ir.model.fields,field_description:itm.field_itm_equipment__wireless_service_id
 msgid "Wireless Service"
@@ -3256,7 +3164,6 @@ msgstr ""
 
 #. module: itm
 #: model_terms:ir.ui.view,arch_db:itm.itm_service_wireless_form
-#: model_terms:ir.ui.view,arch_db:itm.itm_service_wireless_tree
 msgid "Wireless Settings"
 msgstr ""
 
@@ -3292,11 +3199,6 @@ msgid "Worklog"
 msgstr ""
 
 #. module: itm
-#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_worklog_tree
-msgid "Worklogs"
-msgstr ""
-
-#. module: itm
 #: model:ir.model.fields,field_description:itm.field_itm_equipment__worklog_ids
 msgid "Worklogs on this equipment"
 msgstr ""
@@ -3316,11 +3218,6 @@ msgstr ""
 #. module: itm
 #: model:ir.model.fields,help:itm.field_itm_equipment__configuration_file_ids
 msgid "configuration file of this asset or device"
-msgstr ""
-
-#. module: itm
-#: model_terms:ir.ui.view,arch_db:itm.itm_access_tree
-msgid "credentials"
 msgstr ""
 
 #. module: itm
