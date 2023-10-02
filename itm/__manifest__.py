@@ -1,10 +1,10 @@
-# Copyright (C) 2021 TREVI Software
+# Copyright (C) 2021-2023 TREVI Software
 # Copyright (C) 2014 Leandro Ezequiel Baldi
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {
     "name": "IT Infrastructure Management",
-    "version": "14.0.3.3.7",
+    "version": "14.0.3.3.8",
     "license": "AGPL-3",
     "category": "IT Infrastructure Management",
     "summary": """IT Assets, Credentials, Backups, Applications.""",
