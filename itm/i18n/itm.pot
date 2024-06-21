@@ -14,8 +14,30 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: itm
+#. odoo-python
+#: code:addons/itm/models/equipment.py:0
+#, python-format
+msgid "%s (copy)"
+msgstr ""
+
+#. module: itm
 #: model_terms:ir.ui.view,arch_db:itm.itm_service_ad_object_form
 msgid "&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_kanban
+msgid "<b>Brand:</b>"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_kanban
+msgid "<b>Model:</b>"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_kanban
+msgid "<b>OS Name:</b>"
 msgstr ""
 
 #. module: itm
@@ -24,8 +46,30 @@ msgstr ""
 #, python-format
 msgid ""
 "<div class=\"o_mail_notification\"><ul><li>A new %(desc)s was created:"
-"                 <a href=\"#\" class=\"o_redirect\" data-oe-"
-"model=itm.equipment                 data-oe-id=\"%(id)s\"> "
+"                     <a href=\"#\" class=\"o_redirect\" data-oe-"
+"model=itm.equipment                     data-oe-id=\"%(id)s\"> "
+"%(name)s</a></li></ul></div>"
+msgstr ""
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/access.py:0
+#, python-format
+msgid ""
+"<div class=\"o_mail_notification\"><ul><li>A new %(dsc)s was created:"
+"                     <a href=\"#\" class=\"o_redirect\" data-oe-"
+"model=itm.access data-oe-id=\"%(id)s\">                     "
+"%(name)s</a></li></ul></div>"
+msgstr ""
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/service_ad.py:0
+#, python-format
+msgid ""
+"<div class=\"o_mail_notification\"><ul><li>A new %(dsc)s was created:"
+"                     <a href=\"#\" class=\"o_redirect\" data-oe-"
+"model=itm.service.ad                     data-oe-id=\"%(id)s\"> "
 "%(name)s</a></li></ul></div>"
 msgstr ""
 
@@ -42,34 +86,13 @@ msgstr ""
 
 #. module: itm
 #. odoo-python
-#: code:addons/itm/models/access.py:0
-#, python-format
-msgid ""
-"<div class=\"o_mail_notification\"><ul><li>A new %(dsc)s was created:"
-"                 <a href=\"#\" class=\"o_redirect\" data-oe-model=itm.access"
-" data-oe-id=\"%(id)s\">                 %(name)s</a></li></ul></div>"
-msgstr ""
-
-#. module: itm
-#. odoo-python
-#: code:addons/itm/models/service_ad.py:0
-#, python-format
-msgid ""
-"<div class=\"o_mail_notification\"><ul><li>A new %(dsc)s was created:"
-"                 <a href=\"#\" class=\"o_redirect\" data-oe-"
-"model=itm.service.ad                 data-oe-id=\"%(id)s\"> "
-"%(name)s</a></li></ul></div>"
-msgstr ""
-
-#. module: itm
-#. odoo-python
 #: code:addons/itm/models/equipment_component.py:0
 #, python-format
 msgid ""
 "<div class=\"o_mail_notification\"><ul><li>A new %(dsc)s was installed:"
-"                 <a href=\"#\" class=\"o_redirect\"                 data-oe-"
-"model=itm.equipment.component data-oe-id=\"%(id)s\">                 "
-"%(name)s</a></li></ul></div>"
+"                     <a href=\"#\" class=\"o_redirect\"                     "
+"data-oe-model=itm.equipment.component data-oe-id=\"%(id)s\">"
+"                     %(name)s</a></li></ul></div>"
 msgstr ""
 
 #. module: itm
@@ -311,6 +334,11 @@ msgstr ""
 #. module: itm
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_line__perm_advanced
 msgid "Advanced permissions"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.constraint,message:itm.constraint_itm_equipment_component_serial_number
+msgid "Another component already exists with this serial number!"
 msgstr ""
 
 #. module: itm
@@ -793,6 +821,11 @@ msgid "Copy"
 msgstr ""
 
 #. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__product_cost
+msgid "Cost"
+msgstr ""
+
+#. module: itm
 #: model:ir.model.fields,field_description:itm.field_itm_application__crack
 msgid "Crack"
 msgstr ""
@@ -1211,6 +1244,7 @@ msgstr ""
 #. module: itm
 #: model_terms:ir.ui.view,arch_db:itm.itm_access_search
 #: model_terms:ir.ui.view,arch_db:itm.itm_backup_search
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_kanban
 msgid "Equipment"
 msgstr ""
 
@@ -1272,6 +1306,7 @@ msgstr ""
 
 #. module: itm
 #: model:ir.model.fields,field_description:itm.field_itm_equipment__router_rules_ids
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
 msgid "Firewall Rules"
 msgstr ""
 
@@ -1325,6 +1360,7 @@ msgstr ""
 
 #. module: itm
 #: model:ir.model.fields,field_description:itm.field_itm_equipment__router_forward_ids
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
 msgid "Forward Rules"
 msgstr ""
 
@@ -2615,6 +2651,11 @@ msgid "Script Location"
 msgstr ""
 
 #. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_application__serial
+msgid "Serial"
+msgstr ""
+
+#. module: itm
 #: model:ir.model.fields,field_description:itm.field_itm_equipment__product_serial_number
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_component__serial_number
 msgid "Serial Number"
@@ -2835,6 +2876,7 @@ msgstr ""
 
 #. module: itm
 #: model:ir.model.fields,help:itm.field_itm_equipment__brand
+#: model:ir.model.fields,help:itm.field_itm_equipment__brand_id
 msgid "The assets or device brand"
 msgstr ""
 
@@ -3047,6 +3089,11 @@ msgstr ""
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_key__value_type_id
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_value__value_type_id
 msgid "Value Type"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__product_partner_id
+msgid "Vendor"
 msgstr ""
 
 #. module: itm
