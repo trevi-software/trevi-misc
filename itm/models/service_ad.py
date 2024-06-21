@@ -42,35 +42,38 @@ class ItServiceAD(models.Model):
             if ad.site_id and ad.site_id.partner_id:
                 ad.partner_id = ad.site_id.partner_id
 
-    @api.model
-    def create(self, vals):
+    @api.model_create_multi
+    def create(self, vals_list):
 
-        res = super(ItServiceAD, self).create(vals)
+        res_ids = super(ItServiceAD, self).create(vals_list)
 
         # Log a note to Site and Equipment chatter.
         #
         mt_note = self.env.ref("mail.mt_note")
         author = self.env.user.partner_id and self.env.user.partner_id.id or False
-        msg = (
-            _(
-                '<div class="o_mail_notification"><ul><li>A new %(dsc)s was created: \
-                <a href="#" class="o_redirect" data-oe-model=itm.service.ad \
-                data-oe-id="%(id)s"> %(name)s</a></li></ul></div>'
+        for res in res_ids:
+            msg = (
+                _(
+                    '<div class="o_mail_notification"><ul><li>A new %(dsc)s was created: \
+                    <a href="#" class="o_redirect" data-oe-model=itm.service.ad \
+                    data-oe-id="%(id)s"> %(name)s</a></li></ul></div>'
+                )
+                % {
+                    "dsc": res._description,
+                    "id": res.id,
+                    "name": res.name,
+                }
             )
-            % {
-                "dsc": res._description,
-                "id": res.id,
-                "name": res.name,
-            }
-        )
-        if res.site_id:
-            res.site_id.message_post(body=msg, subtype_id=mt_note.id, author_id=author)
-        if res.equipment_id:
-            res.equipment_id.message_post(
-                body=msg, subtype_id=mt_note.id, author_id=author
-            )
+            if res.site_id:
+                res.site_id.message_post(
+                    body=msg, subtype_id=mt_note.id, author_id=author
+                )
+            if res.equipment_id:
+                res.equipment_id.message_post(
+                    body=msg, subtype_id=mt_note.id, author_id=author
+                )
 
-        return res
+        return res_ids
 
     # Log a note on deletion of AD to Site and Equipment chatter. Since
     # more than one record at a time may be deleted post all deleted records

@@ -119,6 +119,7 @@ class ItEquipment(models.Model):
         help="A site or place of which this device is deployed",
     )
 
+    # TODO: remove after migration to 16.0.2.0.3
     brand = fields.Many2one(
         "itm.equipment.brand", "Brand Name", help="The assets or device brand"
     )
@@ -148,7 +149,11 @@ class ItEquipment(models.Model):
     code = fields.Char(
         tracking=True, index=True, help="Organization specific inventory code"
     )
-    brand_id = fields.Many2one("itm.equipment.brand", "Brand")
+    brand_id = fields.Many2one(
+        "itm.equipment.brand",
+        "Brand",
+        help="The assets or device brand",
+    )
     model = fields.Char()
     partner_id = fields.Many2one(
         "res.partner",
@@ -304,6 +309,10 @@ class ItEquipment(models.Model):
     product_serial_number = fields.Char("Serial Number")
     product_warranty = fields.Char("Warranty")
     product_buydate = fields.Date("Buy Date")
+    product_cost = fields.Float("Cost")
+    product_partner_id = fields.Many2one(
+        "res.partner", string="Vendor", check_company=True
+    )
     product_note = fields.Text()
     # Fileserver Page
     equipment_mapping_ids = fields.One2many(
@@ -370,30 +379,33 @@ class ItEquipment(models.Model):
 
     # Log a note on creation of equipment to Site and Equipment chatter.
     #
-    @api.model
-    def create(self, vals):
-        res = super(ItEquipment, self).create(vals)
+    @api.model_create_multi
+    def create(self, vals_list):
+        res_ids = super(ItEquipment, self).create(vals_list)
         mt_note = self.env.ref("mail.mt_note")
         author = self.env.user.partner_id and self.env.user.partner_id.id or False
-        msg = (
-            _(
-                '<div class="o_mail_notification"><ul><li>A new %(desc)s was created: \
-                <a href="#" class="o_redirect" data-oe-model=itm.equipment \
-                data-oe-id="%(id)s"> %(name)s</a></li></ul></div>'
+        for res in res_ids:
+            msg = (
+                _(
+                    '<div class="o_mail_notification"><ul><li>A new %(desc)s was created: \
+                    <a href="#" class="o_redirect" data-oe-model=itm.equipment \
+                    data-oe-id="%(id)s"> %(name)s</a></li></ul></div>'
+                )
+                % {
+                    "desc": res._description,
+                    "id": res.id,
+                    "name": res.name,
+                }
             )
-            % {
-                "desc": res._description,
-                "id": res.id,
-                "name": res.name,
-            }
-        )
-        if res.site_id:
-            res.site_id.message_post(body=msg, subtype_id=mt_note.id, author_id=author)
-        if res.virtual_parent_id:
-            res.virtual_parent_id.message_post(
-                body=msg, subtype_id=mt_note.id, author_id=author
-            )
-        return res
+            if res.site_id:
+                res.site_id.message_post(
+                    body=msg, subtype_id=mt_note.id, author_id=author
+                )
+            if res.virtual_parent_id:
+                res.virtual_parent_id.message_post(
+                    body=msg, subtype_id=mt_note.id, author_id=author
+                )
+        return res_ids
 
     # Log a note on deletion of credential to Site and Equipment chatter. Since
     # more than one record at a time may be deleted post all deleted records
@@ -451,6 +463,12 @@ class ItEquipment(models.Model):
             )
 
         return super(ItEquipment, self).unlink()
+
+    @api.returns("self", lambda value: value.id)
+    def copy(self, default=None):
+        self.ensure_one()
+        default = dict(default or {}, name=_("%s (copy)") % (self.name))
+        return super(ItEquipment, self).copy(default)
 
     def add_ip4_network_interface(
         self, name, network, mac, static_ip, dhcp_ip, use_dhcp, note=False

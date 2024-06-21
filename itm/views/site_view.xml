@@ -98,7 +98,7 @@
                         </group>
                     </group>
                     <group string="Networks">
-                        <field name="network_ids" nolabel="1">
+                        <field name="network_ids" nolabel="1" colspan="2">
                             <tree editable="bottom">
                                 <field name="site_id" invisible="1" />
                                 <field name="name" />
@@ -155,7 +155,7 @@
                             <field name="site_id" />
                         </group>
                         <group string="DNS">
-                            <field name="dns_ids" nolabel="1">
+                            <field name="dns_ids" nolabel="1" colspan="2">
                                 <tree editable="bottom">
                                     <field name="name" />
                                 </tree>
@@ -164,7 +164,7 @@
                     </group>
                     <group>
                         <group string="DHCP Settings">
-                            <field name="dhcp4_ids" nolabel="1">
+                            <field name="dhcp4_ids" nolabel="1" colspan="2">
                                 <tree>
                                     <field name="name" />
                                     <field name="equipment_id" />
@@ -177,7 +177,7 @@
                             </field>
                         </group>
                         <group string="IP Addresses">
-                            <field name="ip4_ids" nolabel="1">
+                            <field name="ip4_ids" nolabel="1" colspan="2">
                                 <tree editable="bottom">
                                     <field name="name" />
                                     <field name="network_id" />

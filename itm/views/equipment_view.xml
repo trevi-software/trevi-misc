@@ -57,23 +57,31 @@
         <field name="name">itm.equipment.tree</field>
         <field name="model">itm.equipment</field>
         <field name="arch" type="xml">
-            <tree
-                decoration-info="state == 'in_store'"
-                decoration-warning="state == 'loaned'"
-                decoration-danger="state == 'in_repair'"
-                decoration-muted="state == 'retired'"
-            >
+            <tree>
                 <field name="name" />
-                <field name="code" />
-                <field name="description" />
-                <field name="ip4_ids" widget="many2many_tags" />
-                <field name="site_id" />
-                <field name="location" />
-                <field name="owner" />
-                <field name="partner_id" />
-                <field name="asset_type_id" />
-                <field name="brand_id" />
-                <field name="state" widget="badge" />
+                <field name="code" optional="show" />
+                <field name="model" optional="hide" />
+                <field name="os_name" optional="hide" />
+                <field name="description" optional="show" />
+                <field name="ip4_ids" widget="many2many_tags" optional="show" />
+                <field name="site_id" optional="show" />
+                <field name="location" optional="show" />
+                <field name="owner" optional="show" />
+                <field name="partner_id" optional="hide" />
+                <field name="asset_type_id" optional="show" />
+                <field name="brand_id" optional="show" />
+                <field name="company_id" groups="base.group_multi_company" />
+                <field
+                    name="state"
+                    decoration-info="state == 'in_store'"
+                    decoration-success="state == 'in_use'"
+                    decoration-warning="state == 'loaned'"
+                    decoration-danger="state == 'in_repair'"
+                    decoration-muted="state == 'retired'"
+                    widget="badge"
+                    optional="show"
+                    class="text-dark"
+                />
             </tree>
         </field>
     </record>
@@ -87,11 +95,12 @@
                     <field
                         name="state"
                         widget="statusbar"
-                        clickable="1"
+                        options="{'clickable': '1'}"
                         statusbar_visible="in_store,in_use,loaned,in_repair,retired"
                     />
                 </header>
                 <sheet>
+                    <field name="company_id" invisible="1" />
                     <div class="oe_button_box" name="buttons">
                         <button
                             name="%(act_equipment_2_access)d"
@@ -169,7 +178,8 @@
                     <group>
                         <group>
                             <field name="site_id" />
-                            <field name="brand" />
+                            <field name="brand_id" />
+                            <field name="model" />
                             <field name="os_name" />
                         </group>
                         <group>
@@ -199,6 +209,7 @@
                                         name="company_id"
                                         string="Company"
                                         groups="base.group_multi_company"
+                                        options="{'no_create': True}"
                                     />
                                     <field name="is_backup" />
                                     <field name="is_application" />
@@ -233,17 +244,22 @@
                         </page>
                         <page
                             string="Product Data"
-                            attrs="{'invisible':[('asset_type_id','!=', %(itm.type_bundle)d)]}"
+                            attrs="{'invisible':[('asset_type_id','=', %(itm.type_virtual)d)]}"
                         >
                             <group>
                                 <group>
                                     <field name="product_id" />
+                                    <field name="product_partner_id" />
                                     <field name="product_serial_number" />
-                                    <field name="product_warranty" />
-                                    <field name="product_buydate" />
+                                    <field name="product_note" />
                                 </group>
                                 <group>
-                                    <field name="product_note" />
+                                    <field name="product_buydate" />
+                                    <field
+                                        name="product_cost"
+                                        groups="itm.group_itm_manager"
+                                    />
+                                    <field name="product_warranty" />
                                 </group>
                             </group>
                         </page>
@@ -252,7 +268,7 @@
                             attrs="{'invisible':[('is_partitioned','=', False )]}"
                         >
                             <group>
-                                <field name="partitions_ids" nolabel="1" colspan="4" />
+                                <field name="partitions_ids" nolabel="1" colspan="2" />
                             </group>
                         </page>
                         <page
@@ -273,33 +289,51 @@
                             string="Router Configuration"
                             attrs="{'invisible':[('function_router','=', False )]}"
                         >
-                            <group>
-                                <field name="router_dmz" />
-                                <field name="router_forward_ids">
-                                    <tree editable="bottom">
-                                        <field name="name" />
-                                        <field name="source_port" />
-                                        <field name="destination_port" />
-                                        <field name="source_address" />
-                                        <field name="destination_address" />
-                                        <field name="type" />
-                                    </tree>
-                                </field>
-                                <field name="router_rules_ids">
-                                    <tree editable="bottom">
-                                        <field name="name" />
-                                        <field name="source_port" />
-                                        <field name="destination_port" />
-                                        <field name="source_address" />
-                                        <field name="destination_address" />
-                                        <field name="permission" />
-                                    </tree>
-                                </field>
-                            </group>
+                            <div>
+                                <group>
+                                    <field name="router_dmz" />
+                                </group>
+                                <group string="Forward Rules">
+                                    <field
+                                        name="router_forward_ids"
+                                        nolabel="1"
+                                        colspan="2"
+                                    >
+                                        <tree editable="bottom">
+                                            <field name="name" />
+                                            <field name="source_port" />
+                                            <field name="destination_port" />
+                                            <field name="source_address" />
+                                            <field name="destination_address" />
+                                            <field name="type" />
+                                        </tree>
+                                    </field>
+                                </group>
+                                <group string="Firewall Rules">
+                                    <field
+                                        name="router_rules_ids"
+                                        nolabel="1"
+                                        colspan="2"
+                                    >
+                                        <tree editable="bottom">
+                                            <field name="name" />
+                                            <field name="source_port" />
+                                            <field name="destination_port" />
+                                            <field name="source_address" />
+                                            <field name="destination_address" />
+                                            <field name="permission" />
+                                        </tree>
+                                    </field>
+                                </group>
+                            </div>
                         </page>
                         <page string="Network Configuration">
-                            <group string="Network Configuration">
-                                <field name="equipment_network_ids" nolabel="1">
+                            <group>
+                                <field
+                                    name="equipment_network_ids"
+                                    nolabel="1"
+                                    colspan="2"
+                                >
                                     <tree editable="bottom">
                                         <field name="name" />
                                         <field name="mac" />
@@ -326,14 +360,16 @@
                             attrs="{'invisible':[('function_fileserver','=', False )]}"
                         >
                             <group>
-                                <group>
-                                    <field name="equipment_mapping_ids" nolabel="1">
-                                        <tree>
-                                            <field name="name" />
-                                            <field name="path" />
-                                        </tree>
-                                    </field>
-                                </group>
+                                <field
+                                    name="equipment_mapping_ids"
+                                    nolabel="1"
+                                    colspan="2"
+                                >
+                                    <tree>
+                                        <field name="name" />
+                                        <field name="path" />
+                                    </tree>
+                                </field>
                             </group>
                         </page>
                         <page
@@ -341,7 +377,7 @@
                             attrs="{'invisible':[('function_database','=', False )]}"
                         >
                             <group>
-                                <field name="db_ids">
+                                <field name="db_ids" nolabel="1" colspan="2">
                                     <tree editable="bottom">
                                         <field name="name" />
                                         <field name="codification" />
@@ -355,7 +391,7 @@
                             attrs="{'invisible':[('is_application','=', False )]}"
                         >
                             <group>
-                                <field name="application_ids" nolabel="1" colspan="4" />
+                                <field name="application_ids" nolabel="1" colspan="2" />
                             </group>
                         </page>
                         <page
@@ -363,7 +399,11 @@
                             attrs="{'invisible':[('is_config_file','=', False )]}"
                         >
                             <group>
-                                <field name="configuration_file_ids">
+                                <field
+                                    name="configuration_file_ids"
+                                    nolabel="1"
+                                    colspan="2"
+                                >
                                     <tree editable="bottom">
                                         <field name="name" />
                                         <field name="date" />
@@ -380,7 +420,7 @@
                             </group>
                         </page>
                         <page string="Worklog">
-                            <field name="worklog_ids" nolabel="1" colspan="4" />
+                            <field name="worklog_ids" nolabel="1" colspan="2" />
                         </page>
                         <page string="Audit Data" groups="itm.group_itm_mod">
                             <group>
@@ -422,11 +462,7 @@
                     string="Contracted"
                     domain="[('is_contracted','=',1)]"
                 />
-                <filter
-                    name="is_contracted"
-                    string="Own"
-                    domain="[('is_contracted','=',0)]"
-                />
+                <filter name="is_own" string="Own" domain="[('is_contracted','=',0)]" />
                 <separator />
                 <filter
                     name="is_backup"
@@ -435,7 +471,7 @@
                     help="Assets with backup"
                 />
                 <filter
-                    name="is_backup"
+                    name="is_notbackup"
                     string="Without Backup"
                     domain="[('is_backup','=',0)]"
                     help="Assets without backup"
@@ -586,10 +622,115 @@
         </field>
     </record>
 
+    <record model="ir.ui.view" id="itm_equipment_kanban">
+        <field name="name">itm.equipment.kanban</field>
+        <field name="model">itm.equipment</field>
+        <field name="arch" type="xml">
+            <kanban sample="1">
+                <field name="id" />
+                <field name="name" />
+                <field name="code" />
+                <field name="model" />
+                <field name="ip4_ids" />
+                <field name="location" />
+                <field name="owner" />
+                <field name="asset_type_id" />
+                <field name="brand_id" />
+                <field name="os_name" />
+                <field name="state" />
+                <templates>
+                    <t t-name="kanban-tooltip">
+                        <ul class="oe_kanban_tooltip">
+                            <li><b><t t-esc="record.asset_type_id.value" />:</b>
+                                 <t t-esc="record.name.value" />
+                            </li>
+                            <li t-if="record.brand_id.raw_value"><b>Brand:</b>
+                                 <t t-esc="record.brand_id.value" />
+                            </li>
+                            <li t-if="record.model.raw_value"><b>Model:</b>
+                                 <t t-esc="record.model.value" />
+                            </li>
+                            <li t-if="record.os_name.raw_value"><b>OS Name:</b>
+                                 <t t-esc="record.os_name.value" />
+                            </li>
+                        </ul>
+                    </t>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                            <div class="o_kanban_image mr-1">
+                                <img
+                                    t-att-src="kanban_image('itm.equipment', 'image', record.id.raw_value)"
+                                    alt="Equipment"
+                                    class="o_image_64_contain"
+                                />
+                            </div>
+                            <div class="oe_kanban_content" tooltip="kanban-tooltip">
+                                <div class="o_kanban_record_top">
+                                    <div class="o_kanban_record_headings mt4 ms-1">
+                                        <strong class="o_kanban_record_title">
+                                            <field name="name" />
+                                            <span t-if="record.code.raw_value">
+                                                <small> (<field name="code" />)</small>
+                                            </span>
+                                        </strong>
+                                    </div>
+                                    <span class="float-end text-end">
+                                        <t t-esc="record.asset_type_id.value" />
+                                    </span>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div><field name="brand_id" /></div>
+                                        <div><field name="model" /></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <span><field name="location" /></span>
+                                    </div>
+                                    <div class="col-6">
+                                        <span class="float-end">
+                                            <field
+                                                name="ip4_ids"
+                                                widget="many2many_tags"
+                                            />
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-10">
+                                        <span><field name="owner" /></span>
+                                    </div>
+                                    <div class="col-2">
+                                        <span class="float-end">
+                                            <field
+                                                name="state"
+                                                widget="label_selection"
+                                                options="{
+                                                        'classes': {
+                                                            'in_store': 'info',
+                                                            'in_use': 'success',
+                                                            'in_repair': 'danger',
+                                                            'loaned': 'warning',
+                                                            'retired': 'default'
+                                                        }
+                                                }"
+                                            />
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
     <record id="itm_equipment_action" model="ir.actions.act_window">
         <field name="name">IT Assets</field>
         <field name="res_model">itm.equipment</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,kanban,form</field>
     </record>
 
     <menuitem

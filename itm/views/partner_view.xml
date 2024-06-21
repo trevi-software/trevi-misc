@@ -91,6 +91,7 @@
                         class="oe_inline oe_stat_button"
                         icon="fa-key"
                         type="action"
+                        groups="itm.group_itm_user"
                         attrs="{'invisible':[('manage_it','=', False )]}"
                     >
                         <field name="access_count" widget="statinfo" />
@@ -100,6 +101,7 @@
                         class="oe_inline oe_stat_button"
                         icon="fa-floppy-o"
                         type="action"
+                        groups="itm.group_itm_user"
                         attrs="{'invisible':[('manage_it','=', False )]}"
                     >
                         <field name="backup_count" widget="statinfo" />
@@ -119,6 +121,7 @@
                     string="Manage IT"
                     name="manage_it"
                     domain="[('manage_it','=',1)]"
+                    groups="itm.group_itm_user"
                 />
             </filter>
         </field>

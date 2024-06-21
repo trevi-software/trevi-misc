@@ -24,12 +24,13 @@ class ResPartner(models.Model):
                 elif contact in contact.it_contact_ids:
                     contact.parent_id.it_contact_ids -= contact
 
-    @api.model
-    def create(self, vals):
-        res = super(ResPartner, self).create(vals)
-        if "it_contact" in vals:
-            res._update_parent_it_contacts(vals["it_contact"])
-        return res
+    @api.model_create_multi
+    def create(self, vals_list):
+        res_ids = super(ResPartner, self).create(vals_list)
+        for res, vals in zip(res_ids, vals_list):
+            if "it_contact" in vals:
+                res._update_parent_it_contacts(vals["it_contact"])
+        return res_ids
 
     def write(self, vals):
         res = super(ResPartner, self).write(vals)

@@ -38,7 +38,7 @@
                         </group>
                         <group>
                             <group string="SSID List">
-                                <field name="bssid_ids" nolabel="1">
+                                <field name="bssid_ids" nolabel="1" colspan="2">
                                     <tree editable="bottom">
                                         <field name="wireless_id" invisible="1" />
                                         <field name="name" />

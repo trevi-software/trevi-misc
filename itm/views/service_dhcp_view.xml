@@ -47,7 +47,7 @@
                     </group>
                     <group>
                         <group string="IP Reservations">
-                            <field name="reservation_ids" nolabel="1">
+                            <field name="reservation_ids" nolabel="1" colspan="2">
                                 <tree editable="bottom">
                                     <field name="dhcp_id" invisible="1" />
                                     <field name="ip_address" />

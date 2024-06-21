@@ -66,6 +66,7 @@ class ItApplication(models.Model):
     )
     db_ids = fields.One2many("itm.equipment.db", "application_id", "Databases")
     # Closed Source
+    serial = fields.Char()
     key = fields.Char()
     keygen = fields.Binary()
     crack = fields.Binary()

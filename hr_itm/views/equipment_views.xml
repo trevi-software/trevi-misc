@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="itm_equipment_search_hr" model='ir.ui.view'>
+        <field name="name">itm.equipment.search.hr</field>
+        <field name="model">itm.equipment</field>
+        <field name="inherit_id" ref="itm.itm_equipment_search" />
+        <field name="arch" type="xml">
+            <field name="partner_id" position="before">
+                <field name="employee_id" />
+                <field name="department_id" />
+            </field>
+            <xpath expr="//filter[@name='is_backup']" position="before">
+                <filter
+                    string="Assigned"
+                    name="assigned"
+                    domain="['|', ('employee_id', '!=', False), ('department_id', '!=', False)]"
+                />
+                <filter
+                    string="Unassigned"
+                    name="available"
+                    domain="[('employee_id', '=', False), ('department_id', '=', False)]"
+                />
+                <separator />
+            </xpath>
+            <group position="inside">
+                <filter
+                    string="Employee"
+                    name="by_employee"
+                    domain="[]"
+                    context="{'group_by': 'employee_id'}"
+                />
+                <filter
+                    string="Department"
+                    name="by_department"
+                    domain="[]"
+                    context="{'group_by': 'department_id'}"
+                />
+            </group>
+        </field>
+    </record>
+
+    <record id="itm_equipment_form_hr" model="ir.ui.view">
+        <field name="name">itm.equipment.form.hr</field>
+        <field name="model">itm.equipment</field>
+        <field name="inherit_id" ref="itm.itm_equipment_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='owner']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='owner']" position="after">
+                <field name="equipment_assign_to" widget="radio" />
+                <field
+                    name="employee_id"
+                    string="Employee"
+                    attrs="{'invisible': ['|', ('equipment_assign_to', '=', 'department'), ('equipment_assign_to', '=', False)]}"
+                />
+                <field
+                    name="department_id"
+                    string="Department"
+                    attrs="{'invisible': ['|', ('equipment_assign_to', '=', 'employee'), ('equipment_assign_to', '=', False)]}"
+                />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="itm_equipment_kanban_hr" model="ir.ui.view">
+        <field name="name">itm.equipment.kanban.hr</field>
+        <field name="model">itm.equipment</field>
+        <field name="inherit_id" ref="itm.itm_equipment_kanban" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='owner']" position="after">
+                <field name="employee_id" />
+                <field name="department_id" />
+            </xpath>
+            <xpath expr="//templates//field[@name='owner']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//templates//field[@name='owner']/.." position="after">
+                <div
+                    t-if="!record.employee_id.raw_value and !record.department_id.value"
+                >
+                    Unassigned
+                </div>
+                <div t-if="record.employee_id.value">
+                    <field name="employee_id" widget="many2one_avatar_employee" />
+                    <t t-esc="record.employee_id.value" />
+                </div>
+                <div t-if="record.department_id.value">
+                    <field name="department_id" />
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="itm_equipment_tree_hr" model="ir.ui.view">
+        <field name="name">itm.equipment.tree.hr</field>
+        <field name="model">itm.equipment</field>
+        <field name="inherit_id" ref="itm.itm_equipment_tree" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='owner']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='owner']" position="after">
+                <field name="employee_id" string="Employee" optional="show" />
+                <field name="department_id" string="Department" optional="show" />
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -29,6 +29,15 @@ class EquipmentComponent(models.Model):
     _inherit = ["mail.activity.mixin", "mail.thread"]
     _description = "Component"
 
+    def name_get(self):
+        result = []
+        for record in self:
+            if record.name and record.serial_number:
+                result.append((record.id, record.name + " / " + record.serial_number))
+            if record.name and not record.serial_number:
+                result.append((record.id, record.name))
+        return result
+
     name = fields.Char(required=True)
     equipment_id = fields.Many2one(
         "itm.equipment",
@@ -38,7 +47,7 @@ class EquipmentComponent(models.Model):
         ondelete="restrict",
     )
     component_type_id = fields.Many2one("itm.equipment.component.type", required=True)
-    serial_number = fields.Char()
+    serial_number = fields.Char(copy=False)
     manufacturer_id = fields.Many2one("itm.equipment.brand")
     note = fields.Text()
     active = fields.Boolean(default=True)
@@ -47,6 +56,14 @@ class EquipmentComponent(models.Model):
         "itm_equipment_component_specification_rel",
         domain="[('component_type_id', '=', component_type_id)]",
     )
+
+    _sql_constraints = [
+        (
+            "serial_number",
+            "unique(serial_number)",
+            "Another component already exists with this serial number!",
+        ),
+    ]
 
     def write(self, vals):
 
@@ -104,34 +121,35 @@ class EquipmentComponent(models.Model):
 
         return super(EquipmentComponent, self).write(vals)
 
-    @api.model
-    def create(self, vals):
+    @api.model_create_multi
+    def create(self, vals_list):
 
-        res = super(EquipmentComponent, self).create(vals)
+        res_ids = super(EquipmentComponent, self).create(vals_list)
 
         # Log a note to Site and Equipment chatter.
         #
         mt_note = self.env.ref("mail.mt_note")
         author = self.env.user.partner_id and self.env.user.partner_id.id or False
-        msg = (
-            _(
-                '<div class="o_mail_notification"><ul><li>A new %(dsc)s was installed: \
-                <a href="#" class="o_redirect" \
-                data-oe-model=itm.equipment.component data-oe-id="%(id)s"> \
-                %(name)s</a></li></ul></div>'
+        for res in res_ids:
+            msg = (
+                _(
+                    '<div class="o_mail_notification"><ul><li>A new %(dsc)s was installed: \
+                    <a href="#" class="o_redirect" \
+                    data-oe-model=itm.equipment.component data-oe-id="%(id)s"> \
+                    %(name)s</a></li></ul></div>'
+                )
+                % {
+                    "dsc": res._description,
+                    "id": res.id,
+                    "name": res.name,
+                }
             )
-            % {
-                "dsc": res._description,
-                "id": res.id,
-                "name": res.name,
-            }
-        )
-        if res.equipment_id:
-            res.equipment_id.message_post(
-                body=msg, subtype_id=mt_note.id, author_id=author
-            )
+            if res.equipment_id:
+                res.equipment_id.message_post(
+                    body=msg, subtype_id=mt_note.id, author_id=author
+                )
 
-        return res
+        return res_ids
 
     # Log a note on deletion of a component to Equipment chatter. Since
     # more than one record at a time may be deleted post all deleted records

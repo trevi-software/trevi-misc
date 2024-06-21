@@ -199,37 +199,41 @@ class ItAccess(models.Model):
 
         return super(ItAccess, self).write(vals)
 
-    @api.model
-    def create(self, vals):
+    @api.model_create_multi
+    def create(self, vals_list):
 
         # Encrypt the password before saving it. The unencrypted password should not be
         # saved to the database even temporarily.
         #
-        if "password" in vals.keys() and vals["password"] is not False:
-            vals["password"] = self.encrypt_string(vals["password"])
+        for vals in vals_list:
+            if "password" in vals.keys() and vals["password"] is not False:
+                vals["password"] = self.encrypt_string(vals["password"])
 
-        res = super(ItAccess, self).create(vals)
+        res_ids = super(ItAccess, self).create(vals_list)
 
-        # Log a note to Site and Equipment chatter.
-        #
-        mt_note = self.env.ref("mail.mt_note")
-        author = self.env.user.partner_id and self.env.user.partner_id.id or False
-        msg = (
-            _(
-                '<div class="o_mail_notification"><ul><li>A new %(dsc)s was created: \
-                <a href="#" class="o_redirect" data-oe-model=itm.access data-oe-id="%(id)s"> \
-                %(name)s</a></li></ul></div>'
+        for res in res_ids:
+            # Log a note to Site and Equipment chatter.
+            #
+            mt_note = self.env.ref("mail.mt_note")
+            author = self.env.user.partner_id and self.env.user.partner_id.id or False
+            msg = (
+                _(
+                    '<div class="o_mail_notification"><ul><li>A new %(dsc)s was created: \
+                    <a href="#" class="o_redirect" data-oe-model=itm.access data-oe-id="%(id)s"> \
+                    %(name)s</a></li></ul></div>'
+                )
+                % {"dsc": res._description, "id": res.id, "name": res.name}
             )
-            % {"dsc": res._description, "id": res.id, "name": res.name}
-        )
-        if res.site_id:
-            res.site_id.message_post(body=msg, subtype_id=mt_note.id, author_id=author)
-        if res.equipment_id:
-            res.equipment_id.message_post(
-                body=msg, subtype_id=mt_note.id, author_id=author
-            )
+            if res.site_id:
+                res.site_id.message_post(
+                    body=msg, subtype_id=mt_note.id, author_id=author
+                )
+            if res.equipment_id:
+                res.equipment_id.message_post(
+                    body=msg, subtype_id=mt_note.id, author_id=author
+                )
 
-        return res
+        return res_ids
 
     # Log a note on deletion of credential to Site and Equipment chatter. Since
     # more than one record at a time may be deleted post all deleted records
