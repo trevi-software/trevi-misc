@@ -376,21 +376,18 @@ class ItEquipment(models.Model):
     #
     @api.model
     def create(self, vals):
-        res = super(ItEquipment, self).create(vals)
+        res = super().create(vals)
         mt_note = self.env.ref("mail.mt_note")
         author = self.env.user.partner_id and self.env.user.partner_id.id or False
-        msg = (
-            _(
-                '<div class="o_mail_notification"><ul><li>A new %(desc)s was created: \
-                <a href="#" class="o_redirect" data-oe-model=itm.equipment \
-                data-oe-id="%(id)s"> %(name)s</a></li></ul></div>'
-            )
-            % {
-                "desc": res._description,
-                "id": res.id,
-                "name": res.name,
-            }
-        )
+        msg = _(
+            '<div class="o_mail_notification"><ul><li>A new %(desc)s was created: \
+				<a href="#" class="o_redirect" data-oe-model=itm.equipment \
+				data-oe-id="%(id)s"> %(name)s</a></li></ul></div>'
+        ) % {
+            "desc": res._description,
+            "id": res.id,
+            "name": res.name,
+        }
         if res.site_id:
             res.site_id.message_post(body=msg, subtype_id=mt_note.id, author_id=author)
         if res.virtual_parent_id:
@@ -400,15 +397,15 @@ class ItEquipment(models.Model):
         return res
 
     def log_chatter(self, chatter_item):
-
         mt_note = self.env.ref("mail.mt_note")
         author = self.env.user.partner_id and self.env.user.partner_id.id or False
         for k, v in chatter_item.items():
             msg = ""
-            for r in v:
-		msg = msg + _(
-			'<li> %{item}s record was deleted: %{topic}s</li>'
-		) % { item: self._description, topic: r['name'] }
+        for r in v:
+            msg = msg + _("<li> %{item}s record was deleted: %{topic}s</li>") % {
+                "item": self._description,
+                "topic": r["name"],
+            }
             note = '<div class="o_mail_notification"><ul>' + msg + "</ul></div>"
             chatter_item.browse(k).message_post(
                 body=note, subtype_id=mt_note.id, author_id=author
@@ -419,7 +416,6 @@ class ItEquipment(models.Model):
     # for each site and each equipment together in one post.
     #
     def unlink(self):
-
         # map access records to sites and equipment
         #
         sites = {}
@@ -443,12 +439,11 @@ class ItEquipment(models.Model):
         self.log_chatter("itm.site")
         self.log_chatter("itm.equipment")
 
-        return super(ItEquipment, self).unlink()
+        return super().unlink()
 
     def add_ip4_network_interface(
         self, name, network, mac, static_ip, dhcp_ip, use_dhcp, note=False
     ):
-
         # If an IPv4 address does not exist, create it
         ip_obj = self.env["itm.site.network.ip4"]
         static_ip4 = ip_obj.search(

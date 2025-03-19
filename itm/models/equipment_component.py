@@ -49,7 +49,6 @@ class EquipmentComponent(models.Model):
     )
 
     def write(self, vals):
-
         # If the equipment is being changed log a note to Equipment chatter
         # that a compnent was removed. Log a note to the new equipment that
         # a component was added.
@@ -57,7 +56,7 @@ class EquipmentComponent(models.Model):
 
         new_eq_id = vals.get("equipment_id", False)
         if not new_eq_id:
-            return super(EquipmentComponent, self).write(vals)
+            return super().write(vals)
 
         new_equip = {new_eq_id: []}
         mt_note = self.env.ref("mail.mt_note")
@@ -102,30 +101,26 @@ class EquipmentComponent(models.Model):
             body=note, subtype_id=mt_note.id, author_id=author
         )
 
-        return super(EquipmentComponent, self).write(vals)
+        return super().write(vals)
 
     @api.model
     def create(self, vals):
-
-        res = super(EquipmentComponent, self).create(vals)
+        res = super().create(vals)
 
         # Log a note to Site and Equipment chatter.
         #
         mt_note = self.env.ref("mail.mt_note")
         author = self.env.user.partner_id and self.env.user.partner_id.id or False
-        msg = (
-            _(
-                '<div class="o_mail_notification"><ul><li>A new %(dsc)s was installed: \
+        msg = _(
+            '<div class="o_mail_notification"><ul><li>A new %(dsc)s was installed: \
                 <a href="#" class="o_redirect" \
                 data-oe-model=itm.equipment.component data-oe-id="%(id)s"> \
                 %(name)s</a></li></ul></div>'
-            )
-            % {
-                "dsc": res._description,
-                "id": res.id,
-                "name": res.name,
-            }
-        )
+        ) % {
+            "dsc": res._description,
+            "id": res.id,
+            "name": res.name,
+        }
         if res.equipment_id:
             res.equipment_id.message_post(
                 body=msg, subtype_id=mt_note.id, author_id=author
@@ -138,7 +133,6 @@ class EquipmentComponent(models.Model):
     # for each equipment together in one post.
     #
     def unlink(self):
-
         mt_note = self.env.ref("mail.mt_note")
         author = self.env.user.partner_id and self.env.user.partner_id.id or False
 
@@ -167,7 +161,7 @@ class EquipmentComponent(models.Model):
                 body=note, subtype_id=mt_note.id, author_id=author
             )
 
-        return super(EquipmentComponent, self).unlink()
+        return super().unlink()
 
 
 class ComponentType(models.Model):
@@ -238,8 +232,7 @@ class SpecificationKey(models.Model):
 
     @api.model
     def create(self, vals):
-
-        res = super(SpecificationKey, self).create(vals)
+        res = super().create(vals)
 
         # When a new key is created from the specification list of the component
         # we need to setup the linkage between component type and key otherwise
@@ -309,7 +302,6 @@ class SpecificationValue(models.Model):
 
     @api.model
     def create(self, vals):
-
         # When a new value is created from the specification list of the component
         # we need to setup the linkage between value and key type otherwise
         # the new value will show as a possible value for *ALL* keys.
@@ -318,4 +310,4 @@ class SpecificationValue(models.Model):
         if default_sel_id and "value_type_id" not in vals:
             vals.update({"value_type_id": default_sel_id})
 
-        return super(SpecificationValue, self).create(vals)
+        return super().create(vals)
