@@ -57,31 +57,25 @@
         <field name="name">itm.equipment.tree</field>
         <field name="model">itm.equipment</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree
+                decoration-info="state == 'in_store'"
+                decoration-warning="state == 'loaned'"
+                decoration-danger="state == 'in_repair'"
+                decoration-muted="state == 'retired'"
+            >
                 <field name="name" />
-                <field name="code" optional="show" />
-                <field name="model" optional="hide" />
-                <field name="os_name" optional="hide" />
-                <field name="description" optional="show" />
-                <field name="ip4_ids" widget="many2many_tags" optional="show" />
-                <field name="site_id" optional="show" />
-                <field name="location" optional="show" />
-                <field name="owner" optional="show" />
-                <field name="partner_id" optional="hide" />
-                <field name="asset_type_id" optional="show" />
-                <field name="brand_id" optional="show" />
-                <field name="company_id" groups="base.group_multi_company" />
-                <field
-                    name="state"
-                    decoration-info="state == 'in_store'"
-                    decoration-success="state == 'in_use'"
-                    decoration-warning="state == 'loaned'"
-                    decoration-danger="state == 'in_repair'"
-                    decoration-muted="state == 'retired'"
-                    widget="badge"
-                    optional="show"
-                    class="text-dark"
-                />
+                <field name="code" />
+                <field name="description" />
+                <field name="function_host" />
+                <field name="is_vm" />
+                <field name="ip4_ids" widget="many2many_tags" />
+                <field name="site_id" />
+                <field name="location" />
+                <field name="owner" />
+                <field name="partner_id" />
+                <field name="asset_type_id" />
+                <field name="brand_id" />
+                <field name="state" widget="badge" />
             </tree>
         </field>
     </record>
@@ -218,6 +212,7 @@
                                     <field name="is_config_file" />
                                 </group>
                                 <group string="Function Configuration">
+                                    <field name="is_vm" />
                                     <field name="function_host" />
                                     <field name="function_router" />
                                     <field name="function_fileserver" />
@@ -251,7 +246,9 @@
                                     <field name="product_id" />
                                     <field name="product_partner_id" />
                                     <field name="product_serial_number" />
-                                    <field name="product_note" />
+                                    <field name="product_warranty" />
+                                    <field name="product_buydate" />
+                                    <field name="product_install_date" />
                                 </group>
                                 <group>
                                     <field name="product_buydate" />
