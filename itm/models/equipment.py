@@ -394,7 +394,7 @@ class ItEquipment(models.Model):
     #
     @api.model_create_multi
     def create(self, vals_list):
-        res_ids = super(ItEquipment, self).create(vals_list)
+        res_ids = super().create(vals_list)
         mt_note = self.env.ref("mail.mt_note")
         author = self.env.user.partner_id and self.env.user.partner_id.id or False
         for res in res_ids:
@@ -422,15 +422,15 @@ class ItEquipment(models.Model):
         author = self.env.user.partner_id and self.env.user.partner_id.id or False
         for k, v in chatter_item.items():
             msg = ""
-            for r in v:
-                msg = msg + _("<li> %{item}s record was deleted: %{topic}s</li>") % {
-                    "item": self._description,
-                    "topic": r["name"],
-                }
-                note = '<div class="o_mail_notification"><ul>' + msg + "</ul></div>"
-                chatter_item.browse(k).message_post(
-                    body=note, subtype_id=mt_note.id, author_id=author
-                )
+        for r in v:
+            msg = msg + _("<li> %{item}s record was deleted: %{topic}s</li>") % {
+                "item": self._description,
+                "topic": r["name"],
+            }
+            note = '<div class="o_mail_notification"><ul>' + msg + "</ul></div>"
+            chatter_item.browse(k).message_post(
+                body=note, subtype_id=mt_note.id, author_id=author
+            )
 
     # Log a note on deletion of credential to Site and Equipment chatter. Since
     # more than one record at a time may be deleted post all deleted records
@@ -460,13 +460,13 @@ class ItEquipment(models.Model):
         self.log_chatter("itm.site")
         self.log_chatter("itm.equipment")
 
-        return super(ItEquipment, self).unlink()
+        return super().unlink()
 
     @api.returns("self", lambda value: value.id)
     def copy(self, default=None):
         self.ensure_one()
         default = dict(default or {}, name=_("%s (copy)") % (self.name))
-        return super(ItEquipment, self).copy(default)
+        return super().copy(default)
 
     def add_ip4_network_interface(
         self, name, network, mac, static_ip, dhcp_ip, use_dhcp, note=False

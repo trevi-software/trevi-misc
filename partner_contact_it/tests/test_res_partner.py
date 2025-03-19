@@ -7,7 +7,7 @@ from odoo.tests import common
 class TestPartnerContact(common.SavepointCase):
     @classmethod
     def setUpClass(cls):
-        super(TestPartnerContact, cls).setUpClass()
+        super().setUpClass()
         cls.ResPartner = cls.env["res.partner"]
         cls.partner = cls.ResPartner.create(
             {
@@ -54,7 +54,6 @@ class TestPartnerContact(common.SavepointCase):
         )
 
     def test_write(self):
-
         self.assertFalse(
             self.contact.it_contact,
             "Initially, the contact should NOT be an IT Contact",

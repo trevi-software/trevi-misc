@@ -44,26 +44,22 @@ class ItServiceAD(models.Model):
 
     @api.model_create_multi
     def create(self, vals_list):
-
-        res_ids = super(ItServiceAD, self).create(vals_list)
+        res_ids = super().create(vals_list)
 
         # Log a note to Site and Equipment chatter.
         #
         mt_note = self.env.ref("mail.mt_note")
         author = self.env.user.partner_id and self.env.user.partner_id.id or False
         for res in res_ids:
-            msg = (
-                _(
-                    '<div class="o_mail_notification"><ul><li>A new %(dsc)s was created: \
+            msg = _(
+                '<div class="o_mail_notification"><ul><li>A new %(dsc)s was created: \
                     <a href="#" class="o_redirect" data-oe-model=itm.service.ad \
                     data-oe-id="%(id)s"> %(name)s</a></li></ul></div>'
-                )
-                % {
-                    "dsc": res._description,
-                    "id": res.id,
-                    "name": res.name,
-                }
-            )
+            ) % {
+                "dsc": res._description,
+                "id": res.id,
+                "name": res.name,
+            }
             if res.site_id:
                 res.site_id.message_post(
                     body=msg, subtype_id=mt_note.id, author_id=author
@@ -80,7 +76,6 @@ class ItServiceAD(models.Model):
     # for each site and each equipment together in one post.
     #
     def unlink(self):
-
         mt_note = self.env.ref("mail.mt_note")
         author = self.env.user.partner_id and self.env.user.partner_id.id or False
 
@@ -128,11 +123,10 @@ class ItServiceAD(models.Model):
                 body=note, subtype_id=mt_note.id, author_id=author
             )
 
-        return super(ItServiceAD, self).unlink()
+        return super().unlink()
 
 
 class ItServiceAdObject(models.Model):
-
     _name = "itm.service.ad.object"
     _description = "Active Directory Object"
     _rec_name = "complete_name"
@@ -142,7 +136,7 @@ class ItServiceAdObject(models.Model):
     def default_get(self, fields):
         if "ad_id" not in fields:
             fields.append("ad_id")
-        res = super(ItServiceAdObject, self).default_get(fields)
+        res = super().default_get(fields)
         return res
 
     def _get_default_ad(self):
@@ -197,7 +191,7 @@ class ItServiceAdObject(models.Model):
     def _compute_complete_logon(self):
         for rec in self:
             if rec.logon_name and rec.ad_id and rec.ad_id.name:
-                rec.complete_logon = "{}@{}".format(rec.logon_name, rec.ad_id.name)
+                rec.complete_logon = f"{rec.logon_name}@{rec.ad_id.name}"
             else:
                 rec.complete_logon = False
 
@@ -220,33 +214,29 @@ class ItServiceAdObject(models.Model):
                 name = obj.logon_name
 
             if obj.parent_id:
-                obj.complete_name = r"%s \ %s" % (obj.parent_id.complete_name, name)
+                obj.complete_name = rf"{obj.parent_id.complete_name} \ {name}"
             else:
                 obj.complete_name = name
 
     @api.model
     def create(self, vals):
-
-        res = super(ItServiceAdObject, self).create(vals)
+        res = super().create(vals)
 
         # Log a note to Site and Equipment chatter.
         #
         mt_note = self.env.ref("mail.mt_note")
         author = self.env.user.partner_id and self.env.user.partner_id.id or False
-        msg = (
-            _(
-                '<div class="o_mail_notification"><ul><li>A new %(dsc)s was created: \
+        msg = _(
+            '<div class="o_mail_notification"><ul><li>A new %(dsc)s was created: \
                 <a href="#" \
                 class="o_redirect" \
                 data-oe-model=itm.service.ad.object data-oe-id="%(id)s"> \
                 %(name)s</a></li></ul></div>'
-            )
-            % {
-                "dsc": res._description,
-                "id": res.id,
-                "name": res.complete_name,
-            }
-        )
+        ) % {
+            "dsc": res._description,
+            "id": res.id,
+            "name": res.complete_name,
+        }
         if res.ad_id and res.ad_id.site_id:
             res.ad_id.site_id.message_post(
                 body=msg, subtype_id=mt_note.id, author_id=author
@@ -263,7 +253,6 @@ class ItServiceAdObject(models.Model):
     # for each site and each equipment together in one post.
     #
     def unlink(self):
-
         mt_note = self.env.ref("mail.mt_note")
         author = self.env.user.partner_id and self.env.user.partner_id.id or False
 
@@ -325,4 +314,4 @@ class ItServiceAdObject(models.Model):
                 body=note, subtype_id=mt_note.id, author_id=author
             )
 
-        return super(ItServiceAdObject, self).unlink()
+        return super().unlink()
