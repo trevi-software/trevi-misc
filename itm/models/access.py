@@ -10,7 +10,6 @@ from random import choice
 from cryptography.fernet import Fernet
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
-
 from odoo import _, api, fields, models
 
 PARAM_PASS = "itm_passkey"
@@ -44,7 +43,6 @@ class ItAccess(models.Model):
             access.password = self.get_random_string()
 
     def get_urlsafe_key(self):
-
         ConfigParam = self.env["ir.config_parameter"]
         salt = None
         passphrase = ConfigParam.sudo().get_param(PARAM_PASS)
@@ -143,7 +141,6 @@ class ItAccess(models.Model):
     ssl_privatekey_filename = fields.Char("Private Key Filename")
 
     def write(self, vals):
-
         # Log a note to Site and Equipment chatter.
         # Map access records to sites and equipment.
         #
@@ -199,18 +196,17 @@ class ItAccess(models.Model):
         if "password" in vals.keys() and vals["password"] is not False:
             vals["password"] = self.encrypt_string(vals["password"])
 
-        return super(ItAccess, self).write(vals)
+        return super().write(vals)
 
     @api.model
     def create(self, vals):
-
         # Encrypt the password before saving it. The unencrypted password should not be
         # saved to the database even temporarily.
         #
         if "password" in vals.keys() and vals["password"] is not False:
             vals["password"] = self.encrypt_string(vals["password"])
 
-        res = super(ItAccess, self).create(vals)
+        res = super().create(vals)
 
         # Log a note to Site and Equipment chatter.
         #
@@ -238,7 +234,6 @@ class ItAccess(models.Model):
     # for each site and each equipment together in one post.
     #
     def unlink(self):
-
         mt_note = self.env.ref("mail.mt_note")
         author = self.env.user.partner_id and self.env.user.partner_id.id or False
 
@@ -284,4 +279,4 @@ class ItAccess(models.Model):
                 body=note, subtype_id=mt_note.id, author_id=author
             )
 
-        return super(ItAccess, self).unlink()
+        return super().unlink()
