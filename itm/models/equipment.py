@@ -229,7 +229,10 @@ class ItEquipment(models.Model):
     function_fileserver = fields.Boolean(
         "File Server", help="This asset or device is a fileserver"
     )
-    function_host = fields.Boolean("Host", help="This asset or device is a host")
+    is_vm = fields.Boolean("Is Virtual Machine")
+    function_host = fields.Boolean(
+        "VM Host", help="This asset or device hosts one or more Virtual Machines"
+    )
     function_router = fields.Boolean(
         "Router", help="This asset or device is a network router"
     )
@@ -304,6 +307,7 @@ class ItEquipment(models.Model):
     product_serial_number = fields.Char("Serial Number")
     product_warranty = fields.Char("Warranty")
     product_buydate = fields.Date("Buy Date")
+    product_install_date = fields.Date("Installation Date")
     product_note = fields.Text()
     # Fileserver Page
     equipment_mapping_ids = fields.One2many(
@@ -327,7 +331,7 @@ class ItEquipment(models.Model):
     dhcp_service_id = fields.Many2one(
         "itm.service.dhcp4",
         "DHCP",
-        help="Domain Host Control Protocol address which related to this asset",
+        help="Domain Host Control Protocol service which is related to this asset",
     )
     wireless_service_id = fields.Many2one("itm.service.wireless", "Wireless Service")
     proxy_service_id = fields.Many2one("itm.service.proxy", "Proxy Service")
@@ -395,14 +399,26 @@ class ItEquipment(models.Model):
             )
         return res
 
+    def log_chatter(self, chatter_item):
+
+        mt_note = self.env.ref("mail.mt_note")
+        author = self.env.user.partner_id and self.env.user.partner_id.id or False
+        for k, v in chatter_item.items():
+            msg = ""
+            for r in v:
+		msg = msg + _(
+			'<li> %{item}s record was deleted: %{topic}s</li>'
+		) % { item: self._description, topic: r['name'] }
+            note = '<div class="o_mail_notification"><ul>' + msg + "</ul></div>"
+            chatter_item.browse(k).message_post(
+                body=note, subtype_id=mt_note.id, author_id=author
+            )
+
     # Log a note on deletion of credential to Site and Equipment chatter. Since
     # more than one record at a time may be deleted post all deleted records
     # for each site and each equipment together in one post.
     #
     def unlink(self):
-
-        mt_note = self.env.ref("mail.mt_note")
-        author = self.env.user.partner_id and self.env.user.partner_id.id or False
 
         # map access records to sites and equipment
         #
@@ -424,31 +440,8 @@ class ItEquipment(models.Model):
                         {"id": res.id, "name": res.name}
                     )
 
-        Site = self.env["itm.site"]
-        for k, v in sites.items():
-            msg = ""
-            for r in v:
-                msg = msg + _("<li> %(dsc)s record was deleted: %(name)s</li>") % {
-                    "dsc": self._description,
-                    "name": r["name"],
-                }
-            note = '<div class="o_mail_notification"><ul>' + msg + "</ul></div>"
-            Site.browse(k).message_post(
-                body=note, subtype_id=mt_note.id, author_id=author
-            )
-
-        Equipment = self.env["itm.equipment"]
-        for k, v in equips.items():
-            msg = ""
-            for r in v:
-                msg = msg + _("<li> %(dsc)s record was deleted: %(name)s</li>") % {
-                    "dsc": self._description,
-                    "name": r["name"],
-                }
-            note = '<div class="o_mail_notification"><ul>' + msg + "</ul></div>"
-            Equipment.browse(k).message_post(
-                body=note, subtype_id=mt_note.id, author_id=author
-            )
+        self.log_chatter("itm.site")
+        self.log_chatter("itm.equipment")
 
         return super(ItEquipment, self).unlink()
 
