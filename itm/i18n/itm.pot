@@ -69,7 +69,6 @@ msgstr ""
 
 #. module: itm
 #: code:addons/itm/models/access.py:0 code:addons/itm/models/equipment.py:0
-#: code:addons/itm/models/equipment.py:0
 #: code:addons/itm/models/service_ad.py:0
 #: code:addons/itm/models/service_ad.py:0
 #, python-format
@@ -1170,7 +1169,7 @@ msgstr ""
 
 #. module: itm
 #: model:ir.model.fields,help:itm.field_itm_equipment__dhcp_service_id
-msgid "Domain Host Control Protocol address which related to this asset"
+msgid "Domain Host Control Protocol service which is related to this asset"
 msgstr ""
 
 #. module: itm
@@ -1429,7 +1428,6 @@ msgid "Historical progress of work that spent on the asset or device"
 msgstr ""
 
 #. module: itm
-#: model:ir.model.fields,field_description:itm.field_itm_equipment__function_host
 #: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
 #: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
 msgid "Host"
@@ -1649,6 +1647,11 @@ msgid "Infrastructure"
 msgstr ""
 
 #. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__product_install_date
+msgid "Installation Date"
+msgstr ""
+
+#. module: itm
 #: model_terms:ir.ui.view,arch_db:itm.itm_application_form
 msgid "Installations"
 msgstr ""
@@ -1676,6 +1679,11 @@ msgstr ""
 #. module: itm
 #: model:ir.model.fields,field_description:itm.field_itm_service_wireless_ssid__is_guest
 msgid "Is Guest"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__is_vm
+msgid "Is Virtual Machine"
 msgstr ""
 
 #. module: itm
@@ -2846,12 +2854,17 @@ msgstr ""
 #, python-format
 msgid ""
 "The value you entered must be unique within its Value Type.\n"
-"Previous record: Value Type: %s, Name: %s"
+"Previous record: Value Type: {}, Name: {}"
 msgstr ""
 
 #. module: itm
 #: model:ir.model.fields,help:itm.field_itm_equipment__function_wireless
 msgid "This asset acts as a wireless access point or router"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__function_host
+msgid "This asset or device hosts one or more Virtual Machines"
 msgstr ""
 
 #. module: itm
@@ -2867,11 +2880,6 @@ msgstr ""
 #. module: itm
 #: model:ir.model.fields,help:itm.field_itm_equipment__function_fileserver
 msgid "This asset or device is a fileserver"
-msgstr ""
-
-#. module: itm
-#: model:ir.model.fields,help:itm.field_itm_equipment__function_host
-msgid "This asset or device is a host"
 msgstr ""
 
 #. module: itm
@@ -2984,6 +2992,11 @@ msgstr ""
 #. module: itm
 #: model:ir.model.fields,field_description:itm.field_itm_access__name
 msgid "Username"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__function_host
+msgid "VM Host"
 msgstr ""
 
 #. module: itm
