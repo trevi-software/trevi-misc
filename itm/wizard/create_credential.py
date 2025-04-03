@@ -53,7 +53,6 @@ class NewCredential(models.TransientModel):
             self.password = ItAccess.get_random_string()
 
     def create_cred(self):
-
         # Remove the password so it doesn't get accidentaly written to the database.
         #
         plaintext = self.password
@@ -71,10 +70,9 @@ class NewCredential(models.TransientModel):
 
     @api.model
     def create(self, vals):
-
         # Remove the password from the dictionary so it doesn't
         # get accidentaly written to the database.
         #
         vals.update({"password": ""})
 
-        return super(NewCredential, self).create(vals)
+        return super().create(vals)

@@ -9,7 +9,7 @@ from odoo.tests import common
 class TestEquipmentComponent(common.SavepointCase):
     @classmethod
     def setUpClass(cls):
-        super(TestEquipmentComponent, cls).setUpClass()
+        super().setUpClass()
 
         cls.Equipment = cls.env["itm.equipment"]
         cls.Component = cls.env["itm.equipment.component"]

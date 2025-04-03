@@ -14,7 +14,6 @@ class TestEquipment(common.SavepointCase):
         cls.SiteNetwork = cls.env["itm.site.network"]
 
     def test_ip_in_multiple_networks(self):
-
         net1 = self.SiteNetwork.create(
             {
                 "name": "local.lan",
@@ -36,7 +35,6 @@ class TestEquipment(common.SavepointCase):
         self.assertEqual(ip2.network_id, net2, "Second IP is in second network")
 
     def test_automatic_network_id(self):
-
         net1 = self.SiteNetwork.create(
             {
                 "name": "local.lan",

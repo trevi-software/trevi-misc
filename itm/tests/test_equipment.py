@@ -46,7 +46,6 @@ class TestEquipment(common.SavepointCase):
         )
 
     def test_ip_dhcp_switch(self):
-
         static_ip = "192.168.0.1"
         dhcp_ip = "192.168.0.2"
         server = self.create_equipment("My Server")
@@ -71,7 +70,6 @@ class TestEquipment(common.SavepointCase):
         )
 
     def test_ip_no_static(self):
-
         dhcp_ip = "192.168.0.1"
         static_ip = False
         server = self.create_equipment("My Server")
@@ -87,7 +85,6 @@ class TestEquipment(common.SavepointCase):
         )
 
     def test_ip_no_dhcp(self):
-
         static_ip = "192.168.0.1"
         dhcp_ip = False
         server = self.create_equipment("My Server")
