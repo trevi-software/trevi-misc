@@ -22,10 +22,9 @@ msgstr ""
 #: code:addons/itm/models/equipment.py:0
 #, python-format
 msgid ""
-"<div class=\"o_mail_notification\"><ul><li>A new %(desc)s was created:"
-"                 <a href=\"#\" class=\"o_redirect\" data-oe-"
-"model=itm.equipment                 data-oe-id=\"%(id)s\"> "
-"%(name)s</a></li></ul></div>"
+"<div class=\"o_mail_notification\"><ul><li>A new %(desc)s was created: "
+"\t\t\t\t<a href=\"#\" class=\"o_redirect\" data-oe-model=itm.equipment "
+"\t\t\t\tdata-oe-id=\"%(id)s\"> %(name)s</a></li></ul></div>"
 msgstr ""
 
 #. module: itm
@@ -68,9 +67,7 @@ msgid ""
 msgstr ""
 
 #. module: itm
-#: code:addons/itm/models/access.py:0 code:addons/itm/models/equipment.py:0
-#: code:addons/itm/models/equipment.py:0
-#: code:addons/itm/models/service_ad.py:0
+#: code:addons/itm/models/access.py:0 code:addons/itm/models/service_ad.py:0
 #, python-format
 msgid "<li> %(dsc)s record was deleted: %(name)s</li>"
 msgstr ""
@@ -86,6 +83,12 @@ msgstr ""
 #: code:addons/itm/models/service_ad.py:0
 #, python-format
 msgid "<li> %s(dsc) record was deleted: %(name)s</li>"
+msgstr ""
+
+#. module: itm
+#: code:addons/itm/models/equipment.py:0
+#, python-format
+msgid "<li> %{item}s record was deleted: %{topic}s</li>"
 msgstr ""
 
 #. module: itm
@@ -1174,7 +1177,7 @@ msgstr ""
 
 #. module: itm
 #: model:ir.model.fields,help:itm.field_itm_equipment__dhcp_service_id
-msgid "Domain Host Control Protocol address which related to this asset"
+msgid "Domain Host Control Protocol service which is related to this asset"
 msgstr ""
 
 #. module: itm
@@ -1433,7 +1436,6 @@ msgid "Historical progress of work that spent on the asset or device"
 msgstr ""
 
 #. module: itm
-#: model:ir.model.fields,field_description:itm.field_itm_equipment__function_host
 #: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
 #: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
 msgid "Host"
@@ -1652,6 +1654,11 @@ msgid "Infrastructure"
 msgstr ""
 
 #. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__product_install_date
+msgid "Installation Date"
+msgstr ""
+
+#. module: itm
 #: model_terms:ir.ui.view,arch_db:itm.itm_application_form
 msgid "Installations"
 msgstr ""
@@ -1679,6 +1686,11 @@ msgstr ""
 #. module: itm
 #: model:ir.model.fields,field_description:itm.field_itm_service_wireless_ssid__is_guest
 msgid "Is Guest"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__is_vm
+msgid "Is Virtual Machine"
 msgstr ""
 
 #. module: itm
@@ -2857,6 +2869,11 @@ msgid "This asset acts as a wireless access point or router"
 msgstr ""
 
 #. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__function_host
+msgid "This asset or device hosts one or more Virtual Machines"
+msgstr ""
+
+#. module: itm
 #: model:ir.model.fields,help:itm.field_itm_equipment__is_backup
 msgid "This asset or device is a backup"
 msgstr ""
@@ -2869,11 +2886,6 @@ msgstr ""
 #. module: itm
 #: model:ir.model.fields,help:itm.field_itm_equipment__function_fileserver
 msgid "This asset or device is a fileserver"
-msgstr ""
-
-#. module: itm
-#: model:ir.model.fields,help:itm.field_itm_equipment__function_host
-msgid "This asset or device is a host"
 msgstr ""
 
 #. module: itm
@@ -2986,6 +2998,11 @@ msgstr ""
 #. module: itm
 #: model:ir.model.fields,field_description:itm.field_itm_access__name
 msgid "Username"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__function_host
+msgid "VM Host"
 msgstr ""
 
 #. module: itm
