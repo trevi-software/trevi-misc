@@ -26,13 +26,13 @@ class ResPartner(models.Model):
 
     @api.model
     def create(self, vals):
-        res = super(ResPartner, self).create(vals)
+        res = super().create(vals)
         if "it_contact" in vals:
             res._update_parent_it_contacts(vals["it_contact"])
         return res
 
     def write(self, vals):
-        res = super(ResPartner, self).write(vals)
+        res = super().write(vals)
         if "it_contact" in vals:
             self._update_parent_it_contacts(vals["it_contact"])
         if vals.get("parent_id", False):
