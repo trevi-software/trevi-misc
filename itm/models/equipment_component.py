@@ -143,20 +143,6 @@ class EquipmentComponent(models.Model):
                 res.equipment_id.message_post(
                     body=msg, subtype_id=mt_note.id, author_id=author
                 )
-                msg = _(
-                    '<div class="o_mail_notification"><ul><li>A new %(dsc)s was installed: \
-                        <a href="#" class="o_redirect" \
-                        data-oe-model=itm.equipment.component data-oe-id="%(id)s"> \
-                        %(name)s</a></li></ul></div>'
-                ) % {
-                    "dsc": res._description,
-                    "id": res.id,
-                    "name": res.name,
-                }
-                if res.equipment_id:
-                    res.equipment_id.message_post(
-                        body=msg, subtype_id=mt_note.id, author_id=author
-                    )
 
         return res_ids
 

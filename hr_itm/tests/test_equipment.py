@@ -33,7 +33,6 @@ class TestEquipment(TransactionCase):
         )
 
     def test_equipment_assign_to(self):
-
         equipment = self.env["itm.equipment"].create(
             {
                 "name": "My Equipment",
