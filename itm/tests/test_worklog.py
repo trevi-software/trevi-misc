@@ -8,7 +8,7 @@ from odoo.tests import common
 class TestEquipmentComponent(common.TransactionCase):
     @classmethod
     def setUpClass(cls):
-        super(TestEquipmentComponent, cls).setUpClass()
+        super().setUpClass()
 
         cls.Equipment = cls.env["itm.equipment"]
         cls.ItSite = cls.env["itm.site"]

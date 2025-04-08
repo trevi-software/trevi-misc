@@ -17,7 +17,7 @@ IT Infrastructure Management - HR
     :target: https://github.com/trevi-software/trevi-misc/tree/16.0/hr_itm
     :alt: trevi-software/trevi-misc
 
-|badge1| |badge2| |badge3| 
+|badge1| |badge2| |badge3|
 
 This module allows to assign employee and/or department as the owner of the equipment.
 It is convenient to filter and group equipment by employees/departments.

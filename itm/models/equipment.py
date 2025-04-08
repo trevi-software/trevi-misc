@@ -36,6 +36,15 @@ class ItEquipmentBrand(models.Model):
     is_accessories = fields.Boolean("Computing Accessories")
     is_components = fields.Boolean("Component Devices")
 
+    _name = "itm.equipment.brand"
+    _description = "IT Asset Brand Name"
+
+    name = fields.Char(required=True)
+    is_computer = fields.Boolean("Computing Devices")
+    is_network = fields.Boolean("Network Devices")
+    is_accessories = fields.Boolean("Computing Accessories")
+    is_components = fields.Boolean("Component Devices")
+
 
 class ItEquipment(models.Model):
     _name = "itm.equipment"
@@ -234,7 +243,10 @@ class ItEquipment(models.Model):
     function_fileserver = fields.Boolean(
         "File Server", help="This asset or device is a fileserver"
     )
-    function_host = fields.Boolean("Host", help="This asset or device is a host")
+    is_vm = fields.Boolean("Is Virtual Machine")
+    function_host = fields.Boolean(
+        "VM Host", help="This asset or device hosts one or more Virtual Machines"
+    )
     function_router = fields.Boolean(
         "Router", help="This asset or device is a network router"
     )
@@ -313,6 +325,7 @@ class ItEquipment(models.Model):
     product_partner_id = fields.Many2one(
         "res.partner", string="Vendor", check_company=True
     )
+    product_install_date = fields.Date("Installation Date")
     product_note = fields.Text()
     # Fileserver Page
     equipment_mapping_ids = fields.One2many(
@@ -336,7 +349,7 @@ class ItEquipment(models.Model):
     dhcp_service_id = fields.Many2one(
         "itm.service.dhcp4",
         "DHCP",
-        help="Domain Host Control Protocol address which related to this asset",
+        help="Domain Host Control Protocol service which is related to this asset",
     )
     wireless_service_id = fields.Many2one("itm.service.wireless", "Wireless Service")
     proxy_service_id = fields.Many2one("itm.service.proxy", "Proxy Service")
@@ -381,22 +394,19 @@ class ItEquipment(models.Model):
     #
     @api.model_create_multi
     def create(self, vals_list):
-        res_ids = super(ItEquipment, self).create(vals_list)
+        res_ids = super().create(vals_list)
         mt_note = self.env.ref("mail.mt_note")
         author = self.env.user.partner_id and self.env.user.partner_id.id or False
         for res in res_ids:
-            msg = (
-                _(
-                    '<div class="o_mail_notification"><ul><li>A new %(desc)s was created: \
-                    <a href="#" class="o_redirect" data-oe-model=itm.equipment \
-                    data-oe-id="%(id)s"> %(name)s</a></li></ul></div>'
-                )
-                % {
-                    "desc": res._description,
-                    "id": res.id,
-                    "name": res.name,
-                }
-            )
+            msg = _(
+                '<div class="o_mail_notification"><ul><li>A new %(desc)s was created: \
+					<a href="#" class="o_redirect" data-oe-model=itm.equipment \
+					data-oe-id="%(id)s"> %(name)s</a></li></ul></div>'
+            ) % {
+                "desc": res._description,
+                "id": res.id,
+                "name": res.name,
+            }
             if res.site_id:
                 res.site_id.message_post(
                     body=msg, subtype_id=mt_note.id, author_id=author
@@ -407,15 +417,26 @@ class ItEquipment(models.Model):
                 )
         return res_ids
 
+    def log_chatter(self, chatter_item):
+        mt_note = self.env.ref("mail.mt_note")
+        author = self.env.user.partner_id and self.env.user.partner_id.id or False
+        for k, v in chatter_item.items():
+            msg = ""
+        for r in v:
+            msg = msg + _("<li> %{item}s record was deleted: %{topic}s</li>") % {
+                "item": self._description,
+                "topic": r["name"],
+            }
+            note = '<div class="o_mail_notification"><ul>' + msg + "</ul></div>"
+            chatter_item.browse(k).message_post(
+                body=note, subtype_id=mt_note.id, author_id=author
+            )
+
     # Log a note on deletion of credential to Site and Equipment chatter. Since
     # more than one record at a time may be deleted post all deleted records
     # for each site and each equipment together in one post.
     #
     def unlink(self):
-
-        mt_note = self.env.ref("mail.mt_note")
-        author = self.env.user.partner_id and self.env.user.partner_id.id or False
-
         # map access records to sites and equipment
         #
         sites = {}
@@ -436,44 +457,20 @@ class ItEquipment(models.Model):
                         {"id": res.id, "name": res.name}
                     )
 
-        Site = self.env["itm.site"]
-        for k, v in sites.items():
-            msg = ""
-            for r in v:
-                msg = msg + _("<li> %(dsc)s record was deleted: %(name)s</li>") % {
-                    "dsc": self._description,
-                    "name": r["name"],
-                }
-            note = '<div class="o_mail_notification"><ul>' + msg + "</ul></div>"
-            Site.browse(k).message_post(
-                body=note, subtype_id=mt_note.id, author_id=author
-            )
+        self.log_chatter("itm.site")
+        self.log_chatter("itm.equipment")
 
-        Equipment = self.env["itm.equipment"]
-        for k, v in equips.items():
-            msg = ""
-            for r in v:
-                msg = msg + _("<li> %(dsc)s record was deleted: %(name)s</li>") % {
-                    "dsc": self._description,
-                    "name": r["name"],
-                }
-            note = '<div class="o_mail_notification"><ul>' + msg + "</ul></div>"
-            Equipment.browse(k).message_post(
-                body=note, subtype_id=mt_note.id, author_id=author
-            )
-
-        return super(ItEquipment, self).unlink()
+        return super().unlink()
 
     @api.returns("self", lambda value: value.id)
     def copy(self, default=None):
         self.ensure_one()
         default = dict(default or {}, name=_("%s (copy)") % (self.name))
-        return super(ItEquipment, self).copy(default)
+        return super().copy(default)
 
     def add_ip4_network_interface(
         self, name, network, mac, static_ip, dhcp_ip, use_dhcp, note=False
     ):
-
         # If an IPv4 address does not exist, create it
         ip_obj = self.env["itm.site.network.ip4"]
         static_ip4 = ip_obj.search(
