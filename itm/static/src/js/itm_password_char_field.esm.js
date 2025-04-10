@@ -7,12 +7,18 @@
  *
  */
 
-import {CharField} from "@web/views/fields/char/char_field";
-import {registry} from "@web/core/registry";
-import {useService} from "@web/core/utils/hooks";
+import { CharField } from "@web/views/fields/char/char_field";
+import { registry } from "@web/core/registry";
+import { useService } from "@web/core/utils/hooks";
 
-const {onMounted, onWillUnmount, onWillStart, onWillUpdateProps, useRef, useState} =
-    owl;
+const {
+    onMounted,
+    onWillUnmount,
+    onWillStart,
+    onWillUpdateProps,
+    useRef,
+    useState,
+} = owl;
 
 export class PasswordCharField extends CharField {
     setup() {

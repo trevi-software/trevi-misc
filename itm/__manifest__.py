@@ -10,7 +10,7 @@
     "summary": """IT Assets, Credentials, Backups, Applications.""",
     "author": """TREVI Software,
         Leandro Ezequiel Baldi""",
-    "website": "https://github.com/trevi-software/trevi-misc",
+    "website": "https://github.com/trevi-software",
     "images": [
         "static/src/img/main_screenshot.png",
         "static/src/img/default_image_equipment.png",

@@ -23,7 +23,6 @@ class ItServiceWireless(models.Model):
     bssid_ids = fields.One2many("itm.service.wireless.ssid", "wireless_id", "SSI")
 
     def _compute_display_name(self):
-
         res = super()._compute_display_name()
 
         for rec in self:
@@ -35,7 +34,6 @@ class ItServiceWireless(models.Model):
 
 
 class WirelessSsid(models.Model):
-
     _name = "itm.service.wireless.ssid"
     _description = "Wireless Base Station ID"
 
