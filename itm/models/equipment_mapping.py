@@ -3,7 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 
-from odoo import _, fields, models
+from odoo import fields, models
 
 
 class ItEquipmentMapping(models.Model):
@@ -27,7 +27,7 @@ class ItEquipmentMappingLine(models.Model):
 
     def _compute_name(self):
         for rec in self:
-            _name = _("Unknown")
+            _name = self.env._("Unknown")
             if rec.adobj_id:
                 _name = rec.adobj_id.name
             rec.name = _name
@@ -43,14 +43,14 @@ class ItEquipmentMappingLine(models.Model):
     )
     type = fields.Selection(
         [
-            ("simple", _("Simple Sharing")),
-            ("advanced", _("Advanced Sharing")),
+            ("simple", "Simple Sharing"),
+            ("advanced", "Advanced Sharing"),
         ]
     )
     perm_simple = fields.Selection(
         [
-            ("read", _("Read")),
-            ("write", _("Read/Write")),
+            ("read", "Read"),
+            ("write", "Read/Write"),
         ],
         string="Simple permissions",
     )

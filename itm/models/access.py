@@ -11,7 +11,7 @@ from cryptography.fernet import Fernet
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 
-from odoo import _, api, fields, models
+from odoo import api, fields, models
 
 PARAM_PASS = "itm_passkey"
 PARAM_SALT = "itm_salt"
@@ -96,11 +96,11 @@ class ItAccess(models.Model):
         # Get the partner from either asset or site
         #
         if self.env.context.get("active_model") == "itm.equipment":
-            equip = self.env["itm.equipment"].browse(self.env.context.get("active_id"))
+            equip = self.env["itm.equipment"].browse(self.env.context.get("id"))
             if equip.partner_id:
                 return equip.partner_id.id
         elif self.env.context.get("active_model") == "itm.site":
-            site = self.env["itm.site"].browse(self.env.context.get("active_id"))
+            site = self.env["itm.site"].browse(self.env.context.get("id"))
             if site.partner_id:
                 return site.partner_id.id
         return False
@@ -108,7 +108,7 @@ class ItAccess(models.Model):
     @api.model
     def _get_site_id(self):
         if self.env.context.get("active_model") == "itm.equipment":
-            equip = self.env["itm.equipment"].browse(self.env.context.get("active_id"))
+            equip = self.env["itm.equipment"].browse(self.env.context.get("id"))
             if equip.site_id:
                 return equip.site_id.id
         return False
@@ -167,7 +167,9 @@ class ItAccess(models.Model):
         for k, v in sites.items():
             msg = ""
             for r in v:
-                msg = msg + _("<li>A %(dsc)s's password was updated: %(name)s</li>") % {
+                msg = msg + self.env._(
+                    "<li>A %(dsc)s's password was updated: %(name)s</li>"
+                ) % {
                     "dsc": self._description,
                     "name": r["name"],
                 }
@@ -180,7 +182,9 @@ class ItAccess(models.Model):
         for k, v in equips.items():
             msg = ""
             for r in v:
-                msg = msg + _("<li>A %(dsc)s's password was updated: %(name)s</li>") % {
+                msg = msg + self.env._(
+                    "<li>A %(dsc)s's password was updated: %(name)s</li>"
+                ) % {
                     "dsc": self._description,
                     "name": r["name"],
                 }
@@ -197,42 +201,61 @@ class ItAccess(models.Model):
 
         return super().write(vals)
 
-    @api.model
-    def create(self, vals):
-        # Encrypt the password before saving it. The unencrypted password should not be
-        # saved to the database even temporarily.
-        #
-        if "password" in vals.keys() and vals["password"] is not False:
-            vals["password"] = self.encrypt_string(vals["password"])
+    @api.model_create_multi
+    def create(self, lst):
+        for item in lst:
+            # Encrypt the password before saving it. The unencrypted password should
+            # not be saved to the database even temporarily.
+            #
+            if "password" in item.keys() and item["password"] is not False:
+                item["password"] = self.encrypt_string(item["password"])
 
-        res = super().create(vals)
+        res = super().create(lst)
 
-        # Log a note to Site and Equipment chatter.
-        #
-        mt_note = self.env.ref("mail.mt_note")
-        author = self.env.user.partner_id and self.env.user.partner_id.id or False
-        msg = _(
-            '<div class="o_mail_notification"><ul><li>A new %(dsc)s was created: \
-                <a href="#" class="o_redirect" data-oe-model=itm.access data-oe-id="%(id)s"> \
-                %(name)s</a></li></ul></div>'
-        ) % {"dsc": res._description, "id": res.id, "name": res.name}
-        if res.site_id:
-            res.site_id.message_post(body=msg, subtype_id=mt_note.id, author_id=author)
-        if res.equipment_id:
-            res.equipment_id.message_post(
-                body=msg, subtype_id=mt_note.id, author_id=author
-            )
+        for r in res:
+            # Log a note to Site and Equipment chatter.
+            #
+            mt_note = self.env.ref("mail.mt_note")
+            author = self.env.user.partner_id and self.env.user.partner_id.id or False
+            msg = self.env._(
+                '<div class="o_mail_notification"><ul><li>A new %(dsc)s was created: \
+                    <a href="#" class="o_redirect" data-oe-model=itm.access \
+                    data-oe-id="%(id)s"> \
+                    %(name)s</a></li></ul></div>'
+            ) % {"dsc": r._description, "id": r.id, "name": r.name}
+            if r.site_id:
+                r.site_id.message_post(
+                    body=msg, subtype_id=mt_note.id, author_id=author
+                )
+            if r.equipment_id:
+                r.equipment_id.message_post(
+                    body=msg, subtype_id=mt_note.id, author_id=author
+                )
 
         return res
+
+    def update_chatter(self, model, lst):
+        mt_note = self.env.ref("mail.mt_note")
+        author = self.env.user.partner_id and self.env.user.partner_id.id or False
+
+        res_model = self.env[model]
+        for k, v in lst:
+            msg = ""
+            for r in v:
+                msg = msg + self.env._("<li> %(dsc)s was deleted: %(name)s</li>") % {
+                    "dsc": self._description,
+                    "name": r["name"],
+                }
+            note = '<div class="o_mail_notification"><ul>' + msg + "</ul></div>"
+            res_model.browse(k).message_post(
+                body=note, subtype_id=mt_note.id, author_id=author
+            )
 
     # Log a note on deletion of credential to Site and Equipment chatter. Since
     # more than one record at a time may be deleted post all deleted records
     # for each site and each equipment together in one post.
     #
     def unlink(self):
-        mt_note = self.env.ref("mail.mt_note")
-        author = self.env.user.partner_id and self.env.user.partner_id.id or False
-
         # map access records to sites and equipment
         #
         sites = {}
@@ -251,30 +274,7 @@ class ItAccess(models.Model):
                 else:
                     equips[res.equipment_id.id].append({"id": res.id, "name": res.name})
 
-        Site = self.env["itm.site"]
-        for k, v in sites.items():
-            msg = ""
-            for r in v:
-                msg = msg + _("<li> %(dsc)s was deleted: %(name)s</li>") % {
-                    "dsc": self._description,
-                    "name": r["name"],
-                }
-            note = '<div class="o_mail_notification"><ul>' + msg + "</ul></div>"
-            Site.browse(k).message_post(
-                body=note, subtype_id=mt_note.id, author_id=author
-            )
-
-        Equipment = self.env["itm.equipment"]
-        for k, v in equips.items():
-            msg = ""
-            for r in v:
-                msg = msg + _("<li> %(dsc)s record was deleted: %(name)s</li>") % {
-                    "dsc": self._description,
-                    "name": r["name"],
-                }
-            note = '<div class="o_mail_notification"><ul>' + msg + "</ul></div>"
-            Equipment.browse(k).message_post(
-                body=note, subtype_id=mt_note.id, author_id=author
-            )
+        self.update_chatter("itm.site", sites.items())
+        self.update_chatter("itm.equipment", equips.items())
 
         return super().unlink()

@@ -23,7 +23,7 @@
         <field name="name">itm.backup.tree</field>
         <field name="model">itm.backup</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="equipment_id" />
                 <field name="name" />
                 <field name="type" />
@@ -32,7 +32,7 @@
                 <field name="script_location" widget="url" />
                 <field name="frequency" />
                 <field name="time_schedule" widget="float_time" />
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -151,7 +151,7 @@
     <record model="ir.actions.act_window" id="itm_backup_action">
         <field name="name">Backups</field>
         <field name="res_model">itm.backup</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
 
     <menuitem

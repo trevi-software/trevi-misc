@@ -14,10 +14,10 @@ class NewCredential(models.TransientModel):
         import logging
 
         _l = logging.getLogger(__name__)
-        _l.warning("_get_aduser: %s", self.env.context.get("active_id"))
-        active_id = self.env.context.get("active_id")
-        if active_id:
-            ad = self.env["itm.service.ad.object"].browse(active_id)
+        _l.warning("_get_aduser: %s", self.env.context.get("id"))
+        _id = self.env.context.get("id")
+        if _id:
+            ad = self.env["itm.service.ad.object"].browse(_id)
             return ad.id
         return False
 
@@ -48,9 +48,9 @@ class NewCredential(models.TransientModel):
 
     @api.onchange("use_random")
     def onchange_use_random(self):
-        ItAccess = self.env["itm.access"]
+        itm_access = self.env["itm.access"]
         if self.use_random:
-            self.password = ItAccess.get_random_string()
+            self.password = itm_access.get_random_string()
 
     def create_cred(self):
         # Remove the password so it doesn't get accidentaly written to the database.
@@ -68,11 +68,12 @@ class NewCredential(models.TransientModel):
         cred = self.env["itm.access"].create(cred_vals)
         self.aduser_id.access_id = cred
 
-    @api.model
-    def create(self, vals):
+    @api.model_create_multi
+    def create(self, lst):
         # Remove the password from the dictionary so it doesn't
         # get accidentaly written to the database.
         #
-        vals.update({"password": ""})
+        for _k, v in lst:
+            v.update({"password": ""})
 
-        return super().create(vals)
+        return super().create(lst)

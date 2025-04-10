@@ -20,7 +20,7 @@
 ##############################################################################
 
 
-from odoo import _, api, fields, models
+from odoo import api, fields, models
 from odoo.exceptions import ValidationError
 
 
@@ -59,8 +59,6 @@ class EquipmentComponent(models.Model):
             return super().write(vals)
 
         new_equip = {new_eq_id: []}
-        mt_note = self.env.ref("mail.mt_note")
-        author = self.env.user.partner_id and self.env.user.partner_id.id or False
         old_equips = {}
         for res in self:
             new_equip[new_eq_id].append({"id": res.id, "name": res.name})
@@ -74,57 +72,57 @@ class EquipmentComponent(models.Model):
                         {"id": res.id, "name": res.name}
                     )
 
-        Equipment = self.env["itm.equipment"]
-
         # Log removal from old
-        for k, v in old_equips.items():
-            msg = ""
-            for r in v:
-                msg = msg + _("<li>A %(dsc)s was removed: %(name)s</li>") % {
-                    "dsc": self._description,
-                    "name": r["name"],
-                }
-            note = '<div class="o_mail_notification"><ul>' + msg + "</ul></div>"
-            Equipment.browse(k).message_post(
-                body=note, subtype_id=mt_note.id, author_id=author
-            )
+        self.update_chatter("itm.equipment", old_equips.items(), "removed")
 
         # Log installation in new
-        msg = ""
-        for r in new_equip:
-            msg = msg + _("<li>A %(dsc)s was installed: %(name)s</li>") % {
-                "dsc": self._description,
-                "name": r["name"],
-            }
-        note = '<div class="o_mail_notification"><ul>' + msg + "</ul></div>"
-        Equipment.browse(new_eq_id).message_post(
-            body=note, subtype_id=mt_note.id, author_id=author
-        )
+        self.update_chatter("itm.equipment", new_equip.items(), "installed")
 
         return super().write(vals)
 
-    @api.model
-    def create(self, vals):
-        res = super().create(vals)
+    def update_chatter(self, model, lst, verb):
+        mt_note = self.env.ref("mail.mt_note")
+        author = self.env.user.partner_id and self.env.user.partner_id.id or False
+        res_model = self.env[model]
+
+        for k, v in lst.items():
+            msg = ""
+            for r in v:
+                msg = msg + self.env._(
+                    "<li>A %(dsc)s record was %(verb)s: %(name)s</li>"
+                ) % {
+                    "dsc": self._description,
+                    "name": r["name"],
+                    "verb": verb,
+                }
+            note = '<div class="o_mail_notification"><ul>' + msg + "</ul></div>"
+            res_model.browse(k).message_post(
+                body=note, subtype_id=mt_note.id, author_id=author
+            )
+
+    @api.model_create_multi
+    def create(self, lst):
+        res = super().create(lst)
 
         # Log a note to Site and Equipment chatter.
         #
         mt_note = self.env.ref("mail.mt_note")
         author = self.env.user.partner_id and self.env.user.partner_id.id or False
-        msg = _(
-            '<div class="o_mail_notification"><ul><li>A new %(dsc)s was installed: \
-                <a href="#" class="o_redirect" \
-                data-oe-model=itm.equipment.component data-oe-id="%(id)s"> \
-                %(name)s</a></li></ul></div>'
-        ) % {
-            "dsc": res._description,
-            "id": res.id,
-            "name": res.name,
-        }
-        if res.equipment_id:
-            res.equipment_id.message_post(
-                body=msg, subtype_id=mt_note.id, author_id=author
-            )
+        for r in res:
+            msg = self.env._(
+                '<div class="o_mail_notification"><ul><li>A new %(dsc)s was installed: \
+                    <a href="#" class="o_redirect" \
+                    data-oe-model=itm.equipment.component data-oe-id="%(id)s"> \
+                    %(name)s</a></li></ul></div>'
+            ) % {
+                "dsc": r._description,
+                "id": r.id,
+                "name": r.name,
+            }
+            if r.equipment_id:
+                r.equipment_id.message_post(
+                    body=msg, subtype_id=mt_note.id, author_id=author
+                )
 
         return res
 
@@ -133,9 +131,6 @@ class EquipmentComponent(models.Model):
     # for each equipment together in one post.
     #
     def unlink(self):
-        mt_note = self.env.ref("mail.mt_note")
-        author = self.env.user.partner_id and self.env.user.partner_id.id or False
-
         # map access records to equipment
         #
         equips = {}
@@ -148,18 +143,7 @@ class EquipmentComponent(models.Model):
                 else:
                     equips[res.equipment_id.id].append({"id": res.id, "name": res.name})
 
-        Equipment = self.env["itm.equipment"]
-        for k, v in equips.items():
-            msg = ""
-            for r in v:
-                msg = msg + _("<li>A %(dsc)s record was deleted: %(name)s</li>") % {
-                    "dsc": self._description,
-                    "name": r["name"],
-                }
-            note = '<div class="o_mail_notification"><ul>' + msg + "</ul></div>"
-            Equipment.browse(k).message_post(
-                body=note, subtype_id=mt_note.id, author_id=author
-            )
+        self.update_chatter("itm.equipment", equips)
 
         return super().unlink()
 
@@ -230,20 +214,18 @@ class SpecificationKey(models.Model):
         "itm.equipment.component.specification.selector", required=True
     )
 
-    @api.model
-    def create(self, vals):
-        res = super().create(vals)
+    @api.model_create_multi
+    def create(self, dicts):
+        res = super().create(dicts)
 
-        # When a new key is created from the specification list of the component
-        # we need to setup the linkage between component type and key otherwise
-        # the new key will not show up in the possible list of keys next time we
-        # try to add it to a specification for the same type of component.
-        #
         default_ctype_id = self.env.context.get("default_component_type_id")
         if default_ctype_id:
-            ctype = self.env["itm.equipment.component.type"].browse(default_ctype_id)
-            if res.id not in ctype.key_ids.ids:
-                ctype.key_ids += res
+            for r in res:
+                ctype = self.env["itm.equipment.component.type"].browse(
+                    default_ctype_id
+                )
+                if r.id not in ctype.key_ids.ids:
+                    ctype.key_ids += r
 
         return res
 
@@ -290,7 +272,7 @@ class SpecificationValue(models.Model):
             if count > 0:
                 ids = self.search(domain)
                 raise ValidationError(
-                    _(
+                    self.env._(
                         "The value you entered must be unique within its Value Type.\n"
                         "Previous record: Value Type: %(vname)s, Name: %(name)s"
                     )
@@ -300,14 +282,16 @@ class SpecificationValue(models.Model):
                     }
                 )
 
-    @api.model
-    def create(self, vals):
+    @api.model_create_multi
+    def create(self, lst):
         # When a new value is created from the specification list of the component
         # we need to setup the linkage between value and key type otherwise
         # the new value will show as a possible value for *ALL* keys.
         #
         default_sel_id = self.env.context.get("default_value_type_id")
-        if default_sel_id and "value_type_id" not in vals:
-            vals.update({"value_type_id": default_sel_id})
+        if default_sel_id:
+            for item in lst:
+                if "value_type_id" not in item:
+                    item.update({"value_type_id": default_sel_id})
 
-        return super().create(vals)
+        return super().create(lst)

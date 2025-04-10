@@ -22,8 +22,8 @@
 
 import base64
 
-from odoo import _, api, fields, models
-from odoo.modules.module import get_module_resource
+from odoo import api, fields, models
+from odoo.tools.misc import file_path
 
 
 class ItEquipmentBrand(models.Model):
@@ -64,9 +64,7 @@ class ItEquipment(models.Model):
 
     @api.model
     def _get_default_image(self):
-        image_path = get_module_resource(
-            "itm", "static/src/img", "default_image_equipment.png"
-        )
+        image_path = file_path("itm/static/src/img/default_image_equipment.png")
         return base64.b64encode(open(image_path, "rb").read())
 
     @api.model
@@ -74,11 +72,11 @@ class ItEquipment(models.Model):
         # Get the partner from either asset or site
         #
         if self.env.context.get("active_model") == "itm.equipment":
-            equip = self.env["itm.equipment"].browse(self.env.context.get("active_id"))
+            equip = self.env["itm.equipment"].browse(self.env.context.get("id"))
             if equip.partner_id:
                 return equip.partner_id.id
         elif self.env.context.get("active_model") == "itm.site":
-            site = self.env["itm.site"].browse(self.env.context.get("active_id"))
+            site = self.env["itm.site"].browse(self.env.context.get("id"))
             if site.partner_id:
                 return site.partner_id.id
         return False
@@ -86,7 +84,7 @@ class ItEquipment(models.Model):
     @api.model
     def _get_site_id(self):
         if self.env.context.get("active_model") == "itm.equipment":
-            equip = self.env["itm.equipment"].browse(self.env.context.get("active_id"))
+            equip = self.env["itm.equipment"].browse(self.env.context.get("id"))
             if equip.site_id:
                 return equip.site_id.id
         return False
@@ -370,36 +368,55 @@ class ItEquipment(models.Model):
 
     # Log a note on creation of equipment to Site and Equipment chatter.
     #
-    @api.model
-    def create(self, vals):
-        res = super().create(vals)
+    @api.model_create_multi
+    def create(self, lst):
+        res = super().create(lst)
         mt_note = self.env.ref("mail.mt_note")
         author = self.env.user.partner_id and self.env.user.partner_id.id or False
-        msg = _(
-            '<div class="o_mail_notification"><ul><li>A new %(desc)s was created: \
-                <a href="#" class="o_redirect" data-oe-model=itm.equipment \
-                data-oe-id="%(id)s"> %(name)s</a></li></ul></div>'
-        ) % {
-            "desc": res._description,
-            "id": res.id,
-            "name": res.name,
-        }
-        if res.site_id:
-            res.site_id.message_post(body=msg, subtype_id=mt_note.id, author_id=author)
-        if res.virtual_parent_id:
-            res.virtual_parent_id.message_post(
-                body=msg, subtype_id=mt_note.id, author_id=author
-            )
+        for r in res:
+            msg = self.env._(
+                '<div class="o_mail_notification"><ul><li>A new %(desc)s was created: \
+                    <a href="#" class="o_redirect" data-oe-model=itm.equipment \
+                    data-oe-id="%(id)s"> %(name)s</a></li></ul></div>'
+            ) % {
+                "desc": r._description,
+                "id": r.id,
+                "name": r.name,
+            }
+            if r.site_id:
+                r.site_id.message_post(
+                    body=msg, subtype_id=mt_note.id, author_id=author
+                )
+            if r.virtual_parent_id:
+                r.virtual_parent_id.message_post(
+                    body=msg, subtype_id=mt_note.id, author_id=author
+                )
         return res
+
+    def update_chatter(self, model, verb, lst):
+        mt_note = self.env.ref("mail.mt_note")
+        author = self.env.user.partner_id and self.env.user.partner_id.id or False
+        res_model = self.env[model]
+        for k, v in lst:
+            msg = ""
+            for r in v:
+                msg = msg + self.env._(
+                    "<li> %(dsc)s record was %(verb)s: %(name)s</li>"
+                ) % {
+                    "dsc": self._description,
+                    "name": r["name"],
+                    "verb": verb,
+                }
+            note = '<div class="o_mail_notification"><ul>' + msg + "</ul></div>"
+            res_model.browse(k).message_post(
+                body=note, subtype_id=mt_note.id, author_id=author
+            )
 
     # Log a note on deletion of credential to Site and Equipment chatter. Since
     # more than one record at a time may be deleted post all deleted records
     # for each site and each equipment together in one post.
     #
     def unlink(self):
-        mt_note = self.env.ref("mail.mt_note")
-        author = self.env.user.partner_id and self.env.user.partner_id.id or False
-
         # map access records to sites and equipment
         #
         sites = {}
@@ -420,31 +437,8 @@ class ItEquipment(models.Model):
                         {"id": res.id, "name": res.name}
                     )
 
-        Site = self.env["itm.site"]
-        for k, v in sites.items():
-            msg = ""
-            for r in v:
-                msg = msg + _("<li> %(dsc)s record was deleted: %(name)s</li>") % {
-                    "dsc": self._description,
-                    "name": r["name"],
-                }
-            note = '<div class="o_mail_notification"><ul>' + msg + "</ul></div>"
-            Site.browse(k).message_post(
-                body=note, subtype_id=mt_note.id, author_id=author
-            )
-
-        Equipment = self.env["itm.equipment"]
-        for k, v in equips.items():
-            msg = ""
-            for r in v:
-                msg = msg + _("<li> %(dsc)s record was deleted: %(name)s</li>") % {
-                    "dsc": self._description,
-                    "name": r["name"],
-                }
-            note = '<div class="o_mail_notification"><ul>' + msg + "</ul></div>"
-            Equipment.browse(k).message_post(
-                body=note, subtype_id=mt_note.id, author_id=author
-            )
+        self.update_chatter("itm.site", "deleted", sites.items())
+        self.update_chatter("itm.equipment", "deleted", equips.items())
 
         return super().unlink()
 

@@ -3,7 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 
-from odoo import _, api, fields, models
+from odoo import api, fields, models
 from odoo.exceptions import ValidationError
 
 
@@ -42,40 +42,57 @@ class ItServiceAD(models.Model):
             if ad.site_id and ad.site_id.partner_id:
                 ad.partner_id = ad.site_id.partner_id
 
-    @api.model
-    def create(self, vals):
-        res = super().create(vals)
+    @api.model_create_multi
+    def create(self, lst):
+        res = super().create(lst)
 
         # Log a note to Site and Equipment chatter.
         #
         mt_note = self.env.ref("mail.mt_note")
         author = self.env.user.partner_id and self.env.user.partner_id.id or False
-        msg = _(
-            '<div class="o_mail_notification"><ul><li>A new %(dsc)s was created: \
-                <a href="#" class="o_redirect" data-oe-model=itm.service.ad \
-                data-oe-id="%(id)s"> %(name)s</a></li></ul></div>'
-        ) % {
-            "dsc": res._description,
-            "id": res.id,
-            "name": res.name,
-        }
-        if res.site_id:
-            res.site_id.message_post(body=msg, subtype_id=mt_note.id, author_id=author)
-        if res.equipment_id:
-            res.equipment_id.message_post(
-                body=msg, subtype_id=mt_note.id, author_id=author
-            )
+        for r in res:
+            msg = self.env._(
+                '<div class="o_mail_notification"><ul><li>A new %(dsc)s was created: \
+                    <a href="#" class="o_redirect" data-oe-model=itm.service.ad \
+                    data-oe-id="%(id)s"> %(name)s</a></li></ul></div>'
+            ) % {
+                "dsc": r._description,
+                "id": r.id,
+                "name": r.name,
+            }
+            if r.site_id:
+                r.site_id.message_post(
+                    body=msg, subtype_id=mt_note.id, author_id=author
+                )
+            if r.equipment_id:
+                r.equipment_id.message_post(
+                    body=msg, subtype_id=mt_note.id, author_id=author
+                )
 
         return res
+
+    @api.model
+    def update_chatter(self, structure, lst):
+        mt_note = self.env.ref("mail.mt_note")
+        author = self.env.user.partner_id and self.env.user.partner_id.id or False
+        site = self.env[structure]
+        for k, v in lst.items():
+            msg = ""
+            for r in v:
+                msg = msg + self.env._("<li> %(dsc)s was deleted: %(name)s</li>") % {
+                    "dsc": self._description,
+                    "name": r["name"],
+                }
+            note = '<div class="o_mail_notification"><ul>' + msg + "</ul></div>"
+            site.browse(k).message_post(
+                body=note, subtype_id=mt_note.id, author_id=author
+            )
 
     # Log a note on deletion of AD to Site and Equipment chatter. Since
     # more than one record at a time may be deleted post all deleted records
     # for each site and each equipment together in one post.
     #
     def unlink(self):
-        mt_note = self.env.ref("mail.mt_note")
-        author = self.env.user.partner_id and self.env.user.partner_id.id or False
-
         # map AD records to sites and equipment
         #
         sites = {}
@@ -94,31 +111,8 @@ class ItServiceAD(models.Model):
                 else:
                     equips[res.equipment_id.id].append({"id": res.id, "name": res.name})
 
-        Site = self.env["itm.site"]
-        for k, v in sites.items():
-            msg = ""
-            for r in v:
-                msg = msg + _("<li> %(dsc)s was deleted: %(name)s</li>") % {
-                    "dsc": self._description,
-                    "name": r["name"],
-                }
-            note = '<div class="o_mail_notification"><ul>' + msg + "</ul></div>"
-            Site.browse(k).message_post(
-                body=note, subtype_id=mt_note.id, author_id=author
-            )
-
-        Equipment = self.env["itm.equipment"]
-        for k, v in equips.items():
-            msg = ""
-            for r in v:
-                msg = msg + _("<li> %s(dsc) record was deleted: %(name)s</li>") % {
-                    "dsc": self._description,
-                    "name": r["name"],
-                }
-            note = '<div class="o_mail_notification"><ul>' + msg + "</ul></div>"
-            Equipment.browse(k).message_post(
-                body=note, subtype_id=mt_note.id, author_id=author
-            )
+        self.update_chatter("itm.site", sites)
+        self.update_chatter("itm.equipment", equips)
 
         return super().unlink()
 
@@ -159,7 +153,7 @@ class ItServiceAdObject(models.Model):
     description = fields.Text()
     active = fields.Boolean(default=True)
     type = fields.Selection(
-        [("folder", _("Folder")), ("group", _("Group")), ("user", _("User"))],
+        [("folder", "Folder"), ("group", "Group"), ("user", "User")],
         string="Object Type",
         default="folder",
     )
@@ -181,7 +175,7 @@ class ItServiceAdObject(models.Model):
     def _check_parent_id(self):
         if not self._check_recursion():
             raise ValidationError(
-                _("You cannot create recursive Active Directory objects.")
+                self.env._("You cannot create recursive Active Directory objects.")
             )
 
     @api.depends("logon_name", "ad_id.name")
@@ -211,19 +205,25 @@ class ItServiceAdObject(models.Model):
                 name = obj.logon_name
 
             if obj.parent_id:
-                obj.complete_name = r"%s \ %s" % (obj.parent_id.complete_name, name)
+                obj.complete_name = f"{obj.parent_id.complete_name} \\ {name}"
             else:
                 obj.complete_name = name
 
-    @api.model
-    def create(self, vals):
-        res = super().create(vals)
+    @api.model_create_multi
+    def create(self, lst):
+        res = super().create(lst)
 
+        for r in res:
+            self.create_chatter(r)
+
+        return res
+
+    def create_chatter(self, res):
         # Log a note to Site and Equipment chatter.
         #
         mt_note = self.env.ref("mail.mt_note")
         author = self.env.user.partner_id and self.env.user.partner_id.id or False
-        msg = _(
+        msg = self.env._(
             '<div class="o_mail_notification"><ul><li>A new %(dsc)s was created: \
                 <a href="#" \
                 class="o_redirect" \
@@ -243,16 +243,28 @@ class ItServiceAdObject(models.Model):
                 body=msg, subtype_id=mt_note.id, author_id=author
             )
 
-        return res
+    @api.model
+    def update_chatter(self, structure, lst):
+        mt_note = self.env.ref("mail.mt_note")
+        author = self.env.user.partner_id and self.env.user.partner_id.id or False
+        site = self.env[structure]
+        for k, v in lst.items():
+            msg = ""
+            for r in v:
+                msg = msg + self.env._("<li> %(dsc)s was deleted: %(name)s</li>") % {
+                    "dsc": self._description,
+                    "name": r["name"],
+                }
+            note = '<div class="o_mail_notification"><ul>' + msg + "</ul></div>"
+            site.browse(k).message_post(
+                body=note, subtype_id=mt_note.id, author_id=author
+            )
 
     # Log a note on deletion of AD object to Site and Equipment chatter. Since
     # more than one record at a time may be deleted post all deleted records
     # for each site and each equipment together in one post.
     #
     def unlink(self):
-        mt_note = self.env.ref("mail.mt_note")
-        author = self.env.user.partner_id and self.env.user.partner_id.id or False
-
         # map AD records to sites and equipment
         #
         sites = {}
@@ -285,30 +297,7 @@ class ItServiceAdObject(models.Model):
                         {"id": obj.id, "name": obj.complete_name}
                     )
 
-        Site = self.env["itm.site"]
-        for k, v in sites.items():
-            msg = ""
-            for r in v:
-                msg = msg + _("<li> %(dsc)s was deleted: %(name)s</li>") % {
-                    "dsc": self._description,
-                    "name": r["name"],
-                }
-            note = '<div class="o_mail_notification"><ul>' + msg + "</ul></div>"
-            Site.browse(k).message_post(
-                body=note, subtype_id=mt_note.id, author_id=author
-            )
-
-        Equipment = self.env["itm.equipment"]
-        for k, v in equips.items():
-            msg = ""
-            for r in v:
-                msg = msg + _("<li> %(dsc)s record was deleted: %(name)s</li>") % {
-                    "dsc": self._description,
-                    "name": r["name"],
-                }
-            note = '<div class="o_mail_notification"><ul>' + msg + "</ul></div>"
-            Equipment.browse(k).message_post(
-                body=note, subtype_id=mt_note.id, author_id=author
-            )
+        self.update_chatter("itm.site", sites)
+        self.update_chatter("itm.equipment", equips)
 
         return super().unlink()

@@ -29,7 +29,7 @@
                         name="web_ribbon"
                         title="Archived"
                         bg_color="bg-danger"
-                        attrs="{'invisible': [('active', '=', True)]}"
+                        invisible="active"
                     />
                     <group>
                         <group>
@@ -49,18 +49,18 @@
         <field name="name">itm.equipment.type.tree</field>
         <field name="model">itm.equipment.type</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="name" />
                 <field name="parent_id" />
                 <field name="active" widget="boolean_toggle" />
-            </tree>
+            </list>
         </field>
     </record>
 
     <record id="itm_equipment_type_action" model="ir.actions.act_window">
         <field name="name">Asset Type</field>
         <field name="res_model">itm.equipment.type</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
 
     <menuitem

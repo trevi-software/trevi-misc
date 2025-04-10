@@ -74,12 +74,12 @@ class ItSiteNetworkIp4(models.Model):
     # Upgrade earlier installations that didn't have 'network_id' field
     #
     def _initialize_network_id(self):
-        _logger.warning(
+        _logger.info(
             "Beginning initialize of 'network_id' field of itm.site.network.ip4"
         )
         iface_obj = self.env["itm.equipment.network"]
         ips = self.env["itm.site.network.ip4"].search([("network_id", "=", False)])
-        _logger.warning(f"Found {len(ips)} records to update")
+        _logger.info(f"Found {len(ips)} records to update")
         for ip in ips:
             iface = iface_obj.search(
                 [

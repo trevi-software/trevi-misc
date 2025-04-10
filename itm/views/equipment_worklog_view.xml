@@ -36,17 +36,17 @@
         </field>
     </record>
 
-    <!-- Tree view for worklogs grill on equipments -->
+    <!-- List view for worklogs grill on equipments -->
     <record model="ir.ui.view" id="itm_equipment_worklog_tree">
         <field name="name">itm.equipment.worklog.tree</field>
         <field name="model">itm.equipment.worklog</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="name" />
                 <field name="date" />
                 <field name="spent_time" widget="float_time" />
                 <field name="user_id" />
-            </tree>
+            </list>
         </field>
     </record>
 

@@ -1,5 +1,3 @@
-/** @odoo-module **/
-
 /**
  * Copyright 2021,2022 TREVI Software <support@trevi.et>
  * Copyright 2018 Modoolar <info@modoolar.com>

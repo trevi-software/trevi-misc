@@ -34,20 +34,20 @@
                     </group>
                     <group string="Permission Lines">
                         <field name="line_ids">
-                            <tree editable="bottom">
-                                <field name="map_id" invisible="1" />
+                            <list editable="bottom">
+                                <field name="map_id" column_invisible="1" />
                                 <field name="adobj_id" />
                                 <field name="type" />
                                 <field
                                     name="perm_simple"
-                                    attrs="{'invisible': [('type', '=', 'advanced')]}"
+                                    invisible="type == 'advanced'"
                                 />
                                 <field
                                     name="perm_advanced"
                                     widget="many2many_tags"
-                                    attrs="{'invisible': [('type', '=', 'simple')]}"
+                                    invisible="type == 'simple'"
                                 />
-                            </tree>
+                            </list>
                         </field>
                     </group>
                 </sheet>
@@ -55,15 +55,15 @@
         </field>
     </record>
 
-    <!-- Tree view for mapping grill on equipments -->
+    <!-- List view for mapping grill on equipments -->
     <record model="ir.ui.view" id="itm_equipment_mapping_tree">
         <field name="name">itm.equipment.mapping.tree</field>
         <field name="model">itm.equipment.mapping</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="name" colspan="4" />
                 <field name="path" />
-            </tree>
+            </list>
         </field>
     </record>
 

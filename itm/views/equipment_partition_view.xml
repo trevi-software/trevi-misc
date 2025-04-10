@@ -32,28 +32,28 @@
                     <field name="type" placeholder="RAID1" />
                     <field name="format" placeholder="ext4" />
                     <field name="mount_ids">
-                        <tree editable="bottom">
+                        <list editable="bottom">
                             <field name="name" />
                             <field name="size" />
-                        </tree>
+                        </list>
                     </field>
                 </group>
             </form>
         </field>
     </record>
 
-    <!-- Tree view for partition grill on equipments -->
+    <!-- List view for partition grill on equipments -->
     <record model="ir.ui.view" id="itm_equipment_partition_tree">
         <field name="name">itm.equipment.partition.tree</field>
         <field name="model">itm.equipment.partition</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="name" />
                 <field name="disks" />
                 <field name="type" />
                 <field name="format" />
                 <field name="mount_ids" />
-            </tree>
+            </list>
         </field>
     </record>
 

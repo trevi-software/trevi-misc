@@ -21,7 +21,7 @@
     <!-- Top menu item -->
     <menuitem
         name="Infrastructure"
-        web_icon="itm,static/description/icon.jpg"
+        web_icon="itm,static/description/icon.png"
         id="menu_main_itm"
         groups="group_itm_user"
         sequence="42"

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo noupdate="1">
 
-    <record id="" model="itm.equipment.db.engine">
+    <record id="dbe_cassandra" model="itm.equipment.db.engine">
         <field name="name">Cassandra</field>
     </record>
 

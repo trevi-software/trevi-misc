@@ -23,12 +23,12 @@
             <field name="name">itm.application.tree</field>
             <field name="model">itm.application</field>
             <field name="arch" type="xml">
-                <tree>
+                <list>
                     <field name="name" />
                     <field name="developer" />
                     <field name="license_type" />
-                    <field name="link_page" invisible="1" />
-                </tree>
+                    <field name="link_page" column_invisible="1" />
+                </list>
             </field>
         </record>
 
@@ -71,7 +71,7 @@
                         <notebook>
                             <page
                             string="Closed Source"
-                            attrs="{'invisible':[('license_type','!=', 'closedsource' )]}"
+                            invisible="license_type != 'closedsource'"
                         >
                                 <group col="4">
                                     <field name="key" />
@@ -173,7 +173,7 @@
         <record model="ir.actions.act_window" id="itm_application_action">
             <field name="name">Applications</field>
             <field name="res_model">itm.application</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">list,form</field>
         </record>
 
         <menuitem

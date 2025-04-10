@@ -55,13 +55,13 @@
             <field name="name">ITM Component Tree View</field>
             <field name="model">itm.equipment.component</field>
             <field name="arch" type="xml">
-                <tree>
+                <list>
                     <field name="name" />
                     <field name="component_type_id" />
                     <field name="serial_number" />
                     <field name="manufacturer_id" />
                     <field name="equipment_id" />
-                </tree>
+                </list>
             </field>
         </record>
 
@@ -76,7 +76,7 @@
                         name="web_ribbon"
                         title="Archived"
                         bg_color="bg-danger"
-                        attrs="{'invisible': [('active', '=', True)]}"
+                        invisible="active"
                     />
                         <group>
                             <group>
@@ -96,19 +96,19 @@
                             widget="one2many"
                             context="{'default_component_type_id': component_type_id}"
                         >
-                                <tree editable="bottom">
-                                    <field name="component_type_id" invisible="1" />
-                                    <field name="possible_key_ids" invisible="1" />
+                                <list editable="bottom">
+                                    <field name="component_type_id" column_invisible="1" />
+                                    <field name="possible_key_ids" column_invisible="1" />
                                     <field
                                     name="key_id"
                                     context="{'default_component_type_id': component_type_id}"
                                 />
-                                    <field name="value_type_id" invisible="1" />
+                                    <field name="value_type_id" column_invisible="1" />
                                     <field
                                     name="value_id"
                                     context="{'default_value_type_id': value_type_id}"
                                 />
-                                </tree>
+                                </list>
                                 <form string="Specification">
                                     <sheet>
                                         <group>
@@ -135,11 +135,7 @@
                             </field>
                         </group>
                     </sheet>
-                    <div class="oe_chatter">
-                        <field name="message_follower_ids" />
-                        <field name="activity_ids" />
-                        <field name="message_ids" />
-                    </div>
+                    <chatter />
                 </form>
             </field>
         </record>
@@ -147,7 +143,7 @@
         <record id="component_action" model="ir.actions.act_window">
             <field name="name">Components</field>
             <field name="res_model">itm.equipment.component</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">list,form</field>
         </record>
         <menuitem
         action="component_action"
@@ -159,13 +155,13 @@
         <!-- Component Types -->
 
         <record id="component_type_tree" model="ir.ui.view">
-            <field name="name">ITM Component Type Tree View</field>
+            <field name="name">ITM Component Type List View</field>
             <field name="model">itm.equipment.component.type</field>
             <field name="arch" type="xml">
-                <tree>
+                <list>
                     <field name="name" />
                     <field name="key_ids" widget="x2many" />
-                </tree>
+                </list>
             </field>
         </record>
 
@@ -181,10 +177,10 @@
                             </group>
                             <group string="Valid Keys">
                                 <field name="key_ids" nolabel="1" editable="bottom">
-                                    <tree>
+                                    <list>
                                         <field name="name" />
                                         <field name="value_type_id" />
-                                    </tree>
+                                    </list>
                                     <form string="Key Form">
                                         <group>
                                             <group>
@@ -205,7 +201,7 @@
         <record id="component_type_action" model="ir.actions.act_window">
             <field name="name">Component Types</field>
             <field name="res_model">itm.equipment.component.type</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">list,form</field>
         </record>
         <menuitem
         action="component_type_action"
@@ -220,13 +216,13 @@
             <field name="name">ITM Component Specification Tree View</field>
             <field name="model">itm.equipment.component.specification</field>
             <field name="arch" type="xml">
-                <tree>
-                    <field name="component_type_id" invisible="1" />
-                    <field name="possible_key_ids" invisible="1" />
+                <list>
+                    <field name="component_type_id" column_invisible="1" />
+                    <field name="possible_key_ids" column_invisible="1" />
                     <field name="key_id" />
-                    <field name="value_type_id" invisible="1" />
+                    <field name="value_type_id" column_invisible="1" />
                     <field name="value_id" />
-                </tree>
+                </list>
             </field>
         </record>
 
@@ -257,11 +253,11 @@
             <field name="name">ITM Component Specification Selector Tree View</field>
             <field name="model">itm.equipment.component.specification.selector</field>
             <field name="arch" type="xml">
-                <tree>
+                <list>
                     <field name="name" />
                     <field name="key_ids" widget="x2many_counter" />
                     <field name="value_ids" widget="x2many_counter" />
-                </tree>
+                </list>
             </field>
         </record>
 
@@ -280,16 +276,16 @@
                         <group>
                             <group string="Valid Keys">
                                 <field name="key_ids" nolabel="1" editable="bottom">
-                                    <tree>
+                                    <list>
                                         <field name="name" />
-                                    </tree>
+                                    </list>
                                 </field>
                             </group>
                             <group string="Valid Values">
                                 <field name="value_ids" nolabel="1" editable="bottom">
-                                    <tree>
+                                    <list>
                                         <field name="name" />
-                                    </tree>
+                                    </list>
                                 </field>
                             </group>
                         </group>
@@ -303,7 +299,7 @@
             <field
             name="res_model"
         >itm.equipment.component.specification.selector</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">list,form</field>
         </record>
         <menuitem
         action="spec_selector_action"
@@ -318,11 +314,11 @@
             <field name="name">ITM Specification Key Tree View</field>
             <field name="model">itm.equipment.component.specification.key</field>
             <field name="arch" type="xml">
-                <tree>
+                <list>
                     <field name="name" />
                     <field name="value_type_id" />
                     <field name="component_type_ids" widget="x2many_tags" />
-                </tree>
+                </list>
             </field>
         </record>
 
@@ -343,9 +339,9 @@
                                 nolabel="1"
                                 editable="bottom"
                             >
-                                    <tree>
+                                    <list>
                                         <field name="name" />
-                                    </tree>
+                                    </list>
                                     <form string="Component Type">
                                         <group>
                                             <group>
@@ -365,7 +361,7 @@
         <record id="spec_key_action" model="ir.actions.act_window">
             <field name="name">Specification Keys</field>
             <field name="res_model">itm.equipment.component.specification.key</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">list,form</field>
         </record>
         <menuitem
         action="spec_key_action"
@@ -403,13 +399,13 @@
         </record>
 
         <record id="spec_value_tree" model="ir.ui.view">
-            <field name="name">ITM Specification Value Tree View</field>
+            <field name="name">ITM Specification Value List View</field>
             <field name="model">itm.equipment.component.specification.value</field>
             <field name="arch" type="xml">
-                <tree>
+                <list>
                     <field name="name" />
                     <field name="value_type_id" />
-                </tree>
+                </list>
             </field>
         </record>
 
@@ -424,7 +420,7 @@
                         name="web_ribbon"
                         title="Archived"
                         bg_color="bg-danger"
-                        attrs="{'invisible': [('active', '=', True)]}"
+                        invisible="active"
                     />
                         <group>
                             <group>
@@ -441,7 +437,7 @@
         <record id="spec_value_action" model="ir.actions.act_window">
             <field name="name">Specification Values</field>
             <field name="res_model">itm.equipment.component.specification.value</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">list,form</field>
         </record>
         <menuitem
         action="spec_value_action"
