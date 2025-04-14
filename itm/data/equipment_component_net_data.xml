@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo noupdate="1">
+
+    <!-- Component Spec Value: Net Speed -->
+    <record id="netspeed_2" model="itm.equipment.component.specification.value">
+        <field name="name">2 Mbps</field>
+        <field name="value_type_id" ref="sel_netspeed" />
+        <field name="active" eval="False" />
+    </record>
+    <record id="netspeed_10" model="itm.equipment.component.specification.value">
+        <field name="name">10 Mbps</field>
+        <field name="value_type_id" ref="sel_netspeed" />
+        <field name="active" eval="False" />
+    </record>
+    <record id="netspeed_11" model="itm.equipment.component.specification.value">
+        <field name="name">11 Mbps</field>
+        <field name="value_type_id" ref="sel_netspeed" />
+        <field name="active" eval="False" />
+    </record>
+    <record id="netspeed_54" model="itm.equipment.component.specification.value">
+        <field name="name">54 Mbps</field>
+        <field name="value_type_id" ref="sel_netspeed" />
+        <field name="active" eval="False" />
+    </record>
+    <record id="netspeed_100" model="itm.equipment.component.specification.value">
+        <field name="name">100 Mbps</field>
+        <field name="value_type_id" ref="sel_netspeed" />
+    </record>
+    <record id="netspeed_450" model="itm.equipment.component.specification.value">
+        <field name="name">450 Mbps</field>
+        <field name="value_type_id" ref="sel_netspeed" />
+    </record>
+    <record id="netspeed_866" model="itm.equipment.component.specification.value">
+        <field name="name">866.7 Mbps</field>
+        <field name="value_type_id" ref="sel_netspeed" />
+    </record>
+    <record id="netspeed_1000" model="itm.equipment.component.specification.value">
+        <field name="name">1000 Mbps</field>
+        <field name="value_type_id" ref="sel_netspeed" />
+    </record>
+    <record id="netspeed_1730" model="itm.equipment.component.specification.value">
+        <field name="name">1.73 Gbps</field>
+        <field name="value_type_id" ref="sel_netspeed" />
+    </record>
+    <record id="netspeed_2400" model="itm.equipment.component.specification.value">
+        <field name="name">2.4 Gbps</field>
+        <field name="value_type_id" ref="sel_netspeed" />
+    </record>
+    <record id="netspeed_10000" model="itm.equipment.component.specification.value">
+        <field name="name">10 Gbps</field>
+        <field name="value_type_id" ref="sel_netspeed" />
+    </record>
+
+    <!-- Component Spec Value: Wirelss Product Class -->
+    <record id="wificlass_g54" model="itm.equipment.component.specification.value">
+        <field name="name">G54</field>
+        <field name="value_type_id" ref="sel_wificlass" />
+    </record>
+    <record id="wificlass_n150" model="itm.equipment.component.specification.value">
+        <field name="name">N150</field>
+        <field name="value_type_id" ref="sel_wificlass" />
+    </record>
+    <record id="wificlass_n300" model="itm.equipment.component.specification.value">
+        <field name="name">N300</field>
+        <field name="value_type_id" ref="sel_wificlass" />
+    </record>
+    <record id="wificlass_n450" model="itm.equipment.component.specification.value">
+        <field name="name">N450</field>
+        <field name="value_type_id" ref="sel_wificlass" />
+    </record>
+    <record id="wificlass_n600" model="itm.equipment.component.specification.value">
+        <field name="name">N600</field>
+        <field name="value_type_id" ref="sel_wificlass" />
+    </record>
+    <record id="wificlass_n750" model="itm.equipment.component.specification.value">
+        <field name="name">N750</field>
+        <field name="value_type_id" ref="sel_wificlass" />
+    </record>
+    <record id="wificlass_n900" model="itm.equipment.component.specification.value">
+        <field name="name">N900</field>
+        <field name="value_type_id" ref="sel_wificlass" />
+    </record>
+    <record id="wificlass_ac580" model="itm.equipment.component.specification.value">
+        <field name="name">AC580</field>
+        <field name="value_type_id" ref="sel_wificlass" />
+    </record>
+    <record id="wificlass_ac750" model="itm.equipment.component.specification.value">
+        <field name="name">AC750</field>
+        <field name="value_type_id" ref="sel_wificlass" />
+    </record>
+    <record id="wificlass_ac1200" model="itm.equipment.component.specification.value">
+        <field name="name">AC1200</field>
+        <field name="value_type_id" ref="sel_wificlass" />
+    </record>
+    <record id="wificlass_ac1300" model="itm.equipment.component.specification.value">
+        <field name="name">AC1300</field>
+        <field name="value_type_id" ref="sel_wificlass" />
+    </record>
+    <record id="wificlass_ac1600" model="itm.equipment.component.specification.value">
+        <field name="name">AC1600</field>
+        <field name="value_type_id" ref="sel_wificlass" />
+    </record>
+    <record id="wificlass_ac1750" model="itm.equipment.component.specification.value">
+        <field name="name">AC1750</field>
+        <field name="value_type_id" ref="sel_wificlass" />
+    </record>
+    <record id="wificlass_ac1900" model="itm.equipment.component.specification.value">
+        <field name="name">AC1900</field>
+        <field name="value_type_id" ref="sel_wificlass" />
+    </record>
+    <record id="wificlass_ac2350" model="itm.equipment.component.specification.value">
+        <field name="name">AC2350</field>
+        <field name="value_type_id" ref="sel_wificlass" />
+    </record>
+    <record id="wificlass_ac2600" model="itm.equipment.component.specification.value">
+        <field name="name">AC2600</field>
+        <field name="value_type_id" ref="sel_wificlass" />
+    </record>
+    <record id="wificlass_ac3100" model="itm.equipment.component.specification.value">
+        <field name="name">AC3100</field>
+        <field name="value_type_id" ref="sel_wificlass" />
+    </record>
+    <record id="wificlass_ac3200" model="itm.equipment.component.specification.value">
+        <field name="name">AC3200</field>
+        <field name="value_type_id" ref="sel_wificlass" />
+    </record>
+    <record id="wificlass_ac5300" model="itm.equipment.component.specification.value">
+        <field name="name">AC5300</field>
+        <field name="value_type_id" ref="sel_wificlass" />
+    </record>
+
+    <!-- Component Spec Value: Wirelss Frequency -->
+    <record id="wififreq_24" model="itm.equipment.component.specification.value">
+        <field name="name">2.4 GHz</field>
+        <field name="value_type_id" ref="sel_wififreq" />
+    </record>
+    <record id="wififreq_5" model="itm.equipment.component.specification.value">
+        <field name="name">5 GHz</field>
+        <field name="value_type_id" ref="sel_wififreq" />
+    </record>
+    <record id="wififreq_245" model="itm.equipment.component.specification.value">
+        <field name="name">2.4 GHz / 5 GHz</field>
+        <field name="value_type_id" ref="sel_wififreq" />
+    </record>
+
+</odoo>

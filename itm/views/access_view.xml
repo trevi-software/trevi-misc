@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    Copyright (C) 2014 Leandro Ezequiel Baldi
+    <baldileandro@gmail.com>
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published
+    by the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<odoo>
+
+    <!-- Access -->
+    <record model="ir.ui.view" id="itm_access_tree">
+        <field name="name">itm.access.tree</field>
+        <field name="model">itm.access</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name" />
+                <field name="equipment_id" />
+                <field name="partner_id" />
+                <field name="site_id" />
+            </list>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="itm_access_form">
+        <field name="name">itm.access.form</field>
+        <field name="model">itm.access</field>
+        <field name="arch" type="xml">
+            <form string="Credential">
+                <sheet>
+                    <field name="active" invisible="1" />
+                    <widget
+                        name="web_ribbon"
+                        title="Archived"
+                        bg_color="bg-danger"
+                        invisible="active"
+                    />
+                    <div class="oe_title">
+                        <div class="oe_edit_only">
+                            <label for="name" />
+                        </div>
+                        <h1>
+                            <field name="name" />
+                        </h1>
+                    </div>
+                    <notebook>
+                        <page string="Information">
+                            <group>
+                                <group>
+                                    <label for="password" class="oe_inline" />
+                                    <div>
+                                        <span>
+                                        <field
+                                                name="password"
+                                                password="True"
+                                                nolabel="1"
+                                                style="max-width:250px"
+                                                class="oe_inline text-truncate"
+                                                widget="password_char"
+                                            />
+                                        <button
+                                                name="get_random_password"
+                                                string="Generate"
+                                                type="object"
+                                                groups="itm.group_itm_mod"
+                                                confirm="Are you sure?"
+                                                icon="fa-random"
+                                                class="oe_inline"
+                                            />
+                                        </span>
+                                    </div>
+                                </group>
+                                <group>
+                                    <field name="equipment_id" />
+                                    <field name="partner_id" />
+                                    <field name="site_id" />
+                                </group>
+                            </group>
+                        </page>
+                        <page string="SSL">
+                            <group label="SSL">
+                                <field name="ssl_csr" filename="ssl_csr_filename" />
+                                <field name="ssl_csr_filename" invisible="1" />
+                                <field name="ssl_cert" filename="ssl_cert_filename" />
+                                <field name="ssl_cert_filename" invisible="1" />
+                                <field
+                                    name="ssl_publickey"
+                                    filename="ssl_publickey_filename"
+                                />
+                                <field name="ssl_publickey_filename" invisible="1" />
+                                <field
+                                    name="ssl_privatekey"
+                                    filename="ssl_privatekey_filename"
+                                />
+                                <field name="ssl_privatekey_filename" invisible="1" />
+                            </group>
+                        </page>
+                        <page string="Audit Data" groups="itm.group_itm_mod">
+                            <group>
+                                <group>
+                                    <field name="create_uid" />
+                                    <field name="create_date" />
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Configuration" groups="itm.group_itm_mod">
+                            <group>
+                                <group>
+                                    <field
+                                        name="company_id"
+                                        string="Company"
+                                        groups="base.group_multi_company"
+                                    />
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter />
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="itm_access_search">
+        <field name="name">itm.access.search</field>
+        <field name="model">itm.access</field>
+        <field name="arch" type="xml">
+            <search string="Access">
+                <!--Searchs-->
+                <field name="name" string="Access Name" />
+                <field name="equipment_id" string="Equipment" />
+                <field name="partner_id" string="Partner" />
+                <field name="site_id" string="Site" />
+                <!--Filters-->
+                <filter
+                    name="is_password"
+                    string="Has Password"
+                    domain="[('password','!=',False)]"
+                    help="Has a password"
+                />
+                <filter
+                    name="not_password"
+                    string="No Password"
+                    domain="[('password','=',False)]"
+                    help="Does not have a password"
+                />
+                <separator />
+                <filter
+                    name="archived"
+                    string="Archived"
+                    domain="[('active','=',False)]"
+                />
+                <group expand="0" string="Group By...">
+                    <filter
+                        name="by_partner"
+                        string="Partner"
+                        icon="terp-personal+"
+                        domain="[]"
+                        context="{'group_by':'partner_id'}"
+                    />
+                    <filter
+                        name="by_site"
+                        string="Site"
+                        icon="terp-personal+"
+                        domain="[]"
+                        context="{'group_by':'site_id'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="itm_access_action">
+        <field name="name">Credentials</field>
+        <field name="res_model">itm.access</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem
+        action="itm_access_action"
+        id="itm_access"
+        sequence="20"
+        parent="itm_menu_general"
+    />
+
+</odoo>

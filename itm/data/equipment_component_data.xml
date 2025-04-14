@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo noupdate="1">
+
+    <!-- Component Types -->
+    <record id="ctype_processor" model="itm.equipment.component.type">
+        <field name="name">Processor</field>
+    </record>
+    <record id="ctype_ram" model="itm.equipment.component.type">
+        <field name="name">Random Access Memory</field>
+    </record>
+    <record id="ctype_hdd" model="itm.equipment.component.type">
+        <field name="name">Hard Disk Drive (HDD)</field>
+    </record>
+    <record id="ctype_ssd" model="itm.equipment.component.type">
+        <field name="name">Solid State Drive (SSD)</field>
+    </record>
+    <record id="ctype_net" model="itm.equipment.component.type">
+        <field name="name">Network Adapter</field>
+    </record>
+    <record id="ctype_wifi" model="itm.equipment.component.type">
+        <field name="name">Wireless Adapter</field>
+    </record>
+    <record id="ctype_modem" model="itm.equipment.component.type">
+        <field name="name">Modem</field>
+    </record>
+    <record id="ctype_sound" model="itm.equipment.component.type">
+        <field name="name">Sound Card</field>
+    </record>
+    <record id="ctype_grph" model="itm.equipment.component.type">
+        <field name="name">Graphics Card</field>
+    </record>
+    <record id="ctype_tv" model="itm.equipment.component.type">
+        <field name="name">Video Capture/TV Tuner</field>
+    </record>
+    <record id="ctype_sata" model="itm.equipment.component.type">
+        <field name="name">SATA Controller</field>
+    </record>
+    <record id="ctype_raid" model="itm.equipment.component.type">
+        <field name="name">RAID Controller</field>
+    </record>
+    <record id="ctype_mobo" model="itm.equipment.component.type">
+        <field name="name">Motherboard</field>
+    </record>
+    <record id="ctype_case" model="itm.equipment.component.type">
+        <field name="name">Case</field>
+    </record>
+    <record id="ctype_psu" model="itm.equipment.component.type">
+        <field name="name">Power Supply Unit</field>
+    </record>
+    <record id="ctype_screen" model="itm.equipment.component.type">
+        <field name="name">Mobile Device Screen</field>
+    </record>
+    <record id="ctype_keyb" model="itm.equipment.component.type">
+        <field name="name">Mobile Device Keyboard</field>
+    </record>
+    <record id="ctype_pa" model="itm.equipment.component.type">
+        <field name="name">Mobile Device Power Adapter</field>
+    </record>
+    <record id="ctype_battery" model="itm.equipment.component.type">
+        <field name="name">Mobile Device Battery</field>
+    </record>
+
+    <!-- Component Spec Key Type-->
+    <record id="sel_cpuintel" model="itm.equipment.component.specification.selector">
+        <field name="name">Intel CPU</field>
+    </record>
+    <record id="sel_cpuamd" model="itm.equipment.component.specification.selector">
+        <field name="name">AMD CPU</field>
+    </record>
+    <record id="sel_cpuarm" model="itm.equipment.component.specification.selector">
+        <field name="name">ARM CPU</field>
+    </record>
+    <record id="sel_cpucores" model="itm.equipment.component.specification.selector">
+        <field name="name">CPU Cores</field>
+    </record>
+    <record id="sel_cputhreads" model="itm.equipment.component.specification.selector">
+        <field name="name">CPU Threads</field>
+    </record>
+    <record id="sel_ramspeed" model="itm.equipment.component.specification.selector">
+        <field name="name">RAM Speed</field>
+    </record>
+    <record id="sel_storage" model="itm.equipment.component.specification.selector">
+        <field name="name">Storage Capacity</field>
+    </record>
+    <record id="sel_storageata" model="itm.equipment.component.specification.selector">
+        <field name="name">Storage Attachment</field>
+    </record>
+    <record id="sel_storageff" model="itm.equipment.component.specification.selector">
+        <field name="name">Storage Form Factor</field>
+    </record>
+    <record id="sel_numsmall" model="itm.equipment.component.specification.selector">
+        <field name="name">Number</field>
+    </record>
+    <record id="sel_netspeed" model="itm.equipment.component.specification.selector">
+        <field name="name">Network Speed</field>
+    </record>
+    <record id="sel_wificlass" model="itm.equipment.component.specification.selector">
+        <field name="name">Wireless Device Class</field>
+    </record>
+    <record id="sel_wififreq" model="itm.equipment.component.specification.selector">
+        <field name="name">Wireless Frequency</field>
+    </record>
+    <record id="sel_mobobus" model="itm.equipment.component.specification.selector">
+        <field name="name">Bus Interface</field>
+    </record>
+    <record id="sel_busiface" model="itm.equipment.component.specification.selector">
+        <field name="name">Bus Interface Type</field>
+    </record>
+    <record id="sel_chassis" model="itm.equipment.component.specification.selector">
+        <field name="name">Chassis</field>
+    </record>
+    <record id="sel_formfactor" model="itm.equipment.component.specification.selector">
+        <field name="name">Form Factor</field>
+    </record>
+    <record id="sel_psuconn" model="itm.equipment.component.specification.selector">
+        <field name="name">Main Connector</field>
+    </record>
+    <record id="sel_power" model="itm.equipment.component.specification.selector">
+        <field name="name">Power</field>
+    </record>
+
+    <!-- Component Spec Key -->
+    <record id="cpukey_intel" model="itm.equipment.component.specification.key">
+        <field name="name">Intel CPU</field>
+        <field name="component_type_ids" eval="[(6, 0,[ref('ctype_processor')])]" />
+        <field name="value_type_id" ref="sel_cpuintel" />
+    </record>
+    <record id="cpukey_amd" model="itm.equipment.component.specification.key">
+        <field name="name">AMD CPU</field>
+        <field name="component_type_ids" eval="[(6, 0,[ref('ctype_processor')])]" />
+        <field name="value_type_id" ref="sel_cpuamd" />
+    </record>
+    <record id="cpukey_arm" model="itm.equipment.component.specification.key">
+        <field name="name">ARM CPU</field>
+        <field name="component_type_ids" eval="[(6, 0,[ref('ctype_processor')])]" />
+        <field name="value_type_id" ref="sel_cpuarm" />
+    </record>
+    <record id="cpukey_cores" model="itm.equipment.component.specification.key">
+        <field name="name">Cores</field>
+        <field name="component_type_ids" eval="[(6, 0,[ref('ctype_processor')])]" />
+        <field name="value_type_id" ref="sel_cpucores" />
+    </record>
+    <record id="cpukey_threads" model="itm.equipment.component.specification.key">
+        <field name="name">Threads</field>
+        <field name="component_type_ids" eval="[(6, 0,[ref('ctype_processor')])]" />
+        <field name="value_type_id" ref="sel_cputhreads" />
+    </record>
+    <record id="ramkey_speed" model="itm.equipment.component.specification.key">
+        <field name="name">RAM Speed</field>
+        <field name="component_type_ids" eval="[(6, 0,[ref('ctype_ram')])]" />
+        <field name="value_type_id" ref="sel_ramspeed" />
+    </record>
+    <record id="key_hdd" model="itm.equipment.component.specification.key">
+        <field name="name">Storage Capacity</field>
+        <field
+            name="component_type_ids"
+            eval="[(6, 0, [ref('ctype_hdd'), ref('ctype_ssd')])]"
+        />
+        <field name="value_type_id" ref="sel_storage" />
+    </record>
+    <record id="key_hddata" model="itm.equipment.component.specification.key">
+        <field name="name">Attachement</field>
+        <field
+            name="component_type_ids"
+            eval="[(6, 0, [ref('ctype_hdd'), ref('ctype_ssd')])]"
+        />
+        <field name="value_type_id" ref="sel_storageata" />
+    </record>
+    <record id="key_hddff" model="itm.equipment.component.specification.key">
+        <field name="name">Form Factor</field>
+        <field
+            name="component_type_ids"
+            eval="[(6, 0, [ref('ctype_hdd'), ref('ctype_ssd')])]"
+        />
+        <field name="value_type_id" ref="sel_storageff" />
+    </record>
+    <record id="key_netports" model="itm.equipment.component.specification.key">
+        <field name="name">RJ-45 Ports</field>
+        <field name="component_type_ids" eval="[(6, 0,[ref('ctype_net')])]" />
+        <field name="value_type_id" ref="sel_numsmall" />
+    </record>
+    <record id="key_netspeed" model="itm.equipment.component.specification.key">
+        <field name="name">Network Speed</field>
+        <field
+            name="component_type_ids"
+            eval="[(6, 0,[ref('ctype_net'),ref('ctype_wifi')])]"
+        />
+        <field name="value_type_id" ref="sel_netspeed" />
+    </record>
+    <record id="key_wificlass" model="itm.equipment.component.specification.key">
+        <field name="name">Wireless Device Class</field>
+        <field name="component_type_ids" eval="[(6, 0,[ref('ctype_wifi')])]" />
+        <field name="value_type_id" ref="sel_wificlass" />
+    </record>
+    <record id="key_wififreq" model="itm.equipment.component.specification.key">
+        <field name="name">Wireless Frequency</field>
+        <field name="component_type_ids" eval="[(6, 0,[ref('ctype_wifi')])]" />
+        <field name="value_type_id" ref="sel_wififreq" />
+    </record>
+    <record id="key_interface" model="itm.equipment.component.specification.key">
+        <field name="name">Interface</field>
+        <field name="value_type_id" ref="sel_mobobus" />
+        <field
+            name="component_type_ids"
+            eval="[(6, 0,
+                [
+                ref('ctype_net'),
+                ref('ctype_wifi'),
+                ref('ctype_modem'),
+                ref('ctype_sound'),
+                ref('ctype_grph'),
+                ref('ctype_tv'),
+                ref('ctype_sata'),
+                ref('ctype_raid'),
+                ref('ctype_mobo'),
+                ]
+            )]"
+        />
+    </record>
+    <record id="key_chassistype" model="itm.equipment.component.specification.key">
+        <field name="name">Chassis Type</field>
+        <field
+            name="component_type_ids"
+            eval="[(6, 0, [ref('ctype_case'),ref('ctype_psu')])]"
+        />
+        <field name="value_type_id" ref="sel_chassis" />
+    </record>
+    <record id="key_formfactor" model="itm.equipment.component.specification.key">
+        <field name="name">Form Factor</field>
+        <field name="value_type_id" ref="sel_formfactor" />
+        <field
+            name="component_type_ids"
+            eval="[(6, 0, [ref('ctype_case'), ref('ctype_psu')])]"
+        />
+    </record>
+    <record id="key_mainconn" model="itm.equipment.component.specification.key">
+        <field name="name">Main Connector</field>
+        <field name="component_type_ids" eval="[(6, 0, [ref('ctype_psu')])]" />
+        <field name="value_type_id" ref="sel_psuconn" />
+    </record>
+    <record id="key_power" model="itm.equipment.component.specification.key">
+        <field name="name">Maximum Power</field>
+        <field name="component_type_ids" eval="[(6, 0, [ref('ctype_psu')])]" />
+        <field name="value_type_id" ref="sel_power" />
+    </record>
+
+    <!-- Component Spec Value: Small numbers -->
+    <record id="num_1" model="itm.equipment.component.specification.value">
+        <field name="name">1</field>
+        <field name="value_type_id" ref="sel_numsmall" />
+    </record>
+    <record id="num_2" model="itm.equipment.component.specification.value">
+        <field name="name">2</field>
+        <field name="value_type_id" ref="sel_numsmall" />
+    </record>
+    <record id="num_3" model="itm.equipment.component.specification.value">
+        <field name="name">3</field>
+        <field name="value_type_id" ref="sel_numsmall" />
+    </record>
+    <record id="num_4" model="itm.equipment.component.specification.value">
+        <field name="name">4</field>
+        <field name="value_type_id" ref="sel_numsmall" />
+    </record>
+    <record id="num_5" model="itm.equipment.component.specification.value">
+        <field name="name">5</field>
+        <field name="value_type_id" ref="sel_numsmall" />
+    </record>
+
+    <!-- Component Spec Value: Mobo Interface -->
+    <record id="iface_pci" model="itm.equipment.component.specification.value">
+        <field name="name">PCI</field>
+        <field name="value_type_id" ref="sel_mobobus" />
+    </record>
+    <record id="iface_pcix" model="itm.equipment.component.specification.value">
+        <field name="name">PCI-X</field>
+        <field name="value_type_id" ref="sel_mobobus" />
+    </record>
+    <record id="iface_pcie" model="itm.equipment.component.specification.value">
+        <field name="name">PCI Express (PCIe)</field>
+        <field name="value_type_id" ref="sel_mobobus" />
+    </record>
+    <record id="iface_minipcie" model="itm.equipment.component.specification.value">
+        <field name="name">Mini PCI Express</field>
+        <field name="value_type_id" ref="sel_mobobus" />
+    </record>
+    <record id="iface_cardbus" model="itm.equipment.component.specification.value">
+        <field name="name">Cardbus</field>
+        <field name="value_type_id" ref="sel_mobobus" />
+    </record>
+    <record id="iface_minicard" model="itm.equipment.component.specification.value">
+        <field name="name">Mini Card</field>
+        <field name="value_type_id" ref="sel_mobobus" />
+    </record>
+
+    <!-- Component Spec Value: Chassis Type -->
+    <record id="chassis_type_desk" model="itm.equipment.component.specification.value">
+        <field name="name">Desktop</field>
+        <field name="value_type_id" ref="sel_chassis" />
+    </record>
+    <record id="chassis_type_tower" model="itm.equipment.component.specification.value">
+        <field name="name">Full Tower</field>
+        <field name="value_type_id" ref="sel_chassis" />
+    </record>
+    <record
+        id="chassis_type_midtower"
+        model="itm.equipment.component.specification.value"
+    >
+        <field name="name">Mid Tower</field>
+        <field name="value_type_id" ref="sel_chassis" />
+    </record>
+    <record
+        id="chassis_type_minitower"
+        model="itm.equipment.component.specification.value"
+    >
+        <field name="name">Mini Tower</field>
+        <field name="value_type_id" ref="sel_chassis" />
+    </record>
+    <record
+        id="chassis_type_microatx"
+        model="itm.equipment.component.specification.value"
+    >
+        <field name="name">Micro ATX</field>
+        <field name="value_type_id" ref="sel_chassis" />
+    </record>
+    <record
+        id="chassis_type_miniitx"
+        model="itm.equipment.component.specification.value"
+    >
+        <field name="name">Mini ITX</field>
+        <field name="value_type_id" ref="sel_chassis" />
+    </record>
+    <record id="chassis_type_rack" model="itm.equipment.component.specification.value">
+        <field name="name">Rackmount</field>
+        <field name="value_type_id" ref="sel_chassis" />
+    </record>
+
+    <!-- Component Spec Value: Chassis Form Factor -->
+    <record id="ff_atx" model="itm.equipment.component.specification.value">
+        <field name="name">ATX</field>
+        <field name="value_type_id" ref="sel_formfactor" />
+    </record>
+    <record id="ff_eatx" model="itm.equipment.component.specification.value">
+        <field name="name">E-ATX</field>
+        <field name="value_type_id" ref="sel_formfactor" />
+    </record>
+    <record id="ff_microatx" model="itm.equipment.component.specification.value">
+        <field name="name">Micro ATX</field>
+        <field name="value_type_id" ref="sel_formfactor" />
+    </record>
+    <record id="ff_itx" model="itm.equipment.component.specification.value">
+        <field name="name">ITX</field>
+        <field name="value_type_id" ref="sel_formfactor" />
+    </record>
+    <record id="ff_miniitx" model="itm.equipment.component.specification.value">
+        <field name="name">Mini-ITX</field>
+        <field name="value_type_id" ref="sel_formfactor" />
+    </record>
+    <record id="ff_iu" model="itm.equipment.component.specification.value">
+        <field name="name">1U</field>
+        <field name="value_type_id" ref="sel_formfactor" />
+    </record>
+    <record id="ff_2u" model="itm.equipment.component.specification.value">
+        <field name="name">2U</field>
+        <field name="value_type_id" ref="sel_formfactor" />
+    </record>
+
+    <!-- Component Spec Value: PSU Main Connector -->
+    <record id="psuconn_20" model="itm.equipment.component.specification.value">
+        <field name="name">20pin</field>
+        <field name="value_type_id" ref="sel_psuconn" />
+    </record>
+    <record id="psuconn_20_4" model="itm.equipment.component.specification.value">
+        <field name="name">20+4pin</field>
+        <field name="value_type_id" ref="sel_psuconn" />
+    </record>
+    <record id="psuconn_20_8" model="itm.equipment.component.specification.value">
+        <field name="name">20+8pin</field>
+        <field name="value_type_id" ref="sel_psuconn" />
+    </record>
+    <record id="psuconn_24" model="itm.equipment.component.specification.value">
+        <field name="name">24pin</field>
+        <field name="value_type_id" ref="sel_psuconn" />
+    </record>
+
+</odoo>

@@ -1,0 +1,3229 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* itm
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_service_ad_object_form
+msgid "&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"
+msgstr ""
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/equipment.py:0
+#, python-format
+msgid ""
+"<div class=\"o_mail_notification\"><ul><li>A new %(desc)s was created:"
+"                 <a href=\"#\" class=\"o_redirect\" data-oe-"
+"model=itm.equipment                 data-oe-id=\"%(id)s\"> "
+"%(name)s</a></li></ul></div>"
+msgstr ""
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/service_ad.py:0
+#, python-format
+msgid ""
+"<div class=\"o_mail_notification\"><ul><li>A new %(dsc)s was created:"
+"                 <a href=\"#\"                 class=\"o_redirect\""
+"                 data-oe-model=itm.service.ad.object data-oe-id=\"%(id)s\">"
+"                 %(name)s</a></li></ul></div>"
+msgstr ""
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/access.py:0
+#, python-format
+msgid ""
+"<div class=\"o_mail_notification\"><ul><li>A new %(dsc)s was created:"
+"                 <a href=\"#\" class=\"o_redirect\" data-oe-model=itm.access"
+" data-oe-id=\"%(id)s\">                 %(name)s</a></li></ul></div>"
+msgstr ""
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/service_ad.py:0
+#, python-format
+msgid ""
+"<div class=\"o_mail_notification\"><ul><li>A new %(dsc)s was created:"
+"                 <a href=\"#\" class=\"o_redirect\" data-oe-"
+"model=itm.service.ad                 data-oe-id=\"%(id)s\"> "
+"%(name)s</a></li></ul></div>"
+msgstr ""
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/equipment_component.py:0
+#, python-format
+msgid ""
+"<div class=\"o_mail_notification\"><ul><li>A new %(dsc)s was installed:"
+"                 <a href=\"#\" class=\"o_redirect\"                 data-oe-"
+"model=itm.equipment.component data-oe-id=\"%(id)s\">                 "
+"%(name)s</a></li></ul></div>"
+msgstr ""
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/access.py:0 code:addons/itm/models/equipment.py:0
+#: code:addons/itm/models/equipment.py:0
+#: code:addons/itm/models/service_ad.py:0
+#, python-format
+msgid "<li> %(dsc)s record was deleted: %(name)s</li>"
+msgstr ""
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/access.py:0 code:addons/itm/models/service_ad.py:0
+#: code:addons/itm/models/service_ad.py:0
+#, python-format
+msgid "<li> %(dsc)s was deleted: %(name)s</li>"
+msgstr ""
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/service_ad.py:0
+#, python-format
+msgid "<li> %s(dsc) record was deleted: %(name)s</li>"
+msgstr ""
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/equipment_component.py:0
+#, python-format
+msgid "<li>A %(dsc)s record was deleted: %(name)s</li>"
+msgstr ""
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/equipment_component.py:0
+#, python-format
+msgid "<li>A %(dsc)s was installed: %(name)s</li>"
+msgstr ""
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/equipment_component.py:0
+#, python-format
+msgid "<li>A %(dsc)s was removed: %(name)s</li>"
+msgstr ""
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/access.py:0 code:addons/itm/models/access.py:0
+#, python-format
+msgid "<li>A %(dsc)s's password was updated: %(name)s</li>"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_application__developer
+msgid "A company or person who create and develop this application"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__description
+msgid ""
+"A device description, eg. 'A basic scanner device for scanning paper into "
+".pdf files' "
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__name
+msgid "A device name, eg. Scanner"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_backup__partner_id
+#: model:ir.model.fields,help:itm.field_itm_equipment__partner_id
+msgid "A partner or user which are using this device"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__contract_owner
+msgid "A person holding the title"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__site_id
+msgid "A site or place of which this device is deployed"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__parent_id
+msgid "AD Folder"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__type
+msgid "AD Type"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_wizard_credential__aduser_id
+msgid "AD User"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_line__adobj_id
+msgid "AD object name"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_wireless_ssid__encryption_type__aes
+msgid "AES"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_equipment_rule__permission__allow
+msgid "ALLOW"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_access_search
+msgid "Access"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_res_partner__access_count
+#: model:ir.model.fields,field_description:itm.field_res_users__access_count
+msgid "Access Count"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless__access_id
+msgid "Access Credentials"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_access_search
+msgid "Access Name"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_wireless__type__ap
+msgid "Access Point"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__message_needaction
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__message_needaction
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__message_needaction
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__message_needaction
+#: model:ir.model.fields,field_description:itm.field_itm_site__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__active
+#: model:ir.model.fields,field_description:itm.field_itm_application__active
+#: model:ir.model.fields,field_description:itm.field_itm_backup__active
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__active
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__active
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_value__active
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_type__active
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__active
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__active
+#: model:ir.model.fields,field_description:itm.field_itm_site__active
+msgid "Active"
+msgstr ""
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.itm_service_ad_action
+#: model:ir.model,name:itm.model_itm_service_ad
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__ad_service_id
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__ad_id
+#: model:ir.model.fields,field_description:itm.field_itm_site__ad_ids
+#: model:ir.model.fields,field_description:itm.field_itm_wizard_credential__ad_id
+#: model:ir.ui.menu,name:itm.itm_ad_menu
+#: model_terms:ir.ui.view,arch_db:itm.itm_service_ad_form
+msgid "Active Directory"
+msgstr ""
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_service_ad_object
+#: model_terms:ir.ui.view,arch_db:itm.itm_service_ad_object_form
+msgid "Active Directory Object"
+msgstr ""
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.itm_service_ad_object_action
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__obj_ids
+#: model:ir.ui.menu,name:itm.itm_ad_object_menu
+#: model_terms:ir.ui.view,arch_db:itm.itm_service_ad_form
+msgid "Active Directory Objects"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_service_ad_search
+msgid "Active Directory Search"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__activity_ids
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__activity_ids
+#: model:ir.model.fields,field_description:itm.field_itm_site__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__activity_exception_decoration
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__activity_exception_decoration
+#: model:ir.model.fields,field_description:itm.field_itm_site__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__activity_state
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__activity_state
+#: model:ir.model.fields,field_description:itm.field_itm_site__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__activity_type_icon
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__activity_type_icon
+#: model:ir.model.fields,field_description:itm.field_itm_site__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_mapping_permission_advanced
+msgid "Advanced Share Mapping Permission"
+msgstr ""
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/equipment_mapping.py:0
+#: model:ir.model.fields.selection,name:itm.selection__itm_equipment_mapping_line__type__advanced
+#, python-format
+msgid "Advanced Sharing"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_line__perm_advanced
+msgid "Advanced permissions"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__application_ids
+msgid "App information of this asset or device"
+msgstr ""
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_application
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__is_application
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_db__application_id
+#: model_terms:ir.ui.view,arch_db:itm.itm_application_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_application_search
+msgid "Application"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_application_search
+msgid "Application Name"
+msgstr ""
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.itm_application_action
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__application_ids
+#: model:ir.ui.menu,name:itm.itm_application
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+msgid "Applications"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.component_form
+#: model_terms:ir.ui.view,arch_db:itm.component_search
+#: model_terms:ir.ui.view,arch_db:itm.itm_access_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_access_search
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_type_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_type_search
+#: model_terms:ir.ui.view,arch_db:itm.itm_service_ad_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_service_ad_object_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_service_ad_search
+#: model_terms:ir.ui.view,arch_db:itm.itm_site_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_site_search
+#: model_terms:ir.ui.view,arch_db:itm.spec_value_form
+#: model_terms:ir.ui.view,arch_db:itm.spec_value_search
+msgid "Archived"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_access_form
+msgid "Are you sure?"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__equipment_id
+#: model:ir.model.fields,field_description:itm.field_itm_backup__equipment_id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_configuration__equipment_id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_db__equipment_id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_forward__equipment_id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping__equipment_id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network__equipment_id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition__equipment_id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_rule__equipment_id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_worklog__equipment_id
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__equipment_id
+#: model:ir.model.fields,field_description:itm.field_itm_service_dhcp4__equipment_id
+#: model:ir.model.fields,field_description:itm.field_itm_wizard_credential__equipment_id
+#: model_terms:ir.ui.view,arch_db:itm.component_search
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Asset"
+msgstr ""
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_component_specification
+msgid "Asset Component Specification"
+msgstr ""
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_component_type
+msgid "Asset Component Type"
+msgstr ""
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.itm_equipment_type_action
+#: model:ir.model,name:itm.model_itm_equipment_type
+#: model:ir.ui.menu,name:itm.itm_equipment_type_menu
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Asset Type"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_type_search
+msgid "Asset Type Search"
+msgstr ""
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_worklog
+msgid "Asset Worklog"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__asset_type_id
+msgid "Asset type"
+msgstr ""
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.act_partner_2_equipment
+#: model:ir.actions.act_window,name:itm.act_site_2_equipment
+#: model:ir.model.fields,field_description:itm.field_itm_application__equipment_ids
+#: model:ir.model.fields,field_description:itm.field_itm_site__equipment_count
+#: model:ir.model.fields,field_description:itm.field_res_partner__equipment_ids
+#: model:ir.model.fields,field_description:itm.field_res_users__equipment_ids
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+msgid "Assets"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Assets with applications"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Assets with backup"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Assets with partitions"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Assets without applications"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Assets without backup"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_site__equipment_ids
+msgid "Asset{s)"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__message_attachment_count
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__message_attachment_count
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__message_attachment_count
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__message_attachment_count
+#: model:ir.model.fields,field_description:itm.field_itm_site__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_access_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_application_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_backup_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+msgid "Audit Data"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless_ssid__auth_type
+msgid "Authentication Type"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_wireless_ssid__auth_type__auto
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_wireless_ssid__encryption_type__auto
+msgid "Auto"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_equipment_forward__type__both
+msgid "BOTH"
+msgstr ""
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.act_partner_2_backup
+#: model:ir.model,name:itm.model_itm_backup
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__is_backup
+#: model_terms:ir.ui.view,arch_db:itm.itm_backup_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_backup_search
+msgid "Backup"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__backup_count
+#: model:ir.model.fields,field_description:itm.field_res_partner__backup_count
+#: model:ir.model.fields,field_description:itm.field_res_users__backup_count
+msgid "Backup Count"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_backup_search
+msgid "Backup Name"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_backup__type
+msgid "Backup Type"
+msgstr ""
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.act_equipment_2_backup
+#: model:ir.actions.act_window,name:itm.itm_backup_action
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__backup_ids
+#: model:ir.model.fields,field_description:itm.field_res_partner__backup_ids
+#: model:ir.model.fields,field_description:itm.field_res_users__backup_ids
+#: model:ir.ui.menu,name:itm.itm_backup
+msgid "Backups"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+msgid "Basic Configuration"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__brand_id
+msgid "Brand"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__brand
+msgid "Brand Name"
+msgstr ""
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.itm_equipment_brand_action
+#: model:ir.ui.menu,name:itm.itm_equipment_brand
+msgid "Brands"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_wireless__type__bridge
+msgid "Bridge"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__product_buydate
+msgid "Buy Date"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_application__license_type__closedsource
+msgid "COMMERCIAL"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__ssl_csr
+msgid "CSR"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__ssl_csr_filename
+msgid "CSR Filename"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_wizard_credential_form
+msgid "Cancel"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__ssl_cert
+msgid "Cert"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__ssl_cert_filename
+msgid "Cert Filename"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_vpn__cacn
+msgid "Client Authorization by common name"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__contract_client_number
+msgid "Client Number"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_application_form
+msgid "Closed Source"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_application_search
+msgid "ClosedSource Applications"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__code
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Code"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_db__codification
+msgid "Codification"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_application_search
+msgid "Commercial"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__company_id
+#: model:ir.model.fields,field_description:itm.field_itm_application__company_id
+#: model:ir.model.fields,field_description:itm.field_itm_backup__company_id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__company_id
+#: model:ir.model.fields,field_description:itm.field_itm_site__company_id
+#: model_terms:ir.ui.view,arch_db:itm.itm_access_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_application_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_backup_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_site_form
+msgid "Company"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__complete_logon
+msgid "Complete Logon"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__identification
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__complete_name
+msgid "Complete Name"
+msgstr ""
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_component
+#: model_terms:ir.ui.view,arch_db:itm.component_form
+msgid "Component"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__component_count
+msgid "Component Count"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_brand__is_components
+msgid "Component Devices"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.component_search
+msgid "Component Search"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.spec_selector_form
+msgid "Component Selector"
+msgstr ""
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_component_specification_key
+msgid "Component Specification Key"
+msgstr ""
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_component_specification_selector
+msgid "Component Specification Selector"
+msgstr ""
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_component_specification_value
+msgid "Component Specification Value"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__component_type_id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification__component_type_id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_key__component_type_ids
+#: model_terms:ir.ui.view,arch_db:itm.component_search
+#: model_terms:ir.ui.view,arch_db:itm.component_type_form
+#: model_terms:ir.ui.view,arch_db:itm.spec_key_form
+msgid "Component Type"
+msgstr ""
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.component_type_action
+#: model:ir.ui.menu,name:itm.component_type_menu
+#: model_terms:ir.ui.view,arch_db:itm.spec_key_form
+msgid "Component Types"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__equipment_id
+#: model_terms:ir.ui.view,arch_db:itm.component_search
+msgid "Component of"
+msgstr ""
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.act_equipment_2_component
+#: model:ir.actions.act_window,name:itm.component_action
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__component_ids
+#: model:ir.ui.menu,name:itm.component_menu
+#: model:ir.ui.menu,name:itm.itm_menu_component_config
+msgid "Components"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_brand__is_accessories
+msgid "Computing Accessories"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_brand__is_computer
+msgid "Computing Devices"
+msgstr ""
+
+#. module: itm
+#: model:ir.ui.menu,name:itm.itm_menu_others
+#: model_terms:ir.ui.view,arch_db:itm.itm_access_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_application_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_backup_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+msgid "Configuration"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_configuration__config_file
+msgid "Configuration File"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_configuration__config_file_filename
+msgid "Configuration File Filename"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__configuration_file_ids
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+msgid "Configuration Files"
+msgstr ""
+
+#. module: itm
+#: model:ir.model,name:itm.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+msgid "Contract Information"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Contracted"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__is_contracted
+msgid "Contracted Service"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__contract_partner_id
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Contractor"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__contract_partner_id
+msgid "Contractor name"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_application_license__copy
+msgid "Copy"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_application__crack
+msgid "Crack"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_service_ad_object_form
+msgid "Create"
+msgstr ""
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.act_adobject_2_newcreds
+msgid "Create Credential"
+msgstr ""
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.new_credential_wizard_action
+msgid "Create New Credential"
+msgstr ""
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_wizard_credential
+msgid "Create New Credential Wizard"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_application__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_application_license__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_backup__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_brand__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_key__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_selector__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_value__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_type__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_configuration__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_db__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_db_engine__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_dbsetting__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_forward__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_function__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_ipreservation__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_line__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_permission_advanced__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network_proxy__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition_mount__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_rule__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_type__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_worklog__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_service_dhcp4__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_service_proxy__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_service_vpn__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless_ssid__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_site__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_site_network__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_site_network_ip4__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_wizard_credential__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_application__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_application_license__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_backup__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_brand__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_key__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_selector__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_value__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_type__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_configuration__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_db__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_db_engine__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_dbsetting__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_forward__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_function__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_ipreservation__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_line__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_permission_advanced__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network_proxy__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition_mount__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_rule__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_type__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_worklog__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_service_dhcp4__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_service_proxy__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_service_vpn__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless_ssid__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_site__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_site_network__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_site_network_ip4__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_wizard_credential__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_access
+#: model_terms:ir.ui.view,arch_db:itm.itm_access_form
+msgid "Credential"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_site__access_ids
+msgid "Credential(s)"
+msgstr ""
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.act_equipment_2_access
+#: model:ir.actions.act_window,name:itm.act_partner_2_access
+#: model:ir.actions.act_window,name:itm.act_site_2_access
+#: model:ir.actions.act_window,name:itm.itm_access_action
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__access_ids
+#: model:ir.model.fields,field_description:itm.field_itm_site__access_count
+#: model:ir.model.fields,field_description:itm.field_res_partner__access_ids
+#: model:ir.model.fields,field_description:itm.field_res_users__access_ids
+#: model:ir.ui.menu,name:itm.itm_access
+msgid "Credentials"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__access_count
+msgid "Credentials Count"
+msgstr ""
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.itm_partner_customer_action
+#: model:ir.ui.menu,name:itm.itm_partner_customer
+msgid "Customers"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_equipment_rule__permission__deny
+msgid "DENY"
+msgstr ""
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.itm_service_dhcp4_action
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__dhcp_service_id
+#: model:ir.model.fields,field_description:itm.field_itm_site_network__dhcp4_ids
+#: model:ir.ui.menu,name:itm.itm_dhcp4_menu
+msgid "DHCP"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network__display_ipv4
+msgid "DHCP IPv4 Address"
+msgstr ""
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_service_dhcp4
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_ipreservation__dhcp_id
+msgid "DHCP Service"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_service_dhcp4_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_site_network_form
+msgid "DHCP Settings"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_backup__type__diff
+#: model_terms:ir.ui.view,arch_db:itm.itm_backup_search
+msgid "DIFF"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__router_dmz
+msgid "DMZ"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_site_network_form
+msgid "DNS"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_site_network__dns_ids
+msgid "DNS Servers"
+msgstr ""
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_db
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_dbsetting__db_id
+msgid "Database"
+msgstr ""
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_db_engine
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_db__engine_id
+msgid "Database Engine"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__function_database
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Database Server"
+msgstr ""
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_dbsetting
+msgid "Database Setting"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__db_ids
+msgid "Database list"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_application__db_ids
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__db_ids
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+msgid "Databases"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_configuration__date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_worklog__date
+msgid "Date"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_site_network__default_gw
+msgid "Default Gateway"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_service_dhcp4__lease_time
+msgid "Default lease time in seconds"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__function_ids
+msgid "Defining the function of the devices, eg. scanning"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__description
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_configuration__name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_db__description
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_dbsetting__description
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_ipreservation__name
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__description
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless__name
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_worklog_form
+msgid "Description"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_backup__destination
+msgid "Destination"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_forward__destination_address
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_rule__destination_address
+msgid "Destination Address"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_forward__destination_port
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_rule__destination_port
+msgid "Destination Port"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_application__developer
+#: model_terms:ir.ui.view,arch_db:itm.itm_application_search
+msgid "Developer"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__virtual_disk_amount
+msgid "Disk Size"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment_partition__type
+msgid "Disk storage controllers"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition__disks
+#: model:ir.model.fields,help:itm.field_itm_equipment_partition__disks
+msgid "Disks"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_application__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_application_license__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_backup__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_brand__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_key__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_selector__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_value__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_type__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_configuration__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_db__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_db_engine__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_dbsetting__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_forward__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_function__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_ipreservation__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_line__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_permission_advanced__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network_proxy__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition_mount__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_rule__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_type__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_worklog__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_service_dhcp4__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_service_proxy__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_service_vpn__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless_ssid__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_site__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_site_network__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_site_network_ip4__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_wizard_credential__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_application__documentation
+msgid "Documentation"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_application__documentation_filename
+msgid "Documentation Filename"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_application__documentation
+msgid "Documentation sheet of technical use or standard operational procedure"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_access_search
+msgid "Does not have a password"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__name
+#: model:ir.model.fields,field_description:itm.field_itm_site_network__name
+msgid "Domain"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__name_pre2000
+msgid "Domain (Pre-Windows 2000)"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__ad_service_id
+msgid "Domain Active Directory that related to this asset"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__dhcp_service_id
+msgid "Domain Host Control Protocol address which related to this asset"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_application__link_download
+msgid "Download Link"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_application__link_download
+msgid "Download link of the application"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless_ssid__encryption_type
+msgid "Encryption Type"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_dhcp4__end_address
+msgid "End Address"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_partition_form
+msgid "Enter a partition entry"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_access_search
+#: model_terms:ir.ui.view,arch_db:itm.itm_backup_search
+msgid "Equipment"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_brand_form
+msgid "Equipment Brand"
+msgstr ""
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_configuration
+msgid "Equipment Configuration"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_res_partner__equipment_count
+#: model:ir.model.fields,field_description:itm.field_res_users__equipment_count
+msgid "Equipment Count"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__image
+msgid "Equipment Photo, limited to 1024x1024px."
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_type_form
+msgid "Equipment Type"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_wireless__type__extender
+msgid "Extender"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_backup__type__full
+#: model_terms:ir.ui.view,arch_db:itm.itm_backup_search
+msgid "FULL"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__function_fileserver
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "File Server"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__equipment_mapping_ids
+msgid "File server information"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping__path
+#: model:ir.model.fields,help:itm.field_itm_equipment_mapping__path
+msgid "Filesystem Path"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__router_rules_ids
+msgid "Firewall Rules"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__first_name
+msgid "First Name"
+msgstr ""
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/service_ad.py:0
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_ad_object__type__folder
+#, python-format
+msgid "Folder"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__folder_name
+msgid "Folder Name"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__message_follower_ids
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__message_follower_ids
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__message_follower_ids
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__message_follower_ids
+#: model:ir.model.fields,field_description:itm.field_itm_site__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__message_partner_ids
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__message_partner_ids
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__message_partner_ids
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__message_partner_ids
+#: model:ir.model.fields,field_description:itm.field_itm_site__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__activity_type_icon
+#: model:ir.model.fields,help:itm.field_itm_equipment_component__activity_type_icon
+#: model:ir.model.fields,help:itm.field_itm_site__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition__format
+msgid "Format"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__router_forward_ids
+msgid "Forward Rules"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_backup__frequency
+msgid "Frequency"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__full_name
+msgid "Full Name"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_function_form
+msgid "Function"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+msgid "Function Configuration"
+msgstr ""
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.itm_equipment_function_action
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__function_ids
+#: model:ir.ui.menu,name:itm.itm_equipment_function
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Functions"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+msgid "Functions..."
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_application_form
+msgid "General Information"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_access_form
+msgid "Generate"
+msgstr ""
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/service_ad.py:0
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_ad_object__type__group
+#, python-format
+msgid "Group"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.component_search
+#: model_terms:ir.ui.view,arch_db:itm.itm_access_search
+#: model_terms:ir.ui.view,arch_db:itm.itm_application_search
+#: model_terms:ir.ui.view,arch_db:itm.itm_backup_search
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+#: model_terms:ir.ui.view,arch_db:itm.itm_service_ad_search
+#: model_terms:ir.ui.view,arch_db:itm.spec_value_search
+msgid "Group By..."
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__group_name
+msgid "Group Name"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__virtual_ids
+msgid "Guest(s)"
+msgstr ""
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.act_equipment_2_equipment
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__virtual_count
+msgid "Guests"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__has_message
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__has_message
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__has_message
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__has_message
+#: model:ir.model.fields,field_description:itm.field_itm_site__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_access_search
+msgid "Has Password"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__is_config_file
+msgid "Has a configuration files"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_access_search
+msgid "Has a password"
+msgstr ""
+
+#. module: itm
+#: model:ir.module.category,description:itm.module_category_it
+msgid "Helps you manage your infrastructure equipment, access and backups."
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__worklog_ids
+msgid "Historical progress of work that spent on the asset or device"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__function_host
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Host"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__id
+#: model:ir.model.fields,field_description:itm.field_itm_application__id
+#: model:ir.model.fields,field_description:itm.field_itm_application_license__id
+#: model:ir.model.fields,field_description:itm.field_itm_backup__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_brand__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_key__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_selector__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_value__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_type__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_configuration__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_db__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_db_engine__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_dbsetting__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_forward__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_function__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_ipreservation__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_line__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_permission_advanced__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network_proxy__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition_mount__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_rule__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_type__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_worklog__id
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__id
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__id
+#: model:ir.model.fields,field_description:itm.field_itm_service_dhcp4__id
+#: model:ir.model.fields,field_description:itm.field_itm_service_proxy__id
+#: model:ir.model.fields,field_description:itm.field_itm_service_vpn__id
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless__id
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless_ssid__id
+#: model:ir.model.fields,field_description:itm.field_itm_site__id
+#: model:ir.model.fields,field_description:itm.field_itm_site_network__id
+#: model:ir.model.fields,field_description:itm.field_itm_site_network_ip4__id
+#: model:ir.model.fields,field_description:itm.field_itm_wizard_credential__id
+msgid "ID"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_backup_search
+msgid "INC"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_backup__type__inc
+msgid "INCREMENTAL"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_site_network_form
+msgid "IP Addresses"
+msgstr ""
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_ipreservation
+msgid "IP Reservation"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_service_dhcp4_form
+msgid "IP Reservations"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_ipreservation__ip_address
+msgid "IP address"
+msgstr ""
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/site.py:0
+#, python-format
+msgid "IP address '%s' already exists."
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network__dhcp_ipv4_id
+msgid "IPv4 Address"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__ip4_ids
+#: model:ir.model.fields,field_description:itm.field_itm_site_network__ip4_ids
+msgid "IPv4 Addresses"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_dhcp4__reservation_ids
+msgid "IPv4 reservations"
+msgstr ""
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment
+msgid "IT Asset"
+msgstr ""
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_brand
+msgid "IT Asset Brand Name"
+msgstr ""
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.itm_equipment_action
+#: model:ir.ui.menu,name:itm.itm_equipment
+#: model:ir.ui.menu,name:itm.itm_menu_general
+msgid "IT Assets"
+msgstr ""
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_function
+msgid "IT Function"
+msgstr ""
+
+#. module: itm
+#: model:ir.module.category,name:itm.module_category_it
+msgid "IT Infrastructure Management"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_site_network_form
+msgid "IT Network"
+msgstr ""
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_site
+#: model_terms:ir.ui.view,arch_db:itm.itm_site_form
+msgid "IT Site"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__activity_exception_icon
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__activity_exception_icon
+#: model:ir.model.fields,field_description:itm.field_itm_site__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__activity_exception_icon
+#: model:ir.model.fields,help:itm.field_itm_equipment_component__activity_exception_icon
+#: model:ir.model.fields,help:itm.field_itm_site__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition__name
+msgid "Identificator"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment_partition__name
+msgid "Identificator or flag for ease identification"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_access__message_needaction
+#: model:ir.model.fields,help:itm.field_itm_equipment__message_needaction
+#: model:ir.model.fields,help:itm.field_itm_equipment_component__message_needaction
+#: model:ir.model.fields,help:itm.field_itm_service_ad__message_needaction
+#: model:ir.model.fields,help:itm.field_itm_site__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_access__message_has_error
+#: model:ir.model.fields,help:itm.field_itm_equipment__message_has_error
+#: model:ir.model.fields,help:itm.field_itm_equipment_component__message_has_error
+#: model:ir.model.fields,help:itm.field_itm_service_ad__message_has_error
+#: model:ir.model.fields,help:itm.field_itm_site__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_service_wireless_ssid__is_guest
+msgid "If checked, this is a Guest SSID"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_equipment__state__in_repair
+msgid "In repair"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_equipment__state__in_store
+msgid "In store"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_equipment__state__in_use
+msgid "In use"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_access_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_backup_form
+msgid "Information"
+msgstr ""
+
+#. module: itm
+#: model:ir.ui.menu,name:itm.menu_main_itm
+msgid "Infrastructure"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_application_form
+msgid "Installations"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network__name
+msgid "Interface Name"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__contract_direction
+#: model:ir.model.fields,help:itm.field_itm_equipment__contract_direction
+msgid "Invoice Direction"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__message_is_follower
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__message_is_follower
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__message_is_follower
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__message_is_follower
+#: model:ir.model.fields,field_description:itm.field_itm_site__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless_ssid__is_guest
+msgid "Is Guest"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_application__key
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification__key_id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_selector__key_ids
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_type__key_ids
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless_ssid__passkey
+msgid "Key"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.component_type_form
+msgid "Key Form"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_application__keygen
+msgid "Keygen"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_application____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_application_license____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_backup____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_brand____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_key____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_selector____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_value____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_type____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_configuration____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_db____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_db_engine____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_dbsetting____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_forward____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_function____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_ipreservation____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_line____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_permission_advanced____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network_proxy____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition_mount____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_rule____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_type____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_worklog____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad_object____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_service_dhcp4____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_service_proxy____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_service_vpn____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless_ssid____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_site____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_site_network____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_site_network_ip4____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_wizard_credential____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__last_name
+msgid "Last Name"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_application__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_application_license__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_backup__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_brand__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_key__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_selector__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_value__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_type__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_configuration__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_db__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_db_engine__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_dbsetting__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_forward__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_function__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_ipreservation__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_line__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_permission_advanced__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network_proxy__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition_mount__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_rule__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_type__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_worklog__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_service_dhcp4__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_service_proxy__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_service_vpn__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless_ssid__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_site__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_site_network__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_site_network_ip4__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_wizard_credential__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_application__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_application_license__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_backup__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_brand__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_key__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_selector__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_value__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_type__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_configuration__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_db__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_db_engine__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_dbsetting__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_forward__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_function__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_ipreservation__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_line__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_permission_advanced__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network_proxy__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition_mount__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_rule__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_type__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_worklog__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_service_dhcp4__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_service_proxy__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_service_vpn__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless_ssid__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_site__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_site_network__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_site_network_ip4__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_wizard_credential__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_dhcp4__lease_time
+msgid "Lease Time"
+msgstr ""
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_application_license
+#: model:ir.model.fields,field_description:itm.field_itm_application__license_id
+#: model_terms:ir.ui.view,arch_db:itm.itm_application_license_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_application_search
+msgid "License"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_application__license_type
+msgid "License Type"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_application__license_type
+msgid "License name"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_application__license_id
+msgid "License type"
+msgstr ""
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.itm_application_license_action
+#: model:ir.ui.menu,name:itm.itm_application_license
+msgid "Licenses"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_application__link_page
+msgid "Link"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_application_form
+msgid "Links and Docs"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_equipment__state__loaned
+msgid "Loaned"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__location
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Location"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_worklog__description
+msgid "Long Description"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network__mac
+msgid "MAC Address"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_ipreservation__mac_address
+msgid "Mac Address"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__message_main_attachment_id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__message_main_attachment_id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__message_main_attachment_id
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__message_main_attachment_id
+#: model:ir.model.fields,field_description:itm.field_itm_site__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_res_partner__manage_it
+#: model:ir.model.fields,field_description:itm.field_res_users__manage_it
+#: model_terms:ir.ui.view,arch_db:itm.itm_partner_filter
+msgid "Manage IT"
+msgstr ""
+
+#. module: itm
+#: model:res.groups,name:itm.group_itm_manager
+msgid "Manager"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__manufacturer_id
+#: model_terms:ir.ui.view,arch_db:itm.component_search
+msgid "Manufacturer"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_line__map_id
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_mapping_form
+msgid "Mapping"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_application__active
+msgid "Mark if this app is currently used and running"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__virtual_memory_amount
+msgid "Memory"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__message_has_error
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__message_has_error
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__message_has_error
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__message_has_error
+#: model:ir.model.fields,field_description:itm.field_itm_site__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__message_ids
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__message_ids
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__message_ids
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__message_ids
+#: model:ir.model.fields,field_description:itm.field_itm_site__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__model
+msgid "Model"
+msgstr ""
+
+#. module: itm
+#: model:res.groups,name:itm.group_itm_mod
+msgid "Moderator"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition__mount_ids
+msgid "Mount on this partition"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment_partition__mount_ids
+msgid "Mount partition"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__my_activity_date_deadline
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__my_activity_date_deadline
+#: model:ir.model.fields,field_description:itm.field_itm_site__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__contract_nif
+msgid "NIF"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_wireless_ssid__auth_type__none
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_wireless_ssid__encryption_type__none
+msgid "NONE"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_application__name
+#: model:ir.model.fields,field_description:itm.field_itm_application_license__name
+#: model:ir.model.fields,field_description:itm.field_itm_backup__name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_brand__name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_key__name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_selector__name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_value__name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_type__name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_db__name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_db_engine__name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_forward__name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_function__name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_line__name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_permission_advanced__name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition_mount__name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_rule__name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_type__name
+#: model:ir.model.fields,field_description:itm.field_itm_service_dhcp4__name
+#: model:ir.model.fields,field_description:itm.field_itm_service_proxy__name
+#: model:ir.model.fields,field_description:itm.field_itm_service_vpn__name
+#: model:ir.model.fields,field_description:itm.field_itm_site__name
+#: model:ir.model.fields,field_description:itm.field_itm_site_network_ip4__name
+#: model:ir.model.fields,field_description:itm.field_itm_wizard_credential__name
+#: model_terms:ir.ui.view,arch_db:itm.component_search
+#: model_terms:ir.ui.view,arch_db:itm.spec_value_search
+msgid "Name"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_application__name
+msgid "Name of the application"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_site_network__netmask
+msgid "Netmask"
+msgstr ""
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_site_network
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network__network_id
+#: model:ir.model.fields,field_description:itm.field_itm_service_dhcp4__network_id
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless__network_id
+#: model:ir.model.fields,field_description:itm.field_itm_site_network_ip4__network_id
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_network_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_site_network_form
+msgid "Network"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Network Asset"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+msgid "Network Configuration"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_brand__is_network
+msgid "Network Devices"
+msgstr ""
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_site_network_ip4
+msgid "Network IPv4 Address"
+msgstr ""
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_network
+msgid "Network Interface"
+msgstr ""
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_network_proxy
+msgid "Network Proxy Configuration"
+msgstr ""
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_service_proxy
+msgid "Network Proxy Service"
+msgstr ""
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_mapping
+msgid "Network Share Mapping"
+msgstr ""
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_mapping_line
+msgid "Network Share Mapping Line"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__equipment_mapping_ids
+msgid "Network Shares"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__equipment_network_ids
+msgid "Network on this equipment"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__equipment_network_ids
+msgid "Network setup that configured within this asset or device"
+msgstr ""
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.itm_network_action
+#: model:ir.model.fields,field_description:itm.field_itm_site__network_ids
+#: model:ir.ui.menu,name:itm.itm_network_menu
+#: model_terms:ir.ui.view,arch_db:itm.itm_site_form
+msgid "Networks"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_wizard_credential_form
+msgid "New Credential"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__activity_date_deadline
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__activity_date_deadline
+#: model:ir.model.fields,field_description:itm.field_itm_site__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__activity_summary
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__activity_summary
+#: model:ir.model.fields,field_description:itm.field_itm_site__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__activity_type_id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__activity_type_id
+#: model:ir.model.fields,field_description:itm.field_itm_site__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_access_search
+msgid "No Password"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_application__note
+#: model:ir.model.fields,field_description:itm.field_itm_backup__note
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__note
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network__note
+msgid "Note"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_application__note
+msgid "Note for this application eg"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__message_needaction_counter
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__message_needaction_counter
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__message_needaction_counter
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__message_needaction_counter
+#: model:ir.model.fields,field_description:itm.field_itm_site__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__virtual_network_amount
+msgid "Number of Network"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__virtual_processor_amount
+msgid "Number of Processor"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__message_has_error_counter
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__message_has_error_counter
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__message_has_error_counter
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__message_has_error_counter
+#: model:ir.model.fields,field_description:itm.field_itm_site__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_access__message_needaction_counter
+#: model:ir.model.fields,help:itm.field_itm_equipment__message_needaction_counter
+#: model:ir.model.fields,help:itm.field_itm_equipment_component__message_needaction_counter
+#: model:ir.model.fields,help:itm.field_itm_service_ad__message_needaction_counter
+#: model:ir.model.fields,help:itm.field_itm_site__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_access__message_has_error_counter
+#: model:ir.model.fields,help:itm.field_itm_equipment__message_has_error_counter
+#: model:ir.model.fields,help:itm.field_itm_equipment_component__message_has_error_counter
+#: model:ir.model.fields,help:itm.field_itm_service_ad__message_has_error_counter
+#: model:ir.model.fields,help:itm.field_itm_site__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_application__license_type__opensource
+msgid "OPEN SOURCE"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__os_name
+msgid "OS Name"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_backup__type__other
+#: model_terms:ir.ui.view,arch_db:itm.itm_backup_search
+msgid "OTHER"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__type
+msgid "Object Type"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_application__link_page
+msgid "Official website link of the application"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_application_search
+msgid "OpenSource"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_application_search
+msgid "OpenSource Applications"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__is_os
+msgid "Operating System"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__os_name
+msgid "Operating system which is installed on device, eg. Windows 10, Ubuntu"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__code
+msgid "Organization specific inventory code"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_wireless_ssid__auth_type__other
+msgid "Other"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Own"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__owner
+msgid "Owner"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_ad__type__primary
+msgid "PRIMARY"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_dbsetting__name
+msgid "Parameter"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_type__parent_id
+msgid "Parent"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_type__parent_path
+msgid "Parent Path"
+msgstr ""
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_partition
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition_mount__partition_id
+msgid "Partition"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+msgid "Partition Information"
+msgstr ""
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_partition_mount
+msgid "Partition Mounts"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment_partition__format
+msgid "Partition format type"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__partitions_ids
+msgid "Partition on this equipment"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Partitioned"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__is_partitioned
+msgid "Partitions"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__partitions_ids
+msgid "Partitions on this equipment"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__partner_id
+#: model:ir.model.fields,field_description:itm.field_itm_backup__partner_id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__partner_id
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__partner_id
+#: model:ir.model.fields,field_description:itm.field_itm_site__partner_id
+#: model:ir.model.fields,field_description:itm.field_itm_wizard_credential__partner_id
+#: model_terms:ir.ui.view,arch_db:itm.itm_access_search
+#: model_terms:ir.ui.view,arch_db:itm.itm_backup_search
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+#: model_terms:ir.ui.view,arch_db:itm.itm_service_ad_search
+msgid "Partner"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__password
+#: model:ir.model.fields,field_description:itm.field_itm_wizard_credential__password
+msgid "Password"
+msgstr ""
+
+#. module: itm
+#. odoo-javascript
+#: code:addons/itm/static/src/js/itm_password_char_field.esm.js:0
+#, python-format
+msgid "Password copied to clipboard"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_rule__permission
+msgid "Permission"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_mapping_form
+msgid "Permission Lines"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping__line_ids
+msgid "Permission lines"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment_mapping__line_ids
+msgid "Permission setup"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__image
+msgid "Photo"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Physical Asset"
+msgstr ""
+
+#. module: itm
+#: model:res.groups,name:itm.group_itm_portal
+msgid "Portal"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification__possible_key_ids
+msgid "Possible Key"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__ssl_privatekey
+msgid "Private Key"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__ssl_privatekey_filename
+msgid "Private Key Filename"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__product_id
+msgid "Product"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+msgid "Product Data"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__product_note
+msgid "Product Note"
+msgstr ""
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.itm_component_action
+#: model:ir.ui.menu,name:itm.itm_component
+msgid "Products"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_proxy__adblocking
+msgid "Proxy Ad Blocking"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_proxy__cache_size
+msgid "Proxy Cache File Size"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__proxy_client_config_id
+msgid "Proxy Configuration"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_proxy__enable_ssk
+msgid "Proxy Enable Single Sign-On (Kerberos)"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network_proxy__name
+msgid "Proxy Hostname"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_proxy__port
+msgid "Proxy Port"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__proxy_service_id
+msgid "Proxy Service"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__ssl_publickey
+msgid "Public Key"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__ssl_publickey_filename
+msgid "Public Key Filename"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_partition_form
+msgid "RAID1"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_wizard_credential__use_random
+msgid "Random password"
+msgstr ""
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/equipment_mapping.py:0
+#: model:ir.model.fields.selection,name:itm.selection__itm_equipment_mapping_line__perm_simple__read
+#, python-format
+msgid "Read"
+msgstr ""
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/equipment_mapping.py:0
+#: model:ir.model.fields.selection,name:itm.selection__itm_equipment_mapping_line__perm_simple__write
+#, python-format
+msgid "Read/Write"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_vpn__gateway
+msgid "Redirect Gateway"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__access_id
+msgid "Related Credential"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__activity_user_id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__activity_user_id
+#: model:ir.model.fields,field_description:itm.field_itm_site__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_equipment__state__retired
+msgid "Retired"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__function_router
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Router"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+msgid "Router Configuration"
+msgstr ""
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_forward
+msgid "Router Forwarding Rule"
+msgstr ""
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_rule
+msgid "Router Rule"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__router_rules_ids
+msgid "Router's firewall rules"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__router_forward_ids
+msgid "Router's forward rules"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_ad__type__secundary
+msgid "SECONDARY"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_ad__type__slave
+msgid "SLAVE"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless__bssid_ids
+msgid "SSI"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless_ssid__name
+msgid "SSID"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_service_wireless_form
+msgid "SSID List"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_access_form
+msgid "SSL"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_backup__script
+msgid "Script"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_backup__script_filename
+msgid "Script Filename"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_backup__script_location
+msgid "Script Location"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__product_serial_number
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__serial_number
+msgid "Serial Number"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+msgid "Service Information"
+msgstr ""
+
+#. module: itm
+#: model:ir.ui.menu,name:itm.itm_menu_services
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+msgid "Services"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_db__setting_ids
+msgid "Settings"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping__name
+msgid "Share Name"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_permission_advanced__line_id
+msgid "Share mapping"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment_mapping_line__name
+msgid "Sharing partition or folder name"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_worklog__name
+msgid "Short Description"
+msgstr ""
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/equipment_mapping.py:0
+#: model:ir.model.fields.selection,name:itm.selection__itm_equipment_mapping_line__type__simple
+#, python-format
+msgid "Simple Sharing"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_line__perm_simple
+msgid "Simple permissions"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__site_id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__site_id
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__site_id
+#: model:ir.model.fields,field_description:itm.field_itm_site_network__site_id
+#: model:ir.model.fields,field_description:itm.field_itm_wizard_credential__site_id
+#: model_terms:ir.ui.view,arch_db:itm.itm_access_search
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+#: model_terms:ir.ui.view,arch_db:itm.itm_service_ad_search
+msgid "Site"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_site_search
+msgid "Site Search"
+msgstr ""
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.itm_site_action
+#: model:ir.ui.menu,name:itm.itm_menu_sites
+#: model:ir.ui.menu,name:itm.itm_site_menu
+msgid "Sites"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition_mount__size
+msgid "Size"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Software Asset"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_backup__source
+msgid "Source"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_forward__source_address
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_rule__source_address
+msgid "Source Address"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_forward__source_port
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_rule__source_port
+msgid "Source Port"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__spec_line_ids
+msgid "Spec Line"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.component_form
+#: model_terms:ir.ui.view,arch_db:itm.specification_form
+msgid "Specification"
+msgstr ""
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.spec_key_action
+#: model:ir.ui.menu,name:itm.spec_key_menu
+msgid "Specification Keys"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.spec_value_search
+msgid "Specification Selector"
+msgstr ""
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.spec_selector_action
+#: model:ir.ui.menu,name:itm.spec_selector_menu
+msgid "Specification Selectors"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.spec_value_form
+msgid "Specification Value"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.spec_value_search
+msgid "Specification Value Search"
+msgstr ""
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.spec_value_action
+#: model:ir.ui.menu,name:itm.spec_value_menu
+msgid "Specification Values"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.component_form
+msgid "Specifications"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_worklog__spent_time
+msgid "Spent Time"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_dhcp4__start_address
+msgid "Start Address"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__state
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "State"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network__static_ipv4_id
+msgid "Static IPv4 Address"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__activity_state
+#: model:ir.model.fields,help:itm.field_itm_equipment_component__activity_state
+#: model:ir.model.fields,help:itm.field_itm_site__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__is_config_file
+msgid "Store Config Files"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_wizard_credential_form
+msgid "Submit"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_dhcp4__subnet
+#: model:ir.model.fields,field_description:itm.field_itm_site_network__subnet
+msgid "Subnet"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_dhcp4__subnet_mask
+msgid "Subnet Mask"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_equipment_forward__type__tcp
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_vpn__protocol__tcp
+msgid "TCP"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_wireless_ssid__encryption_type__tkip
+msgid "TKIP"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__brand
+msgid "The assets or device brand"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__contract_client_number
+msgid "The client number of the contractor"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__contract_nif
+msgid "The tax number for natural and legal person"
+msgstr ""
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/equipment_component.py:0
+#, python-format
+msgid ""
+"The value you entered must be unique within its Value Type.\n"
+"Previous record: Value Type: %(vname)s, Name: %(name)s"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__function_wireless
+msgid "This asset acts as a wireless access point or router"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__is_backup
+msgid "This asset or device is a backup"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__function_database
+msgid "This asset or device is a database server"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__function_fileserver
+msgid "This asset or device is a fileserver"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__function_host
+msgid "This asset or device is a host"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__function_router
+msgid "This asset or device is a network router"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__is_application
+msgid "This asset or device is an application"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__is_contracted
+msgid "This asset or device is contracted from other company"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__is_partitioned
+msgid "This device is partitioned"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_backup__time_schedule
+msgid "Time Schedule"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__contract_owner
+msgid "Titular"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_proxy__transparent
+msgid "Transparent Proxy"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_forward__type
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_line__type
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition__type
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless__type
+#: model_terms:ir.ui.view,arch_db:itm.itm_application_search
+#: model_terms:ir.ui.view,arch_db:itm.itm_backup_search
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Type"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__activity_exception_decoration
+#: model:ir.model.fields,help:itm.field_itm_equipment_component__activity_exception_decoration
+#: model:ir.model.fields,help:itm.field_itm_site__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_equipment_forward__type__udp
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_vpn__protocol__udp
+msgid "UDP"
+msgstr ""
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/equipment_mapping.py:0
+#, python-format
+msgid "Unknown"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network__use_dhcp4
+msgid "Use IPv4 DHCP"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__use_proxy
+msgid "Use Proxy"
+msgstr ""
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/service_ad.py:0
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_worklog__user_id
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_ad_object__type__user
+#: model:res.groups,name:itm.group_itm_user
+#, python-format
+msgid "User"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__logon_name
+msgid "User logon name"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__name
+msgid "Username"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_vpn__address
+msgid "VPN Address"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_vpn__c2c
+msgid "VPN Allow Client to Client connections"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_vpn__nat
+msgid "VPN Network Address Traslation"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_vpn__protocol
+msgid "VPN Protocol"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_vpn__search_domain
+msgid "VPN Search Domain"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_vpn__server_cert
+msgid "VPN Server Certificate"
+msgstr ""
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_service_vpn
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__vpn_service_id
+msgid "VPN Service"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_vpn__tun
+msgid "VPN Tun Interface"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_vpn__wins_server
+msgid "VPN WINS Server"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.component_type_form
+#: model_terms:ir.ui.view,arch_db:itm.spec_selector_form
+msgid "Valid Keys"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.spec_selector_form
+msgid "Valid Values"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification__value_id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_selector__value_ids
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_dbsetting__value
+msgid "Value"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification__value_type_id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_key__value_type_id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_value__value_type_id
+msgid "Value Type"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Virtual Asset"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__virtual_parent_id
+msgid "Virtual Machine"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+msgid "Virtual Machine Data"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_wireless_ssid__auth_type__wep128
+msgid "WEP-128bits"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_wireless_ssid__auth_type__wep64
+msgid "WEP-64bits"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_wireless_ssid__auth_type__wpa_ent
+msgid "WPA Enterprise"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_wireless_ssid__auth_type__wpa
+msgid "WPA Personal (Pre-shared key)"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_wireless_ssid__auth_type__wpa2_ent
+msgid "WPA2 Enterprise"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_wireless_ssid__auth_type__wpa2
+msgid "WPA2 Personal (Pre-shared key)"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__product_warranty
+msgid "Warranty"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_application__is_webapp
+msgid "Web Application"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__website_message_ids
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__website_message_ids
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__website_message_ids
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__website_message_ids
+#: model:ir.model.fields,field_description:itm.field_itm_site__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_access__website_message_ids
+#: model:ir.model.fields,help:itm.field_itm_equipment__website_message_ids
+#: model:ir.model.fields,help:itm.field_itm_equipment_component__website_message_ids
+#: model:ir.model.fields,help:itm.field_itm_service_ad__website_message_ids
+#: model:ir.model.fields,help:itm.field_itm_site__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.itm_service_wireless_action
+#: model:ir.ui.menu,name:itm.itm_wireless_menu
+msgid "Wireless"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__function_wireless
+msgid "Wireless Access Device"
+msgstr ""
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_service_wireless_ssid
+msgid "Wireless Base Station ID"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Wireless Device"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_wireless__type__router_wireless
+msgid "Wireless Router"
+msgstr ""
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_service_wireless
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__wireless_service_id
+msgid "Wireless Service"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_service_wireless_form
+msgid "Wireless Settings"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless_ssid__wireless_id
+msgid "Wireless service"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "With Applications"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "With Backup"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Without Applications"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Without Backup"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_worklog_form
+msgid "Worklog"
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__worklog_ids
+msgid "Worklogs on this equipment"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_application_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_network_form
+msgid "Write a note ..."
+msgstr ""
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/service_ad.py:0
+#, python-format
+msgid "You cannot create recursive Active Directory objects."
+msgstr ""
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__configuration_file_ids
+msgid "configuration file of this asset or device"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_network_form
+msgid "eth0"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_partition_form
+msgid "ext4"
+msgstr ""
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_wizard_credential_form
+msgid "or"
+msgstr ""

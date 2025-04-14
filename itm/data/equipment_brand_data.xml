@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+
+    <record id="brand_1" model="itm.equipment.brand">
+        <field name="name">Dell</field>
+        <field name="is_computer" eval="True" />
+        <field name="is_accessories" eval="True" />
+    </record>
+
+    <record id="brand_2" model="itm.equipment.brand">
+        <field name="name">HP</field>
+        <field name="is_computer" eval="True" />
+        <field name="is_accessories" eval="True" />
+    </record>
+
+    <record id="brand_3" model="itm.equipment.brand">
+        <field name="name">Cisco</field>
+        <field name="is_network" eval="True" />
+    </record>
+
+    <record id="brand_4" model="itm.equipment.brand">
+        <field name="name">D-Link</field>
+        <field name="is_network" eval="True" />
+    </record>
+
+    <record id="brand_5" model="itm.equipment.brand">
+        <field name="name">TP-Link</field>
+        <field name="is_network" eval="True" />
+    </record>
+
+    <record id="brand_6" model="itm.equipment.brand">
+        <field name="name">Ubiquiti</field>
+        <field name="is_network" eval="True" />
+    </record>
+
+</odoo>

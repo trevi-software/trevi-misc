@@ -1,0 +1,6 @@
+<odoo>
+    <!-- Migration for new field "network_id" of itm.site.network.ip4 -->
+    <function model="itm.site.network.ip4" name="_initialize_network_id">
+        <value />
+    </function>
+</odoo>

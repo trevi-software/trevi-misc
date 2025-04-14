@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+
+    <record id="perm_full" model="itm.equipment.mapping.permission.advanced">
+        <field name="name">Full Control</field>
+    </record>
+
+    <record id="perm_change" model="itm.equipment.mapping.permission.advanced">
+        <field name="name">Change</field>
+    </record>
+
+    <record id="perm_read" model="itm.equipment.mapping.permission.advanced">
+        <field name="name">Read</field>
+    </record>
+
+</odoo>

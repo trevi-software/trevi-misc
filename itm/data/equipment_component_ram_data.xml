@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo noupdate="1">
+
+    <!-- Component Spec Value: RAM Speed-->
+    <record id="ddr3_1333" model="itm.equipment.component.specification.value">
+        <field name="name">DDR3 1333</field>
+        <field name="value_type_id" ref="sel_ramspeed" />
+    </record>
+    <record id="ddr3_1500" model="itm.equipment.component.specification.value">
+        <field name="name">DDR3 1500</field>
+        <field name="value_type_id" ref="sel_ramspeed" />
+    </record>
+    <record id="ddr3_1600" model="itm.equipment.component.specification.value">
+        <field name="name">DDR3 1600</field>
+        <field name="value_type_id" ref="sel_ramspeed" />
+    </record>
+    <record id="ddr3_1800" model="itm.equipment.component.specification.value">
+        <field name="name">DDR3 1800</field>
+        <field name="value_type_id" ref="sel_ramspeed" />
+    </record>
+    <record id="ddr3_2400" model="itm.equipment.component.specification.value">
+        <field name="name">DDR3 2400</field>
+        <field name="value_type_id" ref="sel_ramspeed" />
+    </record>
+    <record id="ddr3_2666" model="itm.equipment.component.specification.value">
+        <field name="name">DDR3 2666</field>
+        <field name="value_type_id" ref="sel_ramspeed" />
+    </record>
+    <record id="ddr4_2133" model="itm.equipment.component.specification.value">
+        <field name="name">DDR4 2133</field>
+        <field name="value_type_id" ref="sel_ramspeed" />
+    </record>
+    <record id="ddr4_2400" model="itm.equipment.component.specification.value">
+        <field name="name">DDR4 2400</field>
+        <field name="value_type_id" ref="sel_ramspeed" />
+    </record>
+    <record id="ddr4_2666" model="itm.equipment.component.specification.value">
+        <field name="name">DDR4 2666</field>
+        <field name="value_type_id" ref="sel_ramspeed" />
+    </record>
+    <record id="ddr4_2800" model="itm.equipment.component.specification.value">
+        <field name="name">DDR4 2800</field>
+        <field name="value_type_id" ref="sel_ramspeed" />
+    </record>
+    <record id="ddr4_2933" model="itm.equipment.component.specification.value">
+        <field name="name">DDR4 2933</field>
+        <field name="value_type_id" ref="sel_ramspeed" />
+    </record>
+    <record id="ddr4_3000" model="itm.equipment.component.specification.value">
+        <field name="name">DDR4 3000</field>
+        <field name="value_type_id" ref="sel_ramspeed" />
+    </record>
+    <record id="ddr4_3200" model="itm.equipment.component.specification.value">
+        <field name="name">DDR4 3200</field>
+        <field name="value_type_id" ref="sel_ramspeed" />
+    </record>
+    <record id="ddr4_3300" model="itm.equipment.component.specification.value">
+        <field name="name">DDR4 3300</field>
+        <field name="value_type_id" ref="sel_ramspeed" />
+    </record>
+    <record id="ddr4_3333" model="itm.equipment.component.specification.value">
+        <field name="name">DDR4 3333</field>
+        <field name="value_type_id" ref="sel_ramspeed" />
+    </record>
+    <record id="ddr4_3400" model="itm.equipment.component.specification.value">
+        <field name="name">DDR4 3400</field>
+        <field name="value_type_id" ref="sel_ramspeed" />
+    </record>
+    <record id="ddr4_3466" model="itm.equipment.component.specification.value">
+        <field name="name">DDR4 3466</field>
+        <field name="value_type_id" ref="sel_ramspeed" />
+    </record>
+    <record id="ddr4_3600" model="itm.equipment.component.specification.value">
+        <field name="name">DDR4 3600</field>
+        <field name="value_type_id" ref="sel_ramspeed" />
+    </record>
+    <record id="ddr4_3733" model="itm.equipment.component.specification.value">
+        <field name="name">DDR4 3733</field>
+        <field name="value_type_id" ref="sel_ramspeed" />
+    </record>
+    <record id="ddr4_3800" model="itm.equipment.component.specification.value">
+        <field name="name">DDR4 3800</field>
+        <field name="value_type_id" ref="sel_ramspeed" />
+    </record>
+    <record id="ddr4_3866" model="itm.equipment.component.specification.value">
+        <field name="name">DDR4 3866</field>
+        <field name="value_type_id" ref="sel_ramspeed" />
+    </record>
+    <record id="ddr4_4000" model="itm.equipment.component.specification.value">
+        <field name="name">DDR4 4000</field>
+        <field name="value_type_id" ref="sel_ramspeed" />
+    </record>
+    <record id="ddr4_4133" model="itm.equipment.component.specification.value">
+        <field name="name">DDR4 4133</field>
+        <field name="value_type_id" ref="sel_ramspeed" />
+    </record>
+    <record id="ddr4_4266" model="itm.equipment.component.specification.value">
+        <field name="name">DDR4 4266</field>
+        <field name="value_type_id" ref="sel_ramspeed" />
+    </record>
+    <record id="ddr4_4400" model="itm.equipment.component.specification.value">
+        <field name="name">DDR4 4400</field>
+        <field name="value_type_id" ref="sel_ramspeed" />
+    </record>
+    <record id="ddr4_4500" model="itm.equipment.component.specification.value">
+        <field name="name">DDR4 4500</field>
+        <field name="value_type_id" ref="sel_ramspeed" />
+    </record>
+    <record id="ddr4_4600" model="itm.equipment.component.specification.value">
+        <field name="name">DDR4 4600</field>
+        <field name="value_type_id" ref="sel_ramspeed" />
+    </record>
+    <record id="ddr4_4800" model="itm.equipment.component.specification.value">
+        <field name="name">DDR4 4800</field>
+        <field name="value_type_id" ref="sel_ramspeed" />
+    </record>
+    <record id="ddr4_5066" model="itm.equipment.component.specification.value">
+        <field name="name">DDR4 5066</field>
+        <field name="value_type_id" ref="sel_ramspeed" />
+    </record>
+    <record id="ddr4_5333" model="itm.equipment.component.specification.value">
+        <field name="name">DDR4 5333</field>
+        <field name="value_type_id" ref="sel_ramspeed" />
+    </record>
+    <record id="ddr5_4800" model="itm.equipment.component.specification.value">
+        <field name="name">DDR5 4800</field>
+        <field name="value_type_id" ref="sel_ramspeed" />
+    </record>
+    <record id="ddr5_5000" model="itm.equipment.component.specification.value">
+        <field name="name">DDR5 5000</field>
+        <field name="value_type_id" ref="sel_ramspeed" />
+    </record>
+    <record id="ddr5_52003" model="itm.equipment.component.specification.value">
+        <field name="name">DDR5 5200</field>
+        <field name="value_type_id" ref="sel_ramspeed" />
+    </record>
+
+</odoo>
