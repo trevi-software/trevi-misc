@@ -142,4 +142,6 @@ export class PasswordCharField extends CharField {
     }
 }
 PasswordCharField.template = "itm.PasswordCharField";
-registry.category("fields").add("password_char", PasswordCharField);
+registry.category("fields").add("password_char", {
+    component: PasswordCharField
+});
