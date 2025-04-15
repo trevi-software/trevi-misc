@@ -31,6 +31,7 @@ export class PasswordCharField extends CharField {
         this.cbRef = useRef("clipboard-btn");
         this.ciphertext = "";
         this.is_edited = 0;
+        this.clipboard = false;
 
         onWillStart(async () => {
             this.ciphertext = this.props.value;
@@ -58,7 +59,9 @@ export class PasswordCharField extends CharField {
         });
 
         onWillUnmount(async () => {
-            this.clipboard.destroy();
+            if (this.clipboard) {
+                this.clipboard.destroy();
+            }
         });
     }
 
@@ -143,5 +146,5 @@ export class PasswordCharField extends CharField {
 }
 PasswordCharField.template = "itm.PasswordCharField";
 registry.category("fields").add("password_char", {
-    component: PasswordCharField
+    component: PasswordCharField,
 });

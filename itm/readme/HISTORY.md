@@ -1,3 +1,3 @@
-## 16.0.2.0.0 (2022-11-01)
+## 18.0.1.0.1 (2025-04-15)
 
-- \[IMP\] Use the new Odoo javascript framework OWL
+- \[FIX\] Javascript OWL component intialization 
