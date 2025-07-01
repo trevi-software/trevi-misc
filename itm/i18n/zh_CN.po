@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 20250701\n"
-"PO-Revision-Date: 20250701\n"
+"PO-Revision-Date: 2025-07-01 13:06+0800\n"
 "Last-Translator: 老天281388878@qq.com\n"
 "Language-Team: 开源之家odoo123.com\n"
 "Language: zh_CN\n"
@@ -297,7 +297,7 @@ msgstr "启用"
 #: model:ir.ui.menu,name:itm.itm_ad_menu
 #: model_terms:ir.ui.view,arch_db:itm.itm_service_ad_form
 msgid "Active Directory"
-msgstr "活动目录"
+msgstr "Active Directory"
 
 #. module: itm
 #: model:ir.model,name:itm.model_itm_service_ad_object
@@ -830,7 +830,7 @@ msgstr "承包商"
 #. module: itm
 #: model:ir.model.fields,field_description:itm.field_itm_equipment__is_contracted
 msgid "Contracted Service"
-msgstr "承包服务"
+msgstr "外包服务"
 
 #. module: itm
 #: model:ir.model.fields,field_description:itm.field_itm_equipment__contract_partner_id
@@ -1716,7 +1716,7 @@ msgstr "信息"
 #. module: itm
 #: model:ir.ui.menu,name:itm.menu_main_itm
 msgid "Infrastructure"
-msgstr "基础设施"
+msgstr "IT资产管理"
 
 #. module: itm
 #: model:ir.model.fields,field_description:itm.field_itm_equipment__product_install_date
@@ -1765,7 +1765,7 @@ msgstr "虚拟机"
 #: model:ir.model.fields,field_description:itm.field_itm_equipment_component_type__key_ids
 #: model:ir.model.fields,field_description:itm.field_itm_service_wireless_ssid__passkey
 msgid "Key"
-msgstr "Key"
+msgstr "键"
 
 #. module: itm
 #: model_terms:ir.ui.view,arch_db:itm.component_type_form
@@ -1917,7 +1917,7 @@ msgstr "最后更新于"
 #. module: itm
 #: model:ir.model.fields,field_description:itm.field_itm_service_dhcp4__lease_time
 msgid "Lease Time"
-msgstr "租赁时间"
+msgstr "租期"
 
 #. module: itm
 #: model:ir.model,name:itm.model_itm_application_license
@@ -1998,7 +1998,7 @@ msgstr "主附件"
 #: model:ir.model.fields,field_description:itm.field_res_users__manage_it
 #: model_terms:ir.ui.view,arch_db:itm.itm_partner_filter
 msgid "Manage IT"
-msgstr "管理IT"
+msgstr "IT资产管理员"
 
 #. module: itm
 #: model:res.groups,name:itm.group_itm_manager
@@ -2813,7 +2813,7 @@ msgstr "规格"
 #: model:ir.actions.act_window,name:itm.spec_key_action
 #: model:ir.ui.menu,name:itm.spec_key_menu
 msgid "Specification Keys"
-msgstr "规格 Keys"
+msgstr "Keys"
 
 #. module: itm
 #: model_terms:ir.ui.view,arch_db:itm.spec_value_search
@@ -2824,12 +2824,12 @@ msgstr "规格选项"
 #: model:ir.actions.act_window,name:itm.spec_selector_action
 #: model:ir.ui.menu,name:itm.spec_selector_menu
 msgid "Specification Selectors"
-msgstr "规格选项"
+msgstr "选项"
 
 #. module: itm
 #: model_terms:ir.ui.view,arch_db:itm.spec_value_form
 msgid "Specification Value"
-msgstr "规格值"
+msgstr "参数值"
 
 #. module: itm
 #: model_terms:ir.ui.view,arch_db:itm.spec_value_search
@@ -3221,7 +3221,7 @@ msgstr "网站通信历史"
 #: model:ir.actions.act_window,name:itm.itm_service_wireless_action
 #: model:ir.ui.menu,name:itm.itm_wireless_menu
 msgid "Wireless"
-msgstr "Wireless"
+msgstr "无线"
 
 #. module: itm
 #: model:ir.model.fields,field_description:itm.field_itm_equipment__function_wireless
