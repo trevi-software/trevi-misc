@@ -1,8 +1,9 @@
 # Do NOT update manually; changes here will be overwritten by Copier
-_commit: v1.17.1
+_commit: v1.39
 _src_path: https://github.com/OCA/oca-addons-repo-template.git
 ci: GitHub
-dependency_installation_mode: OCA
+convert_readme_fragments_to_markdown: false
+enable_checklog_odoo: false
 generate_requirements_txt: true
 github_check_license: true
 github_ci_extra_env: {}
@@ -20,5 +21,6 @@ repo_description: Miscellaneous Odoo addons by Trevi that do not belong elsewher
 repo_name: Miscellaneous Trevi Addons
 repo_slug: trevi-misc
 repo_website: https://github.com/trevi-software/trevi-misc
-travis_apt_packages: []
-travis_apt_sources: []
+use_pyproject_toml: false
+use_ruff: false
+
