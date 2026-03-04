@@ -1,3 +1,9 @@
+<<<<<<< before updating
+=======
+
+
+# Miscellaneous Trevi Addons
+>>>>>>> after updating
 <!-- /!\ Non OCA Context : Set here the badge of your runbot / runboat instance. -->
 
 [![Pre-commit Status](https://github.com/trevi-software/trevi-misc/actions/workflows/pre-commit.yml/badge.svg?branch=14.0)](https://github.com/trevi-software/trevi-misc/actions/workflows/pre-commit.yml?query=branch%3A14.0)
@@ -8,8 +14,11 @@
 
 <!-- /!\ do not modify above this line -->
 
+<<<<<<< before updating
 # trevi-software
 
+=======
+>>>>>>> after updating
 Miscellaneous Odoo addons by Trevi that do not belong elsewhere.
 
 <!-- /!\ do not modify below this line -->
