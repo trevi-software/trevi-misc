@@ -1,0 +1,3324 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* itm
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 20250701\n"
+"PO-Revision-Date: 2025-07-01 13:06+0800\n"
+"Last-Translator: 老天281388878@qq.com\n"
+"Language-Team: 开源之家odoo123.com\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.5\n"
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/equipment.py:0
+#, python-format
+msgid "%s (copy)"
+msgstr "%s（复制）"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_service_ad_object_form
+msgid "&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"
+msgstr "&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_kanban
+msgid "<b>Brand:</b>"
+msgstr "<b>品牌:</b>"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_kanban
+msgid "<b>Model:</b>"
+msgstr "<b>型号:</b>"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_kanban
+msgid "<b>OS Name:</b>"
+msgstr "<b>操作系统名称:</b>"
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/equipment.py:0
+#, python-format
+msgid ""
+"<div class=\"o_mail_notification\"><ul><li>A new %(desc)s was created: "
+"\t\t\t\t\t<a href=\"#\" class=\"o_redirect\" data-oe-model=itm.equipment "
+"\t\t\t\t\tdata-oe-id=\"%(id)s\"> %(name)s</a></li></ul></div>"
+msgstr ""
+"<div class=\"o_mail_notification\"><ul><li>一个新的 %(desc)s 已创建: "
+"\t\t\t\t\t<a href=\"#\" class=\"o_redirect\" data-oe-model=itm.equipment "
+"\t\t\t\t\tdata-oe-id=\"%(id)s\"> %(name)s</a></li></ul></div>"
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/access.py:0
+#, python-format
+msgid ""
+"<div class=\"o_mail_notification\"><ul><li>A new %(dsc)s was "
+"created:                     <a href=\"#\" class=\"o_redirect\" data-oe-"
+"model=itm.access data-oe-id=\"%(id)s\">                     %(name)s</a></"
+"li></ul></div>"
+msgstr ""
+"<div class=\"o_mail_notification\"><ul><li>一个新的 %(dsc)s 已创"
+"建:                     <a href=\"#\" class=\"o_redirect\" data-oe-model=itm."
+"access data-oe-id=\"%(id)s\">                     %(name)s</a></li></ul></"
+"div>"
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/service_ad.py:0
+#, python-format
+msgid ""
+"<div class=\"o_mail_notification\"><ul><li>A new %(dsc)s was "
+"created:                     <a href=\"#\" class=\"o_redirect\" data-oe-"
+"model=itm.service.ad                     data-oe-id=\"%(id)s\"> %(name)s</"
+"a></li></ul></div>"
+msgstr ""
+"<div class=\"o_mail_notification\"><ul><li>一个新的 %(dsc)s 已创"
+"建:                     <a href=\"#\" class=\"o_redirect\" data-oe-model=itm."
+"service.ad                     data-oe-id=\"%(id)s\"> %(name)s</a></li></"
+"ul></div>"
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/service_ad.py:0
+#, python-format
+msgid ""
+"<div class=\"o_mail_notification\"><ul><li>A new %(dsc)s was "
+"created:                 <a href=\"#\"                 "
+"class=\"o_redirect\"                 data-oe-model=itm.service.ad.object "
+"data-oe-id=\"%(id)s\">                 %(name)s</a></li></ul></div>"
+msgstr ""
+"<div class=\"o_mail_notification\"><ul><li>一个新的 %(dsc)s 已创"
+"建:                 <a href=\"#\"                 "
+"class=\"o_redirect\"                 data-oe-model=itm.service.ad.object "
+"data-oe-id=\"%(id)s\">                 %(name)s</a></li></ul></div>"
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/equipment_component.py:0
+#, python-format
+msgid ""
+"<div class=\"o_mail_notification\"><ul><li>A new %(dsc)s was "
+"installed:                     <a href=\"#\" "
+"class=\"o_redirect\"                     data-oe-model=itm.equipment."
+"component data-oe-id=\"%(id)s\">                     %(name)s</a></li></ul></"
+"div>"
+msgstr ""
+"<div class=\"o_mail_notification\"><ul><li>一个新的 %(dsc)s 已安"
+"装:                     <a href=\"#\" "
+"class=\"o_redirect\"                     data-oe-model=itm.equipment."
+"component data-oe-id=\"%(id)s\">                     %(name)s</a></li></ul></"
+"div>"
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/access.py:0 code:addons/itm/models/service_ad.py:0
+#, python-format
+msgid "<li> %(dsc)s record was deleted: %(name)s</li>"
+msgstr "<li> %(dsc)s 记录已删除: %(name)s</li>"
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/access.py:0 code:addons/itm/models/service_ad.py:0
+#, python-format
+msgid "<li> %(dsc)s was deleted: %(name)s</li>"
+msgstr "<li> %(dsc)s 已删除: %(name)s</li>"
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/service_ad.py:0
+#, python-format
+msgid "<li> %s(dsc) record was deleted: %(name)s</li>"
+msgstr "<li> %s(dsc) 记录已删除: %(name)s</li>"
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/equipment.py:0
+#, python-format
+msgid "<li> %{item}s record was deleted: %{topic}s</li>"
+msgstr "<li> %{item}s 记录已删除: %{topic}s</li>"
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/equipment_component.py:0
+#, python-format
+msgid "<li>A %(dsc)s record was deleted: %(name)s</li>"
+msgstr "<li>A %(dsc)s 记录已删除: %(name)s</li>"
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/equipment_component.py:0
+#, python-format
+msgid "<li>A %(dsc)s was installed: %(name)s</li>"
+msgstr "<li>一个 %(dsc)s 已安装: %(name)s</li>"
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/equipment_component.py:0
+#, python-format
+msgid "<li>A %(dsc)s was removed: %(name)s</li>"
+msgstr "<li>一个 %(dsc)s 已移除: %(name)s</li>"
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/access.py:0
+#, python-format
+msgid "<li>A %(dsc)s's password was updated: %(name)s</li>"
+msgstr "<li>一个 %(dsc)s's 密码已更新: %(name)s</li>"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_application__developer
+msgid "A company or person who create and develop this application"
+msgstr "创建和开发此应用程序的公司或个人"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__description
+msgid ""
+"A device description, eg. 'A basic scanner device for scanning paper into ."
+"pdf files' "
+msgstr "设备描述，例如 \"用于将纸张扫描成 .pdf 文件的基本扫描仪设备\"。"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__name
+msgid "A device name, eg. Scanner"
+msgstr "一种设备名称，例如Scanner扫描仪"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_backup__partner_id
+#: model:ir.model.fields,help:itm.field_itm_equipment__partner_id
+msgid "A partner or user which are using this device"
+msgstr "使用此设备的合作伙伴或用户"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__contract_owner
+msgid "A person holding the title"
+msgstr "担任该职务的人"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__site_id
+msgid "A site or place of which this device is deployed"
+msgstr "设备所部署的站点或位置"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__parent_id
+msgid "AD Folder"
+msgstr "AD文件夹"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__type
+msgid "AD Type"
+msgstr "AD 类型"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_wizard_credential__aduser_id
+msgid "AD User"
+msgstr "AD 账号"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_line__adobj_id
+msgid "AD object name"
+msgstr "AD 对象名称"
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_wireless_ssid__encryption_type__aes
+msgid "AES"
+msgstr "AES"
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_equipment_rule__permission__allow
+msgid "ALLOW"
+msgstr "允许"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_access_search
+msgid "Access"
+msgstr "接入"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_res_partner__access_count
+#: model:ir.model.fields,field_description:itm.field_res_users__access_count
+msgid "Access Count"
+msgstr "访问次数"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless__access_id
+msgid "Access Credentials"
+msgstr "访问凭证"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_access_search
+msgid "Access Name"
+msgstr "接入名称"
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_wireless__type__ap
+msgid "Access Point"
+msgstr "接入点"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__message_needaction
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__message_needaction
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__message_needaction
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__message_needaction
+#: model:ir.model.fields,field_description:itm.field_itm_site__message_needaction
+msgid "Action Needed"
+msgstr "待处理"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__active
+#: model:ir.model.fields,field_description:itm.field_itm_application__active
+#: model:ir.model.fields,field_description:itm.field_itm_backup__active
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__active
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__active
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_value__active
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_type__active
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__active
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__active
+#: model:ir.model.fields,field_description:itm.field_itm_site__active
+msgid "Active"
+msgstr "启用"
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.itm_service_ad_action
+#: model:ir.model,name:itm.model_itm_service_ad
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__ad_service_id
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__ad_id
+#: model:ir.model.fields,field_description:itm.field_itm_site__ad_ids
+#: model:ir.model.fields,field_description:itm.field_itm_wizard_credential__ad_id
+#: model:ir.ui.menu,name:itm.itm_ad_menu
+#: model_terms:ir.ui.view,arch_db:itm.itm_service_ad_form
+msgid "Active Directory"
+msgstr "Active Directory"
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_service_ad_object
+#: model_terms:ir.ui.view,arch_db:itm.itm_service_ad_object_form
+msgid "Active Directory Object"
+msgstr "Active Directory 对象"
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.itm_service_ad_object_action
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__obj_ids
+#: model:ir.ui.menu,name:itm.itm_ad_object_menu
+#: model_terms:ir.ui.view,arch_db:itm.itm_service_ad_form
+msgid "Active Directory Objects"
+msgstr "Active Directory 对象"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_service_ad_search
+msgid "Active Directory Search"
+msgstr "Active Directory搜索"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__activity_ids
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__activity_ids
+#: model:ir.model.fields,field_description:itm.field_itm_site__activity_ids
+msgid "Activities"
+msgstr "活动"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__activity_exception_decoration
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__activity_exception_decoration
+#: model:ir.model.fields,field_description:itm.field_itm_site__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "活动异常标记"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__activity_state
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__activity_state
+#: model:ir.model.fields,field_description:itm.field_itm_site__activity_state
+msgid "Activity State"
+msgstr "活动状态"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__activity_type_icon
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__activity_type_icon
+#: model:ir.model.fields,field_description:itm.field_itm_site__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "活动类型图标"
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_mapping_permission_advanced
+msgid "Advanced Share Mapping Permission"
+msgstr "高级共享映射权限"
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/equipment_mapping.py:0
+#: model:ir.model.fields.selection,name:itm.selection__itm_equipment_mapping_line__type__advanced
+#, python-format
+msgid "Advanced Sharing"
+msgstr "高级分享"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_line__perm_advanced
+msgid "Advanced permissions"
+msgstr "高级权限"
+
+#. module: itm
+#: model:ir.model.constraint,message:itm.constraint_itm_equipment_component_serial_number
+msgid "Another component already exists with this serial number!"
+msgstr "该序列号的另一个组件已经存在！"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__application_ids
+msgid "App information of this asset or device"
+msgstr "资产或设备的应用信息"
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_application
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__is_application
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_db__application_id
+#: model_terms:ir.ui.view,arch_db:itm.itm_application_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_application_search
+msgid "Application"
+msgstr "应用"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_application_search
+msgid "Application Name"
+msgstr "应用名"
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.itm_application_action
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__application_ids
+#: model:ir.ui.menu,name:itm.itm_application
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+msgid "Applications"
+msgstr "应用"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.component_form
+#: model_terms:ir.ui.view,arch_db:itm.component_search
+#: model_terms:ir.ui.view,arch_db:itm.itm_access_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_access_search
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_type_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_type_search
+#: model_terms:ir.ui.view,arch_db:itm.itm_service_ad_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_service_ad_object_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_service_ad_search
+#: model_terms:ir.ui.view,arch_db:itm.itm_site_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_site_search
+#: model_terms:ir.ui.view,arch_db:itm.spec_value_form
+#: model_terms:ir.ui.view,arch_db:itm.spec_value_search
+msgid "Archived"
+msgstr "归档"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_access_form
+msgid "Are you sure?"
+msgstr "您确定？"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__equipment_id
+#: model:ir.model.fields,field_description:itm.field_itm_backup__equipment_id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_configuration__equipment_id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_db__equipment_id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_forward__equipment_id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping__equipment_id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network__equipment_id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition__equipment_id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_rule__equipment_id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_worklog__equipment_id
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__equipment_id
+#: model:ir.model.fields,field_description:itm.field_itm_service_dhcp4__equipment_id
+#: model:ir.model.fields,field_description:itm.field_itm_wizard_credential__equipment_id
+#: model_terms:ir.ui.view,arch_db:itm.component_search
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Asset"
+msgstr "资产"
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_component_specification
+msgid "Asset Component Specification"
+msgstr "资产组件规格"
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_component_type
+msgid "Asset Component Type"
+msgstr "资产组件类型"
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.itm_equipment_type_action
+#: model:ir.model,name:itm.model_itm_equipment_type
+#: model:ir.ui.menu,name:itm.itm_equipment_type_menu
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Asset Type"
+msgstr "资产类型"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_type_search
+msgid "Asset Type Search"
+msgstr "资产类型搜索"
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_worklog
+msgid "Asset Worklog"
+msgstr "资产工作日志"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__asset_type_id
+msgid "Asset type"
+msgstr "资产类型"
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.act_partner_2_equipment
+#: model:ir.actions.act_window,name:itm.act_site_2_equipment
+#: model:ir.model.fields,field_description:itm.field_itm_application__equipment_ids
+#: model:ir.model.fields,field_description:itm.field_itm_site__equipment_count
+#: model:ir.model.fields,field_description:itm.field_res_partner__equipment_ids
+#: model:ir.model.fields,field_description:itm.field_res_users__equipment_ids
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+msgid "Assets"
+msgstr "资产"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Assets with applications"
+msgstr "应用资产"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Assets with backup"
+msgstr "备份资产"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Assets with partitions"
+msgstr "分区资产"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Assets without applications"
+msgstr "非应用资产"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Assets without backup"
+msgstr "非备份资产"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_site__equipment_ids
+msgid "Asset{s)"
+msgstr "资产"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__message_attachment_count
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__message_attachment_count
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__message_attachment_count
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__message_attachment_count
+#: model:ir.model.fields,field_description:itm.field_itm_site__message_attachment_count
+msgid "Attachment Count"
+msgstr "附件数量"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_access_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_application_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_backup_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+msgid "Audit Data"
+msgstr "审计数据"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless_ssid__auth_type
+msgid "Authentication Type"
+msgstr "认证类型"
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_wireless_ssid__auth_type__auto
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_wireless_ssid__encryption_type__auto
+msgid "Auto"
+msgstr "自动"
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_equipment_forward__type__both
+msgid "BOTH"
+msgstr "二者"
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.act_partner_2_backup
+#: model:ir.model,name:itm.model_itm_backup
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__is_backup
+#: model_terms:ir.ui.view,arch_db:itm.itm_backup_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_backup_search
+msgid "Backup"
+msgstr "备份"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__backup_count
+#: model:ir.model.fields,field_description:itm.field_res_partner__backup_count
+#: model:ir.model.fields,field_description:itm.field_res_users__backup_count
+msgid "Backup Count"
+msgstr "备份次数"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_backup_search
+msgid "Backup Name"
+msgstr "备份名称"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_backup__type
+msgid "Backup Type"
+msgstr "备份类型"
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.act_equipment_2_backup
+#: model:ir.actions.act_window,name:itm.itm_backup_action
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__backup_ids
+#: model:ir.model.fields,field_description:itm.field_res_partner__backup_ids
+#: model:ir.model.fields,field_description:itm.field_res_users__backup_ids
+#: model:ir.ui.menu,name:itm.itm_backup
+msgid "Backups"
+msgstr "备份"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+msgid "Basic Configuration"
+msgstr "基础设定"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__brand_id
+msgid "Brand"
+msgstr "品牌"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__brand
+msgid "Brand Name"
+msgstr "品牌名称"
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.itm_equipment_brand_action
+#: model:ir.ui.menu,name:itm.itm_equipment_brand
+msgid "Brands"
+msgstr "品牌"
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_wireless__type__bridge
+msgid "Bridge"
+msgstr "桥接"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__product_buydate
+msgid "Buy Date"
+msgstr "购买日期"
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_application__license_type__closedsource
+msgid "COMMERCIAL"
+msgstr "商业用途"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__ssl_csr
+msgid "CSR"
+msgstr "CSR证书"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__ssl_csr_filename
+msgid "CSR Filename"
+msgstr "CSR 文件"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_wizard_credential_form
+msgid "Cancel"
+msgstr "取消"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__ssl_cert
+msgid "Cert"
+msgstr "Cert"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__ssl_cert_filename
+msgid "Cert Filename"
+msgstr "Cert 文件"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_vpn__cacn
+msgid "Client Authorization by common name"
+msgstr "按通用名称进行客户端授权"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__contract_client_number
+msgid "Client Number"
+msgstr "客户端编号"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_application_form
+msgid "Closed Source"
+msgstr "闭源"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_application_search
+msgid "ClosedSource Applications"
+msgstr "闭源应用"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__code
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Code"
+msgstr "编码"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_db__codification
+msgid "Codification"
+msgstr "标准编码"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_application_search
+msgid "Commercial"
+msgstr "商业用途"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__company_id
+#: model:ir.model.fields,field_description:itm.field_itm_application__company_id
+#: model:ir.model.fields,field_description:itm.field_itm_backup__company_id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__company_id
+#: model:ir.model.fields,field_description:itm.field_itm_site__company_id
+#: model_terms:ir.ui.view,arch_db:itm.itm_access_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_application_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_backup_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_site_form
+msgid "Company"
+msgstr "公司"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__complete_logon
+msgid "Complete Logon"
+msgstr "登陆完成"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__identification
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__complete_name
+msgid "Complete Name"
+msgstr "全称"
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_component
+#: model_terms:ir.ui.view,arch_db:itm.component_form
+msgid "Component"
+msgstr "组件"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__component_count
+msgid "Component Count"
+msgstr "组件数量"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_brand__is_components
+msgid "Component Devices"
+msgstr "组件设备"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.component_search
+msgid "Component Search"
+msgstr "组件搜索"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.spec_selector_form
+msgid "Component Selector"
+msgstr "组件选项"
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_component_specification_key
+msgid "Component Specification Key"
+msgstr "组件规格Key"
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_component_specification_selector
+msgid "Component Specification Selector"
+msgstr "组件规格选项"
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_component_specification_value
+msgid "Component Specification Value"
+msgstr "组件规格参数"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__component_type_id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification__component_type_id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_key__component_type_ids
+#: model_terms:ir.ui.view,arch_db:itm.component_search
+#: model_terms:ir.ui.view,arch_db:itm.component_type_form
+#: model_terms:ir.ui.view,arch_db:itm.spec_key_form
+msgid "Component Type"
+msgstr "组件类型"
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.component_type_action
+#: model:ir.ui.menu,name:itm.component_type_menu
+#: model_terms:ir.ui.view,arch_db:itm.spec_key_form
+msgid "Component Types"
+msgstr "组件类型"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__equipment_id
+#: model_terms:ir.ui.view,arch_db:itm.component_search
+msgid "Component of"
+msgstr "组件"
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.act_equipment_2_component
+#: model:ir.actions.act_window,name:itm.component_action
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__component_ids
+#: model:ir.ui.menu,name:itm.component_menu
+#: model:ir.ui.menu,name:itm.itm_menu_component_config
+msgid "Components"
+msgstr "组件"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_brand__is_accessories
+msgid "Computing Accessories"
+msgstr "计算机外设"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_brand__is_computer
+msgid "Computing Devices"
+msgstr "计算机设备"
+
+#. module: itm
+#: model:ir.ui.menu,name:itm.itm_menu_others
+#: model_terms:ir.ui.view,arch_db:itm.itm_access_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_application_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_backup_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+msgid "Configuration"
+msgstr "配置"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_configuration__config_file
+msgid "Configuration File"
+msgstr "配置文件"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_configuration__config_file_filename
+msgid "Configuration File Filename"
+msgstr "配置文件的文件名"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__configuration_file_ids
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+msgid "Configuration Files"
+msgstr "配置文件"
+
+#. module: itm
+#: model:ir.model,name:itm.model_res_partner
+msgid "Contact"
+msgstr "联系人"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+msgid "Contract Information"
+msgstr "合同信息"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Contracted"
+msgstr "承包商"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__is_contracted
+msgid "Contracted Service"
+msgstr "外包服务"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__contract_partner_id
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Contractor"
+msgstr "承包商"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__contract_partner_id
+msgid "Contractor name"
+msgstr "承包商名称"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_application_license__copy
+msgid "Copy"
+msgstr "复制"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__product_cost
+msgid "Cost"
+msgstr "成本"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_application__crack
+msgid "Crack"
+msgstr "破解"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_service_ad_object_form
+msgid "Create"
+msgstr "创建"
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.act_adobject_2_newcreds
+msgid "Create Credential"
+msgstr "新建凭证"
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.new_credential_wizard_action
+msgid "Create New Credential"
+msgstr "新建凭证"
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_wizard_credential
+msgid "Create New Credential Wizard"
+msgstr "新建凭证向导"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_application__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_application_license__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_backup__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_brand__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_key__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_selector__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_value__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_type__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_configuration__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_db__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_db_engine__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_dbsetting__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_forward__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_function__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_ipreservation__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_line__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_permission_advanced__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network_proxy__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition_mount__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_rule__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_type__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_worklog__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_service_dhcp4__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_service_proxy__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_service_vpn__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless_ssid__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_site__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_site_network__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_site_network_ip4__create_uid
+#: model:ir.model.fields,field_description:itm.field_itm_wizard_credential__create_uid
+msgid "Created by"
+msgstr "创建者"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_application__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_application_license__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_backup__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_brand__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_key__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_selector__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_value__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_type__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_configuration__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_db__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_db_engine__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_dbsetting__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_forward__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_function__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_ipreservation__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_line__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_permission_advanced__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network_proxy__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition_mount__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_rule__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_type__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_worklog__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_service_dhcp4__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_service_proxy__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_service_vpn__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless_ssid__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_site__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_site_network__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_site_network_ip4__create_date
+#: model:ir.model.fields,field_description:itm.field_itm_wizard_credential__create_date
+msgid "Created on"
+msgstr "创建于"
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_access
+#: model_terms:ir.ui.view,arch_db:itm.itm_access_form
+msgid "Credential"
+msgstr "凭证"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_site__access_ids
+msgid "Credential(s)"
+msgstr "凭证"
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.act_equipment_2_access
+#: model:ir.actions.act_window,name:itm.act_partner_2_access
+#: model:ir.actions.act_window,name:itm.act_site_2_access
+#: model:ir.actions.act_window,name:itm.itm_access_action
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__access_ids
+#: model:ir.model.fields,field_description:itm.field_itm_site__access_count
+#: model:ir.model.fields,field_description:itm.field_res_partner__access_ids
+#: model:ir.model.fields,field_description:itm.field_res_users__access_ids
+#: model:ir.ui.menu,name:itm.itm_access
+msgid "Credentials"
+msgstr "凭证"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__access_count
+msgid "Credentials Count"
+msgstr "凭证数量"
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.itm_partner_customer_action
+#: model:ir.ui.menu,name:itm.itm_partner_customer
+msgid "Customers"
+msgstr "客户"
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_equipment_rule__permission__deny
+msgid "DENY"
+msgstr "拒绝"
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.itm_service_dhcp4_action
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__dhcp_service_id
+#: model:ir.model.fields,field_description:itm.field_itm_site_network__dhcp4_ids
+#: model:ir.ui.menu,name:itm.itm_dhcp4_menu
+msgid "DHCP"
+msgstr "DHCP"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network__display_ipv4
+msgid "DHCP IPv4 Address"
+msgstr "DHCP IPv4 地址"
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_service_dhcp4
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_ipreservation__dhcp_id
+msgid "DHCP Service"
+msgstr "DHCP服务"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_service_dhcp4_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_site_network_form
+msgid "DHCP Settings"
+msgstr "DHCP设置"
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_backup__type__diff
+#: model_terms:ir.ui.view,arch_db:itm.itm_backup_search
+msgid "DIFF"
+msgstr "差异"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__router_dmz
+msgid "DMZ"
+msgstr "DMZ"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_site_network_form
+msgid "DNS"
+msgstr "DNS"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_site_network__dns_ids
+msgid "DNS Servers"
+msgstr "DNS服务器"
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_db
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_dbsetting__db_id
+msgid "Database"
+msgstr "数据库"
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_db_engine
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_db__engine_id
+msgid "Database Engine"
+msgstr "数据库引擎"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__function_database
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Database Server"
+msgstr "数据库服务器"
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_dbsetting
+msgid "Database Setting"
+msgstr "数据库设置"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__db_ids
+msgid "Database list"
+msgstr "数据库列表"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_application__db_ids
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__db_ids
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+msgid "Databases"
+msgstr "数据库"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_configuration__date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_worklog__date
+msgid "Date"
+msgstr "日期"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_site_network__default_gw
+msgid "Default Gateway"
+msgstr "默认网关"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_service_dhcp4__lease_time
+msgid "Default lease time in seconds"
+msgstr "默认租约时间"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__function_ids
+msgid "Defining the function of the devices, eg. scanning"
+msgstr "定义设备的功能，例如扫描功能"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__description
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_configuration__name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_db__description
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_dbsetting__description
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_ipreservation__name
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__description
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless__name
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_worklog_form
+msgid "Description"
+msgstr "描述"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_backup__destination
+msgid "Destination"
+msgstr "目标"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_forward__destination_address
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_rule__destination_address
+msgid "Destination Address"
+msgstr "目标地址"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_forward__destination_port
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_rule__destination_port
+msgid "Destination Port"
+msgstr "目标端口"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_application__developer
+#: model_terms:ir.ui.view,arch_db:itm.itm_application_search
+msgid "Developer"
+msgstr "开发者"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__virtual_disk_amount
+msgid "Disk Size"
+msgstr "磁盘大小"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment_partition__type
+msgid "Disk storage controllers"
+msgstr "磁盘存储控制器"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition__disks
+#: model:ir.model.fields,help:itm.field_itm_equipment_partition__disks
+msgid "Disks"
+msgstr "磁盘"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_application__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_application_license__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_backup__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_brand__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_key__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_selector__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_value__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_type__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_configuration__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_db__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_db_engine__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_dbsetting__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_forward__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_function__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_ipreservation__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_line__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_permission_advanced__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network_proxy__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition_mount__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_rule__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_type__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_worklog__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_service_dhcp4__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_service_proxy__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_service_vpn__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless_ssid__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_site__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_site_network__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_site_network_ip4__display_name
+#: model:ir.model.fields,field_description:itm.field_itm_wizard_credential__display_name
+msgid "Display Name"
+msgstr "显示名称"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_application__documentation
+msgid "Documentation"
+msgstr "文档"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_application__documentation_filename
+msgid "Documentation Filename"
+msgstr "文档文件名称"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_application__documentation
+msgid "Documentation sheet of technical use or standard operational procedure"
+msgstr "技术使用或标准操作程序记录表"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_access_search
+msgid "Does not have a password"
+msgstr "不设密码"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__name
+#: model:ir.model.fields,field_description:itm.field_itm_site_network__name
+msgid "Domain"
+msgstr "域"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__name_pre2000
+msgid "Domain (Pre-Windows 2000)"
+msgstr "域控 (Windows 2000以前)"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__ad_service_id
+msgid "Domain Active Directory that related to this asset"
+msgstr "与此设备关联的 Active Directory 域"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__dhcp_service_id
+msgid "Domain Host Control Protocol service which is related to this asset"
+msgstr "与此资产相关的域主机控制协议服务"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_application__link_download
+msgid "Download Link"
+msgstr "下载链接"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_application__link_download
+msgid "Download link of the application"
+msgstr "应用程序下载链接"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless_ssid__encryption_type
+msgid "Encryption Type"
+msgstr "加密类型"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_dhcp4__end_address
+msgid "End Address"
+msgstr "结束地址"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_partition_form
+msgid "Enter a partition entry"
+msgstr "添加一个分区记录"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_access_search
+#: model_terms:ir.ui.view,arch_db:itm.itm_backup_search
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_kanban
+msgid "Equipment"
+msgstr "设备"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_brand_form
+msgid "Equipment Brand"
+msgstr "设备品牌"
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_configuration
+msgid "Equipment Configuration"
+msgstr "设备配置"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_res_partner__equipment_count
+#: model:ir.model.fields,field_description:itm.field_res_users__equipment_count
+msgid "Equipment Count"
+msgstr "设备数量"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__image
+msgid "Equipment Photo, limited to 1024x1024px."
+msgstr "设备照片，尺寸限制为 1024x1024 像素。"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_type_form
+msgid "Equipment Type"
+msgstr "设备类型"
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_wireless__type__extender
+msgid "Extender"
+msgstr "扩展"
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_backup__type__full
+#: model_terms:ir.ui.view,arch_db:itm.itm_backup_search
+msgid "FULL"
+msgstr "完整"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__function_fileserver
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "File Server"
+msgstr "文件服务器"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__equipment_mapping_ids
+msgid "File server information"
+msgstr "文件服务器信息"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping__path
+#: model:ir.model.fields,help:itm.field_itm_equipment_mapping__path
+msgid "Filesystem Path"
+msgstr "文件系统路径"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__router_rules_ids
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+msgid "Firewall Rules"
+msgstr "防火墙规则"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__first_name
+msgid "First Name"
+msgstr "姓氏"
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/service_ad.py:0
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_ad_object__type__folder
+#, python-format
+msgid "Folder"
+msgstr "文件夹"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__folder_name
+msgid "Folder Name"
+msgstr "文件夹名称"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__message_follower_ids
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__message_follower_ids
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__message_follower_ids
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__message_follower_ids
+#: model:ir.model.fields,field_description:itm.field_itm_site__message_follower_ids
+msgid "Followers"
+msgstr "关注者"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__message_partner_ids
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__message_partner_ids
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__message_partner_ids
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__message_partner_ids
+#: model:ir.model.fields,field_description:itm.field_itm_site__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "关注者（合作伙伴）"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__activity_type_icon
+#: model:ir.model.fields,help:itm.field_itm_equipment_component__activity_type_icon
+#: model:ir.model.fields,help:itm.field_itm_site__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "awesome的字体 icon图标 例如 fa-tasks"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition__format
+msgid "Format"
+msgstr "格式"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__router_forward_ids
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+msgid "Forward Rules"
+msgstr "转发规则"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_backup__frequency
+msgid "Frequency"
+msgstr "频率"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__full_name
+msgid "Full Name"
+msgstr "全名"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_function_form
+msgid "Function"
+msgstr "功能"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+msgid "Function Configuration"
+msgstr "功能配置"
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.itm_equipment_function_action
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__function_ids
+#: model:ir.ui.menu,name:itm.itm_equipment_function
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Functions"
+msgstr "功能"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+msgid "Functions..."
+msgstr "功能..."
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_application_form
+msgid "General Information"
+msgstr "常规信息"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_access_form
+msgid "Generate"
+msgstr "生成"
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/service_ad.py:0
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_ad_object__type__group
+#, python-format
+msgid "Group"
+msgstr "群组"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.component_search
+#: model_terms:ir.ui.view,arch_db:itm.itm_access_search
+#: model_terms:ir.ui.view,arch_db:itm.itm_application_search
+#: model_terms:ir.ui.view,arch_db:itm.itm_backup_search
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+#: model_terms:ir.ui.view,arch_db:itm.itm_service_ad_search
+#: model_terms:ir.ui.view,arch_db:itm.spec_value_search
+msgid "Group By..."
+msgstr "分组..."
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__group_name
+msgid "Group Name"
+msgstr "分组名"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__virtual_ids
+msgid "Guest(s)"
+msgstr "访问"
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.act_equipment_2_equipment
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__virtual_count
+msgid "Guests"
+msgstr "访客"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__has_message
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__has_message
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__has_message
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__has_message
+#: model:ir.model.fields,field_description:itm.field_itm_site__has_message
+msgid "Has Message"
+msgstr "有信息"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_access_search
+msgid "Has Password"
+msgstr "有密码"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__is_config_file
+msgid "Has a configuration files"
+msgstr "有配置文件"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_access_search
+msgid "Has a password"
+msgstr "有密码"
+
+#. module: itm
+#: model:ir.module.category,description:itm.module_category_it
+msgid "Helps you manage your infrastructure equipment, access and backups."
+msgstr "帮助您管理基础设施设备、访问和备份。"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__worklog_ids
+msgid "Historical progress of work that spent on the asset or device"
+msgstr "该资产或设备的历史维护记录"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Host"
+msgstr "主机名"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__id
+#: model:ir.model.fields,field_description:itm.field_itm_application__id
+#: model:ir.model.fields,field_description:itm.field_itm_application_license__id
+#: model:ir.model.fields,field_description:itm.field_itm_backup__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_brand__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_key__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_selector__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_value__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_type__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_configuration__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_db__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_db_engine__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_dbsetting__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_forward__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_function__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_ipreservation__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_line__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_permission_advanced__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network_proxy__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition_mount__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_rule__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_type__id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_worklog__id
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__id
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__id
+#: model:ir.model.fields,field_description:itm.field_itm_service_dhcp4__id
+#: model:ir.model.fields,field_description:itm.field_itm_service_proxy__id
+#: model:ir.model.fields,field_description:itm.field_itm_service_vpn__id
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless__id
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless_ssid__id
+#: model:ir.model.fields,field_description:itm.field_itm_site__id
+#: model:ir.model.fields,field_description:itm.field_itm_site_network__id
+#: model:ir.model.fields,field_description:itm.field_itm_site_network_ip4__id
+#: model:ir.model.fields,field_description:itm.field_itm_wizard_credential__id
+msgid "ID"
+msgstr "ID"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_backup_search
+msgid "INC"
+msgstr "INC"
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_backup__type__inc
+msgid "INCREMENTAL"
+msgstr "增量"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_site_network_form
+msgid "IP Addresses"
+msgstr "IP地址"
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_ipreservation
+msgid "IP Reservation"
+msgstr "预留IP"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_service_dhcp4_form
+msgid "IP Reservations"
+msgstr "预留IP"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_ipreservation__ip_address
+msgid "IP address"
+msgstr "IP地址"
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/site.py:0
+#, python-format
+msgid "IP address '%s' already exists."
+msgstr "IP 地址 '%s' 已存在。"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network__dhcp_ipv4_id
+msgid "IPv4 Address"
+msgstr "IP地址"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__ip4_ids
+#: model:ir.model.fields,field_description:itm.field_itm_site_network__ip4_ids
+msgid "IPv4 Addresses"
+msgstr "IPv4地址"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_dhcp4__reservation_ids
+msgid "IPv4 reservations"
+msgstr "预留IPv4 地址"
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment
+msgid "IT Asset"
+msgstr "IT资产"
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_brand
+msgid "IT Asset Brand Name"
+msgstr "IT资产品牌名称"
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.itm_equipment_action
+#: model:ir.ui.menu,name:itm.itm_equipment
+#: model:ir.ui.menu,name:itm.itm_menu_general
+msgid "IT Assets"
+msgstr "IT资产"
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_function
+msgid "IT Function"
+msgstr "IT功能"
+
+#. module: itm
+#: model:ir.module.category,name:itm.module_category_it
+msgid "IT Infrastructure Management"
+msgstr "IT 基础设施管理"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_site_network_form
+msgid "IT Network"
+msgstr "IT网络"
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_site
+#: model_terms:ir.ui.view,arch_db:itm.itm_site_form
+msgid "IT Site"
+msgstr "IT网站"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__activity_exception_icon
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__activity_exception_icon
+#: model:ir.model.fields,field_description:itm.field_itm_site__activity_exception_icon
+msgid "Icon"
+msgstr "Icon图标"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__activity_exception_icon
+#: model:ir.model.fields,help:itm.field_itm_equipment_component__activity_exception_icon
+#: model:ir.model.fields,help:itm.field_itm_site__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "用于表示异常活动的图标。"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition__name
+msgid "Identificator"
+msgstr "唯一标识"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment_partition__name
+msgid "Identificator or flag for ease identification"
+msgstr "用于便捷识别的标识符或标志"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_access__message_needaction
+#: model:ir.model.fields,help:itm.field_itm_equipment__message_needaction
+#: model:ir.model.fields,help:itm.field_itm_equipment_component__message_needaction
+#: model:ir.model.fields,help:itm.field_itm_service_ad__message_needaction
+#: model:ir.model.fields,help:itm.field_itm_site__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "如果选中，则新邮件需要您注意。"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_access__message_has_error
+#: model:ir.model.fields,help:itm.field_itm_equipment__message_has_error
+#: model:ir.model.fields,help:itm.field_itm_equipment_component__message_has_error
+#: model:ir.model.fields,help:itm.field_itm_service_ad__message_has_error
+#: model:ir.model.fields,help:itm.field_itm_site__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "如果选中，则某些邮件存在传递错误。"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_service_wireless_ssid__is_guest
+msgid "If checked, this is a Guest SSID"
+msgstr "如果勾选，则表示这是一个访客 SSID（无线网络）"
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_equipment__state__in_repair
+msgid "In repair"
+msgstr "维修中"
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_equipment__state__in_store
+msgid "In store"
+msgstr "存储"
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_equipment__state__in_use
+msgid "In use"
+msgstr "在用"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_access_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_backup_form
+msgid "Information"
+msgstr "信息"
+
+#. module: itm
+#: model:ir.ui.menu,name:itm.menu_main_itm
+msgid "Infrastructure"
+msgstr "IT资产管理"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__product_install_date
+msgid "Installation Date"
+msgstr "安装日期"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_application_form
+msgid "Installations"
+msgstr "安装"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network__name
+msgid "Interface Name"
+msgstr "接口名称"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__contract_direction
+#: model:ir.model.fields,help:itm.field_itm_equipment__contract_direction
+msgid "Invoice Direction"
+msgstr "发票收付方向"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__message_is_follower
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__message_is_follower
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__message_is_follower
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__message_is_follower
+#: model:ir.model.fields,field_description:itm.field_itm_site__message_is_follower
+msgid "Is Follower"
+msgstr "是关注者"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless_ssid__is_guest
+msgid "Is Guest"
+msgstr "访客"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__is_vm
+msgid "Is Virtual Machine"
+msgstr "虚拟机"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_application__key
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification__key_id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_selector__key_ids
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_type__key_ids
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless_ssid__passkey
+msgid "Key"
+msgstr "键"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.component_type_form
+msgid "Key Form"
+msgstr "密钥格式"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_application__keygen
+msgid "Keygen"
+msgstr "Keygen"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_application____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_application_license____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_backup____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_brand____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_key____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_selector____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_value____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_type____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_configuration____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_db____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_db_engine____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_dbsetting____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_forward____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_function____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_ipreservation____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_line____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_permission_advanced____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network_proxy____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition_mount____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_rule____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_type____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_worklog____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad_object____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_service_dhcp4____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_service_proxy____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_service_vpn____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless_ssid____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_site____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_site_network____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_site_network_ip4____last_update
+#: model:ir.model.fields,field_description:itm.field_itm_wizard_credential____last_update
+msgid "Last Modified on"
+msgstr "最后编辑于"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__last_name
+msgid "Last Name"
+msgstr "名字"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_application__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_application_license__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_backup__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_brand__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_key__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_selector__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_value__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_type__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_configuration__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_db__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_db_engine__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_dbsetting__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_forward__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_function__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_ipreservation__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_line__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_permission_advanced__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network_proxy__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition_mount__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_rule__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_type__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_worklog__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_service_dhcp4__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_service_proxy__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_service_vpn__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless_ssid__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_site__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_site_network__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_site_network_ip4__write_uid
+#: model:ir.model.fields,field_description:itm.field_itm_wizard_credential__write_uid
+msgid "Last Updated by"
+msgstr "最后更新人"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_application__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_application_license__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_backup__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_brand__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_key__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_selector__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_value__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_type__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_configuration__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_db__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_db_engine__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_dbsetting__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_forward__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_function__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_ipreservation__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_line__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_permission_advanced__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network_proxy__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition_mount__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_rule__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_type__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_worklog__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_service_dhcp4__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_service_proxy__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_service_vpn__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless_ssid__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_site__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_site_network__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_site_network_ip4__write_date
+#: model:ir.model.fields,field_description:itm.field_itm_wizard_credential__write_date
+msgid "Last Updated on"
+msgstr "最后更新于"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_dhcp4__lease_time
+msgid "Lease Time"
+msgstr "租期"
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_application_license
+#: model:ir.model.fields,field_description:itm.field_itm_application__license_id
+#: model_terms:ir.ui.view,arch_db:itm.itm_application_license_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_application_search
+msgid "License"
+msgstr "许可证"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_application__license_type
+msgid "License Type"
+msgstr "License类型"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_application__license_type
+msgid "License name"
+msgstr "License 名称"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_application__license_id
+msgid "License type"
+msgstr "许可证类型"
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.itm_application_license_action
+#: model:ir.ui.menu,name:itm.itm_application_license
+msgid "Licenses"
+msgstr "许可证"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_application__link_page
+msgid "Link"
+msgstr "链接"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_application_form
+msgid "Links and Docs"
+msgstr "链接与文档"
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_equipment__state__loaned
+msgid "Loaned"
+msgstr "已借出"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__location
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Location"
+msgstr "地点"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_worklog__description
+msgid "Long Description"
+msgstr "详细描述"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network__mac
+msgid "MAC Address"
+msgstr "MAC地址"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_ipreservation__mac_address
+msgid "Mac Address"
+msgstr "MAC地址"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__message_main_attachment_id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__message_main_attachment_id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__message_main_attachment_id
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__message_main_attachment_id
+#: model:ir.model.fields,field_description:itm.field_itm_site__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "主附件"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_res_partner__manage_it
+#: model:ir.model.fields,field_description:itm.field_res_users__manage_it
+#: model_terms:ir.ui.view,arch_db:itm.itm_partner_filter
+msgid "Manage IT"
+msgstr "IT资产管理员"
+
+#. module: itm
+#: model:res.groups,name:itm.group_itm_manager
+msgid "Manager"
+msgstr "管理员"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__manufacturer_id
+#: model_terms:ir.ui.view,arch_db:itm.component_search
+msgid "Manufacturer"
+msgstr "制造商"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_line__map_id
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_mapping_form
+msgid "Mapping"
+msgstr "映射"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_application__active
+msgid "Mark if this app is currently used and running"
+msgstr "标记此应用是否正在使用并运行中"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__virtual_memory_amount
+msgid "Memory"
+msgstr "内存"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__message_has_error
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__message_has_error
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__message_has_error
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__message_has_error
+#: model:ir.model.fields,field_description:itm.field_itm_site__message_has_error
+msgid "Message Delivery error"
+msgstr "消息传递错误"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__message_ids
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__message_ids
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__message_ids
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__message_ids
+#: model:ir.model.fields,field_description:itm.field_itm_site__message_ids
+msgid "Messages"
+msgstr "信息"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__model
+msgid "Model"
+msgstr "模型"
+
+#. module: itm
+#: model:res.groups,name:itm.group_itm_mod
+msgid "Moderator"
+msgstr "管理员"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition__mount_ids
+msgid "Mount on this partition"
+msgstr "挂载此分区"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment_partition__mount_ids
+msgid "Mount partition"
+msgstr "挂载分区"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__my_activity_date_deadline
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__my_activity_date_deadline
+#: model:ir.model.fields,field_description:itm.field_itm_site__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "我的待办截止时间"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__contract_nif
+msgid "NIF"
+msgstr "NIF"
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_wireless_ssid__auth_type__none
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_wireless_ssid__encryption_type__none
+msgid "NONE"
+msgstr "无"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_application__name
+#: model:ir.model.fields,field_description:itm.field_itm_application_license__name
+#: model:ir.model.fields,field_description:itm.field_itm_backup__name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_brand__name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_key__name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_selector__name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_value__name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_type__name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_db__name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_db_engine__name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_forward__name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_function__name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_line__name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_permission_advanced__name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition_mount__name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_rule__name
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_type__name
+#: model:ir.model.fields,field_description:itm.field_itm_service_dhcp4__name
+#: model:ir.model.fields,field_description:itm.field_itm_service_proxy__name
+#: model:ir.model.fields,field_description:itm.field_itm_service_vpn__name
+#: model:ir.model.fields,field_description:itm.field_itm_site__name
+#: model:ir.model.fields,field_description:itm.field_itm_site_network_ip4__name
+#: model:ir.model.fields,field_description:itm.field_itm_wizard_credential__name
+#: model_terms:ir.ui.view,arch_db:itm.component_search
+#: model_terms:ir.ui.view,arch_db:itm.spec_value_search
+msgid "Name"
+msgstr "名称"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_application__name
+msgid "Name of the application"
+msgstr "应用程序名称"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_site_network__netmask
+msgid "Netmask"
+msgstr "网址掩码"
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_site_network
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network__network_id
+#: model:ir.model.fields,field_description:itm.field_itm_service_dhcp4__network_id
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless__network_id
+#: model:ir.model.fields,field_description:itm.field_itm_site_network_ip4__network_id
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_network_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_site_network_form
+msgid "Network"
+msgstr "网络"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Network Asset"
+msgstr "网络资产"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+msgid "Network Configuration"
+msgstr "网络配置"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_brand__is_network
+msgid "Network Devices"
+msgstr "网络设备"
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_site_network_ip4
+msgid "Network IPv4 Address"
+msgstr "网络IPv4地址"
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_network
+msgid "Network Interface"
+msgstr "网络接口"
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_network_proxy
+msgid "Network Proxy Configuration"
+msgstr "网络代理配置"
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_service_proxy
+msgid "Network Proxy Service"
+msgstr "网络代理服务"
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_mapping
+msgid "Network Share Mapping"
+msgstr "网络共享映射"
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_mapping_line
+msgid "Network Share Mapping Line"
+msgstr "网络共享映射详情"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__equipment_mapping_ids
+msgid "Network Shares"
+msgstr "网络共享"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__equipment_network_ids
+msgid "Network on this equipment"
+msgstr "设备的网络参数"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__equipment_network_ids
+msgid "Network setup that configured within this asset or device"
+msgstr "该资产或设备内部配置的网络参数"
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.itm_network_action
+#: model:ir.model.fields,field_description:itm.field_itm_site__network_ids
+#: model:ir.ui.menu,name:itm.itm_network_menu
+#: model_terms:ir.ui.view,arch_db:itm.itm_site_form
+msgid "Networks"
+msgstr "网络"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_wizard_credential_form
+msgid "New Credential"
+msgstr "新凭证"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__activity_date_deadline
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__activity_date_deadline
+#: model:ir.model.fields,field_description:itm.field_itm_site__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "后续活动截止时间"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__activity_summary
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__activity_summary
+#: model:ir.model.fields,field_description:itm.field_itm_site__activity_summary
+msgid "Next Activity Summary"
+msgstr "后续活动摘要"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__activity_type_id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__activity_type_id
+#: model:ir.model.fields,field_description:itm.field_itm_site__activity_type_id
+msgid "Next Activity Type"
+msgstr "后续活动类型"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_access_search
+msgid "No Password"
+msgstr "无密码"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_application__note
+#: model:ir.model.fields,field_description:itm.field_itm_backup__note
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__note
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network__note
+msgid "Note"
+msgstr "备注"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_application__note
+msgid "Note for this application eg"
+msgstr "该应用的备注举例"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__message_needaction_counter
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__message_needaction_counter
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__message_needaction_counter
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__message_needaction_counter
+#: model:ir.model.fields,field_description:itm.field_itm_site__message_needaction_counter
+msgid "Number of Actions"
+msgstr "操作次数"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__virtual_network_amount
+msgid "Number of Network"
+msgstr "网络数量"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__virtual_processor_amount
+msgid "Number of Processor"
+msgstr "处理器数量"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__message_has_error_counter
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__message_has_error_counter
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__message_has_error_counter
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__message_has_error_counter
+#: model:ir.model.fields,field_description:itm.field_itm_site__message_has_error_counter
+msgid "Number of errors"
+msgstr "错误数"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_access__message_needaction_counter
+#: model:ir.model.fields,help:itm.field_itm_equipment__message_needaction_counter
+#: model:ir.model.fields,help:itm.field_itm_equipment_component__message_needaction_counter
+#: model:ir.model.fields,help:itm.field_itm_service_ad__message_needaction_counter
+#: model:ir.model.fields,help:itm.field_itm_site__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "待处理消息数"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_access__message_has_error_counter
+#: model:ir.model.fields,help:itm.field_itm_equipment__message_has_error_counter
+#: model:ir.model.fields,help:itm.field_itm_equipment_component__message_has_error_counter
+#: model:ir.model.fields,help:itm.field_itm_service_ad__message_has_error_counter
+#: model:ir.model.fields,help:itm.field_itm_site__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "传递错误的邮件数"
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_application__license_type__opensource
+msgid "OPEN SOURCE"
+msgstr "开源"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__os_name
+msgid "OS Name"
+msgstr "操作系统名称"
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_backup__type__other
+#: model_terms:ir.ui.view,arch_db:itm.itm_backup_search
+msgid "OTHER"
+msgstr "其他"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__type
+msgid "Object Type"
+msgstr "对象类型"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_application__link_page
+msgid "Official website link of the application"
+msgstr "应用程序的官方链接"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_application_search
+msgid "OpenSource"
+msgstr "开源"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_application_search
+msgid "OpenSource Applications"
+msgstr "开源应用"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__is_os
+msgid "Operating System"
+msgstr "操作系统"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__os_name
+msgid "Operating system which is installed on device, eg. Windows 10, Ubuntu"
+msgstr "设备上安装的操作系统，例如 Windows 10、Ubuntu"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__code
+msgid "Organization specific inventory code"
+msgstr "组织特定库存代码"
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_wireless_ssid__auth_type__other
+msgid "Other"
+msgstr "其他"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Own"
+msgstr "自己"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__owner
+msgid "Owner"
+msgstr "拥有者"
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_ad__type__primary
+msgid "PRIMARY"
+msgstr "PRIMARY"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_dbsetting__name
+msgid "Parameter"
+msgstr "参数"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_type__parent_id
+msgid "Parent"
+msgstr "父级"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_type__parent_path
+msgid "Parent Path"
+msgstr "上级路径"
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_partition
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition_mount__partition_id
+msgid "Partition"
+msgstr "分区"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+msgid "Partition Information"
+msgstr "分区信息"
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_partition_mount
+msgid "Partition Mounts"
+msgstr "挂载分区"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment_partition__format
+msgid "Partition format type"
+msgstr "分区格式类型"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__partitions_ids
+msgid "Partition on this equipment"
+msgstr "设备分区"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Partitioned"
+msgstr "分区"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__is_partitioned
+msgid "Partitions"
+msgstr "分区"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__partitions_ids
+msgid "Partitions on this equipment"
+msgstr "设备分区"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__partner_id
+#: model:ir.model.fields,field_description:itm.field_itm_backup__partner_id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__partner_id
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__partner_id
+#: model:ir.model.fields,field_description:itm.field_itm_site__partner_id
+#: model:ir.model.fields,field_description:itm.field_itm_wizard_credential__partner_id
+#: model_terms:ir.ui.view,arch_db:itm.itm_access_search
+#: model_terms:ir.ui.view,arch_db:itm.itm_backup_search
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+#: model_terms:ir.ui.view,arch_db:itm.itm_service_ad_search
+msgid "Partner"
+msgstr "合作伙伴"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__password
+#: model:ir.model.fields,field_description:itm.field_itm_wizard_credential__password
+msgid "Password"
+msgstr "密码"
+
+#. module: itm
+#. odoo-javascript
+#: code:addons/itm/static/src/js/itm_password_char_field.esm.js:0
+#, python-format
+msgid "Password copied to clipboard"
+msgstr "复制密码到剪贴板"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_rule__permission
+msgid "Permission"
+msgstr "权限"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_mapping_form
+msgid "Permission Lines"
+msgstr "权限明细"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping__line_ids
+msgid "Permission lines"
+msgstr "权限明细"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment_mapping__line_ids
+msgid "Permission setup"
+msgstr "权限设置"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__image
+msgid "Photo"
+msgstr "照片"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Physical Asset"
+msgstr "物理资产"
+
+#. module: itm
+#: model:res.groups,name:itm.group_itm_portal
+msgid "Portal"
+msgstr "门户"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification__possible_key_ids
+msgid "Possible Key"
+msgstr "备选密钥"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__ssl_privatekey
+msgid "Private Key"
+msgstr "私钥"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__ssl_privatekey_filename
+msgid "Private Key Filename"
+msgstr "私钥文件名"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__product_id
+msgid "Product"
+msgstr "产品"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+msgid "Product Data"
+msgstr "产品数据"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__product_note
+msgid "Product Note"
+msgstr "产品备注"
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.itm_component_action
+#: model:ir.ui.menu,name:itm.itm_component
+msgid "Products"
+msgstr "产品"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_proxy__adblocking
+msgid "Proxy Ad Blocking"
+msgstr "代理广告拦截"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_proxy__cache_size
+msgid "Proxy Cache File Size"
+msgstr "代理缓存文件大小"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__proxy_client_config_id
+msgid "Proxy Configuration"
+msgstr "代理设置"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_proxy__enable_ssk
+msgid "Proxy Enable Single Sign-On (Kerberos)"
+msgstr "启用基于 Kerberos 的代理单点登录"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network_proxy__name
+msgid "Proxy Hostname"
+msgstr "代理主机名"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_proxy__port
+msgid "Proxy Port"
+msgstr "代理端口"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__proxy_service_id
+msgid "Proxy Service"
+msgstr "代理服务"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__ssl_publickey
+msgid "Public Key"
+msgstr "公共密钥"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__ssl_publickey_filename
+msgid "Public Key Filename"
+msgstr "公共密钥文件名"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_partition_form
+msgid "RAID1"
+msgstr "RAID1"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_wizard_credential__use_random
+msgid "Random password"
+msgstr "随机密码"
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/equipment_mapping.py:0
+#: model:ir.model.fields.selection,name:itm.selection__itm_equipment_mapping_line__perm_simple__read
+#, python-format
+msgid "Read"
+msgstr "读"
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/equipment_mapping.py:0
+#: model:ir.model.fields.selection,name:itm.selection__itm_equipment_mapping_line__perm_simple__write
+#, python-format
+msgid "Read/Write"
+msgstr "读/写"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_vpn__gateway
+msgid "Redirect Gateway"
+msgstr "转发网关"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__access_id
+msgid "Related Credential"
+msgstr "关联凭证"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__activity_user_id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__activity_user_id
+#: model:ir.model.fields,field_description:itm.field_itm_site__activity_user_id
+msgid "Responsible User"
+msgstr "责任人"
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_equipment__state__retired
+msgid "Retired"
+msgstr "已退休"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__function_router
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Router"
+msgstr "路由器"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+msgid "Router Configuration"
+msgstr "路由器配置"
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_forward
+msgid "Router Forwarding Rule"
+msgstr "路由器转发规则"
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_equipment_rule
+msgid "Router Rule"
+msgstr "路由器规则"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__router_rules_ids
+msgid "Router's firewall rules"
+msgstr "路由器防火墙规则"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__router_forward_ids
+msgid "Router's forward rules"
+msgstr "路由器转发规则"
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_ad__type__secundary
+msgid "SECONDARY"
+msgstr "次要的"
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_ad__type__slave
+msgid "SLAVE"
+msgstr "SLAVE"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless__bssid_ids
+msgid "SSI"
+msgstr "SSI"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless_ssid__name
+msgid "SSID"
+msgstr "SSID"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_service_wireless_form
+msgid "SSID List"
+msgstr "SSID 列表"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_access_form
+msgid "SSL"
+msgstr "SSL"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_backup__script
+msgid "Script"
+msgstr "脚本"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_backup__script_filename
+msgid "Script Filename"
+msgstr "脚本文件名称"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_backup__script_location
+msgid "Script Location"
+msgstr "脚本位置"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_application__serial
+msgid "Serial"
+msgstr "串口"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__product_serial_number
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__serial_number
+msgid "Serial Number"
+msgstr "序列号"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+msgid "Service Information"
+msgstr "服务信息"
+
+#. module: itm
+#: model:ir.ui.menu,name:itm.itm_menu_services
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+msgid "Services"
+msgstr "服务"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_db__setting_ids
+msgid "Settings"
+msgstr "设置"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping__name
+msgid "Share Name"
+msgstr "共享名"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_permission_advanced__line_id
+msgid "Share mapping"
+msgstr "共享映射"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment_mapping_line__name
+msgid "Sharing partition or folder name"
+msgstr "共享分区或文件夹名称"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_worklog__name
+msgid "Short Description"
+msgstr "简介"
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/equipment_mapping.py:0
+#: model:ir.model.fields.selection,name:itm.selection__itm_equipment_mapping_line__type__simple
+#, python-format
+msgid "Simple Sharing"
+msgstr "简单共享"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_line__perm_simple
+msgid "Simple permissions"
+msgstr "基础权限"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__site_id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__site_id
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__site_id
+#: model:ir.model.fields,field_description:itm.field_itm_site_network__site_id
+#: model:ir.model.fields,field_description:itm.field_itm_wizard_credential__site_id
+#: model_terms:ir.ui.view,arch_db:itm.itm_access_search
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+#: model_terms:ir.ui.view,arch_db:itm.itm_service_ad_search
+msgid "Site"
+msgstr "站点"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_site_search
+msgid "Site Search"
+msgstr "网站搜索"
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.itm_site_action
+#: model:ir.ui.menu,name:itm.itm_menu_sites
+#: model:ir.ui.menu,name:itm.itm_site_menu
+msgid "Sites"
+msgstr "网站"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition_mount__size
+msgid "Size"
+msgstr "大小"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Software Asset"
+msgstr "软件资产"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_backup__source
+msgid "Source"
+msgstr "来源"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_forward__source_address
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_rule__source_address
+msgid "Source Address"
+msgstr "源地址"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_forward__source_port
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_rule__source_port
+msgid "Source Port"
+msgstr "源端口"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__spec_line_ids
+msgid "Spec Line"
+msgstr "规格明细"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.component_form
+#: model_terms:ir.ui.view,arch_db:itm.specification_form
+msgid "Specification"
+msgstr "规格"
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.spec_key_action
+#: model:ir.ui.menu,name:itm.spec_key_menu
+msgid "Specification Keys"
+msgstr "Keys"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.spec_value_search
+msgid "Specification Selector"
+msgstr "规格选项"
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.spec_selector_action
+#: model:ir.ui.menu,name:itm.spec_selector_menu
+msgid "Specification Selectors"
+msgstr "选项"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.spec_value_form
+msgid "Specification Value"
+msgstr "参数值"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.spec_value_search
+msgid "Specification Value Search"
+msgstr "规格值搜索"
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.spec_value_action
+#: model:ir.ui.menu,name:itm.spec_value_menu
+msgid "Specification Values"
+msgstr "规格值"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.component_form
+msgid "Specifications"
+msgstr "规格参数"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_worklog__spent_time
+msgid "Spent Time"
+msgstr "已用时间"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_dhcp4__start_address
+msgid "Start Address"
+msgstr "起始地址"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__state
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "State"
+msgstr "状态"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network__static_ipv4_id
+msgid "Static IPv4 Address"
+msgstr "静态 IPv4 Address"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__activity_state
+#: model:ir.model.fields,help:itm.field_itm_equipment_component__activity_state
+#: model:ir.model.fields,help:itm.field_itm_site__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"基于活动的状态\n"
+"逾期: 到期日期已通过\n"
+"今天: 活动日期是今天\n"
+"计划: 未来的活动。"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__is_config_file
+msgid "Store Config Files"
+msgstr "存储配置文件"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_wizard_credential_form
+msgid "Submit"
+msgstr "提交"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_dhcp4__subnet
+#: model:ir.model.fields,field_description:itm.field_itm_site_network__subnet
+msgid "Subnet"
+msgstr "子网"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_dhcp4__subnet_mask
+msgid "Subnet Mask"
+msgstr "子网掩码"
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_equipment_forward__type__tcp
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_vpn__protocol__tcp
+msgid "TCP"
+msgstr "TCP"
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_wireless_ssid__encryption_type__tkip
+msgid "TKIP"
+msgstr "TKIP"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__brand
+#: model:ir.model.fields,help:itm.field_itm_equipment__brand_id
+msgid "The assets or device brand"
+msgstr "资产或设备的品牌"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__contract_client_number
+msgid "The client number of the contractor"
+msgstr "承包商的客户编号"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__contract_nif
+msgid "The tax number for natural and legal person"
+msgstr "自然人和法人的税务编号"
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/equipment_component.py:0
+#, python-format
+msgid ""
+"The value you entered must be unique within its Value Type.\n"
+"Previous record: Value Type: %(vname)s, Name: %(name)s"
+msgstr ""
+"您输入的值在其值类型中必须是唯一的。\n"
+"上一条记录：值类型：%(vname)s，名称：%(name)s"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__function_wireless
+msgid "This asset acts as a wireless access point or router"
+msgstr "此资产充当无线接入点或路由器"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__function_host
+msgid "This asset or device hosts one or more Virtual Machines"
+msgstr "此资产或设备托管一个或多个虚拟机"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__is_backup
+msgid "This asset or device is a backup"
+msgstr "此资产或设备是一个备份"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__function_database
+msgid "This asset or device is a database server"
+msgstr "此资产或设备是一个数据库服务器"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__function_fileserver
+msgid "This asset or device is a fileserver"
+msgstr "此资产或设备是一个文件服务器"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__function_router
+msgid "This asset or device is a network router"
+msgstr "此资产或设备是一个网络路由器"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__is_application
+msgid "This asset or device is an application"
+msgstr "此资产或设备是一个应用程序"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__is_contracted
+msgid "This asset or device is contracted from other company"
+msgstr "此资产或设备是从其他公司租赁/外包获得的"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__is_partitioned
+msgid "This device is partitioned"
+msgstr "此设备已分区"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_backup__time_schedule
+msgid "Time Schedule"
+msgstr "计划表"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__contract_owner
+msgid "Titular"
+msgstr "头衔"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_proxy__transparent
+msgid "Transparent Proxy"
+msgstr "透明代理"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_forward__type
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_mapping_line__type
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_partition__type
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless__type
+#: model_terms:ir.ui.view,arch_db:itm.itm_application_search
+#: model_terms:ir.ui.view,arch_db:itm.itm_backup_search
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Type"
+msgstr "类型"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__activity_exception_decoration
+#: model:ir.model.fields,help:itm.field_itm_equipment_component__activity_exception_decoration
+#: model:ir.model.fields,help:itm.field_itm_site__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "已记录异常活动的类型。"
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_equipment_forward__type__udp
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_vpn__protocol__udp
+msgid "UDP"
+msgstr "UDP"
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/equipment_mapping.py:0
+#, python-format
+msgid "Unknown"
+msgstr "未知"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_network__use_dhcp4
+msgid "Use IPv4 DHCP"
+msgstr "启用 IPv4 DHCP"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__use_proxy
+msgid "Use Proxy"
+msgstr "启用代理"
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/service_ad.py:0
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_worklog__user_id
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_ad_object__type__user
+#: model:res.groups,name:itm.group_itm_user
+#, python-format
+msgid "User"
+msgstr "用户"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad_object__logon_name
+msgid "User logon name"
+msgstr "用户登陆名"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__name
+msgid "Username"
+msgstr "用户名"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__function_host
+msgid "VM Host"
+msgstr "VM主机"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_vpn__address
+msgid "VPN Address"
+msgstr "VPN地址"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_vpn__c2c
+msgid "VPN Allow Client to Client connections"
+msgstr "允许建立了VPN连接的客户端互访"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_vpn__nat
+msgid "VPN Network Address Traslation"
+msgstr "VPN 网络地址转换器"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_vpn__protocol
+msgid "VPN Protocol"
+msgstr "VPN Protocol"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_vpn__search_domain
+msgid "VPN Search Domain"
+msgstr "VPN 搜索域"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_vpn__server_cert
+msgid "VPN Server Certificate"
+msgstr "VPN Server 认证"
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_service_vpn
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__vpn_service_id
+msgid "VPN Service"
+msgstr "VPN服务"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_vpn__tun
+msgid "VPN Tun Interface"
+msgstr "VPN Tun 接口"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_vpn__wins_server
+msgid "VPN WINS Server"
+msgstr "VPN WINS 服务器"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.component_type_form
+#: model_terms:ir.ui.view,arch_db:itm.spec_selector_form
+msgid "Valid Keys"
+msgstr "有效密钥"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.spec_selector_form
+msgid "Valid Values"
+msgstr "有效值"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification__value_id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_selector__value_ids
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_dbsetting__value
+msgid "Value"
+msgstr "值"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification__value_type_id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_key__value_type_id
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component_specification_value__value_type_id
+msgid "Value Type"
+msgstr "值的类型"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__product_partner_id
+msgid "Vendor"
+msgstr "供应商"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Virtual Asset"
+msgstr "虚拟资产"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__virtual_parent_id
+msgid "Virtual Machine"
+msgstr "虚拟机"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+msgid "Virtual Machine Data"
+msgstr "虚拟机数据"
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_wireless_ssid__auth_type__wep128
+msgid "WEP-128bits"
+msgstr "WEP-128bits"
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_wireless_ssid__auth_type__wep64
+msgid "WEP-64bits"
+msgstr "WEP-64bits"
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_wireless_ssid__auth_type__wpa_ent
+msgid "WPA Enterprise"
+msgstr "WPA Enterprise"
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_wireless_ssid__auth_type__wpa
+msgid "WPA Personal (Pre-shared key)"
+msgstr "WPA Personal (Pre-shared key)"
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_wireless_ssid__auth_type__wpa2_ent
+msgid "WPA2 Enterprise"
+msgstr "WPA2 Enterprise"
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_wireless_ssid__auth_type__wpa2
+msgid "WPA2 Personal (Pre-shared key)"
+msgstr "WPA2 Personal (Pre-shared key)"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__product_warranty
+msgid "Warranty"
+msgstr "保修"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_application__is_webapp
+msgid "Web Application"
+msgstr "Web 应用"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_access__website_message_ids
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__website_message_ids
+#: model:ir.model.fields,field_description:itm.field_itm_equipment_component__website_message_ids
+#: model:ir.model.fields,field_description:itm.field_itm_service_ad__website_message_ids
+#: model:ir.model.fields,field_description:itm.field_itm_site__website_message_ids
+msgid "Website Messages"
+msgstr "网页信息"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_access__website_message_ids
+#: model:ir.model.fields,help:itm.field_itm_equipment__website_message_ids
+#: model:ir.model.fields,help:itm.field_itm_equipment_component__website_message_ids
+#: model:ir.model.fields,help:itm.field_itm_service_ad__website_message_ids
+#: model:ir.model.fields,help:itm.field_itm_site__website_message_ids
+msgid "Website communication history"
+msgstr "网站通信历史"
+
+#. module: itm
+#: model:ir.actions.act_window,name:itm.itm_service_wireless_action
+#: model:ir.ui.menu,name:itm.itm_wireless_menu
+msgid "Wireless"
+msgstr "无线"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__function_wireless
+msgid "Wireless Access Device"
+msgstr "无线访问设备"
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_service_wireless_ssid
+msgid "Wireless Base Station ID"
+msgstr "无线基站编号"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Wireless Device"
+msgstr "无线设备"
+
+#. module: itm
+#: model:ir.model.fields.selection,name:itm.selection__itm_service_wireless__type__router_wireless
+msgid "Wireless Router"
+msgstr "无线路由器"
+
+#. module: itm
+#: model:ir.model,name:itm.model_itm_service_wireless
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__wireless_service_id
+msgid "Wireless Service"
+msgstr "无线服务"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_service_wireless_form
+msgid "Wireless Settings"
+msgstr "无线设备"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_service_wireless_ssid__wireless_id
+msgid "Wireless service"
+msgstr "无线服务"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "With Applications"
+msgstr "应用"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "With Backup"
+msgstr "备份"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Without Applications"
+msgstr "非应用"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_search
+msgid "Without Backup"
+msgstr "不备份"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_worklog_form
+msgid "Worklog"
+msgstr "工作日志"
+
+#. module: itm
+#: model:ir.model.fields,field_description:itm.field_itm_equipment__worklog_ids
+msgid "Worklogs on this equipment"
+msgstr "此设备的工作日志"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_application_form
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_network_form
+msgid "Write a note ..."
+msgstr "备注 ..."
+
+#. module: itm
+#. odoo-python
+#: code:addons/itm/models/service_ad.py:0
+#, python-format
+msgid "You cannot create recursive Active Directory objects."
+msgstr "不能创建递归 Active Directory 对象。"
+
+#. module: itm
+#: model:ir.model.fields,help:itm.field_itm_equipment__configuration_file_ids
+msgid "configuration file of this asset or device"
+msgstr "此资产或设备的配置文件"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_network_form
+msgid "eth0"
+msgstr "eth0"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_equipment_partition_form
+msgid "ext4"
+msgstr "ext4"
+
+#. module: itm
+#: model_terms:ir.ui.view,arch_db:itm.itm_wizard_credential_form
+msgid "or"
+msgstr "或"
